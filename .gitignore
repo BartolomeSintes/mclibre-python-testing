@@ -4,3 +4,5 @@
 /bower_components/
 /node_modules/
 /.htmlhintrc
+/client/_pycache_/**
+/client/.pytest_cache/**

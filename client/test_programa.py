@@ -10,7 +10,7 @@ with open("test-values.txt", "r") as file:
     texto = texto.replace("'", '"')
     values = json.loads(texto)
 
-def test_program():
+def test_programa():
     global values
 
     input_values = values["input"]
@@ -26,7 +26,7 @@ def test_program():
     program.main()
 
     with open("obtained-result.txt", "w") as file:
-        # saved as json because it is a list
+        # Lo guardo en json porque es una lista y para leerlo no da problemas
         json.dump(output, file)
 
     assert output == values["output"]

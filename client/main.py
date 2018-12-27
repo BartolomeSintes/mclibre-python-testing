@@ -4,39 +4,39 @@ import requests
 import os
 
 r = requests.get("http://www.mclibre.org/python/testing/python.py")
-valores = json.loads(r.text)
+values = json.loads(r.text)
 
-informeErrores = []
+errorReport = []
 
-for i in valores["tests"]:
-    with open("valores-prueba.txt", "w") as fichero:
-        fichero.write(str(i))
+for i in values["tests"]:
+    with open("test-values.txt", "w") as file:
+        file.write(str(i))
 
-    p = subprocess.Popen(['pytest', 'test_programa.py', '--junitxml=resultado.txt'])
+    p = subprocess.Popen(['pytest', 'test-program.py', '--junitxml=result.txt'])
     p.wait()
 
     import xml.etree.ElementTree as ET
-    tree = ET.parse('resultado.txt')
+    tree = ET.parse('result.txt')
     root = tree.getroot()
     for neighbor in root.iter('testsuite'):
         if int(neighbor.attrib["failures"]) > 0:
-            with open("resultado-obtenido.txt", "r") as fichero:
-                # Como está guardado en json, lo lee como lista
-                texto = json.load(fichero)
-            informeErrores += [[i["input"], i["output"], texto]]
-            if os.path.isfile("resultado-obtenido.txt"):
-                os.remove("resultado-obtenido.txt")
+            with open("obtained-result.txt", "r") as file:
+                # file is saved as json and is read as a list
+                texto = json.load(file)
+            errorReport += [[i["input"], i["output"], texto]]
+            if os.path.isfile("obtained-result.txt"):
+                os.remove("obtained-result.txt")
 
-    if os.path.isfile("valores-prueba.txt"):
-        os.remove("valores-prueba.txt")
+    if os.path.isfile("test-values.txt"):
+        os.remove("test-values.txt")
 
-    if os.path.isfile("resultado.txt"):
-        os.remove("resultado.txt")
+    if os.path.isfile("result.txt"):
+        os.remove("result.txt")
 
-if informeErrores == []:
+if errorReport == []:
     print("No se han encontrado fallos en el programa")
 else:
-    for i in informeErrores:
+    for i in errorReport:
         print("El programa no funciona correctamente en el siguiente caso:")
         print("  Valores de prueba:", i[0])
         if len(i[1]) != len(i[2]):
