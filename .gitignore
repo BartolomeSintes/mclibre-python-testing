@@ -3,6 +3,8 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
+/.vscode/
 /.htmlhintrc
-/client/__pycache__/**
-/client/.pytest_cache/**
+/client/__pycache__/
+/client/.pytest_cache/
+/tmp/
