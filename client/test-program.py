@@ -1,9 +1,14 @@
-# basado en https://code-maven.com/mocking-input-and-output-for-python-testing
+# based en https://code-maven.com/mocking-input-and-output-for-python-testing
 
-import program
 import requests
 import pytest
 import json
+import importlib
+
+# Name of the Python program that will be tested
+program_file = "program"
+
+program = importlib.import_module(program_file)
 
 with open("test-values.txt", "r") as file:
     texto = file.read()
