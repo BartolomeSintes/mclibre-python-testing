@@ -2,77 +2,109 @@ import subprocess
 import json
 import requests
 import os
+import sys
 import random
+import argparse
 
-server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/python.py"
-#server_url = "http://localhost/mclibre/consultar/python-testing/server/python.py"
-#server_url = "http://localhost/mclibre/consultar/python-testing/tmp/server/python-testing-windows.py"
 
-json_request = {
-    "jsonrpc": "2.0",
-    "method": "unit-test",
-    "params": {"version": "0.1", "exercise-id": 1},
-    "id": random.randint(0, 100_000)
-}
+def main():
+    parser = argparse.ArgumentParser(
+        description="Testing tool for some of the programming exercises in mclibre.org's Python course available at http://www.mclibre.org/consultar/python/"
+    )
 
-r = requests.get(server_url, data=json.dumps(json_request))
-r.encoding = "utf-8"
-print("############################################")
-print("############################################")
-print("RECIBIDO:")
-print(r.text)
-values = r.json()
-print("RECIBIDO:")
-print(values)
+    # parser.add_argument("to_be_tested_py", action="store", help="File name of the python program that will be tested")
+    parser.add_argument(
+        "exercise_id",
+        action="store",
+        type=int,
+        help="id of the tests that will be applied to the program",
+    )
 
-if "error" in values:
-    print("Se ha recibido un error")
-else:
-    errorReport = []
-    for i in values["result"]:
-        with open("test-values.txt", "w", encoding='iso-8859-1') as file:
-            file.write(str(i))
+    args = parser.parse_args()
+    # testable = args.to_be_tested_py
 
-        p = subprocess.Popen(["pytest", "test-program.py", "--junitxml=result.txt"])
-        p.wait()
+    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/python.py"
+    # server_url = "http://localhost/mclibre/consultar/python-testing/server/python.py"
+    # server_url = "http://localhost/mclibre/consultar/python-testing/tmp/server/python-testing-windows.py"
 
-        import xml.etree.ElementTree as ET
+    random_id = random.randint(0, 100_000)
+    json_request = {
+        "jsonrpc": "2.0",
+        "method": "unit-test",
+        "params": {"version": "0.1", "exercise-id": args.exercise_id},
+        "id": random_id,
+    }
 
-        tree = ET.parse("result.txt")
-        root = tree.getroot()
-        for neighbor in root.iter("testsuite"):
-            if int(neighbor.attrib["failures"]) > 0:
-                with open("obtained-result.txt", "r", encoding='iso-8859-1') as file:
-                    # file is saved as json and is read as a list
-                    texto = json.load(file)
-                errorReport += [[i["input"], i["output"], texto]]
-                if os.path.isfile("obtained-result.txt"):
-                    os.remove("obtained-result.txt")
+    r = requests.get(server_url, data=json.dumps(json_request))
+    r.encoding = "utf-8"
+    values = r.json()
 
-        if os.path.isfile("test-values.txt"):
-            os.remove("test-values.txt")
-
-        if os.path.isfile("result.txt"):
-            os.remove("result.txt")
-
-    if errorReport == []:
-        print("No se han encontrado fallos en el programa")
+    if "error" in values:
+        print()
+        print("An error has been detected:")
+        print(f"  Error number:  {values['error']}")
+        print(f"  Error message: {values['message']}")
+    elif values["id"] != random_id:
+        print()
+        print("An error has been detected:")
+        print("  The id sent by the server is not the same that was sent to the server")
     else:
-        for i in errorReport:
-            print("El programa no funciona correctamente en el siguiente caso:")
-            print("  Valores de prueba:", i[0])
-            if len(i[1]) != len(i[2]):
-                print("  El programa no genera la misma cantidad de salidas")
-            for j in range(min(len(i[1]), len(i[2]))):
-                if i[1][j] != i[2][j]:
-                    print(f'  Resultado esperado: "{i[1][j]}"')
-                    print(f'  Resultado obtenido: "{i[2][j]}"')
-            for j in range(min(len(i[1]), len(i[2])), max(len(i[1]), len(i[2]))):
-                if 0 <= j < len(i[1]):
-                    print(f'  Resultado esperado: "{i[1][j]}"')
-                else:
-                    print(f"  No se esperaba ningún resultado")
-                if 0 <= j < len(i[2]):
-                    print(f'  Resultado obtenido: "{i[2][j]}"')
-                else:
-                    print(f"  No se ha obtenido ningún resultado")
+
+        errorReport = []
+        for i in values["result"]:
+            with open("test-values.txt", "w", encoding="iso-8859-1") as file:
+                file.write(str(i))
+
+            p = subprocess.Popen(
+                ["pytest", "test-program.py", "--junitxml=result.txt", "--quiet"]
+            )
+            p.wait()
+
+            import xml.etree.ElementTree as ET
+
+            tree = ET.parse("result.txt")
+            root = tree.getroot()
+            for neighbor in root.iter("testsuite"):
+                if int(neighbor.attrib["failures"]) > 0:
+                    with open(
+                        "obtained-result.txt", "r", encoding="iso-8859-1"
+                    ) as file:
+                        # file is saved as json and is read as a list
+                        texto = json.load(file)
+                    errorReport += [[i["input"], i["output"], texto]]
+                    if os.path.isfile("obtained-result.txt"):
+                        os.remove("obtained-result.txt")
+
+            if os.path.isfile("test-values.txt"):
+                os.remove("test-values.txt")
+
+            if os.path.isfile("result.txt"):
+                os.remove("result.txt")
+
+        if errorReport == []:
+            print()
+            print("All test have passed")
+        else:
+            for i in errorReport:
+                print()
+                print("Failed test:")
+                print("  Tested values:", i[0][0])
+                if len(i[1]) != len(i[2]):
+                    print("  The program produces an incorrect number of outputs")
+                for j in range(min(len(i[1]), len(i[2]))):
+                    if i[1][j] != i[2][j]:
+                        print(f'  Expected result: "{i[1][j]}"')
+                        print(f'  Obtained result: "{i[2][j]}"')
+                for j in range(min(len(i[1]), len(i[2])), max(len(i[1]), len(i[2]))):
+                    if 0 <= j < len(i[1]):
+                        print(f'  Expected result: "{i[1][j]}"')
+                    else:
+                        print(f"  No result was expected")
+                    if 0 <= j < len(i[2]):
+                        print(f'  Obtained result: "{i[2][j]}"')
+                    else:
+                        print(f"  No result obtained")
+
+
+if __name__ == "__main__":
+    main()
