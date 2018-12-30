@@ -1,10 +1,25 @@
-import subprocess
-import json
-import requests
-import os
-import sys
-import random
 import argparse
+import json
+import os
+import random
+import subprocess
+import sys
+
+# pytest is a required module
+try:
+    exec("import pytest")
+except:
+    print("[ERROR] Missing module: PyTest")
+    print("Please install PyTest and try again")
+    exit()
+
+# requests is a required module
+try:
+    import requests
+except:
+    print("[ERROR] Missing module: Requests")
+    print("Please install Requests and try again")
+    exit()
 
 
 def main():
