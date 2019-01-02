@@ -38,22 +38,24 @@ def main():
     args = parser.parse_args()
     # testable = args.to_be_tested_py
 
-    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/python.py"
-    # server_url = "http://localhost/mclibre/consultar/python-testing/server/python.py"
-    # server_url = "http://localhost/mclibre/consultar/python-testing/tmp/server/python-testing-windows.py"
+    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre-pytesting-server.py"
+    #server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-pytesting-server.py"
 
     random_id = random.randint(0, 100_000)
     json_request = {
         "jsonrpc": "2.0",
         "method": "unit-test",
         "params": {"version": "0.1", "exercise-id": args.exercise_id},
-        "id": random_id,
+        "id": random_id
     }
-
+    #print (json.dumps(json_request))
     r = requests.get(server_url, data=json.dumps(json_request))
-    r.encoding = "utf-8"
+    #print(r)
     values = r.json()
+    #print(values)
 
+    print("-+-+-+-+-+-+-+-+-+-+ MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-+-+")
+    print("-+-+-+-+-+-+-+-+-+-+        WELCOME         -+-+-+-+-+-+-+-+-+-+")
     if "error" in values:
         print()
         print("An error has been detected:")
@@ -65,9 +67,14 @@ def main():
         print("  The id sent by the server is not the same that was sent to the server")
     else:
 
+        print(f"{len(values['result'])} tests will be executed")
+        print("Please, wait until all tests have been executed")
+        print("PyTest will print some messages while the tests are being executed")
+        print("and a final report will be shown after")
+        print("-+-+-+-+-+-+-+-+-+-+        PYTEST         -+-+-+-+-+-+-+-+-+-+")
         errorReport = []
         for i in values["result"]:
-            with open("test-values.txt", "w", encoding="iso-8859-1") as file:
+            with open("test-values.txt", "w", encoding="utf-8") as file:
                 file.write(str(i))
 
             p = subprocess.Popen(
@@ -82,10 +89,11 @@ def main():
             for neighbor in root.iter("testsuite"):
                 if int(neighbor.attrib["failures"]) > 0:
                     with open(
-                        "obtained-result.txt", "r", encoding="iso-8859-1"
+                        "obtained-result.txt", "r", encoding="utf-8"
                     ) as file:
                         # file is saved as json and is read as a list
                         texto = json.load(file)
+                        print(texto)
                     errorReport += [[i["input"], i["output"], texto]]
                     if os.path.isfile("obtained-result.txt"):
                         os.remove("obtained-result.txt")
@@ -96,10 +104,27 @@ def main():
             if os.path.isfile("result.txt"):
                 os.remove("result.txt")
 
+        print()
+        print()
+        print("-+-+-+-+-+-+-+-+-+-+ MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-+-+")
+        print("-+-+-+-+-+-+-+-+-+-+        RESULTS         -+-+-+-+-+-+-+-+-+-+")
+        print()
+        if len(values['result']) > 1:
+            print(f"{len(values['result'])} tests have been executed")
+        else:
+            print(f"{len(values['result'])} test has been executed")
         if errorReport == []:
             print()
             print("All test have passed")
         else:
+            if len(values['result']) - len(errorReport) > 1:
+                print(f"{len(values['result']) - len(errorReport)} tests have passed")
+            else:
+                print(f"{len(values['result']) - len(errorReport)} test has passed")
+            if len(errorReport) > 1:
+                print(f"{len(errorReport)} tests have failed")
+            else:
+                print(f"{len(errorReport)} test has failed")
             for i in errorReport:
                 print()
                 print("Failed test:")

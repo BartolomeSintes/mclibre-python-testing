@@ -10,7 +10,7 @@ program_file = "program"
 
 program = importlib.import_module(program_file)
 
-with open("test-values.txt", "r") as file:
+with open("test-values.txt", "r", encoding="utf-8") as file:
     texto = file.read()
     texto = texto.replace("'", '"')
     values = json.loads(texto)
@@ -30,9 +30,9 @@ def test_program():
 
     program.main()
 
-    with open("obtained-result.txt", "w") as file:
+    with open("obtained-result.txt", "w", encoding="utf-8") as file:
         # saved as json because it is a list
-        json.dump(output, file)
+        json.dump(output, file, ensure_ascii=False)
 
     assert output == values["output"]
 
