@@ -93,8 +93,8 @@ def main():
         )
         exit()
 
-    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre-pytesting-server.py"
-    # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-pytesting-server.py"
+    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre-python-testing-server.py"
+    # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-python-testing-server.py"
 
     random_id = random.randint(0, 100_000)
     json_request = {
