@@ -27,7 +27,12 @@ def main():
         description="Testing tool for some of the programming exercises in mclibre.org's Python course available at http://www.mclibre.org/consultar/python/"
     )
 
-    # parser.add_argument("to_be_tested_py", action="store", help="File name of the python program that will be tested")
+    parser.add_argument(
+        "to_be_tested_py",
+        action="store",
+        help="File name of the python program that will be tested",
+    )
+
     parser.add_argument(
         "exercise_id",
         action="store",
@@ -38,21 +43,28 @@ def main():
     args = parser.parse_args()
     # testable = args.to_be_tested_py
 
+    if not(os.path.isfile(args.to_be_tested_py)):
+        print(f"Error: Program to be tested [{args.to_be_tested_py}] not found. Please, check file name")
+        exit()
+
+    with open("tested-program.txt", "w", encoding="utf-8") as file:
+        file.write(args.to_be_tested_py)
+
     server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre-pytesting-server.py"
-    #server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-pytesting-server.py"
+    # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-pytesting-server.py"
 
     random_id = random.randint(0, 100_000)
     json_request = {
         "jsonrpc": "2.0",
         "method": "unit-test",
         "params": {"version": "0.1", "exercise-id": args.exercise_id},
-        "id": random_id
+        "id": random_id,
     }
-    #print (json.dumps(json_request))
+    # print (json.dumps(json_request))
     r = requests.get(server_url, data=json.dumps(json_request))
-    #print(r)
+    # print(r)
     values = r.json()
-    #print(values)
+    # print(values)
 
     print("-+-+-+-+-+-+-+-+-+-+ MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-+-+")
     print("-+-+-+-+-+-+-+-+-+-+        WELCOME         -+-+-+-+-+-+-+-+-+-+")
@@ -88,9 +100,7 @@ def main():
             root = tree.getroot()
             for neighbor in root.iter("testsuite"):
                 if int(neighbor.attrib["failures"]) > 0:
-                    with open(
-                        "obtained-result.txt", "r", encoding="utf-8"
-                    ) as file:
+                    with open("obtained-result.txt", "r", encoding="utf-8") as file:
                         # file is saved as json and is read as a list
                         texto = json.load(file)
                         print(texto)
@@ -104,12 +114,15 @@ def main():
             if os.path.isfile("result.txt"):
                 os.remove("result.txt")
 
+        if os.path.isfile("tested-program.txt"):
+            os.remove("tested-program.txt")
+
         print()
         print()
         print("-+-+-+-+-+-+-+-+-+-+ MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-+-+")
         print("-+-+-+-+-+-+-+-+-+-+        RESULTS         -+-+-+-+-+-+-+-+-+-+")
         print()
-        if len(values['result']) > 1:
+        if len(values["result"]) > 1:
             print(f"{len(values['result'])} tests have been executed")
         else:
             print(f"{len(values['result'])} test has been executed")
@@ -117,7 +130,7 @@ def main():
             print()
             print("All test have passed")
         else:
-            if len(values['result']) - len(errorReport) > 1:
+            if len(values["result"]) - len(errorReport) > 1:
                 print(f"{len(values['result']) - len(errorReport)} tests have passed")
             else:
                 print(f"{len(values['result']) - len(errorReport)} test has passed")
