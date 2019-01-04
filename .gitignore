@@ -7,7 +7,12 @@
 /.htmlhintrc
 /client/__pycache__/
 /client/.pytest_cache/
-/pypi/
+/server/__pycache__/
+/server/.pytest_cache/
+/pypi/mptc_pkg/__pycache__/
+/pypi/mptc_pkg/build/
+/pypi/mptc_pkg/dist/
+/pypi/mptc_pkg/mclibre_python_testing_client.egg-info/
 /tmp/
 mclibre-python-testing.odt
 .~lock.mclibre-python-testing.odt#
