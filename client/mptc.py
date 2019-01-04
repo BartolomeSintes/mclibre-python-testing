@@ -22,10 +22,10 @@ except:
     exit()
 
 
-def create_test_program():
+def create_test_program(program_to_be_tested):
     with open("test-program.py", "w", encoding="utf-8") as file:
         file.write(
-            """# based en https://code-maven.com/mocking-input-and-output-for-python-testing
+            f"""# based en https://code-maven.com/mocking-input-and-output-for-python-testing
 
 import importlib
 import json
@@ -33,43 +33,35 @@ import os
 import pytest
 import requests
 
-# Name of the Python program that will be tested
-with open("tested-program.txt", "r", encoding="utf-8") as file:
+program_file = str("{program_to_be_tested}").replace(".py", "")
+
+program = importlib.import_module(program_file)
+
+with open("test-values.txt", "r", encoding="utf-8") as file:
     texto = file.read()
-    if not(os.path.isfile(texto)):
-        print("Error: Program to be tested not found. Please, check file name")
-        exit()
-    else:
-        texto = texto.replace(".py", "")
-        program_file = texto
+    texto = texto.replace("'", '"')
+    values = json.loads(texto)
 
-        program = importlib.import_module(program_file)
+    def test_program():
+        global values
 
-        with open("test-values.txt", "r", encoding="utf-8") as file:
-            texto = file.read()
-            texto = texto.replace("'", '"')
-            values = json.loads(texto)
+        input_values = values["input"]
+        output = []
 
-            def test_program():
-                global values
+        def mock_input(s):
+            output.append(s)
+            return input_values.pop(0)
 
-                input_values = values["input"]
-                output = []
+        program.input = mock_input
+        program.print = lambda s: output.append(s)
 
-                def mock_input(s):
-                    output.append(s)
-                    return input_values.pop(0)
+        program.main()
 
-                program.input = mock_input
-                program.print = lambda s: output.append(s)
+        with open("obtained-result.txt", "w", encoding="utf-8") as file:
+            # saved as json because it is a list
+            json.dump(output, file, ensure_ascii=False)
 
-                program.main()
-
-                with open("obtained-result.txt", "w", encoding="utf-8") as file:
-                    # saved as json because it is a list
-                    json.dump(output, file, ensure_ascii=False)
-
-                assert output == values["output"]
+        assert output == values["output"]
 """
         )
 
@@ -100,9 +92,6 @@ def main():
             f"Error: Program to be tested [{args.to_be_tested_py}] not found. Please, check file name"
         )
         exit()
-
-    with open("tested-program.txt", "w", encoding="utf-8") as file:
-        file.write(args.to_be_tested_py)
 
     server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre-pytesting-server.py"
     # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-pytesting-server.py"
@@ -142,7 +131,7 @@ def main():
         for i in values["result"]:
             with open("test-values.txt", "w", encoding="utf-8") as file:
                 file.write(str(i))
-            create_test_program()
+            create_test_program(args.to_be_tested_py)
 
             p = subprocess.Popen(
                 ["pytest", "test-program.py", "--junitxml=result.txt", "--quiet"]
@@ -171,9 +160,6 @@ def main():
 
             if os.path.isfile("test-program.py"):
                 os.remove("test-program.py")
-
-        if os.path.isfile("tested-program.txt"):
-            os.remove("tested-program.txt")
 
         print()
         print()
