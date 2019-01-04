@@ -22,6 +22,58 @@ except:
     exit()
 
 
+def create_test_program():
+    with open("test-program.py", "w", encoding="utf-8") as file:
+        file.write(
+            """# based en https://code-maven.com/mocking-input-and-output-for-python-testing
+
+import importlib
+import json
+import os
+import pytest
+import requests
+
+# Name of the Python program that will be tested
+with open("tested-program.txt", "r", encoding="utf-8") as file:
+    texto = file.read()
+    if not(os.path.isfile(texto)):
+        print("Error: Program to be tested not found. Please, check file name")
+        exit()
+    else:
+        texto = texto.replace(".py", "")
+        program_file = texto
+
+        program = importlib.import_module(program_file)
+
+        with open("test-values.txt", "r", encoding="utf-8") as file:
+            texto = file.read()
+            texto = texto.replace("'", '"')
+            values = json.loads(texto)
+
+            def test_program():
+                global values
+
+                input_values = values["input"]
+                output = []
+
+                def mock_input(s):
+                    output.append(s)
+                    return input_values.pop(0)
+
+                program.input = mock_input
+                program.print = lambda s: output.append(s)
+
+                program.main()
+
+                with open("obtained-result.txt", "w", encoding="utf-8") as file:
+                    # saved as json because it is a list
+                    json.dump(output, file, ensure_ascii=False)
+
+                assert output == values["output"]
+"""
+        )
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Testing tool for some of the programming exercises in mclibre.org's Python course available at http://www.mclibre.org/consultar/python/"
@@ -43,8 +95,10 @@ def main():
     args = parser.parse_args()
     # testable = args.to_be_tested_py
 
-    if not(os.path.isfile(args.to_be_tested_py)):
-        print(f"Error: Program to be tested [{args.to_be_tested_py}] not found. Please, check file name")
+    if not (os.path.isfile(args.to_be_tested_py)):
+        print(
+            f"Error: Program to be tested [{args.to_be_tested_py}] not found. Please, check file name"
+        )
         exit()
 
     with open("tested-program.txt", "w", encoding="utf-8") as file:
@@ -88,6 +142,7 @@ def main():
         for i in values["result"]:
             with open("test-values.txt", "w", encoding="utf-8") as file:
                 file.write(str(i))
+            create_test_program()
 
             p = subprocess.Popen(
                 ["pytest", "test-program.py", "--junitxml=result.txt", "--quiet"]
@@ -113,6 +168,9 @@ def main():
 
             if os.path.isfile("result.txt"):
                 os.remove("result.txt")
+
+            if os.path.isfile("test-program.py"):
+                os.remove("test-program.py")
 
         if os.path.isfile("tested-program.txt"):
             os.remove("tested-program.txt")
