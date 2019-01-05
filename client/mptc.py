@@ -22,6 +22,50 @@ except:
     exit()
 
 
+def create_test_program(program_to_be_tested):
+    with open("test-program.py", "w", encoding="utf-8") as file:
+        file.write(
+            f"""# based en https://code-maven.com/mocking-input-and-output-for-python-testing
+
+import importlib
+import json
+import os
+import pytest
+import requests
+
+program_file = str("{program_to_be_tested}").replace(".py", "")
+
+program = importlib.import_module(program_file)
+
+with open("test-values.txt", "r", encoding="utf-8") as file:
+    texto = file.read()
+    texto = texto.replace("'", '"')
+    values = json.loads(texto)
+
+    def test_program():
+        global values
+
+        input_values = values["input"]
+        output = []
+
+        def mock_input(s):
+            output.append(s)
+            return input_values.pop(0)
+
+        program.input = mock_input
+        program.print = lambda s: output.append(s)
+
+        program.main()
+
+        with open("obtained-result.txt", "w", encoding="utf-8") as file:
+            # saved as json because it is a list
+            json.dump(output, file, ensure_ascii=False)
+
+        assert output == values["output"]
+"""
+        )
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Testing tool for some of the programming exercises in mclibre.org's Python course available at http://www.mclibre.org/consultar/python/"
@@ -43,15 +87,14 @@ def main():
     args = parser.parse_args()
     # testable = args.to_be_tested_py
 
-    if not(os.path.isfile(args.to_be_tested_py)):
-        print(f"Error: Program to be tested [{args.to_be_tested_py}] not found. Please, check file name")
+    if not (os.path.isfile(args.to_be_tested_py)):
+        print(
+            f"Error: Program to be tested [{args.to_be_tested_py}] not found. Please, check file name"
+        )
         exit()
 
-    with open("tested-program.txt", "w", encoding="utf-8") as file:
-        file.write(args.to_be_tested_py)
-
-    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre-pytesting-server.py"
-    # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-pytesting-server.py"
+    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre-python-testing-server.py"
+    # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-python-testing-server.py"
 
     random_id = random.randint(0, 100_000)
     json_request = {
@@ -88,6 +131,7 @@ def main():
         for i in values["result"]:
             with open("test-values.txt", "w", encoding="utf-8") as file:
                 file.write(str(i))
+            create_test_program(args.to_be_tested_py)
 
             p = subprocess.Popen(
                 ["pytest", "test-program.py", "--junitxml=result.txt", "--quiet"]
@@ -114,8 +158,8 @@ def main():
             if os.path.isfile("result.txt"):
                 os.remove("result.txt")
 
-        if os.path.isfile("tested-program.txt"):
-            os.remove("tested-program.txt")
+            if os.path.isfile("test-program.py"):
+                os.remove("test-program.py")
 
         print()
         print()
