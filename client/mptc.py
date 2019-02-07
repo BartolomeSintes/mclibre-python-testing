@@ -101,7 +101,7 @@ def main():
         "jsonrpc": "2.0",
         "method": "unit-test",
         "params": {"version": "0.1", "exercise-id": args.exercise_id},
-        "id": random_id,
+        "id": random_id
     }
     # print (json.dumps(json_request))
     r = requests.get(server_url, data=json.dumps(json_request))
@@ -149,8 +149,8 @@ def main():
                         texto = json.load(file)
                         print(texto)
                     errorReport += [[i["input"], i["output"], texto]]
-                    if os.path.isfile("obtained_result.txt"):
-                        os.remove("obtained_result.txt")
+            if os.path.isfile("obtained_result.txt"):
+                os.remove("obtained_result.txt")
 
             if os.path.isfile("test_values.txt"):
                 os.remove("test_values.txt")

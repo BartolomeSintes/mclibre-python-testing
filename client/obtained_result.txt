@@ -1,1 +1,0 @@
-["CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)", "¿Cuánto pesa? ", "¿Cuánto mide en metros? ", "Su imc es 32.7", "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,", "pero esos límites dependen de la edad, del sexo, de la constitución física, etc."]
