@@ -23,7 +23,7 @@ except:
 
 
 def create_test_program(program_to_be_tested):
-    with open("test-program.py", "w", encoding="utf-8") as file:
+    with open("test_program.py", "w", encoding="utf-8") as file:
         file.write(
             f"""# based en https://code-maven.com/mocking-input-and-output-for-python-testing
 
@@ -37,7 +37,7 @@ program_file = str("{program_to_be_tested}").replace(".py", "")
 
 program = importlib.import_module(program_file)
 
-with open("test-values.txt", "r", encoding="utf-8") as file:
+with open("test_values.txt", "r", encoding="utf-8") as file:
     texto = file.read()
     texto = texto.replace("'", '"')
     values = json.loads(texto)
@@ -57,7 +57,7 @@ with open("test-values.txt", "r", encoding="utf-8") as file:
 
         program.main()
 
-        with open("obtained-result.txt", "w", encoding="utf-8") as file:
+        with open("obtained_result.txt", "w", encoding="utf-8") as file:
             # saved as json because it is a list
             json.dump(output, file, ensure_ascii=False)
 
@@ -93,19 +93,19 @@ def main():
         )
         exit()
 
-    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre-python-testing-server.py"
-    # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre-python-testing-server.py"
+    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre_python_testing_server.py"
+    # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
 
     random_id = random.randint(0, 100_000)
     json_request = {
         "jsonrpc": "2.0",
         "method": "unit-test",
         "params": {"version": "0.1", "exercise-id": args.exercise_id},
-        "id": random_id,
+        "id": random_id
     }
     # print (json.dumps(json_request))
     r = requests.get(server_url, data=json.dumps(json_request))
-    # print(r)
+    #print(r)
     values = r.json()
     # print(values)
 
@@ -129,12 +129,12 @@ def main():
         print("-+-+-+-+-+-+-+-+-+-+        PYTEST         -+-+-+-+-+-+-+-+-+-+")
         errorReport = []
         for i in values["result"]:
-            with open("test-values.txt", "w", encoding="utf-8") as file:
+            with open("test_values.txt", "w", encoding="utf-8") as file:
                 file.write(str(i))
             create_test_program(args.to_be_tested_py)
 
             p = subprocess.Popen(
-                ["pytest", "test-program.py", "--junitxml=result.txt", "--quiet"]
+                ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"]
             )
             p.wait()
 
@@ -144,22 +144,22 @@ def main():
             root = tree.getroot()
             for neighbor in root.iter("testsuite"):
                 if int(neighbor.attrib["failures"]) > 0:
-                    with open("obtained-result.txt", "r", encoding="utf-8") as file:
+                    with open("obtained_result.txt", "r", encoding="utf-8") as file:
                         # file is saved as json and is read as a list
                         texto = json.load(file)
                         print(texto)
                     errorReport += [[i["input"], i["output"], texto]]
-                    if os.path.isfile("obtained-result.txt"):
-                        os.remove("obtained-result.txt")
+            if os.path.isfile("obtained_result.txt"):
+                os.remove("obtained_result.txt")
 
-            if os.path.isfile("test-values.txt"):
-                os.remove("test-values.txt")
+            if os.path.isfile("test_values.txt"):
+                os.remove("test_values.txt")
 
             if os.path.isfile("result.txt"):
                 os.remove("result.txt")
 
-            if os.path.isfile("test-program.py"):
-                os.remove("test-program.py")
+            if os.path.isfile("test_program.py"):
+                os.remove("test_program.py")
 
         print()
         print()
