@@ -2,21 +2,39 @@
 # enable debugging
 import cgi
 import cgitb
+import importlib
 import json
 import os
 import random
 import sys
 
-from mpts import exercise_1
 
 cgitb.enable()
 
-valid_exercise_ids = [1]
+valid_exercise_ids = [[1, [1, 2]]]
+
+
+def valid_exercise_number(num):
+    valid = False
+    for i in valid_exercise_ids:
+        if num in i[1]:
+            valid = True
+    return valid
+
+
+def exercise_module_number(num):
+    module = 0
+    for i in valid_exercise_ids:
+        if num in i[1]:
+            module = i[0]
+    return module
+
 
 def generate_json(exercise_id):
+    mpts_number = exercise_module_number(exercise_id)
+    mpts = importlib.import_module("mpts_" + str(mpts_number))
     print('  "result": [')
-    if exercise_id == 1:
-        exercise_1()
+    mpts.exercise(exercise_id)
     print(" ],")
 
 
@@ -62,7 +80,7 @@ def check_request(form):
         request_ok = 7
     elif "exercise-id" not in form["params"]:
         request_ok = 8
-    elif form["params"]["exercise-id"] != 1:
+    elif not (valid_exercise_number(form["params"]["exercise-id"])):
         request_ok = 9
     elif "id" not in form:
         request_ok = 10

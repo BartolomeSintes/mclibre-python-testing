@@ -1,5 +1,8 @@
 import random
 
+NOT_LAST_TEST = True
+LAST_TEST = False
+
 
 def add_test(input, output, comma):
     print("    {")
@@ -20,76 +23,113 @@ def add_test(input, output, comma):
         print("    }")
 
 
-def exercise_1():
-    fecha = 4 * random.randrange(400, 600) + 1
-    add_test(
-        [fecha],
-        [
-            "COMPROBADOR DE AÑOS BISIESTOS",
-            "Escriba un año y le diré si es bisiesto: ",
-            "El año " + str(fecha) + " no es un año bisiesto.",
-        ],
-        True,
-    )
+def exercise(exercise_id):
+    if exercise_id == 1:
+        # Exercise 1 BEGINNING
+        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
-    fecha = 4 * random.randrange(400, 600) + 2
-    add_test(
-        [fecha],
-        [
-            "COMPROBADOR DE AÑOS BISIESTOS",
-            "Escriba un año y le diré si es bisiesto: ",
-            "El año " + str(fecha) + " no es un año bisiesto.",
-        ],
-        True,
-    )
+        # envía dos números enteros positivos
+        numero_1 = random.randrange(0, 20)
+        numero_2 = random.randrange(0, 20)
+        resultado = (numero_1 + numero_2) / 2
+        add_test(
+            [numero_1, numero_2],
+            [
+                "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
+                "Escriba un número: ",
+                "Escriba otro número: ",
+                f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
+            ],
+            NOT_LAST_TEST,
+        )
 
-    fecha = 4 * random.randrange(400, 600) + 3
-    add_test(
-        [fecha],
-        [
-            "COMPROBADOR DE AÑOS BISIESTOS",
-            "Escriba un año y le diré si es bisiesto: ",
-            "El año " + str(fecha) + " no es un año bisiesto.",
-        ],
-        True,
-    )
+        # envía dos números enteros negativos
+        numero_1 = random.randrange(-21, 0)
+        numero_2 = random.randrange(-21, 0)
+        resultado = (numero_1 + numero_2) / 2
+        add_test(
+            [numero_1, numero_2],
+            [
+                "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
+                "Escriba un número: ",
+                "Escriba otro número: ",
+                f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
+            ],
+            NOT_LAST_TEST,
+        )
 
-    # Múltiplo de 400: No es bisisesto
-    fecha = 400 * random.randrange(1, 7)
-    add_test(
-        [fecha],
-        [
-            "COMPROBADOR DE AÑOS BISIESTOS",
-            "Escriba un año y le diré si es bisiesto: ",
-            "El año " + str(fecha) + " es un año bisiesto porque es múltiplo de 400.",
-        ],
-        True,
-    )
+        # envía dos números decimales positivos
+        numero_1 = random.randrange(0, 100) / 10.0
+        numero_2 = random.randrange(0, 100) / 10.0
+        resultado = (numero_1 + numero_2) / 2
+        add_test(
+            [numero_1, numero_2],
+            [
+                "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
+                "Escriba un número: ",
+                "Escriba otro número: ",
+                f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
+            ],
+            LAST_TEST,
+        )
+        # Exercise 1 END
 
-    # Múltiplo de 100 que no es múltiplo de 400: Es bisisesto
-    fecha = 400 * random.randrange(1, 5) + 100 * random.randrange(1, 4)
-    add_test(
-        [fecha],
-        [
-            "COMPROBADOR DE AÑOS BISIESTOS",
-            "Escriba un año y le diré si es bisiesto: ",
-            "El año "
-            + str(fecha)
-            + " no es un año bisiesto porque es múltiplo de 100 sin ser múltiplo de 400.",
-        ],
-        True,
-    )
+    elif exercise_id == 2:
+        # Exercise 2 BEGINNING
+        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
-    # Múltiplo de 4 que no es múltiplo de 100: Es bisiesto
-    fecha = 100 * random.randrange(10, 25) + 4 * random.randrange(1, 20)
-    add_test(
-        [fecha],
-        [
-            "COMPROBADOR DE AÑOS BISIESTOS",
-            "Escriba un año y le diré si es bisiesto: ",
-            "El año "
-            + str(fecha)
-            + " es un año bisiesto porque es múltiplo de 4 sin ser múltiplo de 100.",
-        ],
-        False,
-    )
+        # imc bajo
+        imc = random.randrange(150, 200) / 10.0
+        altura = random.randrange(60, 200) / 100.0
+        peso = round(imc * altura ** 2)
+        imc = round(peso / altura ** 2, 1)
+
+        add_test(
+            [peso, altura],
+            [
+                "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
+                "¿Cuánto pesa? ",
+                "¿Cuánto mide en metros? ",
+                f"Su imc es {imc}",
+                "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
+                "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
+            ],
+            NOT_LAST_TEST,
+        )
+        # imc medio
+        imc = random.randrange(200, 250) / 10.0
+        altura = random.randrange(60, 200) / 100.0
+        peso = round(imc * altura ** 2)
+        imc = round(peso / altura ** 2, 1)
+
+        add_test(
+            [peso, altura],
+            [
+                "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
+                "¿Cuánto pesa? ",
+                "¿Cuánto mide en metros? ",
+                f"Su imc es {imc}",
+                "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
+                "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
+            ],
+            NOT_LAST_TEST,
+        )
+        # imc alto
+        imc = random.randrange(250, 400) / 10.0
+        altura = random.randrange(60, 200) / 100.0
+        peso = round(imc * altura ** 2)
+        imc = round(peso / altura ** 2, 1)
+
+        add_test(
+            [peso, altura],
+            [
+                "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
+                "¿Cuánto pesa? ",
+                "¿Cuánto mide en metros? ",
+                f"Su imc es {imc}",
+                "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
+                "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
+            ],
+            LAST_TEST,
+        )
+        # Exercise 2 END
