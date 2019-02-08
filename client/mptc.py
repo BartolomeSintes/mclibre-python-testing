@@ -103,11 +103,11 @@ def main():
         "params": {"version": "0.1", "exercise-id": args.exercise_id},
         "id": random_id
     }
-    # print (json.dumps(json_request))
+    #print (json.dumps(json_request))
     r = requests.get(server_url, data=json.dumps(json_request))
     #print(r)
     values = r.json()
-    # print(values)
+    #print(values)
 
     print("-+-+-+-+-+-+-+-+-+-+ MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-+-+")
     print("-+-+-+-+-+-+-+-+-+-+        WELCOME         -+-+-+-+-+-+-+-+-+-+")
@@ -185,7 +185,10 @@ def main():
             for i in errorReport:
                 print()
                 print("Failed test:")
-                print("  Tested values:", i[0][0])
+                if len(i[0]) > 0:
+                    print("  Tested values:", i[0][0])
+                else:
+                    print("  Tested values: None")
                 if len(i[1]) != len(i[2]):
                     print("  The program produces an incorrect number of outputs")
                 for j in range(min(len(i[1]), len(i[2]))):

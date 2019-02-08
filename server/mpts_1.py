@@ -7,10 +7,13 @@ LAST_TEST = False
 def add_test(input, output, comma):
     print("    {")
     print('       "input" : [', end="")
-    for i in range(len(input) - 1):
-        print(input[i], end="")
-        print(", ", end="")
-    print(input[-1], end="")
+    if len(input) == 1:
+        print(input[0], end="")
+    elif len(input) > 1:
+        for i in range(len(input) - 1):
+            print(input[i], end="")
+            print(", ", end="")
+        print(input[-1], end="")
     print("],")
     print('       "output" : [', end="")
     for i in range(len(output) - 1):
@@ -133,3 +136,54 @@ def exercise(exercise_id):
             LAST_TEST,
         )
         # Exercise 2 END
+
+    elif exercise_id == 3:
+        # Exercise 3 BEGINNING
+        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+
+        # números pequeños
+        pies = random.randrange(0, 10)
+        pulgadas = random.randrange(0, 10)
+        cm = (pies * 12 + pulgadas) * 2.54
+
+        add_test(
+            [pies, pulgadas],
+            [
+                "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
+                "Escriba una cantidad de pies: ",
+                "Escriba una cantidad de pulgadas: ",
+                f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
+            ],
+            NOT_LAST_TEST,
+        )
+        # números medianos
+        pies = random.randrange(10, 100)
+        pulgadas = random.randrange(10, 100)
+        cm = (pies * 12 + pulgadas) * 2.54
+
+        add_test(
+            [pies, pulgadas],
+            [
+                "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
+                "Escriba una cantidad de pies: ",
+                "Escriba una cantidad de pulgadas: ",
+                f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
+            ],
+            NOT_LAST_TEST,
+        )
+
+        # números medianos
+        pies = random.randrange(10, 100)
+        pulgadas = random.randrange(10, 100)
+        cm = (pies * 12 + pulgadas) * 2.54
+
+        add_test(
+            [pies, pulgadas],
+            [
+                "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
+                "Escriba una cantidad de pies: ",
+                "Escriba una cantidad de pulgadas: ",
+                f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
+            ],
+            LAST_TEST,
+        )

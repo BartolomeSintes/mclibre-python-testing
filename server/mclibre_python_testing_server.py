@@ -11,7 +11,7 @@ import sys
 
 cgitb.enable()
 
-valid_exercise_ids = [[1, [1, 2]]]
+valid_exercise_ids = [[1, [1, 2, 3]], [100, [1000, 1001, 1002, 1003]]]
 
 
 def valid_exercise_number(num):
