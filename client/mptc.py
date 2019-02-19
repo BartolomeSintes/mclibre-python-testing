@@ -103,11 +103,15 @@ def main():
         "params": {"version": "0.1", "exercise-id": args.exercise_id},
         "id": random_id
     }
-    #print (json.dumps(json_request))
-    r = requests.get(server_url, data=json.dumps(json_request))
-    #print(r)
+    # print (json.dumps(json_request))
+    r = requests.post(server_url, data=json.dumps(json_request))
+    # print(r)
     values = r.json()
-    #print(values)
+    # print(values)
+    # for i in values["result"]:
+    #    print(i["input"])
+    #    print(i["output"])
+    #    print()
 
     print("-+-+-+-+-+-+-+-+-+-+ MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-+-+")
     print("-+-+-+-+-+-+-+-+-+-+        WELCOME         -+-+-+-+-+-+-+-+-+-+")
@@ -172,16 +176,16 @@ def main():
             print(f"{len(values['result'])} test has been executed")
         if errorReport == []:
             print()
-            print("All test have passed")
+            print("All tests have been passed. Congratulations!")
         else:
             if len(values["result"]) - len(errorReport) > 1:
-                print(f"{len(values['result']) - len(errorReport)} tests have passed")
+                print(f"{len(values['result']) - len(errorReport)} tests have been passed")
             else:
-                print(f"{len(values['result']) - len(errorReport)} test has passed")
+                print(f"{len(values['result']) - len(errorReport)} test has been passed")
             if len(errorReport) > 1:
-                print(f"{len(errorReport)} tests have failed")
+                print(f"{len(errorReport)} tests have been failed")
             else:
-                print(f"{len(errorReport)} test has failed")
+                print(f"{len(errorReport)} test has been failed")
             for i in errorReport:
                 print()
                 print("Failed test:")
