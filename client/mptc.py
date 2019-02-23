@@ -47,13 +47,42 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
         input_values = values["input"]
         output = []
+        partial_output = ""
 
         def mock_input(s):
             output.append(s)
             return input_values.pop(0)
 
+        def generate_output(*args, **kwargs):
+          nonlocal partial_output
+          # TODO what happens if \n is included in end?
+
+          # if there is an end keyowrd argument, output is stored
+          # in a string instead of added to the output
+          if "end" in args[1]:
+            with open("recibido.txt", "a", encoding="utf-8") as file:
+              file.write(f"bingo - ")
+            if len(args[0]) != 0:
+              partial_output += args[0][0]
+              for j in range(1, len(args[0])):
+                partial_output = partial_output + " " + args[0][j]
+            partial_output += args[1]["end"]
+          else:
+            # with open("recibido.txt", "a", encoding="utf-8") as file:
+            #   file.write(f"aqui estoy - ")
+            str = partial_output
+            # if there are several arguments in print(), they are added to the ouput
+            if len(args[0]) == 0:
+              str += ""
+            else:
+              str += args[0][0]
+              for j in range(1, len(args[0])):
+                str += " " + args[0][j]
+            partial_output = ""
+            output.append(str)
+
         program.input = mock_input
-        program.print = lambda s: output.append(s)
+        program.print = lambda *args, **kwargs: generate_output(args, kwargs)
 
         program.main()
 
@@ -101,7 +130,7 @@ def main():
         "jsonrpc": "2.0",
         "method": "unit-test",
         "params": {"version": "0.1", "exercise-id": args.exercise_id},
-        "id": random_id
+        "id": random_id,
     }
     # print (json.dumps(json_request))
     r = requests.post(server_url, data=json.dumps(json_request))
@@ -179,9 +208,13 @@ def main():
             print("All tests have been passed. Congratulations!")
         else:
             if len(values["result"]) - len(errorReport) > 1:
-                print(f"{len(values['result']) - len(errorReport)} tests have been passed")
+                print(
+                    f"{len(values['result']) - len(errorReport)} tests have been passed"
+                )
             else:
-                print(f"{len(values['result']) - len(errorReport)} test has been passed")
+                print(
+                    f"{len(values['result']) - len(errorReport)} test has been passed"
+                )
             if len(errorReport) > 1:
                 print(f"{len(errorReport)} tests have been failed")
             else:
