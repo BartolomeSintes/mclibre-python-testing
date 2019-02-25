@@ -55,7 +55,7 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
         def generate_output(*args, **kwargs):
           nonlocal partial_output
-          # TODO what happens if \n is included in end?
+          # TODO what happens if \\n is included in end?
 
           # if there is an end keyowrd argument, output is stored
           # in a string instead of added to the output

@@ -5,8 +5,10 @@
 /node_modules/
 /.vscode/
 /.htmlhintrc
+/__pycache__/
 /client/__pycache__/
 /client/.pytest_cache/
+/client_test/
 /programas
 /pypi/mptc_pkg/__pycache__/
 /pypi/mptc_pkg/build/
