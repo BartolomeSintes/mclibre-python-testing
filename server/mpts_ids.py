@@ -7,6 +7,12 @@ valid_exercise_ids = [
     [2, [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]],
 
 
+    # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+    [3, [32, 33]],
+
+    [4, [50]],
+
+
     [100, [1000, 1001, 1002, 1003]],
 ]
 

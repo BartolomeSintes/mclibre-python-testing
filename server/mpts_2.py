@@ -1012,7 +1012,7 @@ def exercise(exercise_id):
         # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # cm
-        cm = random.randrange(0, 99)
+        cm = random.randrange(0, 100)
         km = 0
         m = 0
         resto = cm
@@ -1027,7 +1027,7 @@ def exercise(exercise_id):
         )
 
         # m
-        cm = random.randrange(100, 99999)
+        cm = random.randrange(100, 100000)
         km = cm // 100000
         m = cm % 100000 // 100
         resto = cm % 100
@@ -1042,7 +1042,7 @@ def exercise(exercise_id):
         )
 
         # m
-        cm = random.randrange(100000, 9999999)
+        cm = random.randrange(100000, 10000000)
         km = cm // 100000
         m = cm % 100000 // 100
         resto = cm % 100
@@ -1058,4 +1058,70 @@ def exercise(exercise_id):
 
         # Exercise 23 END
 
+    elif exercise_id == 24:
+        # TODO NO SE PUEDE VALIDAR LA SOLUCIÓN PORQUE UTILIZA END="" EN EL PRINT
+        # Exercise 24 BEGINNING
+        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+
+        # sólo cm
+        cm = random.randrange(0, 100)
+        km = 0
+        m = 0
+        resto = cm
+        add_test(
+            [cm],
+            [
+                "CONVERTIDOR DE CM A KM, M Y CM",
+                "Escriba una distancia en centímetros: ",
+                f"{cm} centímetros son {resto} cm.",
+            ],
+            NOT_LAST_TEST,
+        )
+
+        # sólo m
+        cm = random.randrange(0, 1000) * 100
+        km = 0
+        m = cm / 100
+        resto = 0
+        add_test(
+            [cm],
+            [
+                "CONVERTIDOR DE CM A KM, M Y CM",
+                "Escriba una distancia en centímetros: ",
+                f"{cm} centímetros son {m} m.",
+            ],
+            NOT_LAST_TEST,
+        )
+
+        # m
+        cm = random.randrange(100, 100000)
+        km = cm // 100000
+        m = cm % 100000 // 100
+        resto = cm % 100
+        add_test(
+            [cm],
+            [
+                "CONVERTIDOR DE CM A KM, M Y CM",
+                "Escriba una distancia en centímetros: ",
+                f"{cm} centímetros son {km} km {m} m {resto} cm.",
+            ],
+            NOT_LAST_TEST,
+        )
+
+        # m
+        cm = random.randrange(100000, 10000000)
+        km = cm // 100000
+        m = cm % 100000 // 100
+        resto = cm % 100
+        add_test(
+            [cm],
+            [
+                "CONVERTIDOR DE CM A KM, M Y CM",
+                "Escriba una distancia en centímetros: ",
+                f"{cm} centímetros son {km} km {m} m {resto} cm.",
+            ],
+            LAST_TEST,
+        )
+
+        # Exercise 24 END
 
