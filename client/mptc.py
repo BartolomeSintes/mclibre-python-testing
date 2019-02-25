@@ -60,26 +60,22 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
           # if there is an end keyowrd argument, output is stored
           # in a string instead of added to the output
           if "end" in args[1]:
-            with open("recibido.txt", "a", encoding="utf-8") as file:
-              file.write(f"bingo - ")
             if len(args[0]) != 0:
-              partial_output += args[0][0]
+              partial_output += str(args[0][0])
               for j in range(1, len(args[0])):
-                partial_output = partial_output + " " + args[0][j]
-            partial_output += args[1]["end"]
+                partial_output = partial_output + " " + str(args[0][j])
+            partial_output += str(args[1]["end"])
           else:
-            # with open("recibido.txt", "a", encoding="utf-8") as file:
-            #   file.write(f"aqui estoy - ")
-            str = partial_output
+            string = partial_output
             # if there are several arguments in print(), they are added to the ouput
             if len(args[0]) == 0:
-              str += ""
+              string += ""
             else:
-              str += args[0][0]
+              string += str(args[0][0])
               for j in range(1, len(args[0])):
-                str += " " + args[0][j]
+                string += " " + str(args[0][j])
             partial_output = ""
-            output.append(str)
+            output.append(string)
 
         program.input = mock_input
 
