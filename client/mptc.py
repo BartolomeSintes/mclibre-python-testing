@@ -149,24 +149,32 @@ def main():
     #    print(i["output"])
     #    print()
 
-    print("-+-+-+-+-+-+-+-+-+-+ MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-+-+")
-    print("-+-+-+-+-+-+-+-+-+-+        WELCOME         -+-+-+-+-+-+-+-+-+-+")
+    print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
+    print("-+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-")
+    print()
     if "error" in values:
-        print()
         print("An error has been detected:")
         print(f"  Error number:  {values['error']}")
         print(f"  Error message: {values['message']}")
     elif values["id"] != random_id:
-        print()
         print("An error has been detected:")
-        print("  The id sent by the server is not the same that was sent to the server")
+        print(
+            "  The id sent by the server is not the same that was sent to the server."
+        )
     else:
-
-        print(f"{len(values['result'])} tests will be executed")
-        print("Please, wait until all tests have been executed")
-        print("PyTest will print some messages while the tests are being executed")
-        print("and a final report will be shown after")
-        print("-+-+-+-+-+-+-+-+-+-+        PYTEST         -+-+-+-+-+-+-+-+-+-+")
+        if len(values["result"]) == 1:
+            print(f"{len(values['result'])} test will be executed.")
+        else:
+            print(f"{len(values['result'])} tests will be executed.")
+        print()
+        print("Please, wait until all tests have been executed.")
+        print()
+        print("Now, PyTest will print some messages while the tests are being executed.")
+        print()
+        print("A final report will be shown after.")
+        print()
+        print("-+-+-+-+-+-+-+-+-      PYTEST OUTPUT     -+-+-+-+-+-+-+-+-")
+        print()
         errorReport = []
         for i in values["result"]:
             with open("test_values.txt", "w", encoding="utf-8") as file:
@@ -203,51 +211,55 @@ def main():
 
         print()
         print()
-        print("-+-+-+-+-+-+-+-+-+-+ MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-+-+")
-        print("-+-+-+-+-+-+-+-+-+-+        RESULTS         -+-+-+-+-+-+-+-+-+-+")
+        print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
+        print("-+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-")
         print()
         if len(values["result"]) > 1:
-            print(f"{len(values['result'])} tests have been executed")
+            print(f"{len(values['result'])} tests have been executed.")
         else:
-            print(f"{len(values['result'])} test has been executed")
+            print(f"{len(values['result'])} test has been executed.")
         if errorReport == []:
             print()
             print("All tests have been passed. Congratulations!")
         else:
             if len(values["result"]) - len(errorReport) > 1:
                 print(
-                    f"{len(values['result']) - len(errorReport)} tests have been passed"
+                    f"{len(values['result']) - len(errorReport)} tests have been passed."
                 )
             else:
                 print(
-                    f"{len(values['result']) - len(errorReport)} test has been passed"
+                    f"{len(values['result']) - len(errorReport)} test has been passed."
                 )
             if len(errorReport) > 1:
-                print(f"{len(errorReport)} tests have been failed")
+                print(f"{len(errorReport)} tests have been failed.")
             else:
-                print(f"{len(errorReport)} test has been failed")
+                print(f"{len(errorReport)} test has been failed.")
             for i in errorReport:
                 print()
                 print("Failed test:")
                 if len(i[0]) > 0:
-                    print("  Tested values:", i[0][0])
+                    print("  Tested values:   ", end="")
+                    for j in i[0]:
+                        print(f"{j} ", end="")
                 else:
-                    print("  Tested values: None")
+                    print("  Tested values:   None")
                 if len(i[1]) != len(i[2]):
-                    print("  The program produces an incorrect number of outputs")
+                    print("  The program produces an incorrect number of outputs.")
                 for j in range(min(len(i[1]), len(i[2]))):
                     if i[1][j] != i[2][j]:
+                        print()
                         print(f'  Expected result: "{i[1][j]}"')
                         print(f'  Obtained result: "{i[2][j]}"')
                 for j in range(min(len(i[1]), len(i[2])), max(len(i[1]), len(i[2]))):
+                    print()
                     if 0 <= j < len(i[1]):
                         print(f'  Expected result: "{i[1][j]}"')
                     else:
-                        print(f"  No result was expected")
+                        print(f"  No result was expected.")
                     if 0 <= j < len(i[2]):
                         print(f'  Obtained result: "{i[2][j]}"')
                     else:
-                        print(f"  No result obtained")
+                        print(f"  No result was obtained.")
 
 
 if __name__ == "__main__":
