@@ -71,7 +71,7 @@ def exercise(exercise_id):
                 "Escriba un número entero: ",
                 f"Ha escrito el número {numero}.",
             ],
-            NOT_LAST_TEST,
+            LAST_TEST,
         )
 
         # Exercise 1003 END
@@ -92,7 +92,7 @@ def exercise(exercise_id):
                 "Escriba otro número: ",
                 f"{a} + {b} = {c}",
             ],
-            NOT_LAST_TEST,
+            LAST_TEST,
         )
 
         # Exercise 1004 END
