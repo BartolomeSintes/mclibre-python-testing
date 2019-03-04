@@ -1,50 +1,8 @@
+import mpts_common
 import random
 
 NOT_LAST_TEST = True
 LAST_TEST = False
-
-
-def strType(var):
-    try:
-        if int(var) == float(var):
-            return "int"
-    except:
-        try:
-            float(var)
-            return "float"
-        except:
-            return "str"
-
-
-def add_test(input, output, comma):
-    print("    {")
-    print('       "input" : [', end="")
-    if len(input) == 1:
-        if strType(input[0]) != 'str':
-            print(input[0], end="")
-        else:
-            print(f'"{input[0]}"', end="")
-    elif len(input) > 1:
-        for i in range(len(input) - 1):
-            if strType(input[i]) != 'str':
-                print(input[i], end="")
-            else:
-                print(f'"{input[i]}"', end="")
-            print(", ", end="")
-        if strType(input[-1]) != 'str':
-            print(input[-1], end="")
-        else:
-            print(f'"{input[-1]}"', end="")
-    print("],")
-    print('       "output" : [', end="")
-    for i in range(len(output) - 1):
-        print(f'"{output[i]}", ', end="")
-    print(f'"{output[-1]}"', end="")
-    print("]")
-    if comma:
-        print("    },")
-    else:
-        print("    }")
 
 
 def exercise(exercise_id):
@@ -56,7 +14,7 @@ def exercise(exercise_id):
         numero_1 = random.randrange(0, 20)
         numero_2 = random.randrange(0, 20)
         resultado = (numero_1 + numero_2) / 2
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
@@ -71,7 +29,7 @@ def exercise(exercise_id):
         numero_1 = random.randrange(-21, 0)
         numero_2 = random.randrange(-21, 0)
         resultado = (numero_1 + numero_2) / 2
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
@@ -86,7 +44,7 @@ def exercise(exercise_id):
         numero_1 = random.randrange(0, 100) / 10.0
         numero_2 = random.randrange(0, 100) / 10.0
         resultado = (numero_1 + numero_2) / 2
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
@@ -108,7 +66,7 @@ def exercise(exercise_id):
         peso = round(imc * altura ** 2)
         imc = round(peso / altura ** 2, 1)
 
-        add_test(
+        mpts_common.add_test(
             [peso, altura],
             [
                 "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
@@ -126,7 +84,7 @@ def exercise(exercise_id):
         peso = round(imc * altura ** 2)
         imc = round(peso / altura ** 2, 1)
 
-        add_test(
+        mpts_common.add_test(
             [peso, altura],
             [
                 "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
@@ -144,7 +102,7 @@ def exercise(exercise_id):
         peso = round(imc * altura ** 2)
         imc = round(peso / altura ** 2, 1)
 
-        add_test(
+        mpts_common.add_test(
             [peso, altura],
             [
                 "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
@@ -167,7 +125,7 @@ def exercise(exercise_id):
         pulgadas = float(random.randrange(0, 10))
         cm = (pies * 12 + pulgadas) * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pies, pulgadas],
             [
                 "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
@@ -182,7 +140,7 @@ def exercise(exercise_id):
         pulgadas = float(random.randrange(100, 300) / 10)
         cm = (pies * 12 + pulgadas) * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pies, pulgadas],
             [
                 "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
@@ -198,7 +156,7 @@ def exercise(exercise_id):
         pulgadas = float(random.randrange(10, 100))
         cm = (pies * 12 + pulgadas) * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pies, pulgadas],
             [
                 "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
@@ -218,7 +176,7 @@ def exercise(exercise_id):
         pulgadas = float(random.randrange(0, 10))
         cm = pulgadas * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pulgadas],
             [
                 "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
@@ -231,7 +189,7 @@ def exercise(exercise_id):
         pulgadas = random.randrange(100, 300) / 10
         cm = pulgadas * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pulgadas],
             [
                 "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
@@ -245,7 +203,7 @@ def exercise(exercise_id):
         pulgadas = float(random.randrange(10, 100))
         cm = pulgadas * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pulgadas],
             [
                 "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
@@ -264,7 +222,7 @@ def exercise(exercise_id):
         pies = float(random.randrange(0, 10))
         cm = pies * 12 * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pies],
             [
                 "CONVERTIDOR DE PIES A CENTÍMETROS",
@@ -277,7 +235,7 @@ def exercise(exercise_id):
         pies = random.randrange(100, 300) / 10
         cm = pies * 12 * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pies],
             [
                 "CONVERTIDOR DE PIES A CENTÍMETROS",
@@ -291,7 +249,7 @@ def exercise(exercise_id):
         pies = float(random.randrange(10, 100))
         cm = pies * 12 * 2.54
 
-        add_test(
+        mpts_common.add_test(
             [pies],
             [
                 "CONVERTIDOR DE PIES A CENTÍMETROS",
@@ -310,7 +268,7 @@ def exercise(exercise_id):
         celsius = float(random.randrange(0, 100))
         fahrenheit = 1.8 * celsius + 32
 
-        add_test(
+        mpts_common.add_test(
             [celsius],
             [
                 "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
@@ -324,7 +282,7 @@ def exercise(exercise_id):
         celsius = random.randrange(-27315, 0) / 100
         fahrenheit = 1.8 * celsius + 32
 
-        add_test(
+        mpts_common.add_test(
             [celsius],
             [
                 "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
@@ -337,7 +295,7 @@ def exercise(exercise_id):
         celsius = float(random.randrange(0, 1000))
         fahrenheit = 1.8 * celsius + 32
 
-        add_test(
+        mpts_common.add_test(
             [celsius],
             [
                 "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
@@ -356,7 +314,7 @@ def exercise(exercise_id):
         fahrenheit = float(random.randrange(0, 100))
         celsius = (fahrenheit - 32) / 1.8
 
-        add_test(
+        mpts_common.add_test(
             [fahrenheit],
             [
                 "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
@@ -370,7 +328,7 @@ def exercise(exercise_id):
         fahrenheit = random.randrange(-4597, 0) / 10
         celsius = (fahrenheit - 32) / 1.8
 
-        add_test(
+        mpts_common.add_test(
             [fahrenheit],
             [
                 "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
@@ -383,7 +341,7 @@ def exercise(exercise_id):
         fahrenheit = float(random.randrange(0, 1000))
         celsius = (fahrenheit - 32) / 1.8
 
-        add_test(
+        mpts_common.add_test(
             [fahrenheit],
             [
                 "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
@@ -403,7 +361,7 @@ def exercise(exercise_id):
         minutos = segundos // 60
         resto = segundos % 60
 
-        add_test(
+        mpts_common.add_test(
             [segundos],
             [
                 "CONVERTIDOR DE SEGUNDOS A MINUTOS",
@@ -418,7 +376,7 @@ def exercise(exercise_id):
         minutos = segundos // 60
         resto = segundos % 60
 
-        add_test(
+        mpts_common.add_test(
             [segundos],
             [
                 "CONVERTIDOR DE SEGUNDOS A MINUTOS",
@@ -433,7 +391,7 @@ def exercise(exercise_id):
         minutos = segundos // 60
         resto = segundos % 60
 
-        add_test(
+        mpts_common.add_test(
             [segundos],
             [
                 "CONVERTIDOR DE SEGUNDOS A MINUTOS",
@@ -456,7 +414,7 @@ def exercise(exercise_id):
         minutos = resto_1 // 60
         resto = resto_1 % 60
 
-        add_test(
+        mpts_common.add_test(
             [segundos],
             [
                 "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
@@ -474,7 +432,7 @@ def exercise(exercise_id):
         minutos = resto_1 // 60
         resto = resto_1 % 60
 
-        add_test(
+        mpts_common.add_test(
             [segundos],
             [
                 "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
@@ -492,7 +450,7 @@ def exercise(exercise_id):
         minutos = resto_1 // 60
         resto = resto_1 % 60
 
-        add_test(
+        mpts_common.add_test(
             [segundos],
             [
                 "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
@@ -514,7 +472,7 @@ def exercise(exercise_id):
         docenas = unidades % 144 // 12
         resto = unidades % 12
 
-        add_test(
+        mpts_common.add_test(
             [unidades],
             [
                 "CONVERTIDOR A GRUESAS Y DOCENAS",
@@ -531,7 +489,7 @@ def exercise(exercise_id):
         docenas = unidades % 144 // 12
         resto = unidades % 12
 
-        add_test(
+        mpts_common.add_test(
             [unidades],
             [
                 "CONVERTIDOR A GRUESAS Y DOCENAS",
@@ -548,7 +506,7 @@ def exercise(exercise_id):
         docenas = unidades % 144 // 12
         resto = unidades % 12
 
-        add_test(
+        mpts_common.add_test(
             [unidades],
             [
                 "CONVERTIDOR A GRUESAS Y DOCENAS",

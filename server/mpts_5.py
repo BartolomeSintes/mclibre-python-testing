@@ -1,50 +1,8 @@
+import mpts_common
 import random
 
 NOT_LAST_TEST = True
 LAST_TEST = False
-
-
-def strType(var):
-    try:
-        if int(var) == float(var):
-            return "int"
-    except:
-        try:
-            float(var)
-            return "float"
-        except:
-            return "str"
-
-
-def add_test(input, output, comma):
-    print("    {")
-    print('       "input" : [', end="")
-    if len(input) == 1:
-        if strType(input[0]) != "str":
-            print(input[0], end="")
-        else:
-            print(f'"{input[0]}"', end="")
-    elif len(input) > 1:
-        for i in range(len(input) - 1):
-            if strType(input[i]) != "str":
-                print(input[i], end="")
-            else:
-                print(f'"{input[i]}"', end="")
-            print(", ", end="")
-        if strType(input[-1]) != "str":
-            print(input[-1], end="")
-        else:
-            print(f'"{input[-1]}"', end="")
-    print("],")
-    print('       "output" : [', end="")
-    for i in range(len(output) - 1):
-        print(f'"{output[i]}", ', end="")
-    print(f'"{output[-1]}"', end="")
-    print("]")
-    if comma:
-        print("    },")
-    else:
-        print("    }")
 
 
 def exercise(exercise_id):
@@ -55,7 +13,7 @@ def exercise(exercise_id):
         # Empate
         a = random.randrange(1, 7)
         b = a
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "JUEGO DE DADOS (1)",
@@ -69,7 +27,7 @@ def exercise(exercise_id):
         # gana Alberto
         a = random.randrange(2, 7)
         b = a - random.randrange(1, a)
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "JUEGO DE DADOS (1)",
@@ -83,7 +41,7 @@ def exercise(exercise_id):
         # gana Bárbara
         a = random.randrange(1, 6)
         b = random.randrange(a + 1, 7)
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "JUEGO DE DADOS (1)",
@@ -105,7 +63,7 @@ def exercise(exercise_id):
         b_1 = random.randrange(4, a_1)
         b_2 = random.randrange(4, a_1)
         a_2 = random.randrange(1, b_1 + b_2 - a_1)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (2)",
@@ -121,7 +79,7 @@ def exercise(exercise_id):
         b_1 = a_1
         a_2 = random.randrange(2, a_1)
         b_2 = random.randrange(1, a_2)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (2)",
@@ -137,7 +95,7 @@ def exercise(exercise_id):
         b_1 = a_1
         a_2 = random.randrange(1, a_1 - 1)
         b_2 = random.randrange(a_2 + 1, a_1)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (2)",
@@ -153,7 +111,7 @@ def exercise(exercise_id):
         a_2 = random.randrange(1, 7)
         b_1 = a_1
         b_2 = a_2
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (2)",
@@ -169,7 +127,7 @@ def exercise(exercise_id):
         a_2 = random.randrange(1, 7)
         b_1 = a_2
         b_2 = a_1
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (2)",
@@ -185,7 +143,7 @@ def exercise(exercise_id):
         a_2 = random.randrange(2, 6)
         b_1 = random.randrange(1, a_2)
         b_2 = random.randrange(1, a_1)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (2)",
@@ -201,7 +159,7 @@ def exercise(exercise_id):
         b_2 = random.randrange(2, 6)
         a_1 = random.randrange(1, b_1)
         a_2 = random.randrange(1, b_2)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (2)",
@@ -223,7 +181,7 @@ def exercise(exercise_id):
         b_1 = random.randrange(4, a_1)
         b_2 = random.randrange(4, a_1)
         a_2 = random.randrange(1, b_1 + b_2 - a_1)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (3)",
@@ -239,7 +197,7 @@ def exercise(exercise_id):
         b_1 = a_1
         a_2 = random.randrange(2, a_1)
         b_2 = random.randrange(1, a_2)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (3)",
@@ -255,7 +213,7 @@ def exercise(exercise_id):
         b_1 = a_1
         a_2 = random.randrange(1, a_1 - 1)
         b_2 = random.randrange(a_2 + 1, a_1)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (3)",
@@ -271,7 +229,7 @@ def exercise(exercise_id):
         a_2 = random.randrange(1, 7)
         b_1 = a_1
         b_2 = a_2
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (3)",
@@ -287,7 +245,7 @@ def exercise(exercise_id):
         a_2 = random.randrange(1, 7)
         b_1 = a_2
         b_2 = a_1
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (3)",
@@ -303,7 +261,7 @@ def exercise(exercise_id):
         a_2 = random.randrange(2, 6)
         b_1 = random.randrange(1, a_2)
         b_2 = random.randrange(1, a_1)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (3)",
@@ -319,7 +277,7 @@ def exercise(exercise_id):
         b_2 = random.randrange(2, 6)
         a_1 = random.randrange(1, b_1)
         a_2 = random.randrange(1, b_2)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, b_1, b_2],
             [
                 "JUEGO DE DADOS (3)",
@@ -343,7 +301,7 @@ def exercise(exercise_id):
         b_1 = random.randrange(1, 11)
         b_2 = random.randrange(max(1, 5 - b_1 + 1), 11)
         b_3 = random.randrange(max(1, 15 - b_1 - b_2 + 1), 11)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, a_3, b_1, b_2, b_3],
             [
                 "JUEGO DEL QUINCE",
@@ -361,7 +319,7 @@ def exercise(exercise_id):
         b_1 = random.randrange(1, 11)
         b_2 = random.randrange(1, min(11, 15 - b_1))
         b_3 = random.randrange(1, min(11, 15 - b_1 - b_2 + 1))
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, a_3, b_1, b_2, b_3],
             [
                 "JUEGO DEL QUINCE",
@@ -379,7 +337,7 @@ def exercise(exercise_id):
         b_1 = random.randrange(1, 11)
         b_2 = random.randrange(max(1, 5 - b_1 + 1), 11)
         b_3 = random.randrange(max(1, 15 - b_1 - b_2 + 1), 11)
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, a_3, b_1, b_2, b_3],
             [
                 "JUEGO DEL QUINCE",
@@ -403,7 +361,7 @@ def exercise(exercise_id):
             b_3 = random.randrange(1, min(11, 15 - b_1 - b_2 + 1))
         if a_1 + a_2 + a_3 < b_1 + b_2 + b_3:
             a_1, a_2, a_3, b_1, b_2, b_3 = b_1, b_2, b_3, a_1, a_2, a_3
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, a_3, b_1, b_2, b_3],
             [
                 "JUEGO DEL QUINCE",
@@ -413,7 +371,7 @@ def exercise(exercise_id):
             ],
             NOT_LAST_TEST,
         )
-        add_test(
+        mpts_common.add_test(
             [b_1, b_2, b_3, a_1, a_2, a_3],
             [
                 "JUEGO DEL QUINCE",
@@ -435,7 +393,7 @@ def exercise(exercise_id):
             b_1 = random.randrange(1, 11)
             b_2 = random.randrange(1, min(11, 15 - b_1))
             b_3 = random.randrange(1, min(11, 15 - b_1 - b_2 + 1))
-        add_test(
+        mpts_common.add_test(
             [a_1, a_2, a_3, b_1, b_2, b_3],
             [
                 "JUEGO DEL QUINCE",
@@ -452,7 +410,7 @@ def exercise(exercise_id):
         # Exercise 55 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
 
-        add_test(
+        mpts_common.add_test(
             [1, 1],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",
@@ -462,7 +420,7 @@ def exercise(exercise_id):
             ],
             NOT_LAST_TEST,
         )
-        add_test(
+        mpts_common.add_test(
             [1, 2],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",
@@ -472,7 +430,7 @@ def exercise(exercise_id):
             ],
             NOT_LAST_TEST,
         )
-        add_test(
+        mpts_common.add_test(
             [1, 3],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",
@@ -483,7 +441,7 @@ def exercise(exercise_id):
             NOT_LAST_TEST,
         )
 
-        add_test(
+        mpts_common.add_test(
             [2, 1],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",
@@ -493,7 +451,7 @@ def exercise(exercise_id):
             ],
             NOT_LAST_TEST,
         )
-        add_test(
+        mpts_common.add_test(
             [2, 2],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",
@@ -503,7 +461,7 @@ def exercise(exercise_id):
             ],
             NOT_LAST_TEST,
         )
-        add_test(
+        mpts_common.add_test(
             [2, 3],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",
@@ -514,7 +472,7 @@ def exercise(exercise_id):
             NOT_LAST_TEST,
         )
 
-        add_test(
+        mpts_common.add_test(
             [3, 1],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",
@@ -524,7 +482,7 @@ def exercise(exercise_id):
             ],
             NOT_LAST_TEST,
         )
-        add_test(
+        mpts_common.add_test(
             [3, 2],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",
@@ -534,7 +492,7 @@ def exercise(exercise_id):
             ],
             NOT_LAST_TEST,
         )
-        add_test(
+        mpts_common.add_test(
             [3, 3],
             [
                 "PIEDRA, PAPEL, ... ¡TIJERA!",

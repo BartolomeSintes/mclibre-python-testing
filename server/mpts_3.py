@@ -1,50 +1,8 @@
+import mpts_common
 import random
 
 NOT_LAST_TEST = True
 LAST_TEST = False
-
-
-def strType(var):
-    try:
-        if int(var) == float(var):
-            return "int"
-    except:
-        try:
-            float(var)
-            return "float"
-        except:
-            return "str"
-
-
-def add_test(input, output, comma):
-    print("    {")
-    print('       "input" : [', end="")
-    if len(input) == 1:
-        if strType(input[0]) != "str":
-            print(input[0], end="")
-        else:
-            print(f'"{input[0]}"', end="")
-    elif len(input) > 1:
-        for i in range(len(input) - 1):
-            if strType(input[i]) != "str":
-                print(input[i], end="")
-            else:
-                print(f'"{input[i]}"', end="")
-            print(", ", end="")
-        if strType(input[-1]) != "str":
-            print(input[-1], end="")
-        else:
-            print(f'"{input[-1]}"', end="")
-    print("],")
-    print('       "output" : [', end="")
-    for i in range(len(output) - 1):
-        print(f'"{output[i]}", ', end="")
-    print(f'"{output[-1]}"', end="")
-    print("]")
-    if comma:
-        print("    },")
-    else:
-        print("    }")
 
 
 def exercise(exercise_id):
@@ -56,7 +14,7 @@ def exercise(exercise_id):
         dia = 0
         mes = random.randrange(1, 13)
         anyo = random.randrange(1583, 5000)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -69,10 +27,10 @@ def exercise(exercise_id):
         )
 
         # dia < 0
-        dia = - random.randrange(1, 29)
+        dia = -random.randrange(1, 29)
         mes = random.randrange(1, 13)
         anyo = random.randrange(1583, 5000)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -88,7 +46,7 @@ def exercise(exercise_id):
         dia = random.randrange(32, 50)
         mes = random.randrange(1, 13)
         anyo = random.randrange(1583, 5000)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -104,7 +62,7 @@ def exercise(exercise_id):
         dia = random.randrange(1, 29)
         mes = 0
         anyo = random.randrange(1583, 5000)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -118,9 +76,9 @@ def exercise(exercise_id):
 
         # mes < 0
         dia = random.randrange(1, 29)
-        mes = - random.randrange(1, 13)
+        mes = -random.randrange(1, 13)
         anyo = random.randrange(1583, 5000)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -136,7 +94,7 @@ def exercise(exercise_id):
         dia = random.randrange(1, 29)
         mes = random.randrange(13, 20)
         anyo = random.randrange(1583, 5000)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -152,7 +110,7 @@ def exercise(exercise_id):
         dia = 31
         mes = random.choice([1, 3, 5, 7, 8, 10, 12])
         anyo = random.randrange(1583, 5000)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -168,7 +126,7 @@ def exercise(exercise_id):
         dia = 31
         mes = random.choice([2, 4, 6, 9, 11])
         anyo = random.randrange(1583, 5000)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -184,7 +142,7 @@ def exercise(exercise_id):
         dia = 29
         mes = 2
         anyo = random.randrange(1600, 5000, 400)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -200,7 +158,7 @@ def exercise(exercise_id):
         dia = 29
         mes = 2
         anyo = 1600 + 400 * random.randrange(0, 11) + 100 * random.randrange(1, 4)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -216,7 +174,7 @@ def exercise(exercise_id):
         dia = 29
         mes = 2
         anyo = 1600 + 100 * random.randrange(0, 5) + 4 * random.randrange(1, 25)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -232,7 +190,7 @@ def exercise(exercise_id):
         dia = 29
         mes = 2
         anyo = 1584 + 4 * random.randrange(0, 150) + random.randrange(1, 4)
-        add_test(
+        mpts_common.add_test(
             [dia, mes, anyo],
             [
                 "COMPROBACIÓN DE FECHA",
@@ -252,7 +210,7 @@ def exercise(exercise_id):
 
         # dia == 0
         opcion = "c"
-        add_test(
+        mpts_common.add_test(
             [opcion],
             [
                 "GALONES Y PINTAS",

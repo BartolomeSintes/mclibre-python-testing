@@ -1,50 +1,8 @@
+import mpts_common
 import random
 
 NOT_LAST_TEST = True
 LAST_TEST = False
-
-
-def strType(var):
-    try:
-        if int(var) == float(var):
-            return "int"
-    except:
-        try:
-            float(var)
-            return "float"
-        except:
-            return "str"
-
-
-def add_test(input, output, comma):
-    print("    {")
-    print('       "input" : [', end="")
-    if len(input) == 1:
-        if strType(input[0]) != "str":
-            print(input[0], end="")
-        else:
-            print(f'"{input[0]}"', end="")
-    elif len(input) > 1:
-        for i in range(len(input) - 1):
-            if strType(input[i]) != "str":
-                print(input[i], end="")
-            else:
-                print(f'"{input[i]}"', end="")
-            print(", ", end="")
-        if strType(input[-1]) != "str":
-            print(input[-1], end="")
-        else:
-            print(f'"{input[-1]}"', end="")
-    print("],")
-    print('       "output" : [', end="")
-    for i in range(len(output) - 1):
-        print(f'"{output[i]}", ', end="")
-    print(f'"{output[-1]}"', end="")
-    print("]")
-    if comma:
-        print("    },")
-    else:
-        print("    }")
 
 
 def exercise(exercise_id):
@@ -57,7 +15,7 @@ def exercise(exercise_id):
         cociente = random.randrange(1, 20)
         divisor = random.randrange(1, 20)
         dividendo = cociente * divisor + resto
-        add_test(
+        mpts_common.add_test(
             [dividendo, divisor],
             [
                 "DIVISOR DE NÚMEROS",
@@ -75,7 +33,7 @@ def exercise(exercise_id):
             resto + 1, 30
         )  # el divisor tiene que ser mayor que el resto
         dividendo = cociente * divisor + resto
-        add_test(
+        mpts_common.add_test(
             [dividendo, divisor],
             [
                 "DIVISOR DE NÚMEROS",
@@ -93,7 +51,7 @@ def exercise(exercise_id):
             resto + 1, 30
         )  # el divisor tiene que ser mayor que el resto
         dividendo = cociente * divisor + resto
-        add_test(
+        mpts_common.add_test(
             [dividendo, divisor],
             [
                 "DIVISOR DE NÚMEROS",
@@ -115,7 +73,7 @@ def exercise(exercise_id):
         cociente = random.randrange(1, 20)
         divisor = random.randrange(1, 20)
         dividendo = cociente * divisor + resto
-        add_test(
+        mpts_common.add_test(
             [dividendo, divisor],
             [
                 "DIVISOR DE NÚMEROS",
@@ -133,7 +91,7 @@ def exercise(exercise_id):
             resto + 1, 30
         )  # el divisor tiene que ser mayor que el resto
         dividendo = cociente * divisor + resto
-        add_test(
+        mpts_common.add_test(
             [dividendo, divisor],
             [
                 "DIVISOR DE NÚMEROS",
@@ -151,7 +109,7 @@ def exercise(exercise_id):
             resto + 1, 30
         )  # el divisor tiene que ser mayor que el resto
         dividendo = cociente * divisor + resto
-        add_test(
+        mpts_common.add_test(
             [dividendo, divisor],
             [
                 "DIVISOR DE NÚMEROS",
@@ -167,7 +125,7 @@ def exercise(exercise_id):
         cociente = random.randrange(1, 20)
         divisor = 0
         dividendo = cociente * divisor + resto
-        add_test(
+        mpts_common.add_test(
             [dividendo, divisor],
             [
                 "DIVISOR DE NÚMEROS",
@@ -189,7 +147,7 @@ def exercise(exercise_id):
         salto = random.randrange(0, 500) / 10
         numero_2 = numero_1 + salto
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE NÚMEROS",
@@ -205,7 +163,7 @@ def exercise(exercise_id):
         salto = random.randrange(0, 500) / 10
         numero_2 = numero_1 - salto
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE NÚMEROS",
@@ -220,7 +178,7 @@ def exercise(exercise_id):
         numero_1 = random.randrange(0, 500) / 10
         numero_2 = numero_1
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE NÚMEROS",
@@ -241,7 +199,7 @@ def exercise(exercise_id):
         fecha_1 = 2000 + random.randrange(0, 50)
         fecha_2 = fecha_1 + random.randrange(1, 20)
 
-        add_test(
+        mpts_common.add_test(
             [fecha_1, fecha_2],
             [
                 "COMPARADOR DE AÑOS",
@@ -256,7 +214,7 @@ def exercise(exercise_id):
         fecha_1 = 2000 + random.randrange(0, 50)
         fecha_2 = fecha_1 - random.randrange(1, 20)
 
-        add_test(
+        mpts_common.add_test(
             [fecha_1, fecha_2],
             [
                 "COMPARADOR DE AÑOS",
@@ -271,7 +229,7 @@ def exercise(exercise_id):
         fecha_1 = 2000 + random.randrange(0, 50)
         fecha_2 = fecha_1
 
-        add_test(
+        mpts_common.add_test(
             [fecha_1, fecha_2],
             [
                 "COMPARADOR DE AÑOS",
@@ -292,7 +250,7 @@ def exercise(exercise_id):
         fecha_1 = 2000 + random.randrange(0, 50)
         fecha_2 = fecha_1 + random.randrange(2, 20)
 
-        add_test(
+        mpts_common.add_test(
             [fecha_1, fecha_2],
             [
                 "COMPARADOR DE AÑOS",
@@ -307,7 +265,7 @@ def exercise(exercise_id):
         fecha_1 = 2000 + random.randrange(0, 50)
         fecha_2 = fecha_1 + 1
 
-        add_test(
+        mpts_common.add_test(
             [fecha_1, fecha_2],
             [
                 "COMPARADOR DE AÑOS",
@@ -322,7 +280,7 @@ def exercise(exercise_id):
         fecha_1 = 2000 + random.randrange(0, 50)
         fecha_2 = fecha_1 - random.randrange(2, 20)
 
-        add_test(
+        mpts_common.add_test(
             [fecha_1, fecha_2],
             [
                 "COMPARADOR DE AÑOS",
@@ -337,7 +295,7 @@ def exercise(exercise_id):
         fecha_1 = 2000 + random.randrange(0, 50)
         fecha_2 = fecha_1 - 1
 
-        add_test(
+        mpts_common.add_test(
             [fecha_1, fecha_2],
             [
                 "COMPARADOR DE AÑOS",
@@ -352,7 +310,7 @@ def exercise(exercise_id):
         fecha_1 = 2000 + random.randrange(0, 50)
         fecha_2 = fecha_1
 
-        add_test(
+        mpts_common.add_test(
             [fecha_1, fecha_2],
             [
                 "COMPARADOR DE AÑOS",
@@ -372,7 +330,7 @@ def exercise(exercise_id):
         # Los números son iguales
         numero_1 = random.randrange(1, 50)
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_1],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -388,7 +346,7 @@ def exercise(exercise_id):
         cociente = random.randrange(1, 11)
         numero_2 = numero_1 * cociente
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -404,7 +362,7 @@ def exercise(exercise_id):
         cociente = random.randrange(1, 11)
         numero_1 = numero_2 * cociente
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -421,7 +379,7 @@ def exercise(exercise_id):
         resto = random.randrange(1, numero_1)
         numero_2 = numero_1 * cociente + resto
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -438,7 +396,7 @@ def exercise(exercise_id):
         resto = random.randrange(1, numero_1)
         numero_2 = numero_1 * cociente + resto
 
-        add_test(
+        mpts_common.add_test(
             [numero_2, numero_1],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -459,7 +417,7 @@ def exercise(exercise_id):
         numero_1 = random.randrange(1, 50)
         numero_2 = 0
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -474,7 +432,7 @@ def exercise(exercise_id):
         numero_1 = 0
         numero_2 = random.randrange(1, 50)
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -488,7 +446,7 @@ def exercise(exercise_id):
         # Los números son iguales
         numero_1 = random.randrange(1, 50)
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_1],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -504,7 +462,7 @@ def exercise(exercise_id):
         cociente = random.randrange(1, 11)
         numero_2 = numero_1 * cociente
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -520,7 +478,7 @@ def exercise(exercise_id):
         cociente = random.randrange(1, 11)
         numero_1 = numero_2 * cociente
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -537,7 +495,7 @@ def exercise(exercise_id):
         resto = random.randrange(1, numero_1)
         numero_2 = numero_1 * cociente + resto
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -554,7 +512,7 @@ def exercise(exercise_id):
         resto = random.randrange(1, numero_1)
         numero_2 = numero_1 * cociente + resto
 
-        add_test(
+        mpts_common.add_test(
             [numero_2, numero_1],
             [
                 "COMPARADOR DE MÚLTIPLOS",
@@ -576,7 +534,7 @@ def exercise(exercise_id):
         numero_2 = numero_1
         numero_3 = numero_1
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2, numero_3],
             [
                 "COMPARADOR DE TRES NÚMEROS",
@@ -593,7 +551,7 @@ def exercise(exercise_id):
         numero_2 = numero_1
         numero_3 = numero_1 + random.randrange(1, 50)
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2, numero_3],
             [
                 "COMPARADOR DE TRES NÚMEROS",
@@ -610,7 +568,7 @@ def exercise(exercise_id):
         numero_3 = numero_1
         numero_2 = numero_1 + random.randrange(1, 50)
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2, numero_3],
             [
                 "COMPARADOR DE TRES NÚMEROS",
@@ -627,7 +585,7 @@ def exercise(exercise_id):
         numero_3 = numero_2
         numero_1 = numero_2 + random.randrange(1, 50)
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2, numero_3],
             [
                 "COMPARADOR DE TRES NÚMEROS",
@@ -644,7 +602,7 @@ def exercise(exercise_id):
         numero_2 = numero_1 + random.randrange(1, 50)
         numero_3 = numero_2 + random.randrange(1, 50)
 
-        add_test(
+        mpts_common.add_test(
             [numero_1, numero_2, numero_3],
             [
                 "COMPARADOR DE TRES NÚMEROS",
@@ -661,7 +619,7 @@ def exercise(exercise_id):
         # Exercise 19 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
         fecha = 4 * random.randrange(400, 600) + 1
-        add_test(
+        mpts_common.add_test(
             [fecha],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
@@ -672,7 +630,7 @@ def exercise(exercise_id):
         )
 
         fecha = 4 * random.randrange(400, 600) + 2
-        add_test(
+        mpts_common.add_test(
             [fecha],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
@@ -683,7 +641,7 @@ def exercise(exercise_id):
         )
 
         fecha = 4 * random.randrange(400, 600) + 3
-        add_test(
+        mpts_common.add_test(
             [fecha],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
@@ -695,7 +653,7 @@ def exercise(exercise_id):
 
         # Múltiplo de 400: No es bisisesto
         fecha = 400 * random.randrange(1, 7)
-        add_test(
+        mpts_common.add_test(
             [fecha],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
@@ -707,7 +665,7 @@ def exercise(exercise_id):
 
         # Múltiplo de 100 que no es múltiplo de 400: Es bisisesto
         fecha = 400 * random.randrange(1, 5) + 100 * random.randrange(1, 4)
-        add_test(
+        mpts_common.add_test(
             [fecha],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
@@ -719,7 +677,7 @@ def exercise(exercise_id):
 
         # Múltiplo de 4 que no es múltiplo de 100: Es bisiesto
         fecha = 100 * random.randrange(10, 25) + 4 * random.randrange(1, 20)
-        add_test(
+        mpts_common.add_test(
             [fecha],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
@@ -738,7 +696,7 @@ def exercise(exercise_id):
         # a, b son cero
         a = 0
         b = 0
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "ECUACIÓN A X + B = 0",
@@ -752,7 +710,7 @@ def exercise(exercise_id):
         # a es cero, b no es cero
         a = 0.0
         b = random.randrange(1, 100)
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "ECUACIÓN A X + B = 0",
@@ -766,7 +724,7 @@ def exercise(exercise_id):
         # a no es cero, b es cero
         a = float(random.randrange(1, 100))
         b = 0.0
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "ECUACIÓN A X + B = 0",
@@ -780,7 +738,7 @@ def exercise(exercise_id):
         # a y b no son cero
         a = float(random.randrange(1, 100))
         b = float(random.randrange(1, 100))
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "ECUACIÓN A X + B = 0",
@@ -794,7 +752,7 @@ def exercise(exercise_id):
         # a y b no son cero
         a = float(random.randrange(1, 100))
         b = float(-random.randrange(1, 100))
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "ECUACIÓN A X + B = 0",
@@ -815,7 +773,7 @@ def exercise(exercise_id):
         a = 0
         b = 0
         c = 0
-        add_test(
+        mpts_common.add_test(
             [a, b, c],
             [
                 "ECUACIÓN A X² + B X + C = 0",
@@ -831,7 +789,7 @@ def exercise(exercise_id):
         a = 0.0
         b = 0
         c = random.randrange(1, 100)
-        add_test(
+        mpts_common.add_test(
             [a, b, c],
             [
                 "ECUACIÓN A X² + B X + C = 0",
@@ -847,7 +805,7 @@ def exercise(exercise_id):
         a = 0
         b = float(random.randrange(1, 100))
         c = float(random.randrange(1, 100))
-        add_test(
+        mpts_common.add_test(
             [a, b, c],
             [
                 "ECUACIÓN A X² + B X + C = 0",
@@ -864,7 +822,7 @@ def exercise(exercise_id):
         b = float(random.randrange(1, 100))
         x = round(b * b / (4 * a))
         c = float(random.randrange(x + 1, x + 100))
-        add_test(
+        mpts_common.add_test(
             [a, b, c],
             [
                 "ECUACIÓN A X² + B X + C = 0",
@@ -880,7 +838,7 @@ def exercise(exercise_id):
         a = float(random.randrange(1, 100))
         b = float(random.randrange(1, 100))
         c = b * b / (4 * a)
-        add_test(
+        mpts_common.add_test(
             [a, b, c],
             [
                 "ECUACIÓN A X² + B X + C = 0",
@@ -897,7 +855,7 @@ def exercise(exercise_id):
         n = float(random.randrange(1, 20))
         b = 2 * a * n
         c = a * n * n
-        add_test(
+        mpts_common.add_test(
             [a, b, c],
             [
                 "ECUACIÓN A X² + B X + C = 0",
@@ -915,7 +873,7 @@ def exercise(exercise_id):
         x = round(b * b / (4 * a))
         c = float(random.randrange(-100, x - 1))
         d = b * b - 4 * a * c
-        add_test(
+        mpts_common.add_test(
             [a, b, c],
             [
                 "ECUACIÓN A X² + B X + C = 0",
@@ -937,7 +895,7 @@ def exercise(exercise_id):
         t_c = "T"
         b = float(random.randrange(1, 100))
         h = float(random.randrange(1, 100))
-        add_test(
+        mpts_common.add_test(
             [t_c, b, h],
             [
                 "CÁLCULO DE ÁREAS",
@@ -956,7 +914,7 @@ def exercise(exercise_id):
         t_c = "t"
         b = float(random.randrange(1, 1000) / 10)
         h = float(random.randrange(1, 1000) / 10)
-        add_test(
+        mpts_common.add_test(
             [t_c, b, h],
             [
                 "CÁLCULO DE ÁREAS",
@@ -974,7 +932,7 @@ def exercise(exercise_id):
         # círculo
         t_c = "C"
         r = float(random.randrange(1, 100))
-        add_test(
+        mpts_common.add_test(
             [t_c, r],
             [
                 "CÁLCULO DE ÁREAS",
@@ -991,7 +949,7 @@ def exercise(exercise_id):
         # círculo
         t_c = "c"
         r = float(random.randrange(1, 1000) / 10)
-        add_test(
+        mpts_common.add_test(
             [t_c, r],
             [
                 "CÁLCULO DE ÁREAS",
@@ -1016,7 +974,7 @@ def exercise(exercise_id):
         km = 0
         m = 0
         resto = cm
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1031,7 +989,7 @@ def exercise(exercise_id):
         km = 0
         m = 0
         resto = cm
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1046,7 +1004,7 @@ def exercise(exercise_id):
         km = 0
         m = 0
         resto = cm
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1061,7 +1019,7 @@ def exercise(exercise_id):
         km = 0
         m = cm // 100
         resto = cm % 100
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1076,7 +1034,7 @@ def exercise(exercise_id):
         km = cm // 100_000
         m = cm % 100_000 // 100
         resto = cm % 100
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1098,7 +1056,7 @@ def exercise(exercise_id):
         km = 0
         m = 0
         resto = cm
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1113,7 +1071,7 @@ def exercise(exercise_id):
         km = 0
         m = 0
         resto = cm
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1128,7 +1086,7 @@ def exercise(exercise_id):
         km = 0
         m = 0
         resto = cm
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1143,7 +1101,7 @@ def exercise(exercise_id):
         km = 0
         m = cm // 100
         resto = 0
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1158,7 +1116,7 @@ def exercise(exercise_id):
         km = cm // 100_000
         m = 0
         resto = 0
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1173,7 +1131,7 @@ def exercise(exercise_id):
         km = cm // 100_000
         m = cm % 100_000 // 100
         resto = cm % 100
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1188,7 +1146,7 @@ def exercise(exercise_id):
         km = cm // 100_000
         m = cm % 100_000 // 100
         resto = cm % 100
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1203,7 +1161,7 @@ def exercise(exercise_id):
         km = cm // 100_000
         m = cm % 100_000 // 100
         resto = cm % 100
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
@@ -1219,7 +1177,7 @@ def exercise(exercise_id):
         km = cm // 100_000
         m = cm % 100_000 // 100
         resto = cm % 100
-        add_test(
+        mpts_common.add_test(
             [cm],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",

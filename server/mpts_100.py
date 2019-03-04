@@ -1,29 +1,8 @@
+import mpts_common
 import random
 
 NOT_LAST_TEST = True
 LAST_TEST = False
-
-
-def add_test(input, output, comma):
-    print("    {")
-    print('       "input" : [', end="")
-    if len(input) == 1:
-        print(input[0], end="")
-    elif len(input) > 1:
-        for i in range(len(input) - 1):
-            print(input[i], end="")
-            print(", ", end="")
-        print(input[-1], end="")
-    print("],")
-    print('       "output" : [', end="")
-    for i in range(len(output) - 1):
-        print('"' + output[i] + '", ', end="")
-    print('"' + output[-1] + '"', end="")
-    print("]")
-    if comma:
-        print("    },")
-    else:
-        print("    }")
 
 
 def exercise(exercise_id):
@@ -32,7 +11,7 @@ def exercise(exercise_id):
         # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # Comprueba salida
-        add_test([], ["¡Hola, mundo!"], LAST_TEST)
+        mpts_common.add_test([], ["¡Hola, mundo!"], LAST_TEST)
         # Exercise 1001 END
 
     elif exercise_id == 1002:
@@ -40,7 +19,7 @@ def exercise(exercise_id):
         # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # Comprueba salida
-        add_test([], ["SALUDANDO", "¡Hola, mundo!", "¡Adios, amigo!"], LAST_TEST)
+        mpts_common.add_test([], ["SALUDANDO", "¡Hola, mundo!", "¡Adios, amigo!"], LAST_TEST)
 
         # Exercise 1002 END
 
@@ -51,7 +30,7 @@ def exercise(exercise_id):
         # número pequeño
         numero = random.randrange(0, 10)
 
-        add_test(
+        mpts_common.add_test(
             [numero],
             [
                 "ESCRIBA NÚMERO",
@@ -64,7 +43,7 @@ def exercise(exercise_id):
         # número negativo
         numero = random.randrange(-100, 0)
 
-        add_test(
+        mpts_common.add_test(
             [numero],
             [
                 "ESCRIBA NÚMERO",
@@ -84,7 +63,7 @@ def exercise(exercise_id):
         b = random.randrange(0, 100) / 10
         c = a + b
 
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "SUMA NÚMEROS",
@@ -105,7 +84,7 @@ def exercise(exercise_id):
         a = random.randrange(0, 1000)
         b = random.randrange(10 * a, 20000) / 10
 
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "NÚMEROS CRECIENTES",
@@ -118,9 +97,9 @@ def exercise(exercise_id):
 
         # números decrecientes
         a = random.randrange(100, 1000) / 10
-        b = random.randrange(0, round(a)-1)
+        b = random.randrange(0, round(a) - 1)
 
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "NÚMEROS CRECIENTES",
@@ -135,7 +114,7 @@ def exercise(exercise_id):
         a = random.randrange(0, 1000)
         b = a
 
-        add_test(
+        mpts_common.add_test(
             [a, b],
             [
                 "NÚMEROS CRECIENTES",
@@ -153,6 +132,6 @@ def exercise(exercise_id):
         # número pequeño
         a = random.randrange(1, 7)
 
-        add_test([a], ["TIRADA DE DADO", f"Ha salido un {a}."], LAST_TEST)
+        mpts_common.add_test([a], ["TIRADA DE DADO", f"Ha salido un {a}."], LAST_TEST)
 
         # Exercise 1006 END
