@@ -79,15 +79,10 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
         program.input = mock_input
 
-        from modulefinder import ModuleFinder
-        finder = ModuleFinder()
-        finder.run_script("{program_to_be_tested}")
-        random_imported = False
-        for i in finder.modules.items():
-            if i[0] == "random":
-                random_imported = True
-        if random_imported:
+        try:
             program.random.randrange = lambda *args : input_values.pop(0)
+        except:
+            pass
 
         program.print = lambda *args, **kwargs: generate_output(args, kwargs)
 
@@ -241,6 +236,7 @@ def main():
                     print("  Tested values:   ", end="")
                     for j in i[0]:
                         print(f"{j} ", end="")
+                    print()
                 else:
                     print("  Tested values:   None")
                 if len(i[1]) != len(i[2]):
