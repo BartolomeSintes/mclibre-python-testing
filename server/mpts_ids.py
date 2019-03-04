@@ -12,7 +12,7 @@ valid_exercise_ids = [
     [5, [51, 52, 53, 54, 55]],
     #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
-    [6, [61]],
+    [6, [61, 62, 63, 64, 65, 66, 67, 68, 69]],
     #
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
     [100, [1001, 1002, 1003, 1004, 1005, 1006]],
