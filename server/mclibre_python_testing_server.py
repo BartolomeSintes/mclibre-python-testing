@@ -1,4 +1,4 @@
-#!"C:\Users\BLJ\AppData\Local\Programs\Python\Python36\pythonw.exe"
+#!/usr/bin/python3
 # enable debugging
 import cgi
 import cgitb
