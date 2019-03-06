@@ -54,28 +54,28 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
             return input_values.pop(0)
 
         def generate_output(*args, **kwargs):
-          nonlocal partial_output
-          # TODO what happens if \\n is included in end?
+            nonlocal partial_output
+            # TODO what happens if \\n is included in end?
 
-          # if there is an end keyowrd argument, output is stored
-          # in a string instead of added to the output
-          if "end" in args[1]:
-            if len(args[0]) != 0:
-              partial_output += str(args[0][0])
-              for j in range(1, len(args[0])):
-                partial_output = partial_output + " " + str(args[0][j])
-            partial_output += str(args[1]["end"])
-          else:
-            string = partial_output
-            # if there are several arguments in print(), they are added to the ouput
-            if len(args[0]) == 0:
-              string += ""
+            # if there is an end keyowrd argument, output is stored
+            # in a string instead of added to the output
+            if "end" in args[1]:
+                if len(args[0]) != 0:
+                    partial_output += str(args[0][0])
+                    for j in range(1, len(args[0])):
+                        partial_output = partial_output + " " + str(args[0][j])
+                partial_output += str(args[1]["end"])
             else:
-              string += str(args[0][0])
-              for j in range(1, len(args[0])):
-                string += " " + str(args[0][j])
-            partial_output = ""
-            output.append(string)
+                string = partial_output
+                # if there are several arguments in print(), they are added to the ouput
+                if len(args[0]) == 0:
+                    string += ""
+                else:
+                    string += str(args[0][0])
+                    for j in range(1, len(args[0])):
+                        string += " " + str(args[0][j])
+                partial_output = ""
+                output.append(string)
 
         program.input = mock_input
 
@@ -87,6 +87,9 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         program.print = lambda *args, **kwargs: generate_output(args, kwargs)
 
         program.main()
+
+        if partial_output != "":
+            output.append(partial_output)
 
         with open("obtained_result.txt", "w", encoding="utf-8") as file:
             # saved as json because it is a list
