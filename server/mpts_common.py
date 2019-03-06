@@ -40,3 +40,23 @@ def add_test(input, output, comma):
     else:
         print("    }")
 
+
+def generate_prime(nth):
+    if nth == 1:
+        return(2)
+    elif nth == 2:
+        return(3)
+    else:
+        primes = [2, 3]
+        while len(primes) < nth:
+            is_prime = False
+            n = primes[-1] + 2
+            while is_prime == False:
+                is_prime = True
+                for i in primes:
+                    if n % i == 0:
+                        is_prime = False
+                if is_prime == False:
+                    n += 2
+            primes += [n]
+        return(primes[-1])
