@@ -14,10 +14,10 @@ valid_exercise_ids = [
     # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
     [6, [61, 62, 63, 64, 65, 66, 67, 68, 69]],
     #
-    # http://localhost/mclibre/consultar/python/ejercicios/ej-for-1.html
-    [7, [71, 72, 73, 74]],
+    # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+    [7, [71, 72, 73, 74, 75, 76, 77, 78, 79, 80]],
     #
-    # http://localhost/mclibre/consultar/python/ejercicios/ej-for-minijuegos.html
+    # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
     [8, [81, 82, 83, 84]],
     #
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
