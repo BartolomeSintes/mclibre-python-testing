@@ -23,6 +23,8 @@ valid_exercise_ids = [
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
     [100, [1001, 1002, 1003, 1004, 1005, 1006, 1007]],
     #
+    # http://www.mclibre.org/consultar/python/examenes/examenes.html#2018-19
+    [1819, [181901, 181902, 181903, 181904]],
 
 ]
 
