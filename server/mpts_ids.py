@@ -18,7 +18,7 @@ valid_exercise_ids = [
     [7, [71, 72, 73, 74, 75, 76, 77, 78, 79, 80]],
     #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
-    [8, [81, 82, 83, 84]],
+    [8, [81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92]],
     #
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
     [100, [1001, 1002, 1003, 1004, 1005, 1006, 1007]],

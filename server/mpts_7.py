@@ -299,11 +299,7 @@ def exercise(exercise_id):
             while dado == b:
                 dado = random.randrange(1, 7)
             tmp_input += [dado]
-        tmp_output = [
-            "OBTENER VALOR (2)",
-            "Número de dados: ",
-            "Valor a conseguir: ",
-        ]
+        tmp_output = ["OBTENER VALOR (2)", "Número de dados: ", "Valor a conseguir: "]
         tmp = "Dados: "
         for i in range(a):
             tmp += f"{tmp_input[i + 2]} "
@@ -319,11 +315,7 @@ def exercise(exercise_id):
             tmp_input += [random.randrange(1, 7)]
         # Cambia uno cualquiera por el objetivo
         tmp_input[random.randrange(2, a + 2)] = b
-        tmp_output = [
-            "OBTENER VALOR (2)",
-            "Número de dados: ",
-            "Valor a conseguir: ",
-        ]
+        tmp_output = ["OBTENER VALOR (2)", "Número de dados: ", "Valor a conseguir: "]
         tmp = "Dados: "
         for i in range(a):
             tmp += f"{tmp_input[i + 2]} "
@@ -361,17 +353,13 @@ def exercise(exercise_id):
             tmp_input += [random.randrange(1, b + 1)]
         # Cambia uno cualquiera por el mayor
         tmp_input[random.randrange(1, a + 1)] = b
-        tmp_output = [
-            "EL DADO MÁS ALTO (1)",
-            "Número de dados: ",
-        ]
+        tmp_output = ["EL DADO MÁS ALTO (1)", "Número de dados: "]
         tmp = "Dados: "
         for i in range(a):
             tmp += f"{tmp_input[i + 1]} "
         tmp_output += [tmp]
         tmp_output += [f"El dado más alto es {b}."]
         mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
-
 
         # Dado máximo entre 4 y 6
         a = random.randrange(1, 11)
@@ -381,10 +369,7 @@ def exercise(exercise_id):
             tmp_input += [random.randrange(1, b + 1)]
         # Cambia uno cualquiera por el mayor
         tmp_input[random.randrange(1, a + 1)] = b
-        tmp_output = [
-            "EL DADO MÁS ALTO (1)",
-            "Número de dados: ",
-        ]
+        tmp_output = ["EL DADO MÁS ALTO (1)", "Número de dados: "]
         tmp = "Dados: "
         for i in range(a):
             tmp += f"{tmp_input[i + 1]} "
@@ -430,10 +415,7 @@ def exercise(exercise_id):
         # Cambia uno cualquiera por el mayor
         tmp_input[random.randrange(a, a + a + 1)] = c
 
-        tmp_output = [
-            "EL DADO MÁS ALTO (2)",
-            "Número de dados: ",
-        ]
+        tmp_output = ["EL DADO MÁS ALTO (2)", "Número de dados: "]
 
         tmp = "Jugador 1: "
         for i in range(a):
@@ -465,10 +447,7 @@ def exercise(exercise_id):
         # Cambia uno cualquiera por el mayor
         tmp_input[random.randrange(a, a + a + 1)] = c
 
-        tmp_output = [
-            "EL DADO MÁS ALTO (2)",
-            "Número de dados: ",
-        ]
+        tmp_output = ["EL DADO MÁS ALTO (2)", "Número de dados: "]
 
         tmp = "Jugador 1: "
         for i in range(a):
@@ -498,12 +477,9 @@ def exercise(exercise_id):
         for i in range(a):
             tmp_input += [random.randrange(1, c + 1)]
         # Cambia uno cualquiera por el mayor
-        tmp_input[random.randrange(a, a + a + 1)] = c
+        tmp_input[random.randrange(a + 1, a + a + 1)] = c
 
-        tmp_output = [
-            "EL DADO MÁS ALTO (2)",
-            "Número de dados: ",
-        ]
+        tmp_output = ["EL DADO MÁS ALTO (2)", "Número de dados: "]
 
         tmp = "Jugador 1: "
         for i in range(a):
@@ -528,17 +504,13 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            ["PARES Y NONES", "Número de dados: ", "¡Imposible!"],
-            NOT_LAST_TEST,
+            [a], ["PARES Y NONES", "Número de dados: ", "¡Imposible!"], NOT_LAST_TEST
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            ["PARES Y NONES", "Número de dados: ", "¡Imposible!"],
-            NOT_LAST_TEST,
+            [a], ["PARES Y NONES", "Número de dados: ", "¡Imposible!"], NOT_LAST_TEST
         )
 
         # Gana el jugador pares
@@ -553,10 +525,7 @@ def exercise(exercise_id):
         random.shuffle(tmp)
         tmp_input += tmp
 
-        tmp_output = [
-            "PARES Y NONES",
-            "Número de dados: ",
-        ]
+        tmp_output = ["PARES Y NONES", "Número de dados: "]
 
         tmp = "Dados: "
         for i in range(2 * a + 1):
@@ -579,10 +548,7 @@ def exercise(exercise_id):
         random.shuffle(tmp)
         tmp_input += tmp
 
-        tmp_output = [
-            "PARES Y NONES",
-            "Número de dados: ",
-        ]
+        tmp_output = ["PARES Y NONES", "Número de dados: "]
 
         tmp = "Dados: "
         for i in range(2 * a + 1):
@@ -605,10 +571,7 @@ def exercise(exercise_id):
         random.shuffle(tmp)
         tmp_input += tmp
 
-        tmp_output = [
-            "PARES Y NONES",
-            "Número de dados: ",
-        ]
+        tmp_output = ["PARES Y NONES", "Número de dados: "]
 
         tmp = "Dados: "
         for i in range(2 * a):
@@ -628,17 +591,13 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            ["EL DADO MÁS BAJO", "Número de dados: ", "¡Imposible!"],
-            NOT_LAST_TEST,
+            [a], ["EL DADO MÁS BAJO", "Número de dados: ", "¡Imposible!"], NOT_LAST_TEST
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            ["EL DADO MÁS BAJO", "Número de dados: ", "¡Imposible!"],
-            NOT_LAST_TEST,
+            [a], ["EL DADO MÁS BAJO", "Número de dados: ", "¡Imposible!"], NOT_LAST_TEST
         )
 
         # Dado más bajo: sólo hay uno
@@ -651,10 +610,7 @@ def exercise(exercise_id):
         ganador = random.randrange(1, a + 1)
         tmp_input[ganador] = b
 
-        tmp_output = [
-            "EL DADO MÁS BAJO",
-            "Número de dados: ",
-        ]
+        tmp_output = ["EL DADO MÁS BAJO", "Número de dados: "]
 
         for i in range(a):
             tmp_output += [f"Jugador {i + 1}: {tmp_input[i + 1]}"]
@@ -670,15 +626,12 @@ def exercise(exercise_id):
         tmp_input = [a]
         for i in range(a):
             tmp_input += [random.randrange(b + 1, 7)]
-        ganador = random.randrange(1, a //2 + 1)
+        ganador = random.randrange(1, a // 2 + 1)
         tmp_input[ganador] = b
-        ganador = random.randrange(a //2 + 1, a + 1)
+        ganador = random.randrange(a // 2 + 1, a + 1)
         tmp_input[ganador] = b
 
-        tmp_output = [
-            "EL DADO MÁS BAJO",
-            "Número de dados: ",
-        ]
+        tmp_output = ["EL DADO MÁS BAJO", "Número de dados: "]
 
         for i in range(a):
             tmp_output += [f"Jugador {i + 1}: {tmp_input[i + 1]}"]
@@ -738,10 +691,7 @@ def exercise(exercise_id):
         tmp_input[uno] = b_2
         tmp_input[dos] = c_2
 
-        tmp_output = [
-            "DADO MÁS ALTO Y MÁS BAJO",
-            "Número de dados: ",
-        ]
+        tmp_output = ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: "]
         tmp = "Jugador 1: "
         for i in range(a):
             tmp += f"{tmp_input[i + 1]} "
@@ -776,10 +726,7 @@ def exercise(exercise_id):
         tmp_input[uno] = b_2
         tmp_input[dos] = c_2
 
-        tmp_output = [
-            "DADO MÁS ALTO Y MÁS BAJO",
-            "Número de dados: ",
-        ]
+        tmp_output = ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: "]
         tmp = "Jugador 1: "
         for i in range(a):
             tmp += f"{tmp_input[i + 1]} "
@@ -814,10 +761,7 @@ def exercise(exercise_id):
         tmp_input[uno] = b_2
         tmp_input[dos] = c_2
 
-        tmp_output = [
-            "DADO MÁS ALTO Y MÁS BAJO",
-            "Número de dados: ",
-        ]
+        tmp_output = ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: "]
         tmp = "Jugador 1: "
         for i in range(a):
             tmp += f"{tmp_input[i + 1]} "
@@ -840,25 +784,19 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"],
-            NOT_LAST_TEST,
+            [a], ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"], NOT_LAST_TEST
         )
 
         # Jugadores: Uno
         a = 1
         mpts_common.add_test(
-            [a],
-            ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"],
-            NOT_LAST_TEST,
+            [a], ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"], NOT_LAST_TEST
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"],
-            NOT_LAST_TEST,
+            [a], ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"], NOT_LAST_TEST
         )
 
         # Gana
@@ -878,10 +816,7 @@ def exercise(exercise_id):
         # tmp_input[uno] = b_1
         # tmp_input[dos] = c_1
 
-        tmp_output = [
-            "DADOS IGUALES",
-            "Número de dados: ",
-        ]
+        tmp_output = ["DADOS IGUALES", "Número de dados: "]
         tmp = "Dados: "
         for i in range(a):
             tmp += f"{tmp_input[i + 1]} "
@@ -904,13 +839,10 @@ def exercise(exercise_id):
             tmp_input += [dado]
             anterior = dado
         # Cambia dos al azar  por el menor y el mayor
-        c = random.randrange(1, a )
+        c = random.randrange(1, a)
         tmp_input[c + 1] = tmp_input[c]
 
-        tmp_output = [
-            "DADOS IGUALES",
-            "Número de dados: ",
-        ]
+        tmp_output = ["DADOS IGUALES", "Número de dados: "]
         tmp = "Dados: "
         for i in range(a):
             tmp += f"{tmp_input[i + 1]} "
@@ -921,4 +853,3 @@ def exercise(exercise_id):
         mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
 
         # Exercise 80 END
-
