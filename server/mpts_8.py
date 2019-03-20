@@ -1086,4 +1086,4 @@ def exercise(exercise_id):
         ]
         mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
 
-        # Exercise 91 END
+        # Exercise 92 END
