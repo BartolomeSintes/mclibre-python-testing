@@ -1,4 +1,6 @@
 valid_exercise_ids = [
+    # EJERCICIOS DE CLASE
+    #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
     [1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
     #
@@ -23,8 +25,15 @@ valid_exercise_ids = [
     # http://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
     [9, [93, 94, 95, 96, 97, 98]],
     #
+    # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+    [10, [101, 102, 103, 104, 105, 106]],
+    #
+    # EJEMPLOS DE USO DE MPTC
+    #
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
     [100, [1001, 1002, 1003, 1004, 1005, 1006, 1007]],
+    #
+    # EXÁMENES
     #
     # http://www.mclibre.org/consultar/python/examenes/examenes.html#2018-19
     [1819, [181901, 181902, 181903, 181904]],
