@@ -61,7 +61,7 @@ def exercise(exercise_id):
 
         # Exercise 101 END
 
-    if exercise_id == 102:
+    elif exercise_id == 102:
         # Exercise 102 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -131,7 +131,7 @@ def exercise(exercise_id):
 
         # Exercise 102 END
 
-    if exercise_id == 103:
+    elif exercise_id == 103:
         # Exercise 103 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -203,7 +203,7 @@ def exercise(exercise_id):
 
         # Exercise 103 END
 
-    if exercise_id == 104:
+    elif exercise_id == 104:
         # Exercise 104 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -320,7 +320,7 @@ def exercise(exercise_id):
 
         # Exercise 104 END
 
-    if exercise_id == 105:
+    elif exercise_id == 105:
         # Exercise 105 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -374,7 +374,7 @@ def exercise(exercise_id):
 
         # Exercise 105 END
 
-    if exercise_id == 106:
+    elif exercise_id == 106:
         # Exercise 106 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -465,7 +465,7 @@ def exercise(exercise_id):
 
         # Exercise 106 END
 
-    if exercise_id == 107:
+    elif exercise_id == 107:
         # Exercise 107 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -569,7 +569,7 @@ def exercise(exercise_id):
 
         # Exercise 107 END
 
-    if exercise_id == 108:
+    elif exercise_id == 108:
         # Exercise 108 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -701,7 +701,7 @@ def exercise(exercise_id):
 
         # Exercise 108 END
 
-    if exercise_id == 109:
+    elif exercise_id == 109:
         # Exercise 109 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -831,11 +831,14 @@ def exercise(exercise_id):
         ]
         mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
 
-
         # Repite pregunta
         a = random.randrange(1, 21) * 2
         tmp_input = [a]
-        tmp_output = ["CUENTA PARES (2)", "Escriba un número par: ", "¿Quiere escribir otro número par? (S/N): "]
+        tmp_output = [
+            "CUENTA PARES (2)",
+            "Escriba un número par: ",
+            "¿Quiere escribir otro número par? (S/N): ",
+        ]
         n = random.randrange(2, 6)
         for i in range(n):
             a = repite[random.randrange(len(repite))]
@@ -843,16 +846,13 @@ def exercise(exercise_id):
             tmp_output += ["¿Quiere escribir otro número par? (S/N): "]
         b = "N"
         tmp_input += [b]
-        tmp_output += [
-            "",
-            "Ha escrito 1 número par.",
-        ]
+        tmp_output += ["", "Ha escrito 1 número par."]
         mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
         #
 
         # Exercise 109 END
 
-    if exercise_id == 110:
+    elif exercise_id == 110:
         # Exercise 110 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
@@ -923,7 +923,5 @@ def exercise(exercise_id):
             ],
             LAST_TEST,
         )
-
-
 
         # Exercise 110 END

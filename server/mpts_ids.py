@@ -28,6 +28,9 @@ valid_exercise_ids = [
     # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
     [10, [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]],
     #
+    # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+    [11, [111, 112, 113]],
+    #
     # EJEMPLOS DE USO DE MPTC
     #
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
