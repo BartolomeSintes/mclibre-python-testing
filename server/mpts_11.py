@@ -272,7 +272,7 @@ def exercise(exercise_id):
         tmp_output += ["Ha ganado el jugador 1."]
         mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
 
-        # Varias tiradas, gana 1
+        # Varias tiradas, gana 2
         n = 2 * random.randrange(1, 5)
         a = ""
         d = termina[random.randrange(len(termina))]
@@ -288,7 +288,7 @@ def exercise(exercise_id):
         tmp2 = tmp1.copy()
         e = random.randrange(1, 6)
         tmp1 += [e]
-        tmp2 += [random.randrange(e, 7)]
+        tmp2 += [random.randrange(e + 1, 7)]
         random.shuffle(tmp1)
         random.shuffle(tmp2)
         suma1 = suma2 = 0

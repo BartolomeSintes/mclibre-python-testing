@@ -266,7 +266,7 @@ def exercise(exercise_id):
 
         # números pequeños enteros
         celsius = float(random.randrange(0, 100))
-        fahrenheit = 1.8 * celsius + 32
+        fahrenheit = round(1.8 * celsius + 32, 1)
 
         mpts_common.add_test(
             [celsius],
@@ -280,7 +280,7 @@ def exercise(exercise_id):
 
         # números negativos decimales
         celsius = random.randrange(-27315, 0) / 100
-        fahrenheit = 1.8 * celsius + 32
+        fahrenheit = round(1.8 * celsius + 32, 1)
 
         mpts_common.add_test(
             [celsius],
@@ -293,7 +293,7 @@ def exercise(exercise_id):
         )
         # números grandes enteros
         celsius = float(random.randrange(0, 1000))
-        fahrenheit = 1.8 * celsius + 32
+        fahrenheit = round(1.8 * celsius + 32, 1)
 
         mpts_common.add_test(
             [celsius],

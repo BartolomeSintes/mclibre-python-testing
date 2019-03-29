@@ -1,5 +1,6 @@
 import mpts_common
 import random
+import math
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -494,7 +495,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(1, round(c / 10))
+        d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
             [1, a, b, c + d],
             [
@@ -511,7 +512,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(1, round(c / 10))
+        d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
             [1, a, b, c - d],
             [
@@ -528,7 +529,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(round(c / 10), round(c / 10 * 3))
+        d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
             [1, a, b, c + d],
             [
@@ -541,11 +542,11 @@ def exercise(exercise_id):
             NOT_LAST_TEST,
         )
 
-        # 1 pregunta - Respuesta incorrecta < 30% por arriba
+        # 1 pregunta - Respuesta incorrecta < 30% por abajo
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(round(c / 10), round(c / 10 * 3))
+        d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
             [1, a, b, c - d],
             [
@@ -562,7 +563,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(round(c / 10 * 3), c)
+        d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
             [1, a, b, c + d],
             [
@@ -617,27 +618,27 @@ def exercise(exercise_id):
                 tmp_input += [a, b, c]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
             elif i == 1:
-                d = random.randrange(1, round(c / 10))
+                d = random.randrange(1, math.ceil(c / 10))
                 tmp_input += [a, b, c + d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}."]
             elif i == 2:
-                d = random.randrange(1, round(c / 10))
+                d = random.randrange(1, math.ceil(c / 10))
                 tmp_input += [a, b, c - d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}."]
             elif i == 3:
-                d = random.randrange(round(c / 10), round(c / 10 * 3))
+                d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
                 tmp_input += [a, b, c + d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}."]
             elif i == 4:
-                d = random.randrange(round(c / 10), round(c / 10 * 3))
+                d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
                 tmp_input += [a, b, c - d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}."]
             elif i == 5:
-                d = random.randrange(round(c / 10 * 3), c)
+                d = random.randrange(math.ceil(c / 10 * 3), c)
                 tmp_input += [a, b, c + d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por más del 30%! La respuesta correcta era {c}."]
             elif i == 6:
-                d = random.randrange(round(c / 10 * 3), c)
+                d = random.randrange(math.ceil(c / 10 * 3), c)
                 tmp_input += [a, b, c - d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por más del 30%! La respuesta correcta era {c}."]
         mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
@@ -695,7 +696,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(1, round(c / 10))
+        d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
             [1, a, b, c + d],
             [
@@ -714,7 +715,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(1, round(c / 10))
+        d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
             [1, a, b, c - d],
             [
@@ -733,7 +734,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(round(c / 10), round(c / 10 * 3))
+        d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
             [1, a, b, c + d],
             [
@@ -752,7 +753,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(round(c / 10), round(c / 10 * 3))
+        d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
             [1, a, b, c - d],
             [
@@ -771,7 +772,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(round(c / 10 * 3), c)
+        d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
             [1, a, b, c + d],
             [
@@ -790,7 +791,7 @@ def exercise(exercise_id):
         a = random.randrange(11, 100)
         b = random.randrange(11, 110)
         c = a * b
-        d = random.randrange(round(c / 10 * 3), c)
+        d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
             [1, a, b, c - d],
             [
@@ -831,27 +832,27 @@ def exercise(exercise_id):
                 tmp_input += [a, b, c]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
             elif i == 1:
-                d = random.randrange(1, round(c / 10))
+                d = random.randrange(1, math.ceil(c / 10))
                 tmp_input += [a, b, c + d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}."]
             elif i == 2:
-                d = random.randrange(1, round(c / 10))
+                d = random.randrange(1, math.ceil(c / 10))
                 tmp_input += [a, b, c - d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}."]
             elif i == 3:
-                d = random.randrange(round(c / 10), round(c / 10 * 3))
+                d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
                 tmp_input += [a, b, c + d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}."]
             elif i == 4:
-                d = random.randrange(round(c / 10), round(c / 10 * 3))
+                d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
                 tmp_input += [a, b, c - d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}."]
             elif i == 5:
-                d = random.randrange(round(c / 10 * 3), c)
+                d = random.randrange(math.ceil(c / 10 * 3), c)
                 tmp_input += [a, b, c + d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por más del 30%! La respuesta correcta era {c}."]
             elif i == 6:
-                d = random.randrange(round(c / 10 * 3), c)
+                d = random.randrange(math.ceil(c / 10 * 3), c)
                 tmp_input += [a, b, c - d]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por más del 30%! La respuesta correcta era {c}."]
         tmp_output += ["", "Le corresponde una nota de 4.3."]
