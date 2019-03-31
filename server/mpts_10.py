@@ -484,7 +484,7 @@ def exercise(exercise_id):
             tmp_output += [f"{b} no es mayor que {a}. Inténtelo de nuevo: "]
         b = a + random.randrange(1, 21)
         tmp_input += [b]
-        tmp_output += [f"Escriba un número entre {a} y {b}: "]
+        tmp_output += ["", f"Escriba un número entre {a} y {b}: "]
         c = a - random.randrange(1, 21)
         tmp_input += [c]
         tmp_output += ["", f"No ha escrito ningún número entre {a} y {b}."]
@@ -505,7 +505,7 @@ def exercise(exercise_id):
             tmp_output += [f"{b} no es mayor que {a}. Inténtelo de nuevo: "]
         b = a + random.randrange(1, 21)
         tmp_input += [b]
-        tmp_output += [f"Escriba un número entre {a} y {b}: "]
+        tmp_output += ["", f"Escriba un número entre {a} y {b}: "]
         c = a - random.randrange(1, 21)
         tmp_input += [c]
         tmp_output += ["", f"No ha escrito ningún número entre {a} y {b}."]
@@ -519,6 +519,7 @@ def exercise(exercise_id):
             "ENTRE DOS VALORES",
             "Escriba un número: ",
             f"Escriba un número mayor que {a}: ",
+            "",
             f"Escriba un número entre {a} y {b}: ",
         ]
         c = random.randrange(a + 1, b)
@@ -536,6 +537,7 @@ def exercise(exercise_id):
             "ENTRE DOS VALORES",
             "Escriba un número: ",
             f"Escriba un número mayor que {a}: ",
+            "",
             f"Escriba un número entre {a} y {b}: ",
         ]
         c = a - random.randrange(1, 21)
@@ -555,6 +557,7 @@ def exercise(exercise_id):
             "ENTRE DOS VALORES",
             "Escriba un número: ",
             f"Escriba un número mayor que {a}: ",
+            "",
             f"Escriba un número entre {a} y {b}: ",
         ]
         n = random.randrange(3, 7)

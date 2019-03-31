@@ -477,7 +477,7 @@ def exercise(exercise_id):
 
         # 1 pregunta - Respuesta correcta
         a = random.randrange(11, 100)
-        b = random.randrange(11, 110)
+        b = random.randrange(11, 100)
         c = a * b
         mpts_common.add_test(
             [1, a, b, c],
@@ -493,7 +493,7 @@ def exercise(exercise_id):
 
         # 1 pregunta - Respuesta incorrecta < 10% por arriba
         a = random.randrange(11, 100)
-        b = random.randrange(11, 110)
+        b = random.randrange(11, 100)
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
@@ -510,7 +510,7 @@ def exercise(exercise_id):
 
         # 1 pregunta - Respuesta incorrecta < 10% por abajo
         a = random.randrange(11, 100)
-        b = random.randrange(11, 110)
+        b = random.randrange(11, 100)
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
@@ -527,7 +527,7 @@ def exercise(exercise_id):
 
         # 1 pregunta - Respuesta incorrecta < 30% por arriba
         a = random.randrange(11, 100)
-        b = random.randrange(11, 110)
+        b = random.randrange(11, 100)
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
@@ -544,7 +544,7 @@ def exercise(exercise_id):
 
         # 1 pregunta - Respuesta incorrecta < 30% por abajo
         a = random.randrange(11, 100)
-        b = random.randrange(11, 110)
+        b = random.randrange(11, 100)
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
@@ -561,7 +561,7 @@ def exercise(exercise_id):
 
         # 1 pregunta - Respuesta incorrecta > 30% por arriba
         a = random.randrange(11, 100)
-        b = random.randrange(11, 110)
+        b = random.randrange(11, 100)
         c = a * b
         d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
@@ -578,7 +578,7 @@ def exercise(exercise_id):
 
         # 1 pregunta - Respuesta incorrecta > 30% por abajo
         a = random.randrange(11, 100)
-        b = random.randrange(11, 110)
+        b = random.randrange(11, 100)
         c = a * b
         d = random.randrange(round(c / 10 * 3), c)
         mpts_common.add_test(
@@ -598,8 +598,8 @@ def exercise(exercise_id):
         tmp_input = [n]
         tmp_output = ["CÁLCULO ESTIMADO (2)", "Número de preguntas: "]
         for _ in range(n):
-            a = random.randrange(2, 11)
-            b = random.randrange(2, 11)
+            a = random.randrange(11, 100)
+            b = random.randrange(11, 100)
             c = a * b
             tmp_input += [a, b, c]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
@@ -610,8 +610,8 @@ def exercise(exercise_id):
         lista = random.sample(range(7), k=7)
         tmp_input = [n]
         tmp_output = ["CÁLCULO ESTIMADO (2)", "Número de preguntas: "]
-        a = random.randrange(2, 11)
-        b = random.randrange(2, 11)
+        a = random.randrange(11, 100)
+        b = random.randrange(11, 100)
         c = a * b
         for i in lista:
             if i == 0:
