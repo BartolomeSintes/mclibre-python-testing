@@ -91,6 +91,21 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         except:
             pass
 
+        try:
+            program.randrange = lambda *args : input_values.pop(0)
+        except:
+            pass
+
+        try:
+            program.random.choice = lambda *args : input_values.pop(0)
+        except:
+            pass
+
+        try:
+            program.choice = lambda *args : input_values.pop(0)
+        except:
+            pass
+
         program.main()
 
         if partial_output != "":
