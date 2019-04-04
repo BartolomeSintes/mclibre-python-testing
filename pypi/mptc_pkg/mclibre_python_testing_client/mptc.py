@@ -33,6 +33,8 @@ import os
 import pytest
 import requests
 
+EXECUTION_ERROR = "Execution error"
+
 program_file = str("{program_to_be_tested}").replace(".py", "")
 
 program = importlib.import_module(program_file)
@@ -49,8 +51,11 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         output = []
         partial_output = ""
 
-        def mock_input(s):
-            output.append(s)
+        def mock_input(*args):
+            if len(args) > 1:
+                raise ValueError(EXECUTION_ERROR)
+            elif len(args) == 1:
+                output.append(args[0])
             return input_values.pop(0)
 
         def generate_output(*args, **kwargs):
@@ -79,12 +84,12 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
         program.input = mock_input
 
+        program.print = lambda *args, **kwargs: generate_output(args, kwargs)
+
         try:
             program.random.randrange = lambda *args : input_values.pop(0)
         except:
             pass
-
-        program.print = lambda *args, **kwargs: generate_output(args, kwargs)
 
         program.main()
 
@@ -218,6 +223,9 @@ def main():
         print()
         print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
         print("-+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-")
+        print()
+        print(f"Tested program: {args.to_be_tested_py}")
+        print(f"MPTC number:    {args.exercise_id}")
         print()
         if len(values["result"]) > 1:
             print(f"{len(values['result'])} tests have been executed.")
