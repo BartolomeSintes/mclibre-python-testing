@@ -101,6 +101,8 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
 
 def main():
+    EXECUTION_ERROR = "Execution error"
+
     parser = argparse.ArgumentParser(
         description="Testing tool for some of the programming exercises in mclibre.org's Python course available at http://www.mclibre.org/consultar/python/"
     )
@@ -167,7 +169,9 @@ def main():
         print()
         print("Please, wait until all tests have been executed.")
         print()
-        print("Now, PyTest will print some messages while the tests are being executed.")
+        print(
+            "Now, PyTest will print some messages while the tests are being executed."
+        )
         print()
         print("A final report will be shown after.")
         print()
@@ -190,11 +194,14 @@ def main():
             root = tree.getroot()
             for neighbor in root.iter("testsuite"):
                 if int(neighbor.attrib["failures"]) > 0:
-                    with open("obtained_result.txt", "r", encoding="utf-8") as file:
-                        # file is saved as json and is read as a list
-                        texto = json.load(file)
-                        print(texto)
-                    errorReport += [[i["input"], i["output"], texto]]
+                    try:
+                        with open("obtained_result.txt", "r", encoding="utf-8") as file:
+                            # file is saved as json and is read as a list
+                            texto = json.load(file)
+                            # print(texto)
+                        errorReport += [[i["input"], i["output"], texto, ""]]
+                    except:
+                        errorReport += [[i["input"], i["output"], "", EXECUTION_ERROR]]
             if os.path.isfile("obtained_result.txt"):
                 os.remove("obtained_result.txt")
 
@@ -242,23 +249,30 @@ def main():
                     print()
                 else:
                     print("  Tested values:   None")
-                if len(i[1]) != len(i[2]):
-                    print("  The program produces an incorrect number of outputs.")
-                for j in range(min(len(i[1]), len(i[2]))):
-                    if i[1][j] != i[2][j]:
+                if i[3] == EXECUTION_ERROR:
+                    print(
+                        "  Your program could not be executed properly. Please, check manually."
+                    )
+                else:
+                    if len(i[1]) != len(i[2]):
+                        print("  The program produces an incorrect number of outputs.")
+                    for j in range(min(len(i[1]), len(i[2]))):
+                        if i[1][j] != i[2][j]:
+                            print()
+                            print(f'  Expected result: "{i[1][j]}"')
+                            print(f'  Obtained result: "{i[2][j]}"')
+                    for j in range(
+                        min(len(i[1]), len(i[2])), max(len(i[1]), len(i[2]))
+                    ):
                         print()
-                        print(f'  Expected result: "{i[1][j]}"')
-                        print(f'  Obtained result: "{i[2][j]}"')
-                for j in range(min(len(i[1]), len(i[2])), max(len(i[1]), len(i[2]))):
-                    print()
-                    if 0 <= j < len(i[1]):
-                        print(f'  Expected result: "{i[1][j]}"')
-                    else:
-                        print(f"  No result was expected.")
-                    if 0 <= j < len(i[2]):
-                        print(f'  Obtained result: "{i[2][j]}"')
-                    else:
-                        print(f"  No result was obtained.")
+                        if 0 <= j < len(i[1]):
+                            print(f'  Expected result: "{i[1][j]}"')
+                        else:
+                            print(f"  No result was expected.")
+                        if 0 <= j < len(i[2]):
+                            print(f'  Obtained result: "{i[2][j]}"')
+                        else:
+                            print(f"  No result was obtained.")
 
 
 if __name__ == "__main__":
