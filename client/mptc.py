@@ -224,6 +224,9 @@ def main():
         print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
         print("-+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-")
         print()
+        print(f"Tested program: {args.to_be_tested_py}")
+        print(f"MPTC number:    {args.exercise_id}")
+        print()
         if len(values["result"]) > 1:
             print(f"{len(values['result'])} tests have been executed.")
         else:
