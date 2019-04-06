@@ -33,7 +33,7 @@ import os
 import pytest
 import requests
 
-EXECUTION_ERROR = "Execution error"
+TOO_MANY_INPUT_ARGS = "Too many arguments in input() call"
 
 program_file = str("{program_to_be_tested}").replace(".py", "")
 
@@ -53,7 +53,7 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
         def mock_input(*args):
             if len(args) > 1:
-                raise ValueError(EXECUTION_ERROR)
+                raise ValueError(TOO_MANY_INPUT_ARGS)
             elif len(args) == 1:
                 output.append(args[0])
             return input_values.pop(0)
@@ -122,6 +122,7 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
 def main():
     EXECUTION_ERROR = "Execution error"
+    SYNTAX_ERROR = "Syntax error"
 
     parser = argparse.ArgumentParser(
         description="Testing tool for some of the programming exercises in mclibre.org's Python course available at http://www.mclibre.org/consultar/python/"
@@ -213,7 +214,9 @@ def main():
             tree = ET.parse("result.txt")
             root = tree.getroot()
             for neighbor in root.iter("testsuite"):
-                if int(neighbor.attrib["failures"]) > 0:
+                if int(neighbor.attrib["errors"]) > 0:
+                    errorReport += [[i["input"], i["output"], "", SYNTAX_ERROR]]
+                elif int(neighbor.attrib["failures"]) > 0:
                     try:
                         with open("obtained_result.txt", "r", encoding="utf-8") as file:
                             # file is saved as json and is read as a list
@@ -272,7 +275,11 @@ def main():
                     print()
                 else:
                     print("  Tested values:   None")
-                if i[3] == EXECUTION_ERROR:
+                if i[3] == SYNTAX_ERROR:
+                    print(
+                        "  Your program could not be executed properly. Please, check syntax manually."
+                    )
+                elif i[3] == EXECUTION_ERROR:
                     print(
                         "  Your program could not be executed properly. Please, check manually."
                     )
