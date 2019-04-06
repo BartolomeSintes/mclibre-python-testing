@@ -142,11 +142,16 @@ def main():
     )
 
     args = parser.parse_args()
-    # testable = args.to_be_tested_py
-
-    if not (os.path.isfile(args.to_be_tested_py)):
+    testable = args.to_be_tested_py
+    if testable[0:2] == ".\\":
+        testable = testable[2:]
+    if testable.find("\\") != -1 or testable.find("/") != -1:
+        print(f"Error: Relative paths [{testable}] are not allowed.")
+        print("Please, execute MPTC from the directory where your program is located.")
+        exit()
+    elif not (os.path.isfile(testable)):
         print(
-            f"Error: Program to be tested [{args.to_be_tested_py}] not found. Please, check file name"
+            f"Error: Program to be tested [{testable}] not found. Please, check file name"
         )
         exit()
 
@@ -202,7 +207,7 @@ def main():
         for i in values["result"]:
             with open("test_values.txt", "w", encoding="utf-8") as file:
                 file.write(str(i))
-            create_test_program(args.to_be_tested_py)
+            create_test_program(testable)
 
             p = subprocess.Popen(
                 ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"]
@@ -242,7 +247,7 @@ def main():
         print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
         print("-+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-")
         print()
-        print(f"Tested program: {args.to_be_tested_py}")
+        print(f"Tested program: {testable}")
         print(f"MPTC number:    {args.exercise_id}")
         print()
         if len(values["result"]) > 1:
