@@ -16,7 +16,8 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b
         mpts_common.add_test(
-            [a, b, c],
+            [c],
+            [a, b],
             [
                 "TABLAS DE MULTIPLICAR (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -30,7 +31,8 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b + random.randrange(1, 10)
         mpts_common.add_test(
-            [a, b, c],
+            [c],
+            [a, b],
             [
                 "TABLAS DE MULTIPLICAR (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -44,7 +46,8 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b - random.randrange(1, 10)
         mpts_common.add_test(
-            [a, b, c],
+            [c],
+            [a, b],
             [
                 "TABLAS DE MULTIPLICAR (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -63,6 +66,7 @@ def exercise(exercise_id):
         n = -random.randrange(1, 11)
         mpts_common.add_test(
             [n],
+            [],
             [
                 "TABLAS DE MULTIPLICAR (2)",
                 "Número de preguntas: ",
@@ -75,6 +79,7 @@ def exercise(exercise_id):
         n = 0
         mpts_common.add_test(
             [n],
+            [],
             [
                 "TABLAS DE MULTIPLICAR (2)",
                 "Número de preguntas: ",
@@ -89,7 +94,8 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b
         mpts_common.add_test(
-            [n, a, b, c],
+            [n, c],
+            [a, b],
             [
                 "TABLAS DE MULTIPLICAR (2)",
                 "Número de preguntas: ",
@@ -106,7 +112,8 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b + random.randrange(1, 21)
         mpts_common.add_test(
-            [n, a, b, c],
+            [n, c],
+            [a, b],
             [
                 "TABLAS DE MULTIPLICAR (2)",
                 "Número de preguntas: ",
@@ -120,44 +127,50 @@ def exercise(exercise_id):
         # Número preguntas n - Respuestas correctas
         n = random.randrange(3, 8)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["TABLAS DE MULTIPLICAR (2)", "Número de preguntas: "]
         for _ in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b
-            tmp_input += [a, b, c]
+            tmp_random += [a, b]
+            tmp_input += [c]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
 
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
 
         # Número preguntas n - Respuestas incorrectas
         n = random.randrange(3, 8)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["TABLAS DE MULTIPLICAR (2)", "Número de preguntas: "]
         for _ in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b + random.randrange(1, 20)
-            tmp_input += [a, b, c]
+            tmp_random += [a, b]
+            tmp_input += [c]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
 
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
 
         # Número preguntas n - Respuestas correctas e incorrectas
         n = random.randrange(5, 10)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["TABLAS DE MULTIPLICAR (2)", "Número de preguntas: "]
         for _ in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b + random.randrange(0, 2)
-            tmp_input += [a, b, c]
+            tmp_random += [a, b]
+            tmp_input += [c]
             if c == a * b:
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
             else:
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
 
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
 
         # Exercise 94 END
 
@@ -169,6 +182,7 @@ def exercise(exercise_id):
         n = -random.randrange(1, 11)
         mpts_common.add_test(
             [n],
+            [],
             [
                 "TABLAS DE MULTIPLICAR (3)",
                 "Número de preguntas: ",
@@ -181,6 +195,7 @@ def exercise(exercise_id):
         n = 0
         mpts_common.add_test(
             [n],
+            [],
             [
                 "TABLAS DE MULTIPLICAR (3)",
                 "Número de preguntas: ",
@@ -195,7 +210,8 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b
         mpts_common.add_test(
-            [n, a, b, c],
+            [n, c],
+            [a, b],
             [
                 "TABLAS DE MULTIPLICAR (3)",
                 "Número de preguntas: ",
@@ -216,7 +232,8 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b + random.randrange(1, 21)
         mpts_common.add_test(
-            [n, a, b, c],
+            [n, c],
+            [a, b],
             [
                 "TABLAS DE MULTIPLICAR (3)",
                 "Número de preguntas: ",
@@ -233,12 +250,14 @@ def exercise(exercise_id):
         # Número preguntas n - Respuestas correctas
         n = random.randrange(3, 8)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["TABLAS DE MULTIPLICAR (3)", "Número de preguntas: "]
         for _ in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b
-            tmp_input += [a, b, c]
+            tmp_input += [c]
+            tmp_random += [a, b]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
         tmp_output += [
             "",
@@ -246,24 +265,26 @@ def exercise(exercise_id):
             "Le corresponde una nota de 10.0.",
             "¡Enhorabuena!",
         ]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
 
         # Número preguntas n - Respuestas incorrectas
         n = random.randrange(3, 8)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["TABLAS DE MULTIPLICAR (3)", "Número de preguntas: "]
         for _ in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b + random.randrange(1, 20)
-            tmp_input += [a, b, c]
+            tmp_input += [c]
+            tmp_random += [a, b]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
         tmp_output += [
             "",
             "Ha contestado correctamente 0 preguntas.",
             "Le corresponde una nota de 0.0.",
         ]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
 
         # Número preguntas n - Respuestas correctas e incorrectas, nota < 9
         n = random.randrange(5, 10)
@@ -271,23 +292,26 @@ def exercise(exercise_id):
         nota = round((n - nok) / n * 10, 1)
         lista = random.sample(range(n), k=nok)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["TABLAS DE MULTIPLICAR (3)", "Número de preguntas: "]
         for i in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b
             if i in lista:
-                tmp_input += [a, b, c + random.randrange(1, 21)]
+                tmp_input += [c + random.randrange(1, 21)]
+                tmp_random += [a, b]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
             else:
-                tmp_input += [a, b, c]
+                tmp_input += [c]
+                tmp_random += [a, b]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
         tmp_output += [
             "",
             f"Ha contestado correctamente {n - nok} preguntas.",
             f"Le corresponde una nota de {nota}.",
         ]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
 
         # Número preguntas n - Respuestas correctas e incorrectas, nota 9
         n = 10
@@ -295,16 +319,19 @@ def exercise(exercise_id):
         nota = 9.0
         lista = random.sample(range(n), k=nok)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["TABLAS DE MULTIPLICAR (3)", "Número de preguntas: "]
         for i in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b
             if i in lista:
-                tmp_input += [a, b, c + random.randrange(1, 21)]
+                tmp_input += [c + random.randrange(1, 21)]
+                tmp_random += [a, b]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
             else:
-                tmp_input += [a, b, c]
+                tmp_input += [c]
+                tmp_random += [a, b]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
         tmp_output += [
             "",
@@ -312,7 +339,7 @@ def exercise(exercise_id):
             f"Le corresponde una nota de {nota}.",
             "¡Enhorabuena!",
         ]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
 
         # Número preguntas n - Respuestas correctas e incorrectas, nota mayor que 9
         n = random.randrange(11, 21)
@@ -320,16 +347,19 @@ def exercise(exercise_id):
         nota = round((n - nok) / n * 10, 1)
         lista = random.sample(range(n), k=nok)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["TABLAS DE MULTIPLICAR (3)", "Número de preguntas: "]
         for i in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b
             if i in lista:
-                tmp_input += [a, b, c + random.randrange(1, 21)]
+                tmp_input += [c + random.randrange(1, 21)]
+                tmp_random += [a, b]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
             else:
-                tmp_input += [a, b, c]
+                tmp_input += [c]
+                tmp_random += [a, b]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
         tmp_output += [
             "",
@@ -337,7 +367,7 @@ def exercise(exercise_id):
             f"Le corresponde una nota de {nota}.",
             "¡Enhorabuena!",
         ]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
 
         # Exercise 95 END
 
@@ -350,7 +380,8 @@ def exercise(exercise_id):
         b = random.randrange(11, 110)
         c = a * b
         mpts_common.add_test(
-            [a, b, c],
+            [c],
+            [a, b],
             ["CÁLCULO ESTIMADO (1)", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"],
             NOT_LAST_TEST,
         )
@@ -361,7 +392,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, round(c / 10))
         mpts_common.add_test(
-            [a, b, c + d],
+            [c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -376,7 +408,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, round(c / 10))
         mpts_common.add_test(
-            [a, b, c - d],
+            [c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -391,7 +424,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10), round(c / 10 * 3))
         mpts_common.add_test(
-            [a, b, c + d],
+            [c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -406,7 +440,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10), round(c / 10 * 3))
         mpts_common.add_test(
-            [a, b, c - d],
+            [c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -421,7 +456,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10 * 3), c)
         mpts_common.add_test(
-            [a, b, c + d],
+            [c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -436,7 +472,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10 * 3), c)
         mpts_common.add_test(
-            [a, b, c - d],
+            [c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (1)",
                 f"¿Cuánto es {a} x {b}? ",
@@ -455,6 +492,7 @@ def exercise(exercise_id):
         n = -random.randrange(1, 11)
         mpts_common.add_test(
             [n],
+            [],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -467,6 +505,7 @@ def exercise(exercise_id):
         n = 0
         mpts_common.add_test(
             [n],
+            [],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -480,7 +519,8 @@ def exercise(exercise_id):
         b = random.randrange(11, 100)
         c = a * b
         mpts_common.add_test(
-            [1, a, b, c],
+            [1, c],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -497,7 +537,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
-            [1, a, b, c + d],
+            [1, c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -514,7 +555,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
-            [1, a, b, c - d],
+            [1, c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -531,7 +573,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
-            [1, a, b, c + d],
+            [1, c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -548,7 +591,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
-            [1, a, b, c - d],
+            [1, c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -565,7 +609,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
-            [1, a, b, c + d],
+            [1, c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -582,7 +627,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10 * 3), c)
         mpts_common.add_test(
-            [1, a, b, c - d],
+            [1, c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (2)",
                 "Número de preguntas: ",
@@ -596,52 +642,86 @@ def exercise(exercise_id):
         # n preguntas - Respuestas correctas
         n = random.randrange(3, 8)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["CÁLCULO ESTIMADO (2)", "Número de preguntas: "]
         for _ in range(n):
             a = random.randrange(11, 100)
             b = random.randrange(11, 100)
             c = a * b
-            tmp_input += [a, b, c]
+            tmp_input += [c]
+            tmp_random += [a, b]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
 
         # n preguntas - 1 de cada
         n = 7
         lista = random.sample(range(7), k=7)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["CÁLCULO ESTIMADO (2)", "Número de preguntas: "]
         a = random.randrange(11, 100)
         b = random.randrange(11, 100)
         c = a * b
         for i in lista:
             if i == 0:
-                tmp_input += [a, b, c]
+                tmp_input += [c]
+                tmp_random += [a, b]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
             elif i == 1:
                 d = random.randrange(1, math.ceil(c / 10))
-                tmp_input += [a, b, c + d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}."]
+                tmp_input += [c + d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                ]
             elif i == 2:
                 d = random.randrange(1, math.ceil(c / 10))
-                tmp_input += [a, b, c - d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}."]
+                tmp_input += [c - d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                ]
             elif i == 3:
                 d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
-                tmp_input += [a, b, c + d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}."]
+                tmp_input += [c + d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                ]
             elif i == 4:
                 d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
-                tmp_input += [a, b, c - d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}."]
+                tmp_input += [c - d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                ]
             elif i == 5:
                 d = random.randrange(math.ceil(c / 10 * 3), c)
-                tmp_input += [a, b, c + d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por más del 30%! La respuesta correcta era {c}."]
+                tmp_input += [c + d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                ]
             elif i == 6:
                 d = random.randrange(math.ceil(c / 10 * 3), c)
-                tmp_input += [a, b, c - d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por más del 30%! La respuesta correcta era {c}."]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+                tmp_input += [c - d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                ]
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
 
         # Exercise 97 END
 
@@ -653,6 +733,7 @@ def exercise(exercise_id):
         n = -random.randrange(1, 11)
         mpts_common.add_test(
             [n],
+            [],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -665,6 +746,7 @@ def exercise(exercise_id):
         n = 0
         mpts_common.add_test(
             [n],
+            [],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -678,7 +760,8 @@ def exercise(exercise_id):
         b = random.randrange(11, 110)
         c = a * b
         mpts_common.add_test(
-            [1, a, b, c],
+            [1, c],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -698,7 +781,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
-            [1, a, b, c + d],
+            [1, c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -717,7 +801,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
-            [1, a, b, c - d],
+            [1, c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -736,7 +821,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
-            [1, a, b, c + d],
+            [1, c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -755,7 +841,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
-            [1, a, b, c - d],
+            [1, c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -774,7 +861,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
-            [1, a, b, c + d],
+            [1, c + d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -793,7 +881,8 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
-            [1, a, b, c - d],
+            [1, c - d],
+            [a, b],
             [
                 "CÁLCULO ESTIMADO (3)",
                 "Número de preguntas: ",
@@ -809,55 +898,88 @@ def exercise(exercise_id):
         # n preguntas - Respuestas correctas
         n = random.randrange(3, 8)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["CÁLCULO ESTIMADO (3)", "Número de preguntas: "]
         for _ in range(n):
             a = random.randrange(2, 11)
             b = random.randrange(2, 11)
             c = a * b
-            tmp_input += [a, b, c]
+            tmp_input += [c]
+            tmp_random += [a, b]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
         tmp_output += ["", "Le corresponde una nota de 10.0.", "¡Enhorabuena!"]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
 
         # n preguntas - 1 de cada
         n = 7
         lista = random.sample(range(7), k=7)
         tmp_input = [n]
+        tmp_random = []
         tmp_output = ["CÁLCULO ESTIMADO (3)", "Número de preguntas: "]
         a = random.randrange(2, 11)
         b = random.randrange(2, 11)
         c = a * b
         for i in lista:
             if i == 0:
-                tmp_input += [a, b, c]
+                tmp_input += [c]
+                tmp_random += [a, b]
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
             elif i == 1:
                 d = random.randrange(1, math.ceil(c / 10))
-                tmp_input += [a, b, c + d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}."]
+                tmp_input += [c + d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                ]
             elif i == 2:
                 d = random.randrange(1, math.ceil(c / 10))
-                tmp_input += [a, b, c - d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}."]
+                tmp_input += [c - d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                ]
             elif i == 3:
                 d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
-                tmp_input += [a, b, c + d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}."]
+                tmp_input += [c + d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                ]
             elif i == 4:
                 d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
-                tmp_input += [a, b, c - d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}."]
+                tmp_input += [c - d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                ]
             elif i == 5:
                 d = random.randrange(math.ceil(c / 10 * 3), c)
-                tmp_input += [a, b, c + d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por más del 30%! La respuesta correcta era {c}."]
+                tmp_input += [c + d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                ]
             elif i == 6:
                 d = random.randrange(math.ceil(c / 10 * 3), c)
-                tmp_input += [a, b, c - d]
-                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", f"¡Ha fallado por más del 30%! La respuesta correcta era {c}."]
+                tmp_input += [c - d]
+                tmp_random += [a, b]
+                tmp_output += [
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                ]
         tmp_output += ["", "Le corresponde una nota de 4.3."]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
 
         # Exercise 98 END
-
 

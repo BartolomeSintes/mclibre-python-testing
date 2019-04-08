@@ -16,6 +16,7 @@ def exercise(exercise_id):
         resultado = (numero_1 + numero_2) / 2
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
                 "Escriba un número: ",
@@ -31,6 +32,7 @@ def exercise(exercise_id):
         resultado = (numero_1 + numero_2) / 2
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
                 "Escriba un número: ",
@@ -46,6 +48,7 @@ def exercise(exercise_id):
         resultado = (numero_1 + numero_2) / 2
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
                 "Escriba un número: ",
@@ -68,6 +71,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [peso, altura],
+            [],
             [
                 "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
                 "¿Cuánto pesa? ",
@@ -86,6 +90,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [peso, altura],
+            [],
             [
                 "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
                 "¿Cuánto pesa? ",
@@ -104,6 +109,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [peso, altura],
+            [],
             [
                 "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
                 "¿Cuánto pesa? ",
@@ -127,6 +133,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pies, pulgadas],
+            [],
             [
                 "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
                 "Escriba una cantidad de pies: ",
@@ -142,6 +149,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pies, pulgadas],
+            [],
             [
                 "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
                 "Escriba una cantidad de pies: ",
@@ -158,6 +166,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pies, pulgadas],
+            [],
             [
                 "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
                 "Escriba una cantidad de pies: ",
@@ -178,6 +187,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pulgadas],
+            [],
             [
                 "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
                 "Escriba una cantidad de pulgadas: ",
@@ -191,6 +201,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pulgadas],
+            [],
             [
                 "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
                 "Escriba una cantidad de pulgadas: ",
@@ -205,6 +216,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pulgadas],
+            [],
             [
                 "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
                 "Escriba una cantidad de pulgadas: ",
@@ -224,6 +236,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pies],
+            [],
             [
                 "CONVERTIDOR DE PIES A CENTÍMETROS",
                 "Escriba una cantidad de pies: ",
@@ -237,6 +250,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pies],
+            [],
             [
                 "CONVERTIDOR DE PIES A CENTÍMETROS",
                 "Escriba una cantidad de pies: ",
@@ -251,6 +265,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [pies],
+            [],
             [
                 "CONVERTIDOR DE PIES A CENTÍMETROS",
                 "Escriba una cantidad de pies: ",
@@ -270,6 +285,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [celsius],
+            [],
             [
                 "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
                 "Escriba una temperatura en grados Celsius: ",
@@ -284,6 +300,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [celsius],
+            [],
             [
                 "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
                 "Escriba una temperatura en grados Celsius: ",
@@ -297,6 +314,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [celsius],
+            [],
             [
                 "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
                 "Escriba una temperatura en grados Celsius: ",
@@ -316,6 +334,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fahrenheit],
+            [],
             [
                 "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
                 "Escriba una temperatura en grados Fahrenheit: ",
@@ -330,6 +349,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fahrenheit],
+            [],
             [
                 "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
                 "Escriba una temperatura en grados Fahrenheit: ",
@@ -343,6 +363,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fahrenheit],
+            [],
             [
                 "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
                 "Escriba una temperatura en grados Fahrenheit: ",
@@ -363,6 +384,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [segundos],
+            [],
             [
                 "CONVERTIDOR DE SEGUNDOS A MINUTOS",
                 "Escriba una cantidad de segundos: ",
@@ -378,6 +400,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [segundos],
+            [],
             [
                 "CONVERTIDOR DE SEGUNDOS A MINUTOS",
                 "Escriba una cantidad de segundos: ",
@@ -393,6 +416,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [segundos],
+            [],
             [
                 "CONVERTIDOR DE SEGUNDOS A MINUTOS",
                 "Escriba una cantidad de segundos: ",
@@ -416,6 +440,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [segundos],
+            [],
             [
                 "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
                 "Escriba una cantidad de segundos: ",
@@ -434,6 +459,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [segundos],
+            [],
             [
                 "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
                 "Escriba una cantidad de segundos: ",
@@ -452,6 +478,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [segundos],
+            [],
             [
                 "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
                 "Escriba una cantidad de segundos: ",
@@ -474,6 +501,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [unidades],
+            [],
             [
                 "CONVERTIDOR A GRUESAS Y DOCENAS",
                 "Escriba una cantidad (entera): ",
@@ -491,6 +519,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [unidades],
+            [],
             [
                 "CONVERTIDOR A GRUESAS Y DOCENAS",
                 "Escriba una cantidad (entera): ",
@@ -508,6 +537,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [unidades],
+            [],
             [
                 "CONVERTIDOR A GRUESAS Y DOCENAS",
                 "Escriba una cantidad (entera): ",

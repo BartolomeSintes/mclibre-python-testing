@@ -13,6 +13,7 @@ def exercise(exercise_id):
         # Listas fijas
         mpts_common.add_test(
             [],
+            [],
             [
                 "LISTAS FIJAS",
                 "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",
@@ -40,6 +41,7 @@ def exercise(exercise_id):
         a = -random.randrange(10)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "LISTAS A PARTIR DE VALOR",
                 "Escriba un número entero mayor que 0: ",
@@ -52,6 +54,7 @@ def exercise(exercise_id):
         a = 1
         mpts_common.add_test(
             [a],
+            [],
             [
                 "LISTAS A PARTIR DE VALOR",
                 "Escriba un número entero mayor que 0: ",
@@ -68,6 +71,7 @@ def exercise(exercise_id):
         a = random.randrange(2, 11)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "LISTAS A PARTIR DE VALOR",
                 "Escriba un número entero mayor que 0: ",
@@ -89,6 +93,7 @@ def exercise(exercise_id):
         # Cero
         mpts_common.add_test(
             [0],
+            [],
             ["LISTAS DESDE CERO HASTA VALOR", "Escriba un número entero: ", "[0]"],
             NOT_LAST_TEST,
         )
@@ -97,6 +102,7 @@ def exercise(exercise_id):
         a = random.randrange(1, 20)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "LISTAS DESDE CERO HASTA VALOR",
                 "Escriba un número entero: ",
@@ -109,6 +115,7 @@ def exercise(exercise_id):
         a = -random.randrange(1, 20)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "LISTAS DESDE CERO HASTA VALOR",
                 "Escriba un número entero: ",
@@ -128,6 +135,7 @@ def exercise(exercise_id):
         b = a
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTAS ENTRE DOS NÚMEROS",
                 "Escriba un número entero: ",
@@ -142,6 +150,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 10)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTAS ENTRE DOS NÚMEROS",
                 "Escriba un número entero: ",
@@ -156,6 +165,7 @@ def exercise(exercise_id):
         b = -random.randrange(1, 20)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTAS ENTRE DOS NÚMEROS",
                 "Escriba un número entero: ",
@@ -170,6 +180,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 20)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTAS ENTRE DOS NÚMEROS",
                 "Escriba un número entero: ",
@@ -184,6 +195,7 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 10)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTAS ENTRE DOS NÚMEROS",
                 "Escriba un número entero: ",
@@ -202,6 +214,7 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 10)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTAS ENTRE DOS NÚMEROS",
                 "Escriba un número entero: ",
@@ -220,6 +233,7 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 10)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTAS ENTRE DOS NÚMEROS",
                 "Escriba un número entero: ",
@@ -244,6 +258,7 @@ def exercise(exercise_id):
         b = a
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE UN VALOR A OTRO",
                 "Escriba el número entero inicial: ",
@@ -258,6 +273,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE UN VALOR A OTRO",
                 "Escriba el número entero inicial: ",
@@ -272,6 +288,7 @@ def exercise(exercise_id):
         b = -random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE UN VALOR A OTRO",
                 "Escriba el número entero inicial: ",
@@ -286,6 +303,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE UN VALOR A OTRO",
                 "Escriba el número entero inicial: ",
@@ -300,6 +318,7 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE UN VALOR A OTRO",
                 "Escriba el número entero inicial: ",
@@ -314,6 +333,7 @@ def exercise(exercise_id):
         b = random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE UN VALOR A OTRO",
                 "Escriba el número entero inicial: ",
@@ -328,6 +348,7 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE UN VALOR A OTRO",
                 "Escriba el número entero inicial: ",
@@ -348,6 +369,7 @@ def exercise(exercise_id):
         b = a
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -362,6 +384,7 @@ def exercise(exercise_id):
         b = a + 1
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -376,6 +399,7 @@ def exercise(exercise_id):
         b = a - 1
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -390,6 +414,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -404,6 +429,7 @@ def exercise(exercise_id):
         b = -random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -418,6 +444,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -432,6 +459,7 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -446,6 +474,7 @@ def exercise(exercise_id):
         b = random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -460,6 +489,7 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "LISTA DE MENOR A MAYOR",
                 "Escriba un número entero: ",
@@ -480,6 +510,7 @@ def exercise(exercise_id):
         b = -random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "VALORES CONSECUTIVOS",
                 "Escriba el número entero inicial: ",
@@ -494,6 +525,7 @@ def exercise(exercise_id):
         b = 0
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "VALORES CONSECUTIVOS",
                 "Escriba el número entero inicial: ",
@@ -508,6 +540,7 @@ def exercise(exercise_id):
         b = 1
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "VALORES CONSECUTIVOS",
                 "Escriba el número entero inicial: ",
@@ -522,6 +555,7 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "VALORES CONSECUTIVOS",
                 "Escriba el número entero inicial: ",
@@ -536,6 +570,7 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "VALORES CONSECUTIVOS",
                 "Escriba el número entero inicial: ",
@@ -556,6 +591,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -570,6 +606,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -584,6 +621,7 @@ def exercise(exercise_id):
         b = a
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -598,6 +636,7 @@ def exercise(exercise_id):
         b = a
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -612,6 +651,7 @@ def exercise(exercise_id):
         b = a + 2 * random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -626,6 +666,7 @@ def exercise(exercise_id):
         b = a + 2 * random.randrange(1, 11) + 1
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -640,6 +681,7 @@ def exercise(exercise_id):
         b = a + 2 * random.randrange(1, 11) + 1
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -654,6 +696,7 @@ def exercise(exercise_id):
         b = a + 2 * random.randrange(1, 11)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -674,6 +717,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 21)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -688,6 +732,7 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 21)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -703,6 +748,7 @@ def exercise(exercise_id):
         c = 0
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -719,6 +765,7 @@ def exercise(exercise_id):
         c = -random.randrange(1, 21)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -736,6 +783,7 @@ def exercise(exercise_id):
         b = random.randrange(a, t + c)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -755,6 +803,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -774,6 +823,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -794,6 +844,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -814,6 +865,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",
@@ -834,6 +886,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MÚLTIPLOS ENTRE VALORES",
                 "Escriba el número entero inicial: ",

@@ -17,6 +17,7 @@ def exercise(exercise_id):
         dividendo = cociente * divisor + resto
         mpts_common.add_test(
             [dividendo, divisor],
+            [],
             [
                 "DIVISOR DE NÚMEROS",
                 "Escriba el dividendo: ",
@@ -35,6 +36,7 @@ def exercise(exercise_id):
         dividendo = cociente * divisor + resto
         mpts_common.add_test(
             [dividendo, divisor],
+            [],
             [
                 "DIVISOR DE NÚMEROS",
                 "Escriba el dividendo: ",
@@ -53,6 +55,7 @@ def exercise(exercise_id):
         dividendo = cociente * divisor + resto
         mpts_common.add_test(
             [dividendo, divisor],
+            [],
             [
                 "DIVISOR DE NÚMEROS",
                 "Escriba el dividendo: ",
@@ -75,6 +78,7 @@ def exercise(exercise_id):
         dividendo = cociente * divisor + resto
         mpts_common.add_test(
             [dividendo, divisor],
+            [],
             [
                 "DIVISOR DE NÚMEROS",
                 "Escriba el dividendo: ",
@@ -93,6 +97,7 @@ def exercise(exercise_id):
         dividendo = cociente * divisor + resto
         mpts_common.add_test(
             [dividendo, divisor],
+            [],
             [
                 "DIVISOR DE NÚMEROS",
                 "Escriba el dividendo: ",
@@ -111,6 +116,7 @@ def exercise(exercise_id):
         dividendo = cociente * divisor + resto
         mpts_common.add_test(
             [dividendo, divisor],
+            [],
             [
                 "DIVISOR DE NÚMEROS",
                 "Escriba el dividendo: ",
@@ -127,6 +133,7 @@ def exercise(exercise_id):
         dividendo = cociente * divisor + resto
         mpts_common.add_test(
             [dividendo, divisor],
+            [],
             [
                 "DIVISOR DE NÚMEROS",
                 "Escriba el dividendo: ",
@@ -149,6 +156,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE NÚMEROS",
                 "Escriba un número: ",
@@ -165,6 +173,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE NÚMEROS",
                 "Escriba un número: ",
@@ -180,6 +189,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE NÚMEROS",
                 "Escriba un número: ",
@@ -201,6 +211,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fecha_1, fecha_2],
+            [],
             [
                 "COMPARADOR DE AÑOS",
                 "¿En qué año estamos?: ",
@@ -216,6 +227,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fecha_1, fecha_2],
+            [],
             [
                 "COMPARADOR DE AÑOS",
                 "¿En qué año estamos?: ",
@@ -231,6 +243,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fecha_1, fecha_2],
+            [],
             [
                 "COMPARADOR DE AÑOS",
                 "¿En qué año estamos?: ",
@@ -252,6 +265,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fecha_1, fecha_2],
+            [],
             [
                 "COMPARADOR DE AÑOS",
                 "¿En qué año estamos?: ",
@@ -267,6 +281,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fecha_1, fecha_2],
+            [],
             [
                 "COMPARADOR DE AÑOS",
                 "¿En qué año estamos?: ",
@@ -282,6 +297,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fecha_1, fecha_2],
+            [],
             [
                 "COMPARADOR DE AÑOS",
                 "¿En qué año estamos?: ",
@@ -297,6 +313,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fecha_1, fecha_2],
+            [],
             [
                 "COMPARADOR DE AÑOS",
                 "¿En qué año estamos?: ",
@@ -312,6 +329,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [fecha_1, fecha_2],
+            [],
             [
                 "COMPARADOR DE AÑOS",
                 "¿En qué año estamos?: ",
@@ -332,6 +350,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_1],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -348,6 +367,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -364,6 +384,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -381,6 +402,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -398,6 +420,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_2, numero_1],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -419,6 +442,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -434,6 +458,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -448,6 +473,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_1],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -464,6 +490,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -480,6 +507,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -497,6 +525,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -514,6 +543,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_2, numero_1],
+            [],
             [
                 "COMPARADOR DE MÚLTIPLOS",
                 "Escriba un número: ",
@@ -536,6 +566,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2, numero_3],
+            [],
             [
                 "COMPARADOR DE TRES NÚMEROS",
                 "Escriba un número: ",
@@ -553,6 +584,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2, numero_3],
+            [],
             [
                 "COMPARADOR DE TRES NÚMEROS",
                 "Escriba un número: ",
@@ -570,6 +602,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2, numero_3],
+            [],
             [
                 "COMPARADOR DE TRES NÚMEROS",
                 "Escriba un número: ",
@@ -587,6 +620,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2, numero_3],
+            [],
             [
                 "COMPARADOR DE TRES NÚMEROS",
                 "Escriba un número: ",
@@ -604,6 +638,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero_1, numero_2, numero_3],
+            [],
             [
                 "COMPARADOR DE TRES NÚMEROS",
                 "Escriba un número: ",
@@ -621,6 +656,7 @@ def exercise(exercise_id):
         fecha = 4 * random.randrange(400, 600) + 1
         mpts_common.add_test(
             [fecha],
+            [],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
                 "Escriba un año y le diré si es bisiesto: ",
@@ -632,6 +668,7 @@ def exercise(exercise_id):
         fecha = 4 * random.randrange(400, 600) + 2
         mpts_common.add_test(
             [fecha],
+            [],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
                 "Escriba un año y le diré si es bisiesto: ",
@@ -643,6 +680,7 @@ def exercise(exercise_id):
         fecha = 4 * random.randrange(400, 600) + 3
         mpts_common.add_test(
             [fecha],
+            [],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
                 "Escriba un año y le diré si es bisiesto: ",
@@ -655,6 +693,7 @@ def exercise(exercise_id):
         fecha = 400 * random.randrange(1, 7)
         mpts_common.add_test(
             [fecha],
+            [],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
                 "Escriba un año y le diré si es bisiesto: ",
@@ -667,6 +706,7 @@ def exercise(exercise_id):
         fecha = 400 * random.randrange(1, 5) + 100 * random.randrange(1, 4)
         mpts_common.add_test(
             [fecha],
+            [],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
                 "Escriba un año y le diré si es bisiesto: ",
@@ -679,6 +719,7 @@ def exercise(exercise_id):
         fecha = 100 * random.randrange(10, 25) + 4 * random.randrange(1, 20)
         mpts_common.add_test(
             [fecha],
+            [],
             [
                 "COMPROBADOR DE AÑOS BISIESTOS",
                 "Escriba un año y le diré si es bisiesto: ",
@@ -698,6 +739,7 @@ def exercise(exercise_id):
         b = 0
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "ECUACIÓN A X + B = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -712,6 +754,7 @@ def exercise(exercise_id):
         b = random.randrange(1, 100)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "ECUACIÓN A X + B = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -726,6 +769,7 @@ def exercise(exercise_id):
         b = 0.0
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "ECUACIÓN A X + B = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -740,6 +784,7 @@ def exercise(exercise_id):
         b = float(random.randrange(1, 100))
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "ECUACIÓN A X + B = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -754,6 +799,7 @@ def exercise(exercise_id):
         b = float(-random.randrange(1, 100))
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "ECUACIÓN A X + B = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -775,6 +821,7 @@ def exercise(exercise_id):
         c = 0
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "ECUACIÓN A X² + B X + C = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -791,6 +838,7 @@ def exercise(exercise_id):
         c = random.randrange(1, 100)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "ECUACIÓN A X² + B X + C = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -807,6 +855,7 @@ def exercise(exercise_id):
         c = float(random.randrange(1, 100))
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "ECUACIÓN A X² + B X + C = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -824,6 +873,7 @@ def exercise(exercise_id):
         c = float(random.randrange(x + 1, x + 100))
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "ECUACIÓN A X² + B X + C = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -840,6 +890,7 @@ def exercise(exercise_id):
         c = b * b / (4 * a)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "ECUACIÓN A X² + B X + C = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -857,6 +908,7 @@ def exercise(exercise_id):
         c = a * n * n
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "ECUACIÓN A X² + B X + C = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -875,6 +927,7 @@ def exercise(exercise_id):
         d = b * b - 4 * a * c
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "ECUACIÓN A X² + B X + C = 0",
                 "Escriba el valor del coeficiente a: ",
@@ -897,6 +950,7 @@ def exercise(exercise_id):
         h = float(random.randrange(1, 100))
         mpts_common.add_test(
             [t_c, b, h],
+            [],
             [
                 "CÁLCULO DE ÁREAS",
                 "Elija una figura geométrica:",
@@ -916,6 +970,7 @@ def exercise(exercise_id):
         h = float(random.randrange(1, 1000) / 10)
         mpts_common.add_test(
             [t_c, b, h],
+            [],
             [
                 "CÁLCULO DE ÁREAS",
                 "Elija una figura geométrica:",
@@ -934,6 +989,7 @@ def exercise(exercise_id):
         r = float(random.randrange(1, 100))
         mpts_common.add_test(
             [t_c, r],
+            [],
             [
                 "CÁLCULO DE ÁREAS",
                 "Elija una figura geométrica:",
@@ -951,6 +1007,7 @@ def exercise(exercise_id):
         r = float(random.randrange(1, 1000) / 10)
         mpts_common.add_test(
             [t_c, r],
+            [],
             [
                 "CÁLCULO DE ÁREAS",
                 "Elija una figura geométrica:",
@@ -976,6 +1033,7 @@ def exercise(exercise_id):
         resto = cm
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -991,6 +1049,7 @@ def exercise(exercise_id):
         resto = cm
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1006,6 +1065,7 @@ def exercise(exercise_id):
         resto = cm
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1021,6 +1081,7 @@ def exercise(exercise_id):
         resto = cm % 100
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1036,6 +1097,7 @@ def exercise(exercise_id):
         resto = cm % 100
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1058,6 +1120,7 @@ def exercise(exercise_id):
         resto = cm
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1073,6 +1136,7 @@ def exercise(exercise_id):
         resto = cm
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1088,6 +1152,7 @@ def exercise(exercise_id):
         resto = cm
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1103,6 +1168,7 @@ def exercise(exercise_id):
         resto = 0
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1118,6 +1184,7 @@ def exercise(exercise_id):
         resto = 0
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1133,6 +1200,7 @@ def exercise(exercise_id):
         resto = cm % 100
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1148,6 +1216,7 @@ def exercise(exercise_id):
         resto = cm % 100
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1163,6 +1232,7 @@ def exercise(exercise_id):
         resto = cm % 100
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",
@@ -1179,6 +1249,7 @@ def exercise(exercise_id):
         resto = cm % 100
         mpts_common.add_test(
             [cm],
+            [],
             [
                 "CONVERTIDOR DE CM A KM, M Y CM",
                 "Escriba una distancia en centímetros: ",

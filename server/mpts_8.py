@@ -15,6 +15,7 @@ def exercise(exercise_id):
         b = random.randrange(-10, a)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "PARES E IMPARES",
                 "Escriba un número entero: ",
@@ -38,7 +39,7 @@ def exercise(exercise_id):
             else:
                 c += [f"El número {i} es impar."]
 
-        mpts_common.add_test([a, b], c, NOT_LAST_TEST)
+        mpts_common.add_test([a, b], [], c, NOT_LAST_TEST)
 
         # De par (negativo) a impar
         a = -2 * random.randrange(0, 10)
@@ -54,7 +55,7 @@ def exercise(exercise_id):
             else:
                 c += [f"El número {i} es impar."]
 
-        mpts_common.add_test([a, b], c, NOT_LAST_TEST)
+        mpts_common.add_test([a, b], [], c, NOT_LAST_TEST)
 
         # De impar (negativo) a par
         a = -2 * random.randrange(0, 10) - 1
@@ -70,7 +71,7 @@ def exercise(exercise_id):
             else:
                 c += [f"El número {i} es impar."]
 
-        mpts_common.add_test([a, b], c, NOT_LAST_TEST)
+        mpts_common.add_test([a, b], [], c, NOT_LAST_TEST)
 
         # De impar a impar
         a = 2 * random.randrange(0, 10) + 1
@@ -86,7 +87,7 @@ def exercise(exercise_id):
             else:
                 c += [f"El número {i} es impar."]
 
-        mpts_common.add_test([a, b], c, LAST_TEST)
+        mpts_common.add_test([a, b], [], c, LAST_TEST)
 
         # Exercise 81 END
 
@@ -98,6 +99,7 @@ def exercise(exercise_id):
         a = random.randrange(-1000, 0)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "DIVISORES",
                 "Escriba un número entero mayor que cero: ",
@@ -110,6 +112,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "DIVISORES",
                 "Escriba un número entero mayor que cero: ",
@@ -122,6 +125,7 @@ def exercise(exercise_id):
         a = 1
         mpts_common.add_test(
             [a],
+            [],
             [
                 "DIVISORES",
                 "Escriba un número entero mayor que cero: ",
@@ -134,6 +138,7 @@ def exercise(exercise_id):
         a = mpts_common.generate_prime(random.randrange(100, 1001))
         mpts_common.add_test(
             [a],
+            [],
             [
                 "DIVISORES",
                 "Escriba un número entero mayor que cero: ",
@@ -155,6 +160,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero],
+            [],
             [
                 "DIVISORES",
                 "Escriba un número entero mayor que cero: ",
@@ -176,6 +182,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero],
+            [],
             [
                 "DIVISORES",
                 "Escriba un número entero mayor que cero: ",
@@ -194,6 +201,7 @@ def exercise(exercise_id):
         a = random.randrange(-1000, 0)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "MAYORES QUE EL PRIMERO",
                 "¿Cuántos valores va a introducir? ",
@@ -206,6 +214,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "MAYORES QUE EL PRIMERO",
                 "¿Cuántos valores va a introducir? ",
@@ -219,6 +228,7 @@ def exercise(exercise_id):
         b = random.randrange(-100, 101)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "MAYORES QUE EL PRIMERO",
                 "¿Cuántos valores va a introducir? ",
@@ -234,6 +244,7 @@ def exercise(exercise_id):
         c = random.randrange(101, 200)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MAYORES QUE EL PRIMERO",
                 "¿Cuántos valores va a introducir? ",
@@ -250,6 +261,7 @@ def exercise(exercise_id):
         c = random.randrange(-100, 0)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MAYORES QUE EL PRIMERO",
                 "¿Cuántos valores va a introducir? ",
@@ -277,7 +289,7 @@ def exercise(exercise_id):
             if c <= b:
                 tmp_output += [f"¡{c} no es mayor que {b}!"]
         tmp_output += ["Gracias por su colaboración."]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, LAST_TEST)
 
         # Exercise 83 END
 
@@ -289,6 +301,7 @@ def exercise(exercise_id):
         a = random.randrange(-1000, 0)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "MAYORES QUE EL ANTERIOR",
                 "¿Cuántos valores va a introducir? ",
@@ -301,6 +314,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "MAYORES QUE EL ANTERIOR",
                 "¿Cuántos valores va a introducir? ",
@@ -314,6 +328,7 @@ def exercise(exercise_id):
         b = random.randrange(-100, 101)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "MAYORES QUE EL ANTERIOR",
                 "¿Cuántos valores va a introducir? ",
@@ -329,6 +344,7 @@ def exercise(exercise_id):
         c = random.randrange(101, 200)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MAYORES QUE EL ANTERIOR",
                 "¿Cuántos valores va a introducir? ",
@@ -345,6 +361,7 @@ def exercise(exercise_id):
         c = random.randrange(-100, 0)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "MAYORES QUE EL ANTERIOR",
                 "¿Cuántos valores va a introducir? ",
@@ -374,7 +391,7 @@ def exercise(exercise_id):
                 tmp_output += [f"¡{c} no es mayor que {d}!"]
             d = c
         tmp_output += ["Gracias por su colaboración."]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, LAST_TEST)
 
         # Exercise 84 END
 
@@ -386,6 +403,7 @@ def exercise(exercise_id):
         a = random.randrange(-1000, 0)
         mpts_common.add_test(
             [a],
+            [],
             ["NÚMEROS NEGATIVOS", "¿Cuántos valores va a introducir? ", "¡Imposible!"],
             NOT_LAST_TEST,
         )
@@ -394,6 +412,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "NÚMEROS NEGATIVOS",
                 "¿Cuántos valores va a introducir? ",
@@ -407,6 +426,7 @@ def exercise(exercise_id):
         b = random.randrange(1, 101)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "NÚMEROS NEGATIVOS",
                 "¿Cuántos valores va a introducir? ",
@@ -421,6 +441,7 @@ def exercise(exercise_id):
         b = random.randrange(-100, 0)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "NÚMEROS NEGATIVOS",
                 "¿Cuántos valores va a introducir? ",
@@ -439,7 +460,7 @@ def exercise(exercise_id):
             c = random.randrange(0, 1000)
             tmp_input += [c]
         tmp_output += ["No ha escrito ningún número negativo."]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Varios números, 1 negativo
         a = random.randrange(5, 21)
@@ -454,7 +475,7 @@ def exercise(exercise_id):
         tmp_input[b] = random.randrange(-1000, 0)
 
         tmp_output += ["Ha escrito 1 número negativo."]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Varios números, varios negativos
         a = random.randrange(5, 21)
@@ -471,7 +492,7 @@ def exercise(exercise_id):
             tmp_input[i] = random.randrange(-1000, 0)
 
         tmp_output += [f"Ha escrito {b} números negativos."]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, LAST_TEST)
 
         # Exercise 85 END
 
@@ -483,6 +504,7 @@ def exercise(exercise_id):
         a = random.randrange(-1000, 0)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "CONTADOR DE PARES E IMPARES",
                 "¿Cuántos valores va a introducir? ",
@@ -495,6 +517,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "CONTADOR DE PARES E IMPARES",
                 "¿Cuántos valores va a introducir? ",
@@ -509,6 +532,7 @@ def exercise(exercise_id):
         b = 2 * random.randrange(1, 101)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "CONTADOR DE PARES E IMPARES",
                 "¿Cuántos valores va a introducir? ",
@@ -524,6 +548,7 @@ def exercise(exercise_id):
         b = 2 * random.randrange(1, 101) + 1
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "CONTADOR DE PARES E IMPARES",
                 "¿Cuántos valores va a introducir? ",
@@ -547,7 +572,7 @@ def exercise(exercise_id):
             tmp_input += [c]
         tmp_output += [f"Ha escrito {a} números pares y 0 números impares."]
         tmp_output += ["Gracias por su colaboración."]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Varios números, 0 pares
         a = random.randrange(5, 21)
@@ -562,7 +587,7 @@ def exercise(exercise_id):
             tmp_input += [c]
         tmp_output += [f"Ha escrito 0 números pares y {a} números impares."]
         tmp_output += ["Gracias por su colaboración."]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Varios pares, varios impares
         a = random.randrange(5, 21)
@@ -583,7 +608,7 @@ def exercise(exercise_id):
 
         tmp_output += [f"Ha escrito {a - b} números pares y {b} números impares."]
         tmp_output += ["Gracias por su colaboración."]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, LAST_TEST)
 
         # Exercise 86 END
 
@@ -595,6 +620,7 @@ def exercise(exercise_id):
         a = random.randrange(-1000, 0)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "NÚMERO PRIMO",
                 "Escriba un número entero mayor que 1: ",
@@ -607,6 +633,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "NÚMERO PRIMO",
                 "Escriba un número entero mayor que 1: ",
@@ -619,6 +646,7 @@ def exercise(exercise_id):
         a = 1
         mpts_common.add_test(
             [a],
+            [],
             [
                 "NÚMERO PRIMO",
                 "Escriba un número entero mayor que 1: ",
@@ -631,6 +659,7 @@ def exercise(exercise_id):
         a = mpts_common.generate_prime(random.randrange(100, 501))
         mpts_common.add_test(
             [a],
+            [],
             [
                 "NÚMERO PRIMO",
                 "Escriba un número entero mayor que 1: ",
@@ -643,6 +672,7 @@ def exercise(exercise_id):
         a = mpts_common.generate_prime(random.randrange(1000, 2001))
         mpts_common.add_test(
             [a],
+            [],
             [
                 "NÚMERO PRIMO",
                 "Escriba un número entero mayor que 1: ",
@@ -657,6 +687,7 @@ def exercise(exercise_id):
             a *= mpts_common.generate_prime(random.randrange(2, 10))
         mpts_common.add_test(
             [a],
+            [],
             [
                 "NÚMERO PRIMO",
                 "Escriba un número entero mayor que 1: ",
@@ -671,6 +702,7 @@ def exercise(exercise_id):
             a *= mpts_common.generate_prime(random.randrange(10, 51))
         mpts_common.add_test(
             [a],
+            [],
             [
                 "NÚMERO PRIMO",
                 "Escriba un número entero mayor que 1: ",
@@ -689,6 +721,7 @@ def exercise(exercise_id):
         a = random.randrange(-1000, 0)
         mpts_common.add_test(
             [a],
+            [],
             ["SUMA DE VALORES", "¿Cuántos valores va a introducir? ", "¡Imposible!"],
             NOT_LAST_TEST,
         )
@@ -697,6 +730,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             ["SUMA DE VALORES", "¿Cuántos valores va a introducir? ", "¡Imposible!"],
             NOT_LAST_TEST,
         )
@@ -712,7 +746,7 @@ def exercise(exercise_id):
             tmp_input += [c]
             suma += c
         tmp_output += [f"La suma de los números que ha escrito es {suma}"]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Muchos números
         a = random.randrange(11, 21)
@@ -725,7 +759,7 @@ def exercise(exercise_id):
             tmp_input += [c]
             suma += c
         tmp_output += [f"La suma de los números que ha escrito es {suma}"]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, LAST_TEST)
 
         # Exercise 88 END
 
@@ -737,6 +771,7 @@ def exercise(exercise_id):
         a = -random.randrange(1, 101)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -749,6 +784,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -762,6 +798,7 @@ def exercise(exercise_id):
         b = random.randrange(0, a)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -776,6 +813,7 @@ def exercise(exercise_id):
         b = a
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -791,6 +829,7 @@ def exercise(exercise_id):
         c = int(b * (b + 1) / 2 - (a - 1) * a / 2)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -806,6 +845,7 @@ def exercise(exercise_id):
         c = int(b * (b + 1) / 2 - (a - 1) * a / 2)
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -825,6 +865,7 @@ def exercise(exercise_id):
         a = -random.randrange(1, 101)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -837,6 +878,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -850,6 +892,7 @@ def exercise(exercise_id):
         b = random.randrange(0, a)
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -864,6 +907,7 @@ def exercise(exercise_id):
         b = a
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -883,6 +927,7 @@ def exercise(exercise_id):
         tmp_output += f"{b} = {c}"
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -903,6 +948,7 @@ def exercise(exercise_id):
         tmp_output += f"{b} = {c}"
         mpts_common.add_test(
             [a, b, c],
+            [],
             [
                 "SUMA ENTRE VALORES",
                 "Escriba un número entero positivo: ",
@@ -923,6 +969,7 @@ def exercise(exercise_id):
         a = -random.randrange(1, 101)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "MAYOR, MENOR Y MEDIA ARITMÉTICA",
                 "¿Cuántos valores va a introducir? ",
@@ -935,6 +982,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "MAYOR, MENOR Y MEDIA ARITMÉTICA",
                 "¿Cuántos valores va a introducir? ",
@@ -966,7 +1014,7 @@ def exercise(exercise_id):
         tmp_output += [f"El número más pequeño de los introducidos es {float(menor)}"]
         tmp_output += [f"El número más grande de los introducidos es {float(mayor)}"]
         tmp_output += [f"La media de los números introducidos es {media}"]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Más números, positivos y negativos
         a = random.randrange(11, 21)
@@ -991,8 +1039,7 @@ def exercise(exercise_id):
         tmp_output += [f"El número más pequeño de los introducidos es {float(menor)}"]
         tmp_output += [f"El número más grande de los introducidos es {float(mayor)}"]
         tmp_output += [f"La media de los números introducidos es {media}"]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
-
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Más números, positivos y negativos, decimales
         a = random.randrange(11, 21)
@@ -1017,7 +1064,7 @@ def exercise(exercise_id):
         tmp_output += [f"El número más pequeño de los introducidos es {float(menor)}"]
         tmp_output += [f"El número más grande de los introducidos es {float(mayor)}"]
         tmp_output += [f"La media de los números introducidos es {media}"]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, LAST_TEST)
 
         # Exercise 91 END
 
@@ -1029,6 +1076,7 @@ def exercise(exercise_id):
         a = -random.randrange(1, 101)
         mpts_common.add_test(
             [a],
+            [],
             [
                 "FACTORIAL",
                 "Escriba un número entero mayor que cero: ",
@@ -1041,6 +1089,7 @@ def exercise(exercise_id):
         a = 0
         mpts_common.add_test(
             [a],
+            [],
             [
                 "FACTORIAL",
                 "Escriba un número entero mayor que cero: ",
@@ -1054,36 +1103,36 @@ def exercise(exercise_id):
         b = 1
         tmp_input = [a]
         tmp_output = [
-                "FACTORIAL",
-                "Escriba un número entero mayor que cero: ",
-                f"El factorial de {a} es {b}.",
+            "FACTORIAL",
+            "Escriba un número entero mayor que cero: ",
+            f"El factorial de {a} es {b}.",
         ]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Factorial pequeño
         a = random.randrange(2, 20)
         b = 1
-        for i in range(2, a+1):
+        for i in range(2, a + 1):
             b *= i
         tmp_input = [a]
         tmp_output = [
-                "FACTORIAL",
-                "Escriba un número entero mayor que cero: ",
-                f"El factorial de {a} es {b}.",
+            "FACTORIAL",
+            "Escriba un número entero mayor que cero: ",
+            f"El factorial de {a} es {b}.",
         ]
-        mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, NOT_LAST_TEST)
 
         # Factorial grande
         a = random.randrange(20, 41)
         b = 1
-        for i in range(2, a+1):
+        for i in range(2, a + 1):
             b *= i
         tmp_input = [a]
         tmp_output = [
-                "FACTORIAL",
-                "Escriba un número entero mayor que cero: ",
-                f"El factorial de {a} es {b}.",
+            "FACTORIAL",
+            "Escriba un número entero mayor que cero: ",
+            f"El factorial de {a} es {b}.",
         ]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(tmp_input, [], tmp_output, LAST_TEST)
 
         # Exercise 92 END

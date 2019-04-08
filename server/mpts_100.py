@@ -11,7 +11,7 @@ def exercise(exercise_id):
         # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # Comprueba salida
-        mpts_common.add_test([], ["¡Hola, mundo!"], LAST_TEST)
+        mpts_common.add_test([], [], ["¡Hola, mundo!"], LAST_TEST)
         # Exercise 1001 END
 
     elif exercise_id == 1002:
@@ -20,7 +20,7 @@ def exercise(exercise_id):
 
         # Comprueba salida
         mpts_common.add_test(
-            [], ["SALUDANDO", "¡Hola, mundo!", "¡Adios, amigo!"], LAST_TEST
+            [], [], ["SALUDANDO", "¡Hola, mundo!", "¡Adios, amigo!"], LAST_TEST
         )
 
         # Exercise 1002 END
@@ -34,6 +34,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero],
+            [],
             [
                 "ESCRIBA NÚMERO",
                 "Escriba un número entero: ",
@@ -47,6 +48,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [numero],
+            [],
             [
                 "ESCRIBA NÚMERO",
                 "Escriba un número entero: ",
@@ -67,6 +69,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "SUMA NÚMEROS",
                 "Escriba un número: ",
@@ -88,6 +91,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "NÚMEROS CRECIENTES",
                 "Escriba un número: ",
@@ -103,6 +107,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "NÚMEROS CRECIENTES",
                 "Escriba un número: ",
@@ -118,6 +123,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [a, b],
+            [],
             [
                 "NÚMEROS CRECIENTES",
                 "Escriba un número: ",
@@ -134,7 +140,7 @@ def exercise(exercise_id):
         # número pequeño
         a = random.randrange(1, 7)
 
-        mpts_common.add_test([a], ["TIRADA DE DADO", f"Ha salido un {a}."], LAST_TEST)
+        mpts_common.add_test([], [a], ["TIRADA DE DADO", f"Ha salido un {a}."], LAST_TEST)
 
         # Exercise 1006 END
 
@@ -145,11 +151,8 @@ def exercise(exercise_id):
         # letra fija
         mpts_common.add_test(
             ["a"],
-            [
-                "ESCRIBA LETRA",
-                "Escriba una letra: ",
-                f"Ha escrito la letra a.",
-            ],
+            [],
+            ["ESCRIBA LETRA", "Escriba una letra: ", f"Ha escrito la letra a."],
             NOT_LAST_TEST,
         )
 
@@ -158,11 +161,8 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             [letra],
-            [
-                "ESCRIBA LETRA",
-                "Escriba una letra: ",
-                f"Ha escrito la letra {letra}.",
-            ],
+            [],
+            ["ESCRIBA LETRA", "Escriba una letra: ", f"Ha escrito la letra {letra}."],
             LAST_TEST,
         )
 

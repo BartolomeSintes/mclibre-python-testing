@@ -16,6 +16,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -32,6 +33,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -48,6 +50,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -64,6 +67,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -80,6 +84,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -96,6 +101,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -112,6 +118,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -128,6 +135,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -144,6 +152,7 @@ def exercise(exercise_id):
         anyo = random.randrange(1600, 5000, 400)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -160,6 +169,7 @@ def exercise(exercise_id):
         anyo = 1600 + 400 * random.randrange(0, 11) + 100 * random.randrange(1, 4)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -176,6 +186,7 @@ def exercise(exercise_id):
         anyo = 1600 + 100 * random.randrange(0, 5) + 4 * random.randrange(1, 25)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -192,6 +203,7 @@ def exercise(exercise_id):
         anyo = 1584 + 4 * random.randrange(0, 150) + random.randrange(1, 4)
         mpts_common.add_test(
             [dia, mes, anyo],
+            [],
             [
                 "COMPROBACIÓN DE FECHA",
                 "Escriba el número de día: ",
@@ -204,7 +216,7 @@ def exercise(exercise_id):
 
         # Exercise 32 END
 
-    if exercise_id == 33:
+    elif exercise_id == 33:
         # Exercise 33 BEGINNING
         # http://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html
 
@@ -212,6 +224,7 @@ def exercise(exercise_id):
         opcion = "c"
         mpts_common.add_test(
             [opcion],
+            [],
             [
                 "GALONES Y PINTAS",
                 "",
