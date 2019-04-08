@@ -10,7 +10,7 @@ def strType(var):
             return "str"
 
 
-def add_test(input, output, comma):
+def add_test(input, random, output, comma):
     print("    {")
     print('       "input" : [', end="")
     if len(input) == 1:
@@ -29,6 +29,24 @@ def add_test(input, output, comma):
             print(input[-1], end="")
         else:
             print(f'"{input[-1]}"', end="")
+    print("],")
+    print('       "random" : [', end="")
+    if len(random) == 1:
+        if strType(random[0]) != "str":
+            print(random[0], end="")
+        else:
+            print(f'"{random[0]}"', end="")
+    elif len(random) > 1:
+        for i in range(len(random) - 1):
+            if strType(random[i]) != "str":
+                print(random[i], end="")
+            else:
+                print(f'"{random[i]}"', end="")
+            print(", ", end="")
+        if strType(random[-1]) != "str":
+            print(random[-1], end="")
+        else:
+            print(f'"{random[-1]}"', end="")
     print("],")
     print('       "output" : [', end="")
     for i in range(len(output) - 1):
