@@ -11,7 +11,7 @@ valid_exercise_ids = [
     [3, [32, 33]],
     #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
-    [5, [51, 52, 53, 54, 55]],
+    [5, [51, 52, 53, 54, 55, 56]],
     #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
     [6, [61, 62, 63, 64, 65, 66, 67, 68, 69]],
@@ -29,12 +29,19 @@ valid_exercise_ids = [
     [10, [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]],
     #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
-    [11, [111, 112, 113, 114]],
+    [11, [111, 112, 113, 114, 115]],
+    #
+    # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+    [12, [120, 121]],
     #
     # EJEMPLOS DE USO DE MPTC
     #
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
     [100, [1001, 1002, 1003, 1004, 1005, 1006, 1007]],
+    #
+    # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+    [101, [1011, 1012, 1013, 1014, 1015]],
+    #
     #
     # EXÁMENES
     #
