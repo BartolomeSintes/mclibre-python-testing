@@ -48,6 +48,7 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         global values
 
         input_values = values["input"]
+        random_values = values["random"]
         output = []
         partial_output = ""
 
@@ -87,22 +88,22 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         program.print = lambda *args, **kwargs: generate_output(args, kwargs)
 
         try:
-            program.random.randrange = lambda *args : input_values.pop(0)
+            program.random.randrange = lambda *args : random_values.pop(0)
         except:
             pass
 
         try:
-            program.randrange = lambda *args : input_values.pop(0)
+            program.randrange = lambda *args : random_values.pop(0)
         except:
             pass
 
         try:
-            program.random.choice = lambda *args : input_values.pop(0)
+            program.random.choice = lambda *args : random_values.pop(0)
         except:
             pass
 
         try:
-            program.choice = lambda *args : input_values.pop(0)
+            program.choice = lambda *args : random_values.pop(0)
         except:
             pass
 
@@ -143,10 +144,10 @@ def main():
 
     args = parser.parse_args()
     testable = args.to_be_tested_py
-    if testable[0:2] == ".\\":
+    if testable[0:2] == ".\\" or testable[0:2] == "./":
         testable = testable[2:]
     if testable.find("\\") != -1 or testable.find("/") != -1:
-        print(f"Error: Relative paths [{testable}] are not allowed.")
+        print(f"Error: Relative or absolute paths [{testable}] are not allowed.")
         print("Please, execute MPTC from the directory where your program is located.")
         exit()
     elif not (os.path.isfile(testable)):
@@ -172,6 +173,7 @@ def main():
     # print(values)
     # for i in values["result"]:
     #    print(i["input"])
+    #    print(i["random"])
     #    print(i["output"])
     #    print()
 
@@ -220,16 +222,22 @@ def main():
             root = tree.getroot()
             for neighbor in root.iter("testsuite"):
                 if int(neighbor.attrib["errors"]) > 0:
-                    errorReport += [[i["input"], i["output"], "", SYNTAX_ERROR]]
+                    errorReport += [
+                        [i["input"], i["random"], i["output"], "", SYNTAX_ERROR]
+                    ]
                 elif int(neighbor.attrib["failures"]) > 0:
                     try:
                         with open("obtained_result.txt", "r", encoding="utf-8") as file:
                             # file is saved as json and is read as a list
                             texto = json.load(file)
                             # print(texto)
-                        errorReport += [[i["input"], i["output"], texto, ""]]
+                        errorReport += [
+                            [i["input"], i["random"], i["output"], texto, ""]
+                        ]
                     except:
-                        errorReport += [[i["input"], i["output"], "", EXECUTION_ERROR]]
+                        errorReport += [
+                            [i["input"], i["random"], i["output"], "", EXECUTION_ERROR]
+                        ]
             if os.path.isfile("obtained_result.txt"):
                 os.remove("obtained_result.txt")
 
@@ -274,40 +282,47 @@ def main():
                 print()
                 print("Failed test:")
                 if len(i[0]) > 0:
-                    print("  Tested values:   ", end="")
+                    print("  Input values:   ", end="")
                     for j in i[0]:
+                        if j == "":
+                            print("[Intro] ", end="")
+                        else:
+                            print(f"{j} ", end="")
+                    print()
+                if len(i[1]) > 0:
+                    print("  Random values:  ", end="")
+                    for j in i[1]:
                         print(f"{j} ", end="")
                     print()
-                else:
-                    print("  Tested values:   None")
-                if i[3] == SYNTAX_ERROR:
+                if i[4] == SYNTAX_ERROR:
                     print(
                         "  Your program could not be executed properly. Please, check syntax manually."
                     )
-                elif i[3] == EXECUTION_ERROR:
+                elif i[4] == EXECUTION_ERROR:
                     print(
                         "  Your program could not be executed properly. Please, check manually."
                     )
                 else:
-                    if len(i[1]) != len(i[2]):
+                    if len(i[2]) != len(i[3]):
                         print("  The program produces an incorrect number of outputs.")
-                    for j in range(min(len(i[1]), len(i[2]))):
-                        if i[1][j] != i[2][j]:
+                    for j in range(min(len(i[2]), len(i[3]))):
+                        if i[2][j] != i[3][j]:
                             print()
-                            print(f'  Expected result: "{i[1][j]}"')
-                            print(f'  Obtained result: "{i[2][j]}"')
+                            print(f'  Expected result: "{i[2][j]}"')
+                            print(f'  Obtained result: "{i[3][j]}"')
                     for j in range(
-                        min(len(i[1]), len(i[2])), max(len(i[1]), len(i[2]))
+                        min(len(i[2]), len(i[3])), max(len(i[2]), len(i[3]))
                     ):
                         print()
-                        if 0 <= j < len(i[1]):
-                            print(f'  Expected result: "{i[1][j]}"')
+                        if 0 <= j < len(i[2]):
+                            print(f'  Expected result: "{i[2][j]}"')
                         else:
                             print(f"  No result was expected.")
-                        if 0 <= j < len(i[2]):
-                            print(f'  Obtained result: "{i[2][j]}"')
+                        if 0 <= j < len(i[3]):
+                            print(f'  Obtained result: "{i[3][j]}"')
                         else:
                             print(f"  No result was obtained.")
+        print()
 
 
 if __name__ == "__main__":
