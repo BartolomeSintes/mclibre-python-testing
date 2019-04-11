@@ -197,24 +197,30 @@ def main():
         print()
         print("Please, wait until all tests have been executed.")
         print()
-        print(
-            "Now, PyTest will print some messages while the tests are being executed."
-        )
-        print()
         print("A final report will be shown after.")
         print()
-        print("-+-+-+-+-+-+-+-+-      PYTEST OUTPUT     -+-+-+-+-+-+-+-+-")
+        print("-+-+-+-+-+-+-+-+-     TESTS EXECUTION    -+-+-+-+-+-+-+-+-")
         print()
         errorReport = []
+        test_counter = 1
         for i in values["result"]:
+            print(f"Running test {test_counter}. Please wait. ")
             with open("test_values.txt", "w", encoding="utf-8") as file:
                 file.write(str(i))
             create_test_program(testable)
-
             p = subprocess.Popen(
-                ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"]
+                ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
             )
             p.wait()
+            failed_message = False
+            for line in p.stdout:
+                if line.rstrip().find(b"1 passed in") != -1:
+                    failed_message = True
+            if failed_message:
+                print(f"Test {test_counter} passed. ", end="")
+            else:
+                print(f"Test {test_counter} failed. ", end="")
+            test_counter += 1
 
             import xml.etree.ElementTree as ET
 
