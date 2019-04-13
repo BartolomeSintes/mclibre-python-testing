@@ -142,6 +142,14 @@ def main():
         help="id of the tests that will be applied to the program",
     )
 
+    parser.add_argument(
+        "-w", "--write", action="store", help="download and save test values in file"
+    )
+
+    parser.add_argument(
+        "-r", "--read", action="store", help="read test values from file"
+    )
+
     args = parser.parse_args()
     testable = args.to_be_tested_py
     if testable[0:2] == ".\\" or testable[0:2] == "./":
@@ -156,179 +164,210 @@ def main():
         )
         exit()
 
-    server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre_python_testing_server.py"
-    # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
-
-    random_id = random.randint(0, 100_000)
-    json_request = {
-        "jsonrpc": "2.0",
-        "method": "unit-test",
-        "params": {"version": "0.1", "exercise-id": args.exercise_id},
-        "id": random_id,
-    }
-    # print (json.dumps(json_request))
-    r = requests.post(server_url, data=json.dumps(json_request))
-    # print(r)
-    values = r.json()
-    # print(values)
-    # for i in values["result"]:
-    #    print(i["input"])
-    #    print(i["random"])
-    #    print(i["output"])
-    #    print()
-
-    print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
-    print("-+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-")
-    print()
-    if "error" in values:
-        print("An error has been detected:")
-        print(f"  Error number:  {values['error']}")
-        print(f"  Error message: {values['message']}")
-    elif values["id"] != random_id:
-        print("An error has been detected:")
-        print(
-            "  The id sent by the server is not the same that was sent to the server."
-        )
+    if args.read is not None:
+        try:
+            with open(args.read, "r", encoding="utf-8") as file:
+                values = json.load(file)
+                random_id = values["id"]
+        except:
+            print(f"Error: {args.read} file not found.")
+            exit()
     else:
-        if len(values["result"]) == 1:
-            print(f"{len(values['result'])} test will be executed.")
-        else:
-            print(f"{len(values['result'])} tests will be executed.")
-        print()
-        print("Please, wait until all tests have been executed.")
-        print()
-        print("A final report will be shown after.")
-        print()
-        print("-+-+-+-+-+-+-+-+-     TESTS EXECUTION    -+-+-+-+-+-+-+-+-")
-        print()
-        errorReport = []
-        test_counter = 1
-        for i in values["result"]:
-            print(f"Running test {test_counter}. Please wait. ")
-            with open("test_values.txt", "w", encoding="utf-8") as file:
-                file.write(str(i))
-            create_test_program(testable)
-            p = subprocess.Popen(
-                ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
-            )
-            p.wait()
-            failed_message = False
-            for line in p.stdout:
-                if line.rstrip().find(b"1 passed in") != -1:
-                    failed_message = True
-            if failed_message:
-                print(f"Test {test_counter} passed. ", end="")
-            else:
-                print(f"Test {test_counter} failed. ", end="")
-            test_counter += 1
+        server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre_python_testing_server.py"
+        # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
 
-            import xml.etree.ElementTree as ET
+        random_id = random.randint(0, 100_000)
+        json_request = {
+            "jsonrpc": "2.0",
+            "method": "unit-test",
+            "params": {"version": "0.1", "exercise-id": args.exercise_id},
+            "id": random_id,
+        }
+        # print (json.dumps(json_request))
+        r = requests.post(server_url, data=json.dumps(json_request))
+        # print(r)
+        values = r.json()
+        # print(values)
+        # for i in values["result"]:
+        #    print(i["input"])
+        #    print(i["random"])
+        #    print(i["output"])
+        #    print()
 
-            tree = ET.parse("result.txt")
-            root = tree.getroot()
-            for neighbor in root.iter("testsuite"):
-                if int(neighbor.attrib["errors"]) > 0:
-                    errorReport += [
-                        [i["input"], i["random"], i["output"], "", SYNTAX_ERROR]
-                    ]
-                elif int(neighbor.attrib["failures"]) > 0:
-                    try:
-                        with open("obtained_result.txt", "r", encoding="utf-8") as file:
-                            # file is saved as json and is read as a list
-                            texto = json.load(file)
-                            # print(texto)
-                        errorReport += [
-                            [i["input"], i["random"], i["output"], texto, ""]
-                        ]
-                    except:
-                        errorReport += [
-                            [i["input"], i["random"], i["output"], "", EXECUTION_ERROR]
-                        ]
-            if os.path.isfile("obtained_result.txt"):
-                os.remove("obtained_result.txt")
-
-            if os.path.isfile("test_values.txt"):
-                os.remove("test_values.txt")
-
-            if os.path.isfile("result.txt"):
-                os.remove("result.txt")
-
-            if os.path.isfile("test_program.py"):
-                os.remove("test_program.py")
-
-        print()
-        print()
+    if args.write is not None:
+        try:
+            with open(args.write, "w", encoding="utf-8") as file:
+                file.write(json.dumps(values, ensure_ascii=False))
+                print(f"Test values have been saved as {file.name}")
+        except:
+            print(f"Error: {args.write} file could not be created.")
+            exit()
+    else:
         print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
-        print("-+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-")
+        print("-+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-")
         print()
-        print(f"Tested program: {testable}")
-        print(f"MPTC number:    {args.exercise_id}")
-        print()
-        if len(values["result"]) > 1:
-            print(f"{len(values['result'])} tests have been executed.")
+        if "error" in values:
+            print("An error has been detected:")
+            print(f"  Error number:  {values['error']}")
+            print(f"  Error message: {values['message']}")
+        elif values["id"] != random_id:
+            print("An error has been detected:")
+            print(
+                "  The id sent by the server is not the same that was sent to the server."
+            )
         else:
-            print(f"{len(values['result'])} test has been executed.")
-        if errorReport == []:
+            if len(values["result"]) == 1:
+                print(f"{len(values['result'])} test will be executed.")
+            else:
+                print(f"{len(values['result'])} tests will be executed.")
             print()
-            print("All tests have been passed. Congratulations!")
-        else:
-            if len(values["result"]) - len(errorReport) > 1:
-                print(
-                    f"{len(values['result']) - len(errorReport)} tests have been passed."
+            print("Please, wait until all tests have been executed.")
+            print()
+            print("A final report will be shown after.")
+            print()
+            print("-+-+-+-+-+-+-+-+-     TESTS EXECUTION    -+-+-+-+-+-+-+-+-")
+            print()
+            errorReport = []
+            test_counter = 1
+            for i in values["result"]:
+                print(f"Running test {test_counter}. Please wait. ")
+                with open("test_values.txt", "w", encoding="utf-8") as file:
+                    file.write(str(i))
+                create_test_program(testable)
+                p = subprocess.Popen(
+                    ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"],
+                    stdin=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
                 )
+                p.wait()
+                failed_message = False
+                for line in p.stdout:
+                    if line.rstrip().find(b"1 passed in") != -1:
+                        failed_message = True
+                if failed_message:
+                    print(f"Test {test_counter} passed. ", end="")
+                else:
+                    print(f"Test {test_counter} failed. ", end="")
+                test_counter += 1
+
+                import xml.etree.ElementTree as ET
+
+                tree = ET.parse("result.txt")
+                root = tree.getroot()
+                for neighbor in root.iter("testsuite"):
+                    if int(neighbor.attrib["errors"]) > 0:
+                        errorReport += [
+                            [i["input"], i["random"], i["output"], "", SYNTAX_ERROR]
+                        ]
+                    elif int(neighbor.attrib["failures"]) > 0:
+                        try:
+                            with open(
+                                "obtained_result.txt", "r", encoding="utf-8"
+                            ) as file:
+                                # file is saved as json and is read as a list
+                                texto = json.load(file)
+                                # print(texto)
+                            errorReport += [
+                                [i["input"], i["random"], i["output"], texto, ""]
+                            ]
+                        except:
+                            errorReport += [
+                                [
+                                    i["input"],
+                                    i["random"],
+                                    i["output"],
+                                    "",
+                                    EXECUTION_ERROR,
+                                ]
+                            ]
+                if os.path.isfile("obtained_result.txt"):
+                    os.remove("obtained_result.txt")
+
+                if os.path.isfile("test_values.txt"):
+                    os.remove("test_values.txt")
+
+                if os.path.isfile("result.txt"):
+                    os.remove("result.txt")
+
+                if os.path.isfile("test_program.py"):
+                    os.remove("test_program.py")
+
+            print()
+            print()
+            print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
+            print("-+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-")
+            print()
+            print(f"Tested program: {testable}")
+            print(f"MPTC number:    {args.exercise_id}")
+            print()
+            if len(values["result"]) > 1:
+                print(f"{len(values['result'])} tests have been executed.")
             else:
-                print(
-                    f"{len(values['result']) - len(errorReport)} test has been passed."
-                )
-            if len(errorReport) > 1:
-                print(f"{len(errorReport)} tests have been failed.")
-            else:
-                print(f"{len(errorReport)} test has been failed.")
-            for i in errorReport:
+                print(f"{len(values['result'])} test has been executed.")
+            if errorReport == []:
                 print()
-                print("Failed test:")
-                if len(i[0]) > 0:
-                    print("  Input values:   ", end="")
-                    for j in i[0]:
-                        if j == "":
-                            print("[Intro] ", end="")
-                        else:
-                            print(f"{j} ", end="")
-                    print()
-                if len(i[1]) > 0:
-                    print("  Random values:  ", end="")
-                    for j in i[1]:
-                        print(f"{j} ", end="")
-                    print()
-                if i[4] == SYNTAX_ERROR:
+                print("All tests have been passed. Congratulations!")
+            else:
+                if len(values["result"]) - len(errorReport) > 1:
                     print(
-                        "  Your program could not be executed properly. Please, check syntax manually."
-                    )
-                elif i[4] == EXECUTION_ERROR:
-                    print(
-                        "  Your program could not be executed properly. Please, check manually."
+                        f"{len(values['result']) - len(errorReport)} tests have been passed."
                     )
                 else:
-                    if len(i[2]) != len(i[3]):
-                        print("  The program produces an incorrect number of outputs.")
-                    for j in range(min(len(i[2]), len(i[3]))):
-                        if i[2][j] != i[3][j]:
-                            print()
-                            print(f'  Expected result: "{i[2][j]}"')
-                            print(f'  Obtained result: "{i[3][j]}"')
-                    for j in range(
-                        min(len(i[2]), len(i[3])), max(len(i[2]), len(i[3]))
-                    ):
+                    print(
+                        f"{len(values['result']) - len(errorReport)} test has been passed."
+                    )
+                if len(errorReport) > 1:
+                    print(f"{len(errorReport)} tests have been failed.")
+                else:
+                    print(f"{len(errorReport)} test has been failed.")
+                for i in errorReport:
+                    print()
+                    print("Failed test:")
+                    if len(i[0]) > 0:
+                        print("  Input values:   ", end="")
+                        for j in i[0]:
+                            if j == "":
+                                print("[Intro] ", end="")
+                            else:
+                                print(f"{j} ", end="")
                         print()
-                        if 0 <= j < len(i[2]):
-                            print(f'  Expected result: "{i[2][j]}"')
-                        else:
-                            print(f"  No result was expected.")
-                        if 0 <= j < len(i[3]):
-                            print(f'  Obtained result: "{i[3][j]}"')
-                        else:
-                            print(f"  No result was obtained.")
-        print()
+                    if len(i[1]) > 0:
+                        print("  Random values:  ", end="")
+                        for j in i[1]:
+                            print(f"{j} ", end="")
+                        print()
+                    if i[4] == SYNTAX_ERROR:
+                        print(
+                            "  Your program could not be executed properly. Please, check syntax manually."
+                        )
+                    elif i[4] == EXECUTION_ERROR:
+                        print(
+                            "  Your program could not be executed properly. Please, check manually."
+                        )
+                    else:
+                        if len(i[2]) != len(i[3]):
+                            print(
+                                "  The program produces an incorrect number of outputs."
+                            )
+                        for j in range(min(len(i[2]), len(i[3]))):
+                            if i[2][j] != i[3][j]:
+                                print()
+                                print(f'  Expected result: "{i[2][j]}"')
+                                print(f'  Obtained result: "{i[3][j]}"')
+                        for j in range(
+                            min(len(i[2]), len(i[3])), max(len(i[2]), len(i[3]))
+                        ):
+                            print()
+                            if 0 <= j < len(i[2]):
+                                print(f'  Expected result: "{i[2][j]}"')
+                            else:
+                                print(f"  No result was expected.")
+                            if 0 <= j < len(i[3]):
+                                print(f'  Obtained result: "{i[3][j]}"')
+                            else:
+                                print(f"  No result was obtained.")
+            print()
 
 
 if __name__ == "__main__":
