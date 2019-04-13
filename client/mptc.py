@@ -313,7 +313,6 @@ def main():
                         print("  The program produces an incorrect number of outputs.")
                     for j in range(min(len(i[2]), len(i[3]))):
                         if i[2][j] != i[3][j]:
-                            print()
                             print(f'  Expected result: "{i[2][j]}"')
                             print(f'  Obtained result: "{i[3][j]}"')
                     for j in range(
