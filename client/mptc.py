@@ -47,8 +47,18 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
     def test_program():
         global values
 
-        input_values = values["input"]
-        random_values = values["random"]
+        if "input" in values:
+            input_values = values["input"]
+        else:
+            input_values = []
+        if "random" in values:
+            random_values = values["random"]
+        else:
+            random_values = []
+        if "choice" in values:
+            choice_values = values["choice"]
+        else:
+            choice_values = []
         output = []
         partial_output = ""
 
@@ -98,12 +108,12 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
             pass
 
         try:
-            program.random.choice = lambda *args : random_values.pop(0)
+            program.random.choice = lambda *args : choice_values.pop(0)
         except:
             pass
 
         try:
-            program.choice = lambda *args : random_values.pop(0)
+            program.choice = lambda *args : choice_values.pop(0)
         except:
             pass
 
@@ -185,7 +195,7 @@ def main():
         }
         # print (json.dumps(json_request))
         r = requests.post(server_url, data=json.dumps(json_request))
-        # print(r)
+        # print(r.text)
         values = r.json()
         # print(values)
         # for i in values["result"]:
@@ -257,9 +267,7 @@ def main():
                 root = tree.getroot()
                 for neighbor in root.iter("testsuite"):
                     if int(neighbor.attrib["errors"]) > 0:
-                        errorReport += [
-                            [i["input"], i["random"], i["output"], "", SYNTAX_ERROR]
-                        ]
+                        errorReport += [[i, "", SYNTAX_ERROR]]
                     elif int(neighbor.attrib["failures"]) > 0:
                         try:
                             with open(
@@ -268,19 +276,9 @@ def main():
                                 # file is saved as json and is read as a list
                                 texto = json.load(file)
                                 # print(texto)
-                            errorReport += [
-                                [i["input"], i["random"], i["output"], texto, ""]
-                            ]
+                            errorReport += [[i, texto, ""]]
                         except:
-                            errorReport += [
-                                [
-                                    i["input"],
-                                    i["random"],
-                                    i["output"],
-                                    "",
-                                    EXECUTION_ERROR,
-                                ]
-                            ]
+                            errorReport += [[i, "", EXECUTION_ERROR]]
                 if os.path.isfile("obtained_result.txt"):
                     os.remove("obtained_result.txt")
 
@@ -324,47 +322,50 @@ def main():
                 for i in errorReport:
                     print()
                     print("Failed test:")
-                    if len(i[0]) > 0:
-                        print("  Input values:   ", end="")
-                        for j in i[0]:
-                            if j == "":
-                                print("[Intro] ", end="")
-                            else:
+                    if "input" in i[0]:
+                        if len(i[0]) > 0:
+                            print("  Input values:   ", end="")
+                            for j in i[0]["input"]:
+                                if j == "":
+                                    print("[Intro] ", end="")
+                                else:
+                                    print(f"{j} ", end="")
+                            print()
+                    if "random" in i[0]:
+                        if len(i[0]) > 0:
+                            print("  Random values:   ", end="")
+                            for j in i[0]["random"]:
                                 print(f"{j} ", end="")
-                        print()
-                    if len(i[1]) > 0:
-                        print("  Random values:  ", end="")
-                        for j in i[1]:
-                            print(f"{j} ", end="")
-                        print()
-                    if i[4] == SYNTAX_ERROR:
+                            print()
+
+                    if i[2] == SYNTAX_ERROR:
                         print(
                             "  Your program could not be executed properly. Please, check syntax manually."
                         )
-                    elif i[4] == EXECUTION_ERROR:
+                    elif i[2] == EXECUTION_ERROR:
                         print(
                             "  Your program could not be executed properly. Please, check manually."
                         )
                     else:
-                        if len(i[2]) != len(i[3]):
+                        if len(i[0]["output"]) != len(i[1]):
                             print(
                                 "  The program produces an incorrect number of outputs."
                             )
-                        for j in range(min(len(i[2]), len(i[3]))):
-                            if i[2][j] != i[3][j]:
-                                print()
-                                print(f'  Expected result: "{i[2][j]}"')
-                                print(f'  Obtained result: "{i[3][j]}"')
+                        for j in range(min(len(i[0]["output"]), len(i[1]))):
+                            if i[0]["output"][j] != i[1][j]:
+                                print(f'  Expected result: "{i[0]["output"][j]}"')
+                                print(f'  Obtained result: "{i[1][j]}"')
                         for j in range(
-                            min(len(i[2]), len(i[3])), max(len(i[2]), len(i[3]))
+                            min(len(i[0]["output"]), len(i[1])),
+                            max(len(i[0]["output"]), len(i[1])),
                         ):
                             print()
-                            if 0 <= j < len(i[2]):
-                                print(f'  Expected result: "{i[2][j]}"')
+                            if 0 <= j < len(i[0]["output"]):
+                                print(f'  Expected result: "{i[0]["output"][j]}"')
                             else:
                                 print(f"  No result was expected.")
-                            if 0 <= j < len(i[3]):
-                                print(f'  Obtained result: "{i[3][j]}"')
+                            if 0 <= j < len(i[1]):
+                                print(f'  Obtained result: "{i[1][j]}"')
                             else:
                                 print(f"  No result was obtained.")
             print()
