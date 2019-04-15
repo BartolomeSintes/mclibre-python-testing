@@ -10,49 +10,33 @@ def strType(var):
             return "str"
 
 
-def add_test(input, random, output, comma):
+def add_test(comma, *args):
     print("    {")
-    print('       "input" : [', end="")
-    if len(input) == 1:
-        if strType(input[0]) != "str":
-            print(input[0], end="")
-        else:
-            print(f'"{input[0]}"', end="")
-    elif len(input) > 1:
-        for i in range(len(input) - 1):
-            if strType(input[i]) != "str":
-                print(input[i], end="")
+    for i in range(len(args)):
+        # print()
+        # print(i)
+        # print()
+        print(f'       "{args[i][0]}" : [', end="")
+        if len(args[i][1]) == 1:
+            if strType(args[i][1][0]) != "str":
+                print(args[i][1][0], end="")
             else:
-                print(f'"{input[i]}"', end="")
-            print(", ", end="")
-        if strType(input[-1]) != "str":
-            print(input[-1], end="")
-        else:
-            print(f'"{input[-1]}"', end="")
-    print("],")
-    print('       "random" : [', end="")
-    if len(random) == 1:
-        if strType(random[0]) != "str":
-            print(random[0], end="")
-        else:
-            print(f'"{random[0]}"', end="")
-    elif len(random) > 1:
-        for i in range(len(random) - 1):
-            if strType(random[i]) != "str":
-                print(random[i], end="")
+                print(f'"{args[i][1][0]}"', end="")
+        elif len(args[i][1]) > 1:
+            for j in range(len(args[i][1]) - 1):
+                if strType(args[i][1][j]) != "str":
+                    print(args[i][1][j], end="")
+                else:
+                    print(f'"{args[i][1][j]}"', end="")
+                print(", ", end="")
+            if strType(args[i][1][-1]) != "str":
+                print(args[i][1][-1], end="")
             else:
-                print(f'"{random[i]}"', end="")
-            print(", ", end="")
-        if strType(random[-1]) != "str":
-            print(random[-1], end="")
+                print(f'"{args[i][1][-1]}"', end="")
+        if i == len(args) - 1:
+            print("]")
         else:
-            print(f'"{random[-1]}"', end="")
-    print("],")
-    print('       "output" : [', end="")
-    for i in range(len(output) - 1):
-        print(f'"{output[i]}", ', end="")
-    print(f'"{output[-1]}"', end="")
-    print("]")
+            print("],")
     if comma:
         print("    },")
     else:
