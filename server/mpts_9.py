@@ -340,9 +340,41 @@ def exercise(exercise_id):
             ["output", tmp_output],
         )
 
+        # Número preguntas n - 1 respuesta correcta e incorrectas, nota < 9
+        n = random.randrange(5, 10)
+        nok = n-1
+        nota = round((n - nok) / n * 10, 1)
+        lista = random.sample(range(n), k=nok)
+        tmp_input = [n]
+        tmp_random = []
+        tmp_output = ["TABLAS DE MULTIPLICAR (3)", "Número de preguntas: "]
+        for i in range(n):
+            a = random.randrange(2, 11)
+            b = random.randrange(2, 11)
+            c = a * b
+            if i in lista:
+                tmp_input += [c + random.randrange(1, 21)]
+                tmp_random += [a, b]
+                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
+            else:
+                tmp_input += [c]
+                tmp_random += [a, b]
+                tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
+        tmp_output += [
+            "",
+            f"Ha contestado correctamente {n - nok} pregunta.",
+            f"Le corresponde una nota de {nota}.",
+        ]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
+
         # Número preguntas n - Respuestas correctas e incorrectas, nota < 9
         n = random.randrange(5, 10)
-        nok = random.randrange(1, n)
+        nok = random.randrange(1, n-1)
         nota = round((n - nok) / n * 10, 1)
         lista = random.sample(range(n), k=nok)
         tmp_input = [n]
