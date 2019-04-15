@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mclibre_python_testing_client",
-    version="0.0.31",
+    version="0.0.32",
     author="Bartolome Sintes",
     author_email="bartolome.sintes@gmail.com",
     description="Testing tool for some of the exercises in mclibre.org's Python course available at http://www.mclibre.org/consultar/python/",
