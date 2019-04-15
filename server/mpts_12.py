@@ -25,7 +25,12 @@ def exercise(exercise_id):
             tmp_output += [f"{a} + {b} = ", "¡Respuesta correcta!", ""]
 
         tmp_output += ["Programa terminado."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Algunas incorrectas
         tmp_input = []
@@ -59,7 +64,12 @@ def exercise(exercise_id):
             tmp_output += tmp[i][2]
 
         tmp_output += ["Programa terminado."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 120 END
 
@@ -85,7 +95,12 @@ def exercise(exercise_id):
         tmp_output += [f"{a} + {b} = ", "¡Respuesta correcta!", ""]
 
         tmp_output += ["Ha acertado 1 operación en 1 intento.", "Programa terminado."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varios valores negativos
         tmp_input = []
@@ -109,7 +124,12 @@ def exercise(exercise_id):
         tmp_output += [f"{a} + {b} = ", "¡Respuesta correcta!", ""]
 
         tmp_output += ["Ha acertado 1 operación en 1 intento.", "Programa terminado."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Una correcta
         tmp_input = [1]
@@ -127,7 +147,12 @@ def exercise(exercise_id):
         tmp_output += [f"{a} + {b} = ", "¡Respuesta correcta!", ""]
 
         tmp_output += [f"Ha acertado 1 operación en 1 intento.", "Programa terminado."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Todas correctas
         n = random.randrange(2, 10)
@@ -150,7 +175,12 @@ def exercise(exercise_id):
             f"Ha acertado {n} operaciones en {n} intentos.",
             "Programa terminado.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Una correcta, varios fallos
         tmp_input = [1]
@@ -187,7 +217,12 @@ def exercise(exercise_id):
             f"Ha acertado 1 operación en {m + 1} intentos.",
             "Programa terminado.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varias correctas, varios fallos
         n = random.randrange(2, 10)
@@ -230,7 +265,12 @@ def exercise(exercise_id):
             f"Ha acertado {n} operaciones en {m + n} intentos.",
             "Programa terminado.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 121 END
 
@@ -261,7 +301,11 @@ def exercise(exercise_id):
             "Programa terminado.",
         ]
         tmp_input += [a, b, a + b]
-        mpts_common.add_test(tmp_input, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["output", tmp_output],
+        )
 
         # # Varios valores negativos
         # tmp_input = []

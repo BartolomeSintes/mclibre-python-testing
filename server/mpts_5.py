@@ -14,45 +14,51 @@ def exercise(exercise_id):
         a = random.randrange(1, 7)
         b = a
         mpts_common.add_test(
-            [],
-            [a, b],
-            [
-                "JUEGO DE DADOS (1)",
-                f"Alberto ha sacado un {a}.",
-                f"Bárbara ha sacado un {b}.",
-                "Han empatado.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    f"Alberto ha sacado un {a}.",
+                    f"Bárbara ha sacado un {b}.",
+                    "Han empatado.",
+                ],
+            ],
         )
 
         # gana Alberto
         a = random.randrange(2, 7)
         b = a - random.randrange(1, a)
         mpts_common.add_test(
-            [],
-            [a, b],
-            [
-                "JUEGO DE DADOS (1)",
-                f"Alberto ha sacado un {a}.",
-                f"Bárbara ha sacado un {b}.",
-                "Ha ganado Alberto.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    f"Alberto ha sacado un {a}.",
+                    f"Bárbara ha sacado un {b}.",
+                    "Ha ganado Alberto.",
+                ],
+            ],
         )
 
         # gana Bárbara
         a = random.randrange(1, 6)
         b = random.randrange(a + 1, 7)
         mpts_common.add_test(
-            [],
-            [a, b],
-            [
-                "JUEGO DE DADOS (1)",
-                f"Alberto ha sacado un {a}.",
-                f"Bárbara ha sacado un {b}.",
-                "Ha ganado Bárbara.",
-            ],
             LAST_TEST,
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    f"Alberto ha sacado un {a}.",
+                    f"Bárbara ha sacado un {b}.",
+                    "Ha ganado Bárbara.",
+                ],
+            ],
         )
 
         # Exercise 51 END
@@ -67,15 +73,17 @@ def exercise(exercise_id):
         b_2 = random.randrange(4, a_1)
         a_2 = random.randrange(1, b_1 + b_2 - a_1)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (2)",
-                f"Carmen ha sacado un {a_1} y un {a_2}.",
-                f"David ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado David.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    f"Carmen ha sacado un {a_1} y un {a_2}.",
+                    f"David ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado David.",
+                ],
+            ],
         )
 
         # Los mayores coinciden, gana un jugador
@@ -84,15 +92,17 @@ def exercise(exercise_id):
         a_2 = random.randrange(2, a_1)
         b_2 = random.randrange(1, a_2)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (2)",
-                f"Carmen ha sacado un {a_1} y un {a_2}.",
-                f"David ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado Carmen.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    f"Carmen ha sacado un {a_1} y un {a_2}.",
+                    f"David ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado Carmen.",
+                ],
+            ],
         )
 
         # Los mayores coinciden, gana el otro
@@ -101,15 +111,17 @@ def exercise(exercise_id):
         a_2 = random.randrange(1, a_1 - 1)
         b_2 = random.randrange(a_2 + 1, a_1)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (2)",
-                f"Carmen ha sacado un {a_1} y un {a_2}.",
-                f"David ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado David.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    f"Carmen ha sacado un {a_1} y un {a_2}.",
+                    f"David ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado David.",
+                ],
+            ],
         )
 
         # Empate
@@ -118,15 +130,17 @@ def exercise(exercise_id):
         b_1 = a_1
         b_2 = a_2
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (2)",
-                f"Carmen ha sacado un {a_1} y un {a_2}.",
-                f"David ha sacado un {b_1} y un {b_2}.",
-                "Han empatado.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    f"Carmen ha sacado un {a_1} y un {a_2}.",
+                    f"David ha sacado un {b_1} y un {b_2}.",
+                    "Han empatado.",
+                ],
+            ],
         )
 
         # Empate, cruzado
@@ -135,15 +149,17 @@ def exercise(exercise_id):
         b_1 = a_2
         b_2 = a_1
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (2)",
-                f"Carmen ha sacado un {a_1} y un {a_2}.",
-                f"David ha sacado un {b_1} y un {b_2}.",
-                "Han empatado.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    f"Carmen ha sacado un {a_1} y un {a_2}.",
+                    f"David ha sacado un {b_1} y un {b_2}.",
+                    "Han empatado.",
+                ],
+            ],
         )
 
         # Los dos dados son mayores
@@ -152,15 +168,17 @@ def exercise(exercise_id):
         b_1 = random.randrange(1, a_2)
         b_2 = random.randrange(1, a_1)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (2)",
-                f"Carmen ha sacado un {a_1} y un {a_2}.",
-                f"David ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado Carmen.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    f"Carmen ha sacado un {a_1} y un {a_2}.",
+                    f"David ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado Carmen.",
+                ],
+            ],
         )
 
         # Los dos dados son mayores, cruzados
@@ -169,15 +187,17 @@ def exercise(exercise_id):
         a_1 = random.randrange(1, b_1)
         a_2 = random.randrange(1, b_2)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (2)",
-                f"Carmen ha sacado un {a_1} y un {a_2}.",
-                f"David ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado David.",
-            ],
             LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    f"Carmen ha sacado un {a_1} y un {a_2}.",
+                    f"David ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado David.",
+                ],
+            ],
         )
 
         # Exercise 52 END
@@ -192,15 +212,17 @@ def exercise(exercise_id):
         b_2 = random.randrange(4, a_1)
         a_2 = random.randrange(1, b_1 + b_2 - a_1)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (3)",
-                f"Elena ha sacado un {a_1} y un {a_2}.",
-                f"Fernando ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado Elena.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (3)",
+                    f"Elena ha sacado un {a_1} y un {a_2}.",
+                    f"Fernando ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado Elena.",
+                ],
+            ],
         )
 
         # Los mayores coinciden, gana un jugador
@@ -209,15 +231,17 @@ def exercise(exercise_id):
         a_2 = random.randrange(2, a_1)
         b_2 = random.randrange(1, a_2)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (3)",
-                f"Elena ha sacado un {a_1} y un {a_2}.",
-                f"Fernando ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado Elena.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (3)",
+                    f"Elena ha sacado un {a_1} y un {a_2}.",
+                    f"Fernando ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado Elena.",
+                ],
+            ],
         )
 
         # Los mayores coinciden, gana el otro
@@ -226,15 +250,17 @@ def exercise(exercise_id):
         a_2 = random.randrange(1, a_1 - 1)
         b_2 = random.randrange(a_2 + 1, a_1)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (3)",
-                f"Elena ha sacado un {a_1} y un {a_2}.",
-                f"Fernando ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado Fernando.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (3)",
+                    f"Elena ha sacado un {a_1} y un {a_2}.",
+                    f"Fernando ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado Fernando.",
+                ],
+            ],
         )
 
         # Empate
@@ -243,15 +269,17 @@ def exercise(exercise_id):
         b_1 = a_1
         b_2 = a_2
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (3)",
-                f"Elena ha sacado un {a_1} y un {a_2}.",
-                f"Fernando ha sacado un {b_1} y un {b_2}.",
-                "Han empatado.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (3)",
+                    f"Elena ha sacado un {a_1} y un {a_2}.",
+                    f"Fernando ha sacado un {b_1} y un {b_2}.",
+                    "Han empatado.",
+                ],
+            ],
         )
 
         # Empate, cruzado
@@ -260,15 +288,17 @@ def exercise(exercise_id):
         b_1 = a_2
         b_2 = a_1
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (3)",
-                f"Elena ha sacado un {a_1} y un {a_2}.",
-                f"Fernando ha sacado un {b_1} y un {b_2}.",
-                "Han empatado.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (3)",
+                    f"Elena ha sacado un {a_1} y un {a_2}.",
+                    f"Fernando ha sacado un {b_1} y un {b_2}.",
+                    "Han empatado.",
+                ],
+            ],
         )
 
         # Los dos dados son mayores
@@ -277,15 +307,17 @@ def exercise(exercise_id):
         b_1 = random.randrange(1, a_2)
         b_2 = random.randrange(1, a_1)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (3)",
-                f"Elena ha sacado un {a_1} y un {a_2}.",
-                f"Fernando ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado Elena.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (3)",
+                    f"Elena ha sacado un {a_1} y un {a_2}.",
+                    f"Fernando ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado Elena.",
+                ],
+            ],
         )
 
         # Los dos dados son mayores, cruzados
@@ -294,15 +326,17 @@ def exercise(exercise_id):
         a_1 = random.randrange(1, b_1)
         a_2 = random.randrange(1, b_2)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, b_1, b_2],
-            [
-                "JUEGO DE DADOS (3)",
-                f"Elena ha sacado un {a_1} y un {a_2}.",
-                f"Fernando ha sacado un {b_1} y un {b_2}.",
-                "Ha ganado Fernando.",
-            ],
             LAST_TEST,
+            ["random", [a_1, a_2, b_1, b_2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (3)",
+                    f"Elena ha sacado un {a_1} y un {a_2}.",
+                    f"Fernando ha sacado un {b_1} y un {b_2}.",
+                    "Ha ganado Fernando.",
+                ],
+            ],
         )
 
         # Exercise 53 END
@@ -319,15 +353,17 @@ def exercise(exercise_id):
         b_2 = random.randrange(max(1, 5 - b_1 + 1), 11)
         b_3 = random.randrange(max(1, 15 - b_1 - b_2 + 1), 11)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, a_3, b_1, b_2, b_3],
-            [
-                "JUEGO DEL QUINCE",
-                f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
-                f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
-                "No ha ganado nadie.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, a_3, b_1, b_2, b_3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
+                    f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
+                    "No ha ganado nadie.",
+                ],
+            ],
         )
 
         # El primero se pasa y el segundo no
@@ -338,15 +374,17 @@ def exercise(exercise_id):
         b_2 = random.randrange(1, min(11, 15 - b_1))
         b_3 = random.randrange(1, min(11, 15 - b_1 - b_2 + 1))
         mpts_common.add_test(
-            [],
-            [a_1, a_2, a_3, b_1, b_2, b_3],
-            [
-                "JUEGO DEL QUINCE",
-                f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
-                f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
-                "Ha ganado Héctor.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, a_3, b_1, b_2, b_3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
+                    f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
+                    "Ha ganado Héctor.",
+                ],
+            ],
         )
 
         # El segundo se pasa y el primero no
@@ -357,15 +395,17 @@ def exercise(exercise_id):
         b_2 = random.randrange(max(1, 5 - b_1 + 1), 11)
         b_3 = random.randrange(max(1, 15 - b_1 - b_2 + 1), 11)
         mpts_common.add_test(
-            [],
-            [a_1, a_2, a_3, b_1, b_2, b_3],
-            [
-                "JUEGO DEL QUINCE",
-                f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
-                f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
-                "Ha ganado Gloria.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, a_3, b_1, b_2, b_3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
+                    f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
+                    "Ha ganado Gloria.",
+                ],
+            ],
         )
 
         # Ninguno se pasa, pero no empatan
@@ -382,26 +422,30 @@ def exercise(exercise_id):
         if a_1 + a_2 + a_3 < b_1 + b_2 + b_3:
             a_1, a_2, a_3, b_1, b_2, b_3 = b_1, b_2, b_3, a_1, a_2, a_3
         mpts_common.add_test(
-            [],
-            [a_1, a_2, a_3, b_1, b_2, b_3],
-            [
-                "JUEGO DEL QUINCE",
-                f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
-                f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
-                "Ha ganado Gloria.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a_1, a_2, a_3, b_1, b_2, b_3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
+                    f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
+                    "Ha ganado Gloria.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            [b_1, b_2, b_3, a_1, a_2, a_3],
-            [
-                "JUEGO DEL QUINCE",
-                f"Gloria ha sacado un {b_1}, un {b_2} y un {b_3}.",
-                f"Héctor ha sacado un {a_1}, un {a_2} y un {a_3}.",
-                "Ha ganado Héctor.",
-            ],
             NOT_LAST_TEST,
+            ["random", [b_1, b_2, b_3, a_1, a_2, a_3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Gloria ha sacado un {b_1}, un {b_2} y un {b_3}.",
+                    f"Héctor ha sacado un {a_1}, un {a_2} y un {a_3}.",
+                    "Ha ganado Héctor.",
+                ],
+            ],
         )
 
         # Empatan sin pasarse
@@ -416,15 +460,17 @@ def exercise(exercise_id):
             b_2 = random.randrange(1, min(11, 15 - b_1))
             b_3 = random.randrange(1, min(11, 15 - b_1 - b_2 + 1))
         mpts_common.add_test(
-            [],
-            [a_1, a_2, a_3, b_1, b_2, b_3],
-            [
-                "JUEGO DEL QUINCE",
-                f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
-                f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
-                "Han empatado.",
-            ],
             LAST_TEST,
+            ["random", [a_1, a_2, a_3, b_1, b_2, b_3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Gloria ha sacado un {a_1}, un {a_2} y un {a_3}.",
+                    f"Héctor ha sacado un {b_1}, un {b_2} y un {b_3}.",
+                    "Han empatado.",
+                ],
+            ],
         )
 
         # Exercise 54 END
@@ -434,105 +480,123 @@ def exercise(exercise_id):
         # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
 
         mpts_common.add_test(
-            [],
-            [1, 1],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado piedra.",
-                "Juan ha sacado piedra.",
-                "Han empatado.",
-            ],
             NOT_LAST_TEST,
+            ["random", [1, 1]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado piedra.",
+                    "Juan ha sacado piedra.",
+                    "Han empatado.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            [1, 2],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado piedra.",
-                "Juan ha sacado papel.",
-                "Ha ganado Juan.",
-            ],
             NOT_LAST_TEST,
+            ["random", [1, 2]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado piedra.",
+                    "Juan ha sacado papel.",
+                    "Ha ganado Juan.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            [1, 3],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado piedra.",
-                "Juan ha sacado tijera.",
-                "Ha ganado Inés.",
-            ],
             NOT_LAST_TEST,
-        )
-
-        mpts_common.add_test(
-            [],
-            [2, 1],
+            ["random", [1, 3]],
             [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado papel.",
-                "Juan ha sacado piedra.",
-                "Ha ganado Inés.",
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado piedra.",
+                    "Juan ha sacado tijera.",
+                    "Ha ganado Inés.",
+                ],
             ],
-            NOT_LAST_TEST,
-        )
-        mpts_common.add_test(
-            [],
-            [2, 2],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado papel.",
-                "Juan ha sacado papel.",
-                "Han empatado.",
-            ],
-            NOT_LAST_TEST,
-        )
-        mpts_common.add_test(
-            [],
-            [2, 3],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado papel.",
-                "Juan ha sacado tijera.",
-                "Ha ganado Juan.",
-            ],
-            NOT_LAST_TEST,
         )
 
         mpts_common.add_test(
-            [],
-            [3, 1],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado tijera.",
-                "Juan ha sacado piedra.",
-                "Ha ganado Juan.",
-            ],
             NOT_LAST_TEST,
+            ["random", [2, 1]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado papel.",
+                    "Juan ha sacado piedra.",
+                    "Ha ganado Inés.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            [3, 2],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado tijera.",
-                "Juan ha sacado papel.",
-                "Ha ganado Inés.",
-            ],
             NOT_LAST_TEST,
+            ["random", [2, 2]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado papel.",
+                    "Juan ha sacado papel.",
+                    "Han empatado.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            [3, 3],
+            NOT_LAST_TEST,
+            ["random", [2, 3]],
             [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado tijera.",
-                "Juan ha sacado tijera.",
-                "Han empatado.",
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado papel.",
+                    "Juan ha sacado tijera.",
+                    "Ha ganado Juan.",
+                ],
             ],
+        )
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [3, 1]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado tijera.",
+                    "Juan ha sacado piedra.",
+                    "Ha ganado Juan.",
+                ],
+            ],
+        )
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [3, 2]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado tijera.",
+                    "Juan ha sacado papel.",
+                    "Ha ganado Inés.",
+                ],
+            ],
+        )
+        mpts_common.add_test(
             LAST_TEST,
+            ["random", [3, 3]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado tijera.",
+                    "Juan ha sacado tijera.",
+                    "Han empatado.",
+                ],
+            ],
         )
 
         # Exercise 55 END
@@ -542,105 +606,123 @@ def exercise(exercise_id):
         # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
 
         mpts_common.add_test(
-            [],
-            ["piedra", "piedra"],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado piedra.",
-                "Juan ha sacado piedra.",
-                "Han empatado.",
-            ],
             NOT_LAST_TEST,
+            ["choice", ["piedra", "piedra"]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado piedra.",
+                    "Juan ha sacado piedra.",
+                    "Han empatado.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            ["piedra", "papel"],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado piedra.",
-                "Juan ha sacado papel.",
-                "Ha ganado Juan.",
-            ],
             NOT_LAST_TEST,
+            ["choice", ["piedra", "papel"]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado piedra.",
+                    "Juan ha sacado papel.",
+                    "Ha ganado Juan.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            ["piedra", "tijera"],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado piedra.",
-                "Juan ha sacado tijera.",
-                "Ha ganado Inés.",
-            ],
             NOT_LAST_TEST,
-        )
-
-        mpts_common.add_test(
-            [],
-            ["papel", "piedra"],
+            ["choice", ["piedra", "tijera"]],
             [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado papel.",
-                "Juan ha sacado piedra.",
-                "Ha ganado Inés.",
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado piedra.",
+                    "Juan ha sacado tijera.",
+                    "Ha ganado Inés.",
+                ],
             ],
-            NOT_LAST_TEST,
-        )
-        mpts_common.add_test(
-            [],
-            ["papel", "papel"],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado papel.",
-                "Juan ha sacado papel.",
-                "Han empatado.",
-            ],
-            NOT_LAST_TEST,
-        )
-        mpts_common.add_test(
-            [],
-            ["papel", "tijera"],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado papel.",
-                "Juan ha sacado tijera.",
-                "Ha ganado Juan.",
-            ],
-            NOT_LAST_TEST,
         )
 
         mpts_common.add_test(
-            [],
-            ["tijera", "piedra"],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado tijera.",
-                "Juan ha sacado piedra.",
-                "Ha ganado Juan.",
-            ],
             NOT_LAST_TEST,
+            ["choice", ["papel", "piedra"]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado papel.",
+                    "Juan ha sacado piedra.",
+                    "Ha ganado Inés.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            ["tijera", "papel"],
-            [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado tijera.",
-                "Juan ha sacado papel.",
-                "Ha ganado Inés.",
-            ],
             NOT_LAST_TEST,
+            ["choice", ["papel", "papel"]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado papel.",
+                    "Juan ha sacado papel.",
+                    "Han empatado.",
+                ],
+            ],
         )
         mpts_common.add_test(
-            [],
-            ["tijera", "tijera"],
+            NOT_LAST_TEST,
+            ["choice", ["papel", "tijera"]],
             [
-                "PIEDRA, PAPEL, ... ¡TIJERA!",
-                "Inés ha sacado tijera.",
-                "Juan ha sacado tijera.",
-                "Han empatado.",
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado papel.",
+                    "Juan ha sacado tijera.",
+                    "Ha ganado Juan.",
+                ],
             ],
+        )
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["choice", ["tijera", "piedra"]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado tijera.",
+                    "Juan ha sacado piedra.",
+                    "Ha ganado Juan.",
+                ],
+            ],
+        )
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["choice", ["tijera", "papel"]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado tijera.",
+                    "Juan ha sacado papel.",
+                    "Ha ganado Inés.",
+                ],
+            ],
+        )
+        mpts_common.add_test(
             LAST_TEST,
+            ["choice", ["tijera", "tijera"]],
+            [
+                "output",
+                [
+                    "PIEDRA, PAPEL, ... ¡TIJERA!",
+                    "Inés ha sacado tijera.",
+                    "Juan ha sacado tijera.",
+                    "Han empatado.",
+                ],
+            ],
         )
 
         # Exercise 56 END

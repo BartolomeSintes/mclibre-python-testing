@@ -13,19 +13,17 @@ def exercise(exercise_id):
         # Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["TIRADA DE DADOS", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["TIRADA DE DADOS", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["TIRADA DE DADOS", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["TIRADA DE DADOS", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Varios
@@ -39,7 +37,12 @@ def exercise(exercise_id):
         for i in range(a):
             tmp += f"{tmp_random[i]} "
         tmp_output += [tmp]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varios
         a = random.randrange(10, 21)
@@ -52,7 +55,12 @@ def exercise(exercise_id):
         for i in range(a):
             tmp += f"{tmp_random[i]} "
         tmp_output += [tmp]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 71 END
 
@@ -63,28 +71,25 @@ def exercise(exercise_id):
         # Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["TIRADAS DE DADO", "Número de jugadores: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["TIRADAS DE DADO", "Número de jugadores: ", "¡Imposible!"]],
         )
 
         # Uno
         a = 1
         mpts_common.add_test(
-            [a],
-            [],
-            ["TIRADAS DE DADO", "Número de jugadores: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["TIRADAS DE DADO", "Número de jugadores: ", "¡Imposible!"]],
         )
 
         # Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["TIRADAS DE DADO", "Número de jugadores: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["TIRADAS DE DADO", "Número de jugadores: ", "¡Imposible!"]],
         )
 
         # Varios
@@ -96,7 +101,12 @@ def exercise(exercise_id):
         tmp_output = ["TIRADAS DE DADO", "Número de jugadores: "]
         for i in range(a):
             tmp_output += [f"Jugador {i + 1}: {tmp_random[i]} "]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varios
         a = random.randrange(11, 21)
@@ -107,7 +117,12 @@ def exercise(exercise_id):
         tmp_output = ["TIRADAS DE DADO", "Número de jugadores: "]
         for i in range(a):
             tmp_output += [f"Jugador {i + 1}: {tmp_random[i]} "]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 72 END
 
@@ -118,79 +133,85 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["OBTENER VALOR (1)", "Número de jugadores: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["OBTENER VALOR (1)", "Número de jugadores: ", "¡Imposible!"]],
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["OBTENER VALOR (1)", "Número de jugadores: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["OBTENER VALOR (1)", "Número de jugadores: ", "¡Imposible!"]],
         )
 
         # Objetivo: Cero
         a = random.randrange(1, 20)
         b = 0
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "OBTENER VALOR (1)",
-                "Número de jugadores: ",
-                "Valor a conseguir: ",
-                f"¡Imposible conseguir un {b}!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "OBTENER VALOR (1)",
+                    "Número de jugadores: ",
+                    "Valor a conseguir: ",
+                    f"¡Imposible conseguir un {b}!",
+                ],
+            ],
         )
 
         # Objetivo: negativo
         a = random.randrange(1, 20)
         b = -random.randrange(1, 20)
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "OBTENER VALOR (1)",
-                "Número de jugadores: ",
-                "Valor a conseguir: ",
-                f"¡Imposible conseguir un {b}!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "OBTENER VALOR (1)",
+                    "Número de jugadores: ",
+                    "Valor a conseguir: ",
+                    f"¡Imposible conseguir un {b}!",
+                ],
+            ],
         )
 
         # Objetivo: Siete
         a = random.randrange(1, 20)
         b = 7
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "OBTENER VALOR (1)",
-                "Número de jugadores: ",
-                "Valor a conseguir: ",
-                f"¡Imposible conseguir un {b}!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "OBTENER VALOR (1)",
+                    "Número de jugadores: ",
+                    "Valor a conseguir: ",
+                    f"¡Imposible conseguir un {b}!",
+                ],
+            ],
         )
 
         # Objetivo: mayor que siete
         a = random.randrange(1, 20)
         b = random.randrange(8, 20)
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "OBTENER VALOR (1)",
-                "Número de jugadores: ",
-                "Valor a conseguir: ",
-                f"¡Imposible conseguir un {b}!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "OBTENER VALOR (1)",
+                    "Número de jugadores: ",
+                    "Valor a conseguir: ",
+                    f"¡Imposible conseguir un {b}!",
+                ],
+            ],
         )
 
         # Varios
@@ -210,7 +231,12 @@ def exercise(exercise_id):
                 tmp_output += [f"Jugador {i + 1}: {tmp_random[i]} CONSEGUIDO"]
             else:
                 tmp_output += [f"Jugador {i + 1}: {tmp_random[i]}"]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varios (algún acierto)
         a = random.randrange(1, 11)
@@ -230,7 +256,12 @@ def exercise(exercise_id):
                 tmp_output += [f"Jugador {i + 1}: {tmp_random[i]} CONSEGUIDO"]
             else:
                 tmp_output += [f"Jugador {i + 1}: {tmp_random[i]}"]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 73 END
 
@@ -241,79 +272,85 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["OBTENER VALOR (2)", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["OBTENER VALOR (2)", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["OBTENER VALOR (2)", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["OBTENER VALOR (2)", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Objetivo: Cero
         a = random.randrange(1, 20)
         b = 0
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "OBTENER VALOR (2)",
-                "Número de dados: ",
-                "Valor a conseguir: ",
-                f"¡Imposible conseguir un {b}!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "OBTENER VALOR (2)",
+                    "Número de dados: ",
+                    "Valor a conseguir: ",
+                    f"¡Imposible conseguir un {b}!",
+                ],
+            ],
         )
 
         # Objetivo: negativo
         a = random.randrange(1, 20)
         b = -random.randrange(1, 20)
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "OBTENER VALOR (2)",
-                "Número de dados: ",
-                "Valor a conseguir: ",
-                f"¡Imposible conseguir un {b}!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "OBTENER VALOR (2)",
+                    "Número de dados: ",
+                    "Valor a conseguir: ",
+                    f"¡Imposible conseguir un {b}!",
+                ],
+            ],
         )
 
         # Objetivo: Siete
         a = random.randrange(1, 20)
         b = 7
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "OBTENER VALOR (2)",
-                "Número de dados: ",
-                "Valor a conseguir: ",
-                f"¡Imposible conseguir un {b}!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "OBTENER VALOR (2)",
+                    "Número de dados: ",
+                    "Valor a conseguir: ",
+                    f"¡Imposible conseguir un {b}!",
+                ],
+            ],
         )
 
         # Objetivo: mayor que siete
         a = random.randrange(1, 20)
         b = random.randrange(8, 20)
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "OBTENER VALOR (2)",
-                "Número de dados: ",
-                "Valor a conseguir: ",
-                f"¡Imposible conseguir un {b}!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "OBTENER VALOR (2)",
+                    "Número de dados: ",
+                    "Valor a conseguir: ",
+                    f"¡Imposible conseguir un {b}!",
+                ],
+            ],
         )
 
         # Varios: pierde
@@ -333,7 +370,12 @@ def exercise(exercise_id):
             tmp += f"{tmp_random[i]} "
         tmp_output += [tmp]
         tmp_output += ["El jugador ha perdido."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varios: gana
         a = random.randrange(1, 11)
@@ -350,7 +392,12 @@ def exercise(exercise_id):
             tmp += f"{tmp_random[i]} "
         tmp_output += [tmp]
         tmp_output += ["El jugador ha ganado."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 74 END
 
@@ -361,19 +408,17 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["EL DADO MÁS ALTO (1)", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["EL DADO MÁS ALTO (1)", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["EL DADO MÁS ALTO (1)", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["EL DADO MÁS ALTO (1)", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Dado máximo entre 1 y 3
@@ -391,7 +436,12 @@ def exercise(exercise_id):
             tmp += f"{tmp_random[i]} "
         tmp_output += [tmp]
         tmp_output += [f"El dado más alto es {b}."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Dado máximo entre 4 y 6
         a = random.randrange(1, 11)
@@ -408,7 +458,12 @@ def exercise(exercise_id):
             tmp += f"{tmp_random[i]} "
         tmp_output += [tmp]
         tmp_output += [f"El dado más alto es {b}."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 75 END
 
@@ -419,19 +474,17 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["EL DADO MÁS ALTO (2)", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["EL DADO MÁS ALTO (2)", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["EL DADO MÁS ALTO (2)", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["EL DADO MÁS ALTO (2)", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Gana el jugador 1
@@ -465,7 +518,12 @@ def exercise(exercise_id):
 
         tmp_output += ["Ha ganado el jugador 1."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # # Gana el jugador 2
         a = random.randrange(1, 11)
@@ -498,7 +556,12 @@ def exercise(exercise_id):
 
         tmp_output += ["Ha ganado el jugador 2."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Empate
         a = random.randrange(1, 11)
@@ -531,7 +594,12 @@ def exercise(exercise_id):
 
         tmp_output += ["Han empatado."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 76 END
 
@@ -542,19 +610,17 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["PARES Y NONES", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["PARES Y NONES", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["PARES Y NONES", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["PARES Y NONES", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Gana el jugador pares
@@ -577,7 +643,12 @@ def exercise(exercise_id):
 
         tmp_output += ["Ha ganado el jugador de los pares."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Gana el jugador impares
         a = random.randrange(1, 11)
@@ -599,7 +670,12 @@ def exercise(exercise_id):
 
         tmp_output += ["Ha ganado el jugador de los impares."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Empate
         a = random.randrange(1, 11)
@@ -621,8 +697,12 @@ def exercise(exercise_id):
 
         tmp_output += ["Han empatado."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
-
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
         # Exercise 77 END
 
     elif exercise_id == 78:
@@ -632,28 +712,25 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["EL DADO MÁS BAJO", "Número de jugadores: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["EL DADO MÁS BAJO", "Número de jugadores: ", "¡Imposible!"]],
         )
 
         # Jugadores: Uno
         a = 1
         mpts_common.add_test(
-            [a],
-            [],
-            ["EL DADO MÁS BAJO", "Número de jugadores: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["EL DADO MÁS BAJO", "Número de jugadores: ", "¡Imposible!"]],
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["EL DADO MÁS BAJO", "Número de jugadores: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["EL DADO MÁS BAJO", "Número de jugadores: ", "¡Imposible!"]],
         )
 
         # Dado más bajo: sólo hay uno
@@ -674,7 +751,12 @@ def exercise(exercise_id):
 
         tmp_output += [f"Ha ganado el jugador {ganador + 1}."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Dado más bajo: hay dos
         a = random.randrange(2, 11)
@@ -696,7 +778,12 @@ def exercise(exercise_id):
 
         tmp_output += [f"Ha ganado el jugador {max(lista) + 1}."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Dado más bajo: hay más de dos
         a = random.randrange(8, 11)
@@ -718,7 +805,13 @@ def exercise(exercise_id):
 
         tmp_output += [f"Ha ganado el jugador {max(lista) + 1}."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
+
         # Exercise 78 END
 
     elif exercise_id == 79:
@@ -728,28 +821,34 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: ", "¡Imposible!"],
+            ],
         )
 
         # Jugadores: Uno
         a = 1
         mpts_common.add_test(
-            [a],
-            [],
-            ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: ", "¡Imposible!"],
+            ],
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                ["DADO MÁS ALTO Y MÁS BAJO", "Número de dados: ", "¡Imposible!"],
+            ],
         )
 
         # Gana el jugador 2
@@ -786,7 +885,12 @@ def exercise(exercise_id):
 
         tmp_output += [f"Ha ganado el jugador 2."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Gana el jugador 1
         a = random.randrange(2, 11)
@@ -822,7 +926,12 @@ def exercise(exercise_id):
 
         tmp_output += [f"Ha ganado el jugador 1."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Empatan
         a = random.randrange(2, 11)
@@ -858,7 +967,12 @@ def exercise(exercise_id):
 
         tmp_output += [f"Han empatado."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 79 END
 
@@ -869,28 +983,25 @@ def exercise(exercise_id):
         # Jugadores: Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Jugadores: Uno
         a = 1
         mpts_common.add_test(
-            [a],
-            [],
-            ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Jugadores: Negativo
         a = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a],
-            [],
-            ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"],
             NOT_LAST_TEST,
+            ["input", [a]],
+            ["output", ["DADOS IGUALES", "Número de dados: ", "¡Imposible!"]],
         )
 
         # Gana
@@ -915,7 +1026,12 @@ def exercise(exercise_id):
 
         tmp_output += ["El jugador ha ganado."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Pierde
         a = random.randrange(2, 11)
@@ -931,7 +1047,7 @@ def exercise(exercise_id):
             tmp_random += [dado]
             anterior = dado
         # Cambia uno al azar por el anterior
-        c = random.randrange(a-1)
+        c = random.randrange(a - 1)
         tmp_random[c + 1] = tmp_random[c]
 
         tmp_output = ["DADOS IGUALES", "Número de dados: "]
@@ -942,6 +1058,11 @@ def exercise(exercise_id):
 
         tmp_output += ["El jugador ha perdido."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 80 END

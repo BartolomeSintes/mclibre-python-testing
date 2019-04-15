@@ -11,7 +11,7 @@ def exercise(exercise_id):
         # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # Comprueba salida
-        mpts_common.add_test([], [], ["¡Hola, mundo!"], LAST_TEST)
+        mpts_common.add_test(LAST_TEST, ["output", ["¡Hola, mundo!"]])
         # Exercise 1001 END
 
     elif exercise_id == 1002:
@@ -20,7 +20,7 @@ def exercise(exercise_id):
 
         # Comprueba salida
         mpts_common.add_test(
-            [], [], ["SALUDANDO", "¡Hola, mundo!", "¡Adios, amigo!"], LAST_TEST
+            LAST_TEST, ["output", ["SALUDANDO", "¡Hola, mundo!", "¡Adios, amigo!"]]
         )
 
         # Exercise 1002 END
@@ -33,28 +33,32 @@ def exercise(exercise_id):
         numero = random.randrange(0, 10)
 
         mpts_common.add_test(
-            [numero],
-            [],
-            [
-                "ESCRIBA NÚMERO",
-                "Escriba un número entero: ",
-                f"Ha escrito el número {numero}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [numero]],
+            [
+                "output",
+                [
+                    "ESCRIBA NÚMERO",
+                    "Escriba un número entero: ",
+                    f"Ha escrito el número {numero}.",
+                ],
+            ],
         )
 
         # número negativo
         numero = random.randrange(-100, 0)
 
         mpts_common.add_test(
-            [numero],
-            [],
-            [
-                "ESCRIBA NÚMERO",
-                "Escriba un número entero: ",
-                f"Ha escrito el número {numero}.",
-            ],
             LAST_TEST,
+            ["input", [numero]],
+            [
+                "output",
+                [
+                    "ESCRIBA NÚMERO",
+                    "Escriba un número entero: ",
+                    f"Ha escrito el número {numero}.",
+                ],
+            ],
         )
 
         # Exercise 1003 END
@@ -68,15 +72,17 @@ def exercise(exercise_id):
         c = a + b
 
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "SUMA NÚMEROS",
-                "Escriba un número: ",
-                "Escriba otro número: ",
-                f"{a} + {b} = {c}",
-            ],
             LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "SUMA NÚMEROS",
+                    "Escriba un número: ",
+                    "Escriba otro número: ",
+                    f"{a} + {b} = {c}",
+                ],
+            ],
         )
 
         # Exercise 1004 END
@@ -90,15 +96,17 @@ def exercise(exercise_id):
         b = random.randrange(10 * a, 20000) / 10
 
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "NÚMEROS CRECIENTES",
-                "Escriba un número: ",
-                "Escriba otro número más grande: ",
-                "Gracias por su colaboración.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "NÚMEROS CRECIENTES",
+                    "Escriba un número: ",
+                    "Escriba otro número más grande: ",
+                    "Gracias por su colaboración.",
+                ],
+            ],
         )
 
         # números decrecientes
@@ -106,15 +114,17 @@ def exercise(exercise_id):
         b = random.randrange(0, round(a) - 1)
 
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "NÚMEROS CRECIENTES",
-                "Escriba un número: ",
-                "Escriba otro número más grande: ",
-                "¡Le he pedido un número más grande!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "NÚMEROS CRECIENTES",
+                    "Escriba un número: ",
+                    "Escriba otro número más grande: ",
+                    "¡Le he pedido un número más grande!",
+                ],
+            ],
         )
 
         # números iguales
@@ -122,15 +132,17 @@ def exercise(exercise_id):
         b = a
 
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "NÚMEROS CRECIENTES",
-                "Escriba un número: ",
-                "Escriba otro número más grande: ",
-                "¡Le he pedido un número más grande!",
-            ],
             LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "NÚMEROS CRECIENTES",
+                    "Escriba un número: ",
+                    "Escriba otro número más grande: ",
+                    "¡Le he pedido un número más grande!",
+                ],
+            ],
         )
         # Exercise 1005 END
 
@@ -140,7 +152,11 @@ def exercise(exercise_id):
         # número pequeño
         a = random.randrange(1, 7)
 
-        mpts_common.add_test([], [a], ["TIRADA DE DADO", f"Ha salido un {a}."], LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a]],
+            ["output", ["TIRADA DE DADO", f"Ha salido un {a}."]],
+        )
 
         # Exercise 1006 END
 
@@ -150,20 +166,28 @@ def exercise(exercise_id):
 
         # letra fija
         mpts_common.add_test(
-            ["a"],
-            [],
-            ["ESCRIBA LETRA", "Escriba una letra: ", f"Ha escrito la letra a."],
             NOT_LAST_TEST,
+            ["input", ["a"]],
+            [
+                "output",
+                ["ESCRIBA LETRA", "Escriba una letra: ", f"Ha escrito la letra a."],
+            ],
         )
 
         # letra
         letra = random.choice(["a", "b", "c", "d"])
 
         mpts_common.add_test(
-            [letra],
-            [],
-            ["ESCRIBA LETRA", "Escriba una letra: ", f"Ha escrito la letra {letra}."],
             LAST_TEST,
+            ["input", [letra]],
+            [
+                "output",
+                [
+                    "ESCRIBA LETRA",
+                    "Escriba una letra: ",
+                    f"Ha escrito la letra {letra}.",
+                ],
+            ],
         )
 
         # Exercise 1007 END

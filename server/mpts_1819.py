@@ -13,27 +13,31 @@ def exercise(exercise_id):
         # Cantidad negativa
         a = -random.randrange(1, 10000)
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                "Ha indicado una cantidad negativa.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    "Ha indicado una cantidad negativa.",
+                ],
+            ],
         )
 
         # Cantidad no múltiplo de cien
         a = 100 * random.randrange(0, 100) + random.randrange(1, 100)
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                "No ha indicado una cantidad múltiplo de cien.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    "No ha indicado una cantidad múltiplo de cien.",
+                ],
+            ],
         )
 
         # Sólo billetes de 100
@@ -42,17 +46,19 @@ def exercise(exercise_id):
         b100 = 1
         a = 500 * b500 + 200 * b200 + 100 * b100
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                f"Puede pagar {a} con:",
-                f"* {b500} billete(s) de 500 €",
-                f"* {b200} billete(s) de 200 €",
-                f"* {b100} billete(s) de 100 €",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    f"Puede pagar {a} con:",
+                    f"* {b500} billete(s) de 500 €",
+                    f"* {b200} billete(s) de 200 €",
+                    f"* {b100} billete(s) de 100 €",
+                ],
+            ],
         )
 
         # Sólo billetes de 200
@@ -61,17 +67,19 @@ def exercise(exercise_id):
         b100 = 0
         a = 500 * b500 + 200 * b200 + 100 * b100
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                f"Puede pagar {a} con:",
-                f"* {b500} billete(s) de 500 €",
-                f"* {b200} billete(s) de 200 €",
-                f"* {b100} billete(s) de 100 €",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    f"Puede pagar {a} con:",
+                    f"* {b500} billete(s) de 500 €",
+                    f"* {b200} billete(s) de 200 €",
+                    f"* {b100} billete(s) de 100 €",
+                ],
+            ],
         )
 
         # Sólo billetes de 500
@@ -80,17 +88,19 @@ def exercise(exercise_id):
         b100 = 0
         a = 500 * b500 + 200 * b200 + 100 * b100
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                f"Puede pagar {a} con:",
-                f"* {b500} billete(s) de 500 €",
-                f"* {b200} billete(s) de 200 €",
-                f"* {b100} billete(s) de 100 €",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    f"Puede pagar {a} con:",
+                    f"* {b500} billete(s) de 500 €",
+                    f"* {b200} billete(s) de 200 €",
+                    f"* {b100} billete(s) de 100 €",
+                ],
+            ],
         )
 
         # Billetes de 100 y 200
@@ -99,17 +109,19 @@ def exercise(exercise_id):
         b100 = 1
         a = 500 * b500 + 200 * b200 + 100 * b100
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                f"Puede pagar {a} con:",
-                f"* {b500} billete(s) de 500 €",
-                f"* {b200} billete(s) de 200 €",
-                f"* {b100} billete(s) de 100 €",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    f"Puede pagar {a} con:",
+                    f"* {b500} billete(s) de 500 €",
+                    f"* {b200} billete(s) de 200 €",
+                    f"* {b100} billete(s) de 100 €",
+                ],
+            ],
         )
 
         # Billetes de 100 y 500
@@ -118,17 +130,19 @@ def exercise(exercise_id):
         b100 = 1
         a = 500 * b500 + 200 * b200 + 100 * b100
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                f"Puede pagar {a} con:",
-                f"* {b500} billete(s) de 500 €",
-                f"* {b200} billete(s) de 200 €",
-                f"* {b100} billete(s) de 100 €",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    f"Puede pagar {a} con:",
+                    f"* {b500} billete(s) de 500 €",
+                    f"* {b200} billete(s) de 200 €",
+                    f"* {b100} billete(s) de 100 €",
+                ],
+            ],
         )
 
         # Billetes de 200 y 500
@@ -137,17 +151,19 @@ def exercise(exercise_id):
         b100 = 0
         a = 500 * b500 + 200 * b200 + 100 * b100
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                f"Puede pagar {a} con:",
-                f"* {b500} billete(s) de 500 €",
-                f"* {b200} billete(s) de 200 €",
-                f"* {b100} billete(s) de 100 €",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    f"Puede pagar {a} con:",
+                    f"* {b500} billete(s) de 500 €",
+                    f"* {b200} billete(s) de 200 €",
+                    f"* {b100} billete(s) de 100 €",
+                ],
+            ],
         )
 
         # Billetes de 100, 200 y 500
@@ -156,17 +172,19 @@ def exercise(exercise_id):
         b100 = 1
         a = 500 * b500 + 200 * b200 + 100 * b100
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "CONTANDO BILLETES",
-                "Escriba una cantidad de dinero (múltiplo de 100): ",
-                f"Puede pagar {a} con:",
-                f"* {b500} billete(s) de 500 €",
-                f"* {b200} billete(s) de 200 €",
-                f"* {b100} billete(s) de 100 €",
-            ],
             LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTANDO BILLETES",
+                    "Escriba una cantidad de dinero (múltiplo de 100): ",
+                    f"Puede pagar {a} con:",
+                    f"* {b500} billete(s) de 500 €",
+                    f"* {b200} billete(s) de 200 €",
+                    f"* {b100} billete(s) de 100 €",
+                ],
+            ],
         )
 
         # Exercise 181901 END
@@ -178,29 +196,33 @@ def exercise(exercise_id):
         # Cantidad negativa
         a = -random.randrange(1, 10000)
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "SU CAMBIO",
-                "¿Cuánto tiene que pagar? ",
-                "Ha indicado una cantidad negativa.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "SU CAMBIO",
+                    "¿Cuánto tiene que pagar? ",
+                    "Ha indicado una cantidad negativa.",
+                ],
+            ],
         )
 
         # Billetes 200 negativos
         a = random.randrange(1, 10000)
         b200 = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a, b200],
-            [],
-            [
-                "SU CAMBIO",
-                "¿Cuánto tiene que pagar? ",
-                "¿Cuántos billetes de 200 € entrega? ",
-                "Ha indicado una cantidad negativa.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b200]],
+            [
+                "output",
+                [
+                    "SU CAMBIO",
+                    "¿Cuánto tiene que pagar? ",
+                    "¿Cuántos billetes de 200 € entrega? ",
+                    "Ha indicado una cantidad negativa.",
+                ],
+            ],
         )
 
         # Billetes 100 negativos
@@ -208,16 +230,18 @@ def exercise(exercise_id):
         b200 = random.randrange(1, 10)
         b100 = -random.randrange(1, 10)
         mpts_common.add_test(
-            [a, b200, b100],
-            [],
-            [
-                "SU CAMBIO",
-                "¿Cuánto tiene que pagar? ",
-                "¿Cuántos billetes de 200 € entrega? ",
-                "¿Cuántos billetes de 100 € entrega? ",
-                "Ha indicado una cantidad negativa.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b200, b100]],
+            [
+                "output",
+                [
+                    "SU CAMBIO",
+                    "¿Cuánto tiene que pagar? ",
+                    "¿Cuántos billetes de 200 € entrega? ",
+                    "¿Cuántos billetes de 100 € entrega? ",
+                    "Ha indicado una cantidad negativa.",
+                ],
+            ],
         )
 
         # Cantidad exacta
@@ -225,16 +249,18 @@ def exercise(exercise_id):
         b100 = random.randrange(1, 10)
         a = 200 * b200 + 100 * b100
         mpts_common.add_test(
-            [a, b200, b100],
-            [],
-            [
-                "SU CAMBIO",
-                "¿Cuánto tiene que pagar? ",
-                "¿Cuántos billetes de 200 € entrega? ",
-                "¿Cuántos billetes de 100 € entrega? ",
-                "Ha entregado la cantidad exacta.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b200, b100]],
+            [
+                "output",
+                [
+                    "SU CAMBIO",
+                    "¿Cuánto tiene que pagar? ",
+                    "¿Cuántos billetes de 200 € entrega? ",
+                    "¿Cuántos billetes de 100 € entrega? ",
+                    "Ha entregado la cantidad exacta.",
+                ],
+            ],
         )
 
         # Falta dinero
@@ -243,16 +269,18 @@ def exercise(exercise_id):
         b = random.randrange(1, 500)
         a = 200 * b200 + 100 * b100 + b
         mpts_common.add_test(
-            [a, b200, b100],
-            [],
-            [
-                "SU CAMBIO",
-                "¿Cuánto tiene que pagar? ",
-                "¿Cuántos billetes de 200 € entrega? ",
-                "¿Cuántos billetes de 100 € entrega? ",
-                f"Le falta entregar {b} €.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b200, b100]],
+            [
+                "output",
+                [
+                    "SU CAMBIO",
+                    "¿Cuánto tiene que pagar? ",
+                    "¿Cuántos billetes de 200 € entrega? ",
+                    "¿Cuántos billetes de 100 € entrega? ",
+                    f"Le falta entregar {b} €.",
+                ],
+            ],
         )
 
         # Sobra dinero
@@ -261,16 +289,18 @@ def exercise(exercise_id):
         b = random.randrange(1, 200 * b200 + 100 * b100)
         a = 200 * b200 + 100 * b100 - b
         mpts_common.add_test(
-            [a, b200, b100],
-            [],
-            [
-                "SU CAMBIO",
-                "¿Cuánto tiene que pagar? ",
-                "¿Cuántos billetes de 200 € entrega? ",
-                "¿Cuántos billetes de 100 € entrega? ",
-                f"Su cambio es de {b} €.",
-            ],
             LAST_TEST,
+            ["input", [a, b200, b100]],
+            [
+                "output",
+                [
+                    "SU CAMBIO",
+                    "¿Cuánto tiene que pagar? ",
+                    "¿Cuántos billetes de 200 € entrega? ",
+                    "¿Cuántos billetes de 100 € entrega? ",
+                    f"Su cambio es de {b} €.",
+                ],
+            ],
         )
 
         # Exercise 181902 END
@@ -282,72 +312,82 @@ def exercise(exercise_id):
         # lado1: cantidad negativa
         a = -random.randrange(2, 100)
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "¡El valor debe ser positivo!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "¡El valor debe ser positivo!",
+                ],
+            ],
         )
 
         # lado1: 0
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "¡El valor debe ser positivo!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "¡El valor debe ser positivo!",
+                ],
+            ],
         )
 
         # lado2: cantidad negativa
         a = random.randrange(2, 100)
         b = -random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "¡El valor debe ser positivo!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "¡El valor debe ser positivo!",
+                ],
+            ],
         )
 
         # lado2: 0
         a = random.randrange(2, 100)
         b = 0
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "¡El valor debe ser positivo!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "¡El valor debe ser positivo!",
+                ],
+            ],
         )
 
         # lado2: mayor que lado1
         a = random.randrange(2, 100)
         b = a + random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "¡Le he pedido que escribiera primero el lado más largo!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "¡Le he pedido que escribiera primero el lado más largo!",
+                ],
+            ],
         )
 
         # lado3: cantidad negativa
@@ -355,16 +395,18 @@ def exercise(exercise_id):
         b = random.randrange(1, a)
         c = -random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "Escriba la longitud del tercer lado: ",
-                "¡El valor debe ser positivo!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "Escriba la longitud del tercer lado: ",
+                    "¡El valor debe ser positivo!",
+                ],
+            ],
         )
 
         # lado3: 0
@@ -372,16 +414,18 @@ def exercise(exercise_id):
         b = random.randrange(1, a)
         c = 0
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "Escriba la longitud del tercer lado: ",
-                "¡El valor debe ser positivo!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "Escriba la longitud del tercer lado: ",
+                    "¡El valor debe ser positivo!",
+                ],
+            ],
         )
 
         # lado3: mayor que lado1
@@ -389,16 +433,18 @@ def exercise(exercise_id):
         b = random.randrange(1, a + 1)
         c = a + random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "Escriba la longitud del tercer lado: ",
-                "¡Le he pedido que escribiera primero el lado más largo!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "Escriba la longitud del tercer lado: ",
+                    "¡Le he pedido que escribiera primero el lado más largo!",
+                ],
+            ],
         )
 
         # lado3: triángulo posible
@@ -406,16 +452,18 @@ def exercise(exercise_id):
         b = random.randrange(1, a)
         c = random.randrange(a - b + 1, a + 1)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "Escriba la longitud del tercer lado: ",
-                f"Un triángulo puede tener como lados {a}, {b} y {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "Escriba la longitud del tercer lado: ",
+                    f"Un triángulo puede tener como lados {a}, {b} y {c}.",
+                ],
+            ],
         )
 
         # lado3: triángulo imposible
@@ -423,16 +471,18 @@ def exercise(exercise_id):
         b = random.randrange(1, a)
         c = random.randrange(1, a - b)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "Escriba la longitud del tercer lado: ",
-                f"Un triángulo no puede tener como lados {a}, {b} y {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "Escriba la longitud del tercer lado: ",
+                    f"Un triángulo no puede tener como lados {a}, {b} y {c}.",
+                ],
+            ],
         )
 
         # lado3: triángulo degenerado
@@ -440,16 +490,18 @@ def exercise(exercise_id):
         b = random.randrange(1, a)
         c = a - b
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "ANALIZADOR DE TRIÁNGULOS",
-                "Escriba la longitud del lado más largo: ",
-                "Escriba la longitud del segundo lado: ",
-                "Escriba la longitud del tercer lado: ",
-                "Los datos corresponden a un triángulo degenerado.",
-            ],
             LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ANALIZADOR DE TRIÁNGULOS",
+                    "Escriba la longitud del lado más largo: ",
+                    "Escriba la longitud del segundo lado: ",
+                    "Escriba la longitud del tercer lado: ",
+                    "Los datos corresponden a un triángulo degenerado.",
+                ],
+            ],
         )
 
         # Exercise 181903 END
@@ -462,15 +514,17 @@ def exercise(exercise_id):
         a = random.randrange(-100, 101)
         b = a
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "¡Ha repetido el número!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "¡Ha repetido el número!",
+                ],
+            ],
         )
 
         # a y c iguales
@@ -478,16 +532,18 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 100)
         c = a
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "Escriba otro número entero distinto a los anteriores: ",
-                "¡Ha repetido algún número!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "Escriba otro número entero distinto a los anteriores: ",
+                    "¡Ha repetido algún número!",
+                ],
+            ],
         )
 
         # b y c iguales
@@ -495,16 +551,18 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 100)
         c = b
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "Escriba otro número entero distinto a los anteriores: ",
-                "¡Ha repetido algún número!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "Escriba otro número entero distinto a los anteriores: ",
+                    "¡Ha repetido algún número!",
+                ],
+            ],
         )
 
         # orden c - a - b
@@ -512,16 +570,18 @@ def exercise(exercise_id):
         b = a + random.randrange(1, 100)
         c = a - random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "Escriba otro número entero distinto a los anteriores: ",
-                f"{a} está entre {b} y {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "Escriba otro número entero distinto a los anteriores: ",
+                    f"{a} está entre {b} y {c}.",
+                ],
+            ],
         )
 
         # orden b - a - c
@@ -529,16 +589,18 @@ def exercise(exercise_id):
         b = a - random.randrange(1, 100)
         c = a + random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "Escriba otro número entero distinto a los anteriores: ",
-                f"{a} está entre {b} y {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "Escriba otro número entero distinto a los anteriores: ",
+                    f"{a} está entre {b} y {c}.",
+                ],
+            ],
         )
 
         # orden a - b - c
@@ -546,16 +608,18 @@ def exercise(exercise_id):
         c = b + random.randrange(1, 100)
         a = b - random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "Escriba otro número entero distinto a los anteriores: ",
-                f"{b} está entre {a} y {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "Escriba otro número entero distinto a los anteriores: ",
+                    f"{b} está entre {a} y {c}.",
+                ],
+            ],
         )
 
         # orden c - b - a
@@ -563,16 +627,18 @@ def exercise(exercise_id):
         c = b - random.randrange(1, 100)
         a = b + random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "Escriba otro número entero distinto a los anteriores: ",
-                f"{b} está entre {a} y {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "Escriba otro número entero distinto a los anteriores: ",
+                    f"{b} está entre {a} y {c}.",
+                ],
+            ],
         )
 
         # orden a - c - b
@@ -580,16 +646,18 @@ def exercise(exercise_id):
         b = c + random.randrange(1, 100)
         a = c - random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "Escriba otro número entero distinto a los anteriores: ",
-                f"{c} está entre {a} y {b}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "Escriba otro número entero distinto a los anteriores: ",
+                    f"{c} está entre {a} y {b}.",
+                ],
+            ],
         )
 
         # orden b - c - a
@@ -597,16 +665,18 @@ def exercise(exercise_id):
         b = c - random.randrange(1, 100)
         a = c + random.randrange(1, 100)
         mpts_common.add_test(
-            [a, b, c],
-            [],
-            [
-                "EL NÚMERO DE EN MEDIO",
-                "Escriba un número entero: ",
-                "Escriba otro número entero distinto: ",
-                "Escriba otro número entero distinto a los anteriores: ",
-                f"{c} está entre {a} y {b}.",
-            ],
             LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "EL NÚMERO DE EN MEDIO",
+                    "Escriba un número entero: ",
+                    "Escriba otro número entero distinto: ",
+                    "Escriba otro número entero distinto a los anteriores: ",
+                    f"{c} está entre {a} y {b}.",
+                ],
+            ],
         )
 
         # Exercise 181904 END

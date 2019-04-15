@@ -15,16 +15,18 @@ def exercise(exercise_id):
         mes = random.randrange(1, 13)
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # dia < 0
@@ -32,16 +34,18 @@ def exercise(exercise_id):
         mes = random.randrange(1, 13)
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # dia >= 32
@@ -49,16 +53,18 @@ def exercise(exercise_id):
         mes = random.randrange(1, 13)
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # mes == 0
@@ -66,16 +72,18 @@ def exercise(exercise_id):
         mes = 0
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # mes < 0
@@ -83,16 +91,18 @@ def exercise(exercise_id):
         mes = -random.randrange(1, 13)
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # mes >= 13
@@ -100,16 +110,18 @@ def exercise(exercise_id):
         mes = random.randrange(13, 20)
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # dia 31 de mes con 31 días
@@ -117,16 +129,18 @@ def exercise(exercise_id):
         mes = random.choice([1, 3, 5, 7, 8, 10, 12])
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} existe",
+                ],
+            ],
         )
 
         # dia 31 de mes con menos de 31 días
@@ -134,16 +148,18 @@ def exercise(exercise_id):
         mes = random.choice([2, 4, 6, 9, 11])
         anyo = random.randrange(1583, 5000)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # dia 29 febrero múltiplo de 400
@@ -151,16 +167,18 @@ def exercise(exercise_id):
         mes = 2
         anyo = random.randrange(1600, 5000, 400)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} existe",
+                ],
+            ],
         )
 
         # dia 29 febrero múltiplo de 100 (no de 400)
@@ -168,16 +186,18 @@ def exercise(exercise_id):
         mes = 2
         anyo = 1600 + 400 * random.randrange(0, 11) + 100 * random.randrange(1, 4)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # dia 29 febrero múltiplo de 4 (no de 100)
@@ -185,16 +205,18 @@ def exercise(exercise_id):
         mes = 2
         anyo = 1600 + 100 * random.randrange(0, 5) + 4 * random.randrange(1, 25)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} existe",
-            ],
             NOT_LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} existe",
+                ],
+            ],
         )
 
         # dia 29 febrero no múltiplo de 4
@@ -202,16 +224,18 @@ def exercise(exercise_id):
         mes = 2
         anyo = 1584 + 4 * random.randrange(0, 150) + random.randrange(1, 4)
         mpts_common.add_test(
-            [dia, mes, anyo],
-            [],
-            [
-                "COMPROBACIÓN DE FECHA",
-                "Escriba el número de día: ",
-                "Escriba el número de mes: ",
-                "Escriba el número de año: ",
-                f"El día {dia} del mes {mes} del año {anyo} no existe",
-            ],
             LAST_TEST,
+            ["input", [dia, mes, anyo]],
+            [
+                "output",
+                [
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                ],
+            ],
         )
 
         # Exercise 32 END
@@ -223,22 +247,24 @@ def exercise(exercise_id):
         # dia == 0
         opcion = "c"
         mpts_common.add_test(
-            [opcion],
-            [],
-            [
-                "GALONES Y PINTAS",
-                "",
-                "Este programa permite:",
-                "a. Convertir litros en galones y pintas.",
-                "b. Convertir galones y pintas en litros",
-                "",
-                "Elija una opción: ",
-                "",
-                "Debe escribir a o b.",
-                "",
-                "Programa terminado",
-            ],
             LAST_TEST,
+            ["input", [opcion]],
+            [
+                "output",
+                [
+                    "GALONES Y PINTAS",
+                    "",
+                    "Este programa permite:",
+                    "a. Convertir litros en galones y pintas.",
+                    "b. Convertir galones y pintas en litros",
+                    "",
+                    "Elija una opción: ",
+                    "",
+                    "Debe escribir a o b.",
+                    "",
+                    "Programa terminado",
+                ],
+            ],
         )
 
         # Exercise 33 END

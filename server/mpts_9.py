@@ -16,14 +16,17 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b
         mpts_common.add_test(
-            [c],
-            [a, b],
-            [
-                "TABLAS DE MULTIPLICAR (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta correcta!",
-            ],
             NOT_LAST_TEST,
+            ["input", [c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta correcta!",
+                ],
+            ],
         )
 
         # Respuesta incorrecta
@@ -31,14 +34,17 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b + random.randrange(1, 10)
         mpts_common.add_test(
-            [c],
-            [a, b],
-            [
-                "TABLAS DE MULTIPLICAR (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta incorrecta!",
-            ],
             NOT_LAST_TEST,
+            ["input", [c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta incorrecta!",
+                ],
+            ],
         )
 
         # Respuesta incorrecta
@@ -46,14 +52,17 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b - random.randrange(1, 10)
         mpts_common.add_test(
-            [c],
-            [a, b],
-            [
-                "TABLAS DE MULTIPLICAR (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta incorrecta!",
-            ],
             LAST_TEST,
+            ["input", [c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta incorrecta!",
+                ],
+            ],
         )
 
         # Exercise 93 END
@@ -65,27 +74,31 @@ def exercise(exercise_id):
         # Número preguntas negativo
         n = -random.randrange(1, 11)
         mpts_common.add_test(
-            [n],
-            [],
-            [
-                "TABLAS DE MULTIPLICAR (2)",
-                "Número de preguntas: ",
-                "El número de preguntas debe ser al menos 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (2)",
+                    "Número de preguntas: ",
+                    "El número de preguntas debe ser al menos 1.",
+                ],
+            ],
         )
 
         # Número preguntas cero
         n = 0
         mpts_common.add_test(
-            [n],
-            [],
-            [
-                "TABLAS DE MULTIPLICAR (2)",
-                "Número de preguntas: ",
-                "El número de preguntas debe ser al menos 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (2)",
+                    "Número de preguntas: ",
+                    "El número de preguntas debe ser al menos 1.",
+                ],
+            ],
         )
 
         # Número preguntas 1 - Respuesta correcta
@@ -94,16 +107,19 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b
         mpts_common.add_test(
-            [n, c],
-            [a, b],
-            [
-                "TABLAS DE MULTIPLICAR (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta correcta!",
-            ],
             NOT_LAST_TEST,
+            ["input", [n, c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta correcta!",
+                ],
+            ],
         )
 
         # Número preguntas 1 - Respuesta incorrecta
@@ -112,16 +128,19 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b + random.randrange(1, 21)
         mpts_common.add_test(
-            [n, c],
-            [a, b],
-            [
-                "TABLAS DE MULTIPLICAR (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta incorrecta!",
-            ],
             NOT_LAST_TEST,
+            ["input", [n, c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta incorrecta!",
+                ],
+            ],
         )
 
         # Número preguntas n - Respuestas correctas
@@ -137,7 +156,12 @@ def exercise(exercise_id):
             tmp_input += [c]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Número preguntas n - Respuestas incorrectas
         n = random.randrange(3, 8)
@@ -152,7 +176,12 @@ def exercise(exercise_id):
             tmp_input += [c]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Número preguntas n - Respuestas correctas e incorrectas
         n = random.randrange(5, 10)
@@ -170,7 +199,12 @@ def exercise(exercise_id):
             else:
                 tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta incorrecta!"]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 94 END
 
@@ -181,27 +215,31 @@ def exercise(exercise_id):
         # Número preguntas negativo
         n = -random.randrange(1, 11)
         mpts_common.add_test(
-            [n],
-            [],
-            [
-                "TABLAS DE MULTIPLICAR (3)",
-                "Número de preguntas: ",
-                "El número de preguntas debe ser al menos 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (3)",
+                    "Número de preguntas: ",
+                    "El número de preguntas debe ser al menos 1.",
+                ],
+            ],
         )
 
         # Número preguntas cero
         n = 0
         mpts_common.add_test(
-            [n],
-            [],
-            [
-                "TABLAS DE MULTIPLICAR (3)",
-                "Número de preguntas: ",
-                "El número de preguntas debe ser al menos 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (3)",
+                    "Número de preguntas: ",
+                    "El número de preguntas debe ser al menos 1.",
+                ],
+            ],
         )
 
         # Número preguntas 1 - Respuesta correcta
@@ -210,20 +248,23 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b
         mpts_common.add_test(
-            [n, c],
-            [a, b],
-            [
-                "TABLAS DE MULTIPLICAR (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta correcta!",
-                "",
-                "Ha contestado correctamente 1 pregunta.",
-                "Le corresponde una nota de 10.0.",
-                "¡Enhorabuena!",
-            ],
             NOT_LAST_TEST,
+            ["input", [n, c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta correcta!",
+                    "",
+                    "Ha contestado correctamente 1 pregunta.",
+                    "Le corresponde una nota de 10.0.",
+                    "¡Enhorabuena!",
+                ],
+            ],
         )
 
         # Número preguntas 1 - Respuesta incorrecta
@@ -232,19 +273,22 @@ def exercise(exercise_id):
         b = random.randrange(2, 11)
         c = a * b + random.randrange(1, 21)
         mpts_common.add_test(
-            [n, c],
-            [a, b],
-            [
-                "TABLAS DE MULTIPLICAR (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta incorrecta!",
-                "",
-                "Ha contestado correctamente 0 preguntas.",
-                "Le corresponde una nota de 0.0.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n, c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "TABLAS DE MULTIPLICAR (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta incorrecta!",
+                    "",
+                    "Ha contestado correctamente 0 preguntas.",
+                    "Le corresponde una nota de 0.0.",
+                ],
+            ],
         )
 
         # Número preguntas n - Respuestas correctas
@@ -265,7 +309,12 @@ def exercise(exercise_id):
             "Le corresponde una nota de 10.0.",
             "¡Enhorabuena!",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Número preguntas n - Respuestas incorrectas
         n = random.randrange(3, 8)
@@ -284,7 +333,12 @@ def exercise(exercise_id):
             "Ha contestado correctamente 0 preguntas.",
             "Le corresponde una nota de 0.0.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Número preguntas n - Respuestas correctas e incorrectas, nota < 9
         n = random.randrange(5, 10)
@@ -311,7 +365,12 @@ def exercise(exercise_id):
             f"Ha contestado correctamente {n - nok} preguntas.",
             f"Le corresponde una nota de {nota}.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Número preguntas n - Respuestas correctas e incorrectas, nota 9
         n = 10
@@ -339,7 +398,12 @@ def exercise(exercise_id):
             f"Le corresponde una nota de {nota}.",
             "¡Enhorabuena!",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Número preguntas n - Respuestas correctas e incorrectas, nota mayor que 9
         n = random.randrange(11, 21)
@@ -367,8 +431,12 @@ def exercise(exercise_id):
             f"Le corresponde una nota de {nota}.",
             "¡Enhorabuena!",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
-
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
         # Exercise 95 END
 
     elif exercise_id == 96:
@@ -380,10 +448,17 @@ def exercise(exercise_id):
         b = random.randrange(11, 110)
         c = a * b
         mpts_common.add_test(
-            [c],
-            [a, b],
-            ["CÁLCULO ESTIMADO (1)", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"],
             NOT_LAST_TEST,
+            ["input", [c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta correcta!",
+                ],
+            ],
         )
 
         # Respuesta incorrecta < 10% por arriba
@@ -392,14 +467,17 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, round(c / 10))
         mpts_common.add_test(
-            [c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # Respuesta incorrecta < 10% por abajo
@@ -408,14 +486,17 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, round(c / 10))
         mpts_common.add_test(
-            [c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # Respuesta incorrecta < 30% por arriba
@@ -424,14 +505,17 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10), round(c / 10 * 3))
         mpts_common.add_test(
-            [c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # Respuesta incorrecta < 30% por arriba
@@ -440,14 +524,17 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10), round(c / 10 * 3))
         mpts_common.add_test(
-            [c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # Respuesta incorrecta > 30% por arriba
@@ -456,14 +543,17 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10 * 3), c)
         mpts_common.add_test(
-            [c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # Respuesta incorrecta > 30% por abajo
@@ -472,14 +562,17 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10 * 3), c)
         mpts_common.add_test(
-            [c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (1)",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
-            ],
             LAST_TEST,
+            ["input", [c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (1)",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # Exercise 96 END
@@ -491,27 +584,31 @@ def exercise(exercise_id):
         # Número preguntas negativo
         n = -random.randrange(1, 11)
         mpts_common.add_test(
-            [n],
-            [],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "El número de preguntas debe ser al menos 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "El número de preguntas debe ser al menos 1.",
+                ],
+            ],
         )
 
         # Número preguntas cero
         n = 0
         mpts_common.add_test(
-            [n],
-            [],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "El número de preguntas debe ser al menos 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "El número de preguntas debe ser al menos 1.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta correcta
@@ -519,16 +616,19 @@ def exercise(exercise_id):
         b = random.randrange(11, 100)
         c = a * b
         mpts_common.add_test(
-            [1, c],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta correcta!",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta correcta!",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta < 10% por arriba
@@ -537,16 +637,19 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
-            [1, c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta < 10% por abajo
@@ -555,16 +658,19 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
-            [1, c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta < 30% por arriba
@@ -573,16 +679,19 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
-            [1, c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta < 30% por abajo
@@ -591,16 +700,19 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
-            [1, c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta > 30% por arriba
@@ -609,16 +721,19 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
-            [1, c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta > 30% por abajo
@@ -627,16 +742,19 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(round(c / 10 * 3), c)
         mpts_common.add_test(
-            [1, c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (2)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (2)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                ],
+            ],
         )
 
         # n preguntas - Respuestas correctas
@@ -651,7 +769,12 @@ def exercise(exercise_id):
             tmp_input += [c]
             tmp_random += [a, b]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # n preguntas - 1 de cada
         n = 7
@@ -721,7 +844,12 @@ def exercise(exercise_id):
                     f"¿Cuánto es {a} x {b}? ",
                     f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
                 ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 97 END
 
@@ -732,27 +860,31 @@ def exercise(exercise_id):
         # Número preguntas negativo
         n = -random.randrange(1, 11)
         mpts_common.add_test(
-            [n],
-            [],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "El número de preguntas debe ser al menos 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "El número de preguntas debe ser al menos 1.",
+                ],
+            ],
         )
 
         # Número preguntas cero
         n = 0
         mpts_common.add_test(
-            [n],
-            [],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "El número de preguntas debe ser al menos 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "El número de preguntas debe ser al menos 1.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta correcta
@@ -760,19 +892,22 @@ def exercise(exercise_id):
         b = random.randrange(11, 110)
         c = a * b
         mpts_common.add_test(
-            [1, c],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                "¡Respuesta correcta!",
-                "",
-                "Le corresponde una nota de 10.0.",
-                "¡Enhorabuena!",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    "¡Respuesta correcta!",
+                    "",
+                    "Le corresponde una nota de 10.0.",
+                    "¡Enhorabuena!",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta < 10% por arriba
@@ -781,18 +916,21 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
-            [1, c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
-                "",
-                "Le corresponde una nota de 6.7.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                    "",
+                    "Le corresponde una nota de 6.7.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta < 10% por abajo
@@ -801,18 +939,21 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(1, math.ceil(c / 10))
         mpts_common.add_test(
-            [1, c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
-                "",
-                "Le corresponde una nota de 6.7.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 10%! La respuesta correcta era {c}.",
+                    "",
+                    "Le corresponde una nota de 6.7.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta < 30% por arriba
@@ -821,18 +962,21 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
-            [1, c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
-                "",
-                "Le corresponde una nota de 3.3.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                    "",
+                    "Le corresponde una nota de 3.3.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta < 30% por arriba
@@ -841,18 +985,21 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10), math.ceil(c / 10 * 3))
         mpts_common.add_test(
-            [1, c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
-                "",
-                "Le corresponde una nota de 3.3.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por menos del 30%! La respuesta correcta era {c}.",
+                    "",
+                    "Le corresponde una nota de 3.3.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta > 30% por arriba
@@ -861,18 +1008,21 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
-            [1, c + d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
-                "",
-                "Le corresponde una nota de 0.0.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c + d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                    "",
+                    "Le corresponde una nota de 0.0.",
+                ],
+            ],
         )
 
         # 1 pregunta - Respuesta incorrecta > 30% por abajo
@@ -881,18 +1031,21 @@ def exercise(exercise_id):
         c = a * b
         d = random.randrange(math.ceil(c / 10 * 3), c)
         mpts_common.add_test(
-            [1, c - d],
-            [a, b],
-            [
-                "CÁLCULO ESTIMADO (3)",
-                "Número de preguntas: ",
-                "",
-                f"¿Cuánto es {a} x {b}? ",
-                f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
-                "",
-                "Le corresponde una nota de 0.0.",
-            ],
             NOT_LAST_TEST,
+            ["input", [1, c - d]],
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "CÁLCULO ESTIMADO (3)",
+                    "Número de preguntas: ",
+                    "",
+                    f"¿Cuánto es {a} x {b}? ",
+                    f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
+                    "",
+                    "Le corresponde una nota de 0.0.",
+                ],
+            ],
         )
 
         # n preguntas - Respuestas correctas
@@ -908,7 +1061,12 @@ def exercise(exercise_id):
             tmp_random += [a, b]
             tmp_output += ["", f"¿Cuánto es {a} x {b}? ", "¡Respuesta correcta!"]
         tmp_output += ["", "Le corresponde una nota de 10.0.", "¡Enhorabuena!"]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # n preguntas - 1 de cada
         n = 7
@@ -979,7 +1137,12 @@ def exercise(exercise_id):
                     f"¡Ha fallado por más del 30%! La respuesta correcta era {c}.",
                 ]
         tmp_output += ["", "Le corresponde una nota de 4.3."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 98 END
 

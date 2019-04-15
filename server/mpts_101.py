@@ -11,10 +11,14 @@ def exercise(exercise_id):
 
         # Del 1 al 6
         mpts_common.add_test(
-            [1, 2, 3, 4], [], ["MPTC (1)", "1", "2", "3", "4"], NOT_LAST_TEST
+            NOT_LAST_TEST,
+            ["input", [1, 2, 3, 4]],
+            ["output", ["MPTC (1)", "1", "2", "3", "4"]],
         )
         mpts_common.add_test(
-            [1, 2, 3, 4], [], ["MPTC (1)", "1", "2", "3", "4"], LAST_TEST
+            LAST_TEST,
+            ["input", [1, 2, 3, 4]],
+            ["output", ["MPTC (1)", "1", "2", "3", "4"]],
         )
 
         # Exercise 1011 END
@@ -24,10 +28,14 @@ def exercise(exercise_id):
 
         # Del 1 al 6
         mpts_common.add_test(
-            [1, 2, 3, 4], [], ["MPTC (1)", "1", "2", "3", "5"], NOT_LAST_TEST
+            NOT_LAST_TEST,
+            ["input", [1, 2, 3, 4]],
+            ["output", ["MPTC (1)", "1", "2", "3", "5"]],
         )
         mpts_common.add_test(
-            [1, 2, 3, 4], [], ["MPTC (1)", "1", "2", "3", "4"], LAST_TEST
+            LAST_TEST,
+            ["input", [1, 2, 3, 4]],
+            ["output", ["MPTC (1)", "1", "2", "3", "4"]],
         )
 
         # Exercise 1012 END
@@ -36,7 +44,9 @@ def exercise(exercise_id):
         # Exercise 1013 BEGINNING
 
         # Del 1 al 6
-        mpts_common.add_test([3.5, 0, 0], [], ["MPTC (1)", "Duración: 3.5"], LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST, ["input", [3.5, 0, 0]], ["output", ["MPTC (1)", "Duración: 3.5"]]
+        )
 
         # Exercise 1013 END
 
@@ -45,7 +55,9 @@ def exercise(exercise_id):
 
         # Test mptc 0.24
         mpts_common.add_test(
-            ["Barto"], [], ["Díme tu nombre: ", "Tu nombre es Barto."], LAST_TEST
+            LAST_TEST,
+            ["input", ["Barto"]],
+            ["output", ["Díme tu nombre: ", "Tu nombre es Barto."]],
         )
 
         # Exercise 1014 END
@@ -54,7 +66,7 @@ def exercise(exercise_id):
         # Exercise 1014 BEGINNING
 
         # Test mptc 0.23
-        mpts_common.add_test([2], [], ["0.5"], NOT_LAST_TEST)
-        mpts_common.add_test([0], [], ["0"], LAST_TEST)
+        mpts_common.add_test(NOT_LAST_TEST, ["input", [2]], ["output", ["0.5"]])
+        mpts_common.add_test(LAST_TEST, ["input", [0]], ["output", ["0"]])
 
         # Exercise 1015 END

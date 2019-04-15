@@ -13,82 +13,94 @@ def exercise(exercise_id):
         # Cantidad negativa
         a = -random.randrange(1, 10000)
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "MÚLTIPLOS BINARIOS",
-                "Escriba un número de bytes: ",
-                "Ha indicado una cantidad negativa.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    "Ha indicado una cantidad negativa.",
+                ],
+            ],
         )
 
         # Cero
         a = 0
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "MÚLTIPLOS BINARIOS",
-                "Escriba un número de bytes: ",
-                "0 bytes son 0 GiB, 0 MiB, 0 KiB y 0 bytes.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    "0 bytes son 0 GiB, 0 MiB, 0 KiB y 0 bytes.",
+                ],
+            ],
         )
 
         # Sólo bytes
         a = random.randrange(1, 1024)
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "MÚLTIPLOS BINARIOS",
-                "Escriba un número de bytes: ",
-                f"{a} bytes son 0 GiB, 0 MiB, 0 KiB y {a} bytes.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    f"{a} bytes son 0 GiB, 0 MiB, 0 KiB y {a} bytes.",
+                ],
+            ],
         )
 
         # Sólo kibibytes
         a = random.randrange(1, 1024)
         b = 1024 * a
         mpts_common.add_test(
-            [b],
-            [],
-            [
-                "MÚLTIPLOS BINARIOS",
-                "Escriba un número de bytes: ",
-                f"{b} bytes son 0 GiB, 0 MiB, {a} KiB y 0 bytes.",
-            ],
             NOT_LAST_TEST,
+            ["input", [b]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    f"{b} bytes son 0 GiB, 0 MiB, {a} KiB y 0 bytes.",
+                ],
+            ],
         )
 
         # Sólo mebibytes
         a = random.randrange(1, 1024)
         b = 1024 * 1024 * a
         mpts_common.add_test(
-            [b],
-            [],
-            [
-                "MÚLTIPLOS BINARIOS",
-                "Escriba un número de bytes: ",
-                f"{b} bytes son 0 GiB, {a} MiB, 0 KiB y 0 bytes.",
-            ],
             NOT_LAST_TEST,
+            ["input", [b]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    f"{b} bytes son 0 GiB, {a} MiB, 0 KiB y 0 bytes.",
+                ],
+            ],
         )
 
         # Sólo gibibytes
         a = random.randrange(1, 1024)
         b = 1024 * 1024 * 1024 * a
         mpts_common.add_test(
-            [b],
-            [],
-            [
-                "MÚLTIPLOS BINARIOS",
-                "Escriba un número de bytes: ",
-                f"{b} bytes son {a} GiB, 0 MiB, 0 KiB y 0 bytes.",
-            ],
             NOT_LAST_TEST,
+            ["input", [b]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    f"{b} bytes son {a} GiB, 0 MiB, 0 KiB y 0 bytes.",
+                ],
+            ],
         )
 
         # De todo
@@ -98,14 +110,16 @@ def exercise(exercise_id):
         d = random.randrange(1, 1024)
         e = 1024 * 1024 * 1024 * a + 1024 * 1024 * b + 1024 * c + d
         mpts_common.add_test(
-            [e],
-            [],
-            [
-                "MÚLTIPLOS BINARIOS",
-                "Escriba un número de bytes: ",
-                f"{e} bytes son {a} GiB, {b} MiB, {c} KiB y {d} bytes.",
-            ],
             LAST_TEST,
+            ["input", [e]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    f"{e} bytes son {a} GiB, {b} MiB, {c} KiB y {d} bytes.",
+                ],
+            ],
         )
 
         # Exercise 171811 END
@@ -119,17 +133,19 @@ def exercise(exercise_id):
         g = random.randrange(0, 256)
         b = random.randrange(0, 256)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # r fuera de rango por arriba
@@ -137,17 +153,19 @@ def exercise(exercise_id):
         g = random.randrange(0, 256)
         b = random.randrange(0, 256)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # r fuera de rango por arriba
@@ -155,17 +173,19 @@ def exercise(exercise_id):
         g = random.randrange(0, 256)
         b = random.randrange(0, 256)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # g fuera de rango por abajo
@@ -173,17 +193,19 @@ def exercise(exercise_id):
         g = -random.randrange(1, 10000)
         b = random.randrange(0, 256)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # g fuera de rango por arriba
@@ -191,17 +213,19 @@ def exercise(exercise_id):
         g = random.randrange(256, 300)
         b = random.randrange(0, 256)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # g fuera de rango por arriba
@@ -209,17 +233,19 @@ def exercise(exercise_id):
         g = 256
         b = random.randrange(0, 256)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # b fuera de rango por abajo
@@ -227,17 +253,19 @@ def exercise(exercise_id):
         g = random.randrange(0, 256)
         b = -random.randrange(1, 10000)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # b fuera de rango por arriba
@@ -245,17 +273,19 @@ def exercise(exercise_id):
         g = random.randrange(0, 256)
         b = 256
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # b fuera de rango por arriba
@@ -263,17 +293,19 @@ def exercise(exercise_id):
         g = random.randrange(0, 256)
         b = random.randrange(256, 300)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "Por favor, escriba valores desde 0 hasta 255.",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "Por favor, escriba valores desde 0 hasta 255.",
+                ],
+            ],
         )
 
         # c = 0 r = g = b = 255
@@ -281,17 +313,19 @@ def exercise(exercise_id):
         g = r
         b = r
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                "El color es H = 0 S = 0.0 L = 1.0",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    "El color es H = 0 S = 0.0 L = 1.0",
+                ],
+            ],
         )
 
         # c = 0 r = g = b != 255
@@ -300,17 +334,19 @@ def exercise(exercise_id):
         b = r
         l = round(r / 255, 3)
         mpts_common.add_test(
-            [r, g, b],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = 0 S = 0.0 L = {l}",
-            ],
             NOT_LAST_TEST,
+            ["input", [r, g, b]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = 0 S = 0.0 L = {l}",
+                ],
+            ],
         )
 
         # M = r, g = b
@@ -324,17 +360,19 @@ def exercise(exercise_id):
         l = (r + g) / 2
         s = (r - g) / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # M = r, g > b
@@ -349,17 +387,19 @@ def exercise(exercise_id):
         l = (r + b) / 2
         s = c / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # M = r, g < b
@@ -374,17 +414,19 @@ def exercise(exercise_id):
         l = (r + g) / 2
         s = c / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # M = g, r = b
@@ -398,17 +440,19 @@ def exercise(exercise_id):
         l = (g + r) / 2
         s = (g - r) / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # M = g, b > r
@@ -423,17 +467,19 @@ def exercise(exercise_id):
         l = (g + r) / 2
         s = c / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # M = g, b < r
@@ -448,17 +494,19 @@ def exercise(exercise_id):
         l = (g + b) / 2
         s = c / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # M = b, r = g
@@ -472,17 +520,19 @@ def exercise(exercise_id):
         l = (b + r) / 2
         s = (b - r) / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # M = b, r > g
@@ -497,17 +547,19 @@ def exercise(exercise_id):
         l = (b + g) / 2
         s = c / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # M = b, r < g
@@ -522,17 +574,19 @@ def exercise(exercise_id):
         l = (b + r) / 2
         s = c / (1 - abs(2 * l - 1))
         mpts_common.add_test(
-            [R, G, B],
-            [],
-            [
-                "CONVERTIDOR RGB A HSL",
-                "Introduzca las componentes RGB (valores entre 0 y 255)",
-                "R = ",
-                "G = ",
-                "B = ",
-                f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
-            ],
             LAST_TEST,
+            ["input", [R, G, B]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR RGB A HSL",
+                    "Introduzca las componentes RGB (valores entre 0 y 255)",
+                    "R = ",
+                    "G = ",
+                    "B = ",
+                    f"El color es H = {h} S = {round(s, 3)} L = {round(l, 3)}",
+                ],
+            ],
         )
 
         # Exercise 171812 END
@@ -543,104 +597,118 @@ def exercise(exercise_id):
 
         # 0 - 0
         mpts_common.add_test(
-            [],
-            [0, 0],
-            [
-                "PARES Y NONES",
-                "Pablo no saca ningún dedo.",
-                "Noelia no saca ningún dedo.",
-                "Total: 0.",
-                "Ha ganado Pablo.",
-            ],
             NOT_LAST_TEST,
+            ["random", [0, 0]],
+            [
+                "output",
+                [
+                    "PARES Y NONES",
+                    "Pablo no saca ningún dedo.",
+                    "Noelia no saca ningún dedo.",
+                    "Total: 0.",
+                    "Ha ganado Pablo.",
+                ],
+            ],
         )
 
         # 0 - 1
         mpts_common.add_test(
-            [],
-            [0, 1],
-            [
-                "PARES Y NONES",
-                "Pablo no saca ningún dedo.",
-                "Noelia saca 1 dedo.",
-                "Total: 1.",
-                "Ha ganado Noelia.",
-            ],
             NOT_LAST_TEST,
+            ["random", [0, 1]],
+            [
+                "output",
+                [
+                    "PARES Y NONES",
+                    "Pablo no saca ningún dedo.",
+                    "Noelia saca 1 dedo.",
+                    "Total: 1.",
+                    "Ha ganado Noelia.",
+                ],
+            ],
         )
 
         # 0 - par
         a = random.choice([2, 4])
         mpts_common.add_test(
-            [],
-            [0, a],
-            [
-                "PARES Y NONES",
-                "Pablo no saca ningún dedo.",
-                f"Noelia saca {a} dedos.",
-                f"Total: {a}.",
-                "Ha ganado Pablo.",
-            ],
             NOT_LAST_TEST,
+            ["random", [0, a]],
+            [
+                "output",
+                [
+                    "PARES Y NONES",
+                    "Pablo no saca ningún dedo.",
+                    f"Noelia saca {a} dedos.",
+                    f"Total: {a}.",
+                    "Ha ganado Pablo.",
+                ],
+            ],
         )
 
         # 0 - impar
         a = random.choice([3, 5])
         mpts_common.add_test(
-            [],
-            [0, a],
-            [
-                "PARES Y NONES",
-                "Pablo no saca ningún dedo.",
-                f"Noelia saca {a} dedos.",
-                f"Total: {a}.",
-                "Ha ganado Noelia.",
-            ],
             NOT_LAST_TEST,
+            ["random", [0, a]],
+            [
+                "output",
+                [
+                    "PARES Y NONES",
+                    "Pablo no saca ningún dedo.",
+                    f"Noelia saca {a} dedos.",
+                    f"Total: {a}.",
+                    "Ha ganado Noelia.",
+                ],
+            ],
         )
 
         # 1 - 1
         mpts_common.add_test(
-            [],
-            [1, 1],
-            [
-                "PARES Y NONES",
-                "Pablo saca 1 dedo.",
-                "Noelia saca 1 dedo.",
-                "Total: 2.",
-                "Ha ganado Pablo.",
-            ],
             NOT_LAST_TEST,
+            ["random", [1, 1]],
+            [
+                "output",
+                [
+                    "PARES Y NONES",
+                    "Pablo saca 1 dedo.",
+                    "Noelia saca 1 dedo.",
+                    "Total: 2.",
+                    "Ha ganado Pablo.",
+                ],
+            ],
         )
 
         # par - 1
         a = random.choice([2, 4])
         mpts_common.add_test(
-            [],
-            [a, 1],
-            [
-                "PARES Y NONES",
-                f"Pablo saca {a} dedos.",
-                "Noelia saca 1 dedo.",
-                f"Total: {a + 1}.",
-                "Ha ganado Noelia.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a, 1]],
+            [
+                "output",
+                [
+                    "PARES Y NONES",
+                    f"Pablo saca {a} dedos.",
+                    "Noelia saca 1 dedo.",
+                    f"Total: {a + 1}.",
+                    "Ha ganado Noelia.",
+                ],
+            ],
         )
 
         # impar - 1
         a = random.choice([3, 5])
         mpts_common.add_test(
-            [],
-            [a, 1],
-            [
-                "PARES Y NONES",
-                f"Pablo saca {a} dedos.",
-                "Noelia saca 1 dedo.",
-                f"Total: {a + 1}.",
-                "Ha ganado Pablo.",
-            ],
             NOT_LAST_TEST,
+            ["random", [a, 1]],
+            [
+                "output",
+                [
+                    "PARES Y NONES",
+                    f"Pablo saca {a} dedos.",
+                    "Noelia saca 1 dedo.",
+                    f"Total: {a + 1}.",
+                    "Ha ganado Pablo.",
+                ],
+            ],
         )
 
         #  > 1 - > 1
@@ -648,16 +716,18 @@ def exercise(exercise_id):
         b = random.choice([2, 6])
         ganador = ["Pablo", "Noelia"]
         mpts_common.add_test(
-            [],
-            [a, b],
-            [
-                "PARES Y NONES",
-                f"Pablo saca {a} dedos.",
-                f"Noelia saca {b} dedos.",
-                f"Total: {a + b}.",
-                f"Ha ganado {ganador[(a+b)%2]}.",
-            ],
             LAST_TEST,
+            ["random", [a, b]],
+            [
+                "output",
+                [
+                    "PARES Y NONES",
+                    f"Pablo saca {a} dedos.",
+                    f"Noelia saca {b} dedos.",
+                    f"Total: {a + b}.",
+                    f"Ha ganado {ganador[(a+b)%2]}.",
+                ],
+            ],
         )
 
         # Exercise 171813 END

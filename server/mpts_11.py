@@ -16,14 +16,16 @@ def exercise(exercise_id):
         a = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "LOS 20 (1)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "Programa terminado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "LOS 20 (1)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "Programa terminado.",
+                ],
+            ],
         )
 
         # Una tirada
@@ -32,17 +34,20 @@ def exercise(exercise_id):
         c = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, c],
-            [b],
-            [
-                "LOS 20 (1)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                f"Tirada: {b}",
-                "",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "Programa terminado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, c]],
+            ["random", [b]],
+            [
+                "output",
+                [
+                    "LOS 20 (1)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    f"Tirada: {b}",
+                    "",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "Programa terminado.",
+                ],
+            ],
         )
 
         # Varias tiradas
@@ -67,7 +72,12 @@ def exercise(exercise_id):
         tmp_input += [c]
         tmp_output += ["Programa terminado."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 111 END
 
@@ -81,14 +91,16 @@ def exercise(exercise_id):
         a = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "LOS 20 (2)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "Programa terminado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "LOS 20 (2)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "Programa terminado.",
+                ],
+            ],
         )
 
         # Una tirada
@@ -97,17 +109,20 @@ def exercise(exercise_id):
         c = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, c],
-            [b],
-            [
-                "LOS 20 (2)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                f"Tirada: {b} - Suma: {b}",
-                "",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "Programa terminado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, c]],
+            ["random", [b]],
+            [
+                "output",
+                [
+                    "LOS 20 (2)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    f"Tirada: {b} - Suma: {b}",
+                    "",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "Programa terminado.",
+                ],
+            ],
         )
 
         # Varias tiradas
@@ -134,7 +149,12 @@ def exercise(exercise_id):
         tmp_input += [c]
         tmp_output += ["Programa terminado."]
 
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 112 END
 
@@ -148,14 +168,16 @@ def exercise(exercise_id):
         a = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a],
-            [],
-            [
-                "LOS 20 (3)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "No se ha lanzado ningún dado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "LOS 20 (3)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "No se ha lanzado ningún dado.",
+                ],
+            ],
         )
 
         # Una tirada, empate
@@ -164,18 +186,21 @@ def exercise(exercise_id):
         c = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, c],
-            [b, b],
-            [
-                "LOS 20 (3)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                f"Jugador 1 - Tirada: {b} - Suma: {b}",
-                f"Jugador 2 - Tirada: {b} - Suma: {b}",
-                "",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "¡Empate!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, c]],
+            ["random", [b, b]],
+            [
+                "output",
+                [
+                    "LOS 20 (3)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    f"Jugador 1 - Tirada: {b} - Suma: {b}",
+                    f"Jugador 2 - Tirada: {b} - Suma: {b}",
+                    "",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "¡Empate!",
+                ],
+            ],
         )
 
         # Una tirada, gana 1
@@ -185,18 +210,21 @@ def exercise(exercise_id):
         d = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, d],
-            [b, c],
-            [
-                "LOS 20 (3)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                f"Jugador 1 - Tirada: {b} - Suma: {b}",
-                f"Jugador 2 - Tirada: {c} - Suma: {c}",
-                "",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "Ha ganado el jugador 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, d]],
+            ["random", [b, c]],
+            [
+                "output",
+                [
+                    "LOS 20 (3)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    f"Jugador 1 - Tirada: {b} - Suma: {b}",
+                    f"Jugador 2 - Tirada: {c} - Suma: {c}",
+                    "",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "Ha ganado el jugador 1.",
+                ],
+            ],
         )
 
         # Una tirada, gana 2
@@ -206,18 +234,21 @@ def exercise(exercise_id):
         d = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, d],
-            [b, c],
-            [
-                "LOS 20 (3)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                f"Jugador 1 - Tirada: {b} - Suma: {b}",
-                f"Jugador 2 - Tirada: {c} - Suma: {c}",
-                "",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "Ha ganado el jugador 2.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, d]],
+            ["random", [b, c]],
+            [
+                "output",
+                [
+                    "LOS 20 (3)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    f"Jugador 1 - Tirada: {b} - Suma: {b}",
+                    f"Jugador 2 - Tirada: {c} - Suma: {c}",
+                    "",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "Ha ganado el jugador 2.",
+                ],
+            ],
         )
 
         # Varias tiradas, empate
@@ -250,7 +281,12 @@ def exercise(exercise_id):
             ]
         tmp_input += [d]
         tmp_output += ["¡Empate!"]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varias tiradas, gana 1
         n = 2 * random.randrange(1, 5)
@@ -286,7 +322,12 @@ def exercise(exercise_id):
             ]
         tmp_input += [d]
         tmp_output += ["Ha ganado el jugador 1."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varias tiradas, gana 2
         n = 2 * random.randrange(1, 5)
@@ -322,7 +363,12 @@ def exercise(exercise_id):
             ]
         tmp_input += [d]
         tmp_output += ["Ha ganado el jugador 2."]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 113 END
 
@@ -337,20 +383,22 @@ def exercise(exercise_id):
         b = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "LOS 20 (4)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                "",
-                "Jugador 1 - Suma: 0",
-                "Jugador 2 - Suma: 0",
-                "Programa terminado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LOS 20 (4)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    "",
+                    "Jugador 1 - Suma: 0",
+                    "Jugador 2 - Suma: 0",
+                    "Programa terminado.",
+                ],
+            ],
         )
 
         # Una tirada, empate
@@ -362,25 +410,28 @@ def exercise(exercise_id):
         f = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, b, e, f],
-            [c, d],
-            [
-                "LOS 20 (4)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                f"Jugador 1 - Tirada: {c} - Suma: {c}",
-                f"Jugador 2 - Tirada: {d} - Suma: {d}",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                "",
-                f"Jugador 1 - Suma: {c}",
-                f"Jugador 2 - Suma: {d}",
-                "Programa terminado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, e, f]],
+            ["random", [c, d]],
+            [
+                "output",
+                [
+                    "LOS 20 (4)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    f"Jugador 1 - Tirada: {c} - Suma: {c}",
+                    f"Jugador 2 - Tirada: {d} - Suma: {d}",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    "",
+                    f"Jugador 1 - Suma: {c}",
+                    f"Jugador 2 - Suma: {d}",
+                    "Programa terminado.",
+                ],
+            ],
         )
 
         # Una tirada, gana 1
@@ -392,25 +443,28 @@ def exercise(exercise_id):
         f = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, b, e, f],
-            [c, d],
-            [
-                "LOS 20 (4)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                f"Jugador 1 - Tirada: {c} - Suma: {c}",
-                f"Jugador 2 - Tirada: {d} - Suma: {d}",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                "",
-                f"Jugador 1 - Suma: {c}",
-                f"Jugador 2 - Suma: {d}",
-                "Programa terminado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, e, f]],
+            ["random", [c, d]],
+            [
+                "output",
+                [
+                    "LOS 20 (4)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    f"Jugador 1 - Tirada: {c} - Suma: {c}",
+                    f"Jugador 2 - Tirada: {d} - Suma: {d}",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    "",
+                    f"Jugador 1 - Suma: {c}",
+                    f"Jugador 2 - Suma: {d}",
+                    "Programa terminado.",
+                ],
+            ],
         )
 
         # Una tirada, gana 2
@@ -422,25 +476,28 @@ def exercise(exercise_id):
         f = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, b, e, f],
-            [c, d],
-            [
-                "LOS 20 (4)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                f"Jugador 1 - Tirada: {c} - Suma: {c}",
-                f"Jugador 2 - Tirada: {d} - Suma: {d}",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                "",
-                f"Jugador 1 - Suma: {c}",
-                f"Jugador 2 - Suma: {d}",
-                "Programa terminado.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, e, f]],
+            ["random", [c, d]],
+            [
+                "output",
+                [
+                    "LOS 20 (4)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    f"Jugador 1 - Tirada: {c} - Suma: {c}",
+                    f"Jugador 2 - Tirada: {d} - Suma: {d}",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    "",
+                    f"Jugador 1 - Suma: {c}",
+                    f"Jugador 2 - Suma: {d}",
+                    "Programa terminado.",
+                ],
+            ],
         )
 
         # Varias tiradas, empate
@@ -482,7 +539,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Programa terminado.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varias tiradas, gana 1
         n = random.randrange(2, 10)
@@ -528,7 +590,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Programa terminado.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Varias tiradas, gana 2
         n = random.randrange(2, 10)
@@ -574,7 +641,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Programa terminado.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # 1 tira más
         n = random.randrange(2, 10)
@@ -639,7 +711,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Programa terminado.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # 2 tira más
         n = random.randrange(2, 10)
@@ -704,7 +781,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Programa terminado.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 114 END
 
@@ -719,20 +801,22 @@ def exercise(exercise_id):
         b = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, b],
-            [],
-            [
-                "LOS 20 (5)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                "",
-                "Jugador 1 - Suma: 0",
-                "Jugador 2 - Suma: 0",
-                "¡Empate!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LOS 20 (5)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    "",
+                    "Jugador 1 - Suma: 0",
+                    "Jugador 2 - Suma: 0",
+                    "¡Empate!",
+                ],
+            ],
         )
 
         # Una tirada, empate
@@ -744,25 +828,28 @@ def exercise(exercise_id):
         f = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, b, e, f],
-            [c, d],
-            [
-                "LOS 20 (5)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                f"Jugador 1 - Tirada: {c} - Suma: {c}",
-                f"Jugador 2 - Tirada: {d} - Suma: {d}",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                "",
-                f"Jugador 1 - Suma: {c}",
-                f"Jugador 2 - Suma: {d}",
-                "¡Empate!",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, e, f]],
+            ["random", [c, d]],
+            [
+                "output",
+                [
+                    "LOS 20 (5)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    f"Jugador 1 - Tirada: {c} - Suma: {c}",
+                    f"Jugador 2 - Tirada: {d} - Suma: {d}",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    "",
+                    f"Jugador 1 - Suma: {c}",
+                    f"Jugador 2 - Suma: {d}",
+                    "¡Empate!",
+                ],
+            ],
         )
 
         # Una tirada, gana 1
@@ -774,25 +861,28 @@ def exercise(exercise_id):
         f = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, b, e, f],
-            [c, d],
-            [
-                "LOS 20 (5)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                f"Jugador 1 - Tirada: {c} - Suma: {c}",
-                f"Jugador 2 - Tirada: {d} - Suma: {d}",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                "",
-                f"Jugador 1 - Suma: {c}",
-                f"Jugador 2 - Suma: {d}",
-                "Ha ganado el jugador 1.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, e, f]],
+            ["random", [c, d]],
+            [
+                "output",
+                [
+                    "LOS 20 (5)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    f"Jugador 1 - Tirada: {c} - Suma: {c}",
+                    f"Jugador 2 - Tirada: {d} - Suma: {d}",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    "",
+                    f"Jugador 1 - Suma: {c}",
+                    f"Jugador 2 - Suma: {d}",
+                    "Ha ganado el jugador 1.",
+                ],
+            ],
         )
 
         # Una tirada, gana 2
@@ -804,25 +894,28 @@ def exercise(exercise_id):
         f = termina[random.randrange(len(termina))]
 
         mpts_common.add_test(
-            [a, b, e, f],
-            [c, d],
-            [
-                "LOS 20 (5)",
-                "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                f"Jugador 1 - Tirada: {c} - Suma: {c}",
-                f"Jugador 2 - Tirada: {d} - Suma: {d}",
-                "",
-                "Jugador 1: ",
-                "Jugador 2: ",
-                "",
-                f"Jugador 1 - Suma: {c}",
-                f"Jugador 2 - Suma: {d}",
-                "Ha ganado el jugador 2.",
-            ],
             NOT_LAST_TEST,
+            ["input", [a, b, e, f]],
+            ["random", [c, d]],
+            [
+                "output",
+                [
+                    "LOS 20 (5)",
+                    "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    f"Jugador 1 - Tirada: {c} - Suma: {c}",
+                    f"Jugador 2 - Tirada: {d} - Suma: {d}",
+                    "",
+                    "Jugador 1: ",
+                    "Jugador 2: ",
+                    "",
+                    f"Jugador 1 - Suma: {c}",
+                    f"Jugador 2 - Suma: {d}",
+                    "Ha ganado el jugador 2.",
+                ],
+            ],
         )
 
         # Se pasan los dos, 2 tira más
@@ -891,7 +984,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "¡Empate!",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Se pasa 1
         tmp_input = []
@@ -964,7 +1062,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Ha ganado el jugador 2.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Se pasa 2
         tmp_input = []
@@ -1040,7 +1143,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Ha ganado el jugador 1.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # No se pasa ninguno, gana 1
         tmp_input = []
@@ -1115,7 +1223,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Ha ganado el jugador 1.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # # No se pasa ninguno, gana 2
         tmp_input = []
@@ -1151,7 +1264,7 @@ def exercise(exercise_id):
         suma1 = suma2 = 0
         for i in range(m):
             tmp_input += ["", ""]
-            tmp_random +=  [tmp1[i], tmp2[i]]
+            tmp_random += [tmp1[i], tmp2[i]]
             suma1 += tmp1[i]
             suma2 += tmp2[i]
             tmp_output += [
@@ -1193,7 +1306,12 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "Ha ganado el jugador 2.",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, NOT_LAST_TEST)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # No se pasa ninguno, empate
         tmp_input = []
@@ -1278,6 +1396,11 @@ def exercise(exercise_id):
             f"Jugador 2 - Suma: {suma2}",
             "¡Empate!",
         ]
-        mpts_common.add_test(tmp_input, tmp_random, tmp_output, LAST_TEST)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
 
         # Exercise 115 END

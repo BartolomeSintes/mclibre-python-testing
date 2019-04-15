@@ -15,15 +15,17 @@ def exercise(exercise_id):
         numero_2 = random.randrange(0, 20)
         resultado = (numero_1 + numero_2) / 2
         mpts_common.add_test(
-            [numero_1, numero_2],
-            [],
-            [
-                "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
-                "Escriba un número: ",
-                "Escriba otro número: ",
-                f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [numero_1, numero_2]],
+            [
+                "output",
+                [
+                    "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
+                    "Escriba un número: ",
+                    "Escriba otro número: ",
+                    f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
+                ],
+            ],
         )
 
         # envía dos números enteros negativos
@@ -31,15 +33,17 @@ def exercise(exercise_id):
         numero_2 = random.randrange(-21, 0)
         resultado = (numero_1 + numero_2) / 2
         mpts_common.add_test(
-            [numero_1, numero_2],
-            [],
-            [
-                "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
-                "Escriba un número: ",
-                "Escriba otro número: ",
-                f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
-            ],
             NOT_LAST_TEST,
+            ["input", [numero_1, numero_2]],
+            [
+                "output",
+                [
+                    "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
+                    "Escriba un número: ",
+                    "Escriba otro número: ",
+                    f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
+                ],
+            ],
         )
 
         # envía dos números decimales positivos
@@ -47,15 +51,17 @@ def exercise(exercise_id):
         numero_2 = random.randrange(0, 100) / 10.0
         resultado = (numero_1 + numero_2) / 2
         mpts_common.add_test(
-            [numero_1, numero_2],
-            [],
-            [
-                "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
-                "Escriba un número: ",
-                "Escriba otro número: ",
-                f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
-            ],
             LAST_TEST,
+            ["input", [numero_1, numero_2]],
+            [
+                "output",
+                [
+                    "CÁLCULO DE LA MEDIA DE DOS NÚMEROS",
+                    "Escriba un número: ",
+                    "Escriba otro número: ",
+                    f"La media aritmética de {str(float(numero_1))} y {str(float(numero_2))} es {str(resultado)}",
+                ],
+            ],
         )
         # Exercise 1 END
 
@@ -70,17 +76,19 @@ def exercise(exercise_id):
         imc = round(peso / altura ** 2, 1)
 
         mpts_common.add_test(
-            [peso, altura],
-            [],
-            [
-                "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
-                "¿Cuánto pesa? ",
-                "¿Cuánto mide en metros? ",
-                f"Su imc es {imc}",
-                "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
-                "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
-            ],
             NOT_LAST_TEST,
+            ["input", [peso, altura]],
+            [
+                "output",
+                [
+                    "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
+                    "¿Cuánto pesa? ",
+                    "¿Cuánto mide en metros? ",
+                    f"Su imc es {imc}",
+                    "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
+                    "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
+                ],
+            ],
         )
         # imc medio
         imc = random.randrange(200, 250) / 10.0
@@ -89,17 +97,19 @@ def exercise(exercise_id):
         imc = round(peso / altura ** 2, 1)
 
         mpts_common.add_test(
-            [peso, altura],
-            [],
-            [
-                "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
-                "¿Cuánto pesa? ",
-                "¿Cuánto mide en metros? ",
-                f"Su imc es {imc}",
-                "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
-                "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
-            ],
             NOT_LAST_TEST,
+            ["input", [peso, altura]],
+            [
+                "output",
+                [
+                    "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
+                    "¿Cuánto pesa? ",
+                    "¿Cuánto mide en metros? ",
+                    f"Su imc es {imc}",
+                    "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
+                    "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
+                ],
+            ],
         )
         # imc alto
         imc = random.randrange(250, 400) / 10.0
@@ -108,17 +118,19 @@ def exercise(exercise_id):
         imc = round(peso / altura ** 2, 1)
 
         mpts_common.add_test(
-            [peso, altura],
-            [],
-            [
-                "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
-                "¿Cuánto pesa? ",
-                "¿Cuánto mide en metros? ",
-                f"Su imc es {imc}",
-                "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
-                "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
-            ],
             LAST_TEST,
+            ["input", [peso, altura]],
+            [
+                "output",
+                [
+                    "CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)",
+                    "¿Cuánto pesa? ",
+                    "¿Cuánto mide en metros? ",
+                    f"Su imc es {imc}",
+                    "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,",
+                    "pero esos límites dependen de la edad, del sexo, de la constitución física, etc.",
+                ],
+            ],
         )
         # Exercise 2 END
 
@@ -132,15 +144,17 @@ def exercise(exercise_id):
         cm = (pies * 12 + pulgadas) * 2.54
 
         mpts_common.add_test(
-            [pies, pulgadas],
-            [],
-            [
-                "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
-                "Escriba una cantidad de pies: ",
-                "Escriba una cantidad de pulgadas: ",
-                f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
-            ],
             NOT_LAST_TEST,
+            ["input", [pies, pulgadas]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
+                    "Escriba una cantidad de pies: ",
+                    "Escriba una cantidad de pulgadas: ",
+                    f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
+                ],
+            ],
         )
         # números medianos decimales
         pies = float(random.randrange(100, 300) / 10)
@@ -148,15 +162,17 @@ def exercise(exercise_id):
         cm = (pies * 12 + pulgadas) * 2.54
 
         mpts_common.add_test(
-            [pies, pulgadas],
-            [],
-            [
-                "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
-                "Escriba una cantidad de pies: ",
-                "Escriba una cantidad de pulgadas: ",
-                f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
-            ],
             NOT_LAST_TEST,
+            ["input", [pies, pulgadas]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
+                    "Escriba una cantidad de pies: ",
+                    "Escriba una cantidad de pulgadas: ",
+                    f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
+                ],
+            ],
         )
 
         # números grandes
@@ -165,15 +181,17 @@ def exercise(exercise_id):
         cm = (pies * 12 + pulgadas) * 2.54
 
         mpts_common.add_test(
-            [pies, pulgadas],
-            [],
-            [
-                "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
-                "Escriba una cantidad de pies: ",
-                "Escriba una cantidad de pulgadas: ",
-                f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
-            ],
             LAST_TEST,
+            ["input", [pies, pulgadas]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS",
+                    "Escriba una cantidad de pies: ",
+                    "Escriba una cantidad de pulgadas: ",
+                    f"{pies} pies y {pulgadas} pulgadas son {cm} cm",
+                ],
+            ],
         )
         # Exercise 3 END
 
@@ -186,28 +204,32 @@ def exercise(exercise_id):
         cm = pulgadas * 2.54
 
         mpts_common.add_test(
-            [pulgadas],
-            [],
-            [
-                "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
-                "Escriba una cantidad de pulgadas: ",
-                f"{pulgadas} pulgadas son {cm} cm",
-            ],
             NOT_LAST_TEST,
+            ["input", [pulgadas]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
+                    "Escriba una cantidad de pulgadas: ",
+                    f"{pulgadas} pulgadas son {cm} cm",
+                ],
+            ],
         )
         # números medianos decimales
         pulgadas = random.randrange(100, 300) / 10
         cm = pulgadas * 2.54
 
         mpts_common.add_test(
-            [pulgadas],
-            [],
-            [
-                "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
-                "Escriba una cantidad de pulgadas: ",
-                f"{pulgadas} pulgadas son {cm} cm",
-            ],
             NOT_LAST_TEST,
+            ["input", [pulgadas]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
+                    "Escriba una cantidad de pulgadas: ",
+                    f"{pulgadas} pulgadas son {cm} cm",
+                ],
+            ],
         )
 
         # números grandes
@@ -215,14 +237,16 @@ def exercise(exercise_id):
         cm = pulgadas * 2.54
 
         mpts_common.add_test(
-            [pulgadas],
-            [],
-            [
-                "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
-                "Escriba una cantidad de pulgadas: ",
-                f"{pulgadas} pulgadas son {cm} cm",
-            ],
             LAST_TEST,
+            ["input", [pulgadas]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PULGADAS A CENTÍMETROS",
+                    "Escriba una cantidad de pulgadas: ",
+                    f"{pulgadas} pulgadas son {cm} cm",
+                ],
+            ],
         )
         # Exercise 4 END
 
@@ -235,28 +259,32 @@ def exercise(exercise_id):
         cm = pies * 12 * 2.54
 
         mpts_common.add_test(
-            [pies],
-            [],
-            [
-                "CONVERTIDOR DE PIES A CENTÍMETROS",
-                "Escriba una cantidad de pies: ",
-                f"{pies} pies son {cm} cm",
-            ],
             NOT_LAST_TEST,
+            ["input", [pies]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PIES A CENTÍMETROS",
+                    "Escriba una cantidad de pies: ",
+                    f"{pies} pies son {cm} cm",
+                ],
+            ],
         )
         # números medianos decimales
         pies = random.randrange(100, 300) / 10
         cm = pies * 12 * 2.54
 
         mpts_common.add_test(
-            [pies],
-            [],
-            [
-                "CONVERTIDOR DE PIES A CENTÍMETROS",
-                "Escriba una cantidad de pies: ",
-                f"{pies} pies son {cm} cm",
-            ],
             NOT_LAST_TEST,
+            ["input", [pies]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PIES A CENTÍMETROS",
+                    "Escriba una cantidad de pies: ",
+                    f"{pies} pies son {cm} cm",
+                ],
+            ],
         )
 
         # números grandes
@@ -264,14 +292,16 @@ def exercise(exercise_id):
         cm = pies * 12 * 2.54
 
         mpts_common.add_test(
-            [pies],
-            [],
-            [
-                "CONVERTIDOR DE PIES A CENTÍMETROS",
-                "Escriba una cantidad de pies: ",
-                f"{pies} pies son {cm} cm",
-            ],
             LAST_TEST,
+            ["input", [pies]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE PIES A CENTÍMETROS",
+                    "Escriba una cantidad de pies: ",
+                    f"{pies} pies son {cm} cm",
+                ],
+            ],
         )
         # Exercise 5 END
 
@@ -284,14 +314,16 @@ def exercise(exercise_id):
         fahrenheit = round(1.8 * celsius + 32, 1)
 
         mpts_common.add_test(
-            [celsius],
-            [],
-            [
-                "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
-                "Escriba una temperatura en grados Celsius: ",
-                f"{celsius} ºC son {fahrenheit} ºF",
-            ],
             NOT_LAST_TEST,
+            ["input", [celsius]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
+                    "Escriba una temperatura en grados Celsius: ",
+                    f"{celsius} ºC son {fahrenheit} ºF",
+                ],
+            ],
         )
 
         # números negativos decimales
@@ -299,28 +331,32 @@ def exercise(exercise_id):
         fahrenheit = round(1.8 * celsius + 32, 1)
 
         mpts_common.add_test(
-            [celsius],
-            [],
-            [
-                "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
-                "Escriba una temperatura en grados Celsius: ",
-                f"{celsius} ºC son {fahrenheit} ºF",
-            ],
             NOT_LAST_TEST,
+            ["input", [celsius]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
+                    "Escriba una temperatura en grados Celsius: ",
+                    f"{celsius} ºC son {fahrenheit} ºF",
+                ],
+            ],
         )
         # números grandes enteros
         celsius = float(random.randrange(0, 1000))
         fahrenheit = round(1.8 * celsius + 32, 1)
 
         mpts_common.add_test(
-            [celsius],
-            [],
-            [
-                "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
-                "Escriba una temperatura en grados Celsius: ",
-                f"{celsius} ºC son {fahrenheit} ºF",
-            ],
             LAST_TEST,
+            ["input", [celsius]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT",
+                    "Escriba una temperatura en grados Celsius: ",
+                    f"{celsius} ºC son {fahrenheit} ºF",
+                ],
+            ],
         )
         # Exercise 6 END
 
@@ -333,14 +369,16 @@ def exercise(exercise_id):
         celsius = (fahrenheit - 32) / 1.8
 
         mpts_common.add_test(
-            [fahrenheit],
-            [],
-            [
-                "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
-                "Escriba una temperatura en grados Fahrenheit: ",
-                f"{fahrenheit} ºF son {round(celsius, 1)} ºC",
-            ],
             NOT_LAST_TEST,
+            ["input", [fahrenheit]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
+                    "Escriba una temperatura en grados Fahrenheit: ",
+                    f"{fahrenheit} ºF son {round(celsius, 1)} ºC",
+                ],
+            ],
         )
 
         # números negativos decimales
@@ -348,28 +386,32 @@ def exercise(exercise_id):
         celsius = (fahrenheit - 32) / 1.8
 
         mpts_common.add_test(
-            [fahrenheit],
-            [],
-            [
-                "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
-                "Escriba una temperatura en grados Fahrenheit: ",
-                f"{fahrenheit} ºF son {round(celsius, 1)} ºC",
-            ],
             NOT_LAST_TEST,
+            ["input", [fahrenheit]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
+                    "Escriba una temperatura en grados Fahrenheit: ",
+                    f"{fahrenheit} ºF son {round(celsius, 1)} ºC",
+                ],
+            ],
         )
         # números grandes enteros
         fahrenheit = float(random.randrange(0, 1000))
         celsius = (fahrenheit - 32) / 1.8
 
         mpts_common.add_test(
-            [fahrenheit],
-            [],
-            [
-                "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
-                "Escriba una temperatura en grados Fahrenheit: ",
-                f"{fahrenheit} ºF son {round(celsius, 1)} ºC",
-            ],
             LAST_TEST,
+            ["input", [fahrenheit]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS",
+                    "Escriba una temperatura en grados Fahrenheit: ",
+                    f"{fahrenheit} ºF son {round(celsius, 1)} ºC",
+                ],
+            ],
         )
         # Exercise 7 END
 
@@ -383,14 +425,16 @@ def exercise(exercise_id):
         resto = segundos % 60
 
         mpts_common.add_test(
-            [segundos],
-            [],
-            [
-                "CONVERTIDOR DE SEGUNDOS A MINUTOS",
-                "Escriba una cantidad de segundos: ",
-                f"{segundos} segundos son {minutos} minutos y {resto} segundos",
-            ],
             NOT_LAST_TEST,
+            ["input", [segundos]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE SEGUNDOS A MINUTOS",
+                    "Escriba una cantidad de segundos: ",
+                    f"{segundos} segundos son {minutos} minutos y {resto} segundos",
+                ],
+            ],
         )
 
         # números medianos enteros
@@ -399,14 +443,16 @@ def exercise(exercise_id):
         resto = segundos % 60
 
         mpts_common.add_test(
-            [segundos],
-            [],
-            [
-                "CONVERTIDOR DE SEGUNDOS A MINUTOS",
-                "Escriba una cantidad de segundos: ",
-                f"{segundos} segundos son {minutos} minutos y {resto} segundos",
-            ],
             NOT_LAST_TEST,
+            ["input", [segundos]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE SEGUNDOS A MINUTOS",
+                    "Escriba una cantidad de segundos: ",
+                    f"{segundos} segundos son {minutos} minutos y {resto} segundos",
+                ],
+            ],
         )
 
         # números grandes enteros
@@ -415,14 +461,16 @@ def exercise(exercise_id):
         resto = segundos % 60
 
         mpts_common.add_test(
-            [segundos],
-            [],
-            [
-                "CONVERTIDOR DE SEGUNDOS A MINUTOS",
-                "Escriba una cantidad de segundos: ",
-                f"{segundos} segundos son {minutos} minutos y {resto} segundos",
-            ],
             LAST_TEST,
+            ["input", [segundos]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE SEGUNDOS A MINUTOS",
+                    "Escriba una cantidad de segundos: ",
+                    f"{segundos} segundos son {minutos} minutos y {resto} segundos",
+                ],
+            ],
         )
         # Exercise 8 END
 
@@ -439,14 +487,16 @@ def exercise(exercise_id):
         resto = resto_1 % 60
 
         mpts_common.add_test(
-            [segundos],
-            [],
-            [
-                "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
-                "Escriba una cantidad de segundos: ",
-                f"{segundos} segundos son {horas} horas, {minutos} minutos y {resto} segundos",
-            ],
             NOT_LAST_TEST,
+            ["input", [segundos]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
+                    "Escriba una cantidad de segundos: ",
+                    f"{segundos} segundos son {horas} horas, {minutos} minutos y {resto} segundos",
+                ],
+            ],
         )
 
         # números medianos enteros
@@ -458,14 +508,16 @@ def exercise(exercise_id):
         resto = resto_1 % 60
 
         mpts_common.add_test(
-            [segundos],
-            [],
-            [
-                "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
-                "Escriba una cantidad de segundos: ",
-                f"{segundos} segundos son {horas} horas, {minutos} minutos y {resto} segundos",
-            ],
             NOT_LAST_TEST,
+            ["input", [segundos]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
+                    "Escriba una cantidad de segundos: ",
+                    f"{segundos} segundos son {horas} horas, {minutos} minutos y {resto} segundos",
+                ],
+            ],
         )
 
         # números grandes enteros
@@ -477,14 +529,16 @@ def exercise(exercise_id):
         resto = resto_1 % 60
 
         mpts_common.add_test(
-            [segundos],
-            [],
-            [
-                "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
-                "Escriba una cantidad de segundos: ",
-                f"{segundos} segundos son {horas} horas, {minutos} minutos y {resto} segundos",
-            ],
             LAST_TEST,
+            ["input", [segundos]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS",
+                    "Escriba una cantidad de segundos: ",
+                    f"{segundos} segundos son {horas} horas, {minutos} minutos y {resto} segundos",
+                ],
+            ],
         )
         # Exercise 9 END
 
@@ -500,14 +554,16 @@ def exercise(exercise_id):
         resto = unidades % 12
 
         mpts_common.add_test(
-            [unidades],
-            [],
-            [
-                "CONVERTIDOR A GRUESAS Y DOCENAS",
-                "Escriba una cantidad (entera): ",
-                f"{unidades} unidades son {gruesas} gruesas, {docenas} docenas y {resto} unidades",
-            ],
             NOT_LAST_TEST,
+            ["input", [unidades]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR A GRUESAS Y DOCENAS",
+                    "Escriba una cantidad (entera): ",
+                    f"{unidades} unidades son {gruesas} gruesas, {docenas} docenas y {resto} unidades",
+                ],
+            ],
         )
 
         # números medianos enteros
@@ -518,14 +574,16 @@ def exercise(exercise_id):
         resto = unidades % 12
 
         mpts_common.add_test(
-            [unidades],
-            [],
-            [
-                "CONVERTIDOR A GRUESAS Y DOCENAS",
-                "Escriba una cantidad (entera): ",
-                f"{unidades} unidades son {gruesas} gruesas, {docenas} docenas y {resto} unidades",
-            ],
             NOT_LAST_TEST,
+            ["input", [unidades]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR A GRUESAS Y DOCENAS",
+                    "Escriba una cantidad (entera): ",
+                    f"{unidades} unidades son {gruesas} gruesas, {docenas} docenas y {resto} unidades",
+                ],
+            ],
         )
 
         # números grandes enteros
@@ -536,13 +594,15 @@ def exercise(exercise_id):
         resto = unidades % 12
 
         mpts_common.add_test(
-            [unidades],
-            [],
-            [
-                "CONVERTIDOR A GRUESAS Y DOCENAS",
-                "Escriba una cantidad (entera): ",
-                f"{unidades} unidades son {gruesas} gruesas, {docenas} docenas y {resto} unidades",
-            ],
             LAST_TEST,
+            ["input", [unidades]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR A GRUESAS Y DOCENAS",
+                    "Escriba una cantidad (entera): ",
+                    f"{unidades} unidades son {gruesas} gruesas, {docenas} docenas y {resto} unidades",
+                ],
+            ],
         )
         # Exercise 10 END
