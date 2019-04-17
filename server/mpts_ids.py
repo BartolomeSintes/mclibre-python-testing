@@ -11,7 +11,7 @@ valid_exercise_ids = [
     [3, [32, 33]],
     #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
-    [5, [51, 52, 53, 54, 55, 56]],
+    [5, [51, 52, 53, 54, 55]],
     #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
     [6, [61, 62, 63, 64, 65, 66, 67, 68, 69]],
@@ -45,10 +45,13 @@ valid_exercise_ids = [
     #
     # EXÁMENES
     #
-    # http://www.mclibre.org/consultar/python/examenes/examenes.html#2018-19
+    # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
     [1718, [171811, 171812, 171813]],
     #
-    # http://www.mclibre.org/consultar/python/examenes/examenes.html#2018-19
+    # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180523.html
+    [1718, [171821, 171822, 171823]],
+    #
+    # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
     [1819, [181901, 181902, 181903, 181904]],
 
 ]

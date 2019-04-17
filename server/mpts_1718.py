@@ -103,6 +103,45 @@ def exercise(exercise_id):
             ],
         )
 
+        # Dos de los cuatro, al azar
+        v = [random.randrange(1, 1024), random.randrange(1, 1024), 0, 0]
+        random.shuffle(v)
+        e = 1024 * 1024 * 1024 * v[0] + 1024 * 1024 * v[1] + 1024 * v[2] + v[3]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [e]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    f"{e} bytes son {v[0]} GiB, {v[1]} MiB, {v[2]} KiB y {v[3]} bytes.",
+                ],
+            ],
+        )
+
+        # Tres de los cuatro, al azar
+        v = [
+            random.randrange(1, 1024),
+            random.randrange(1, 1024),
+            random.randrange(1, 1024),
+            0,
+        ]
+        random.shuffle(v)
+        e = 1024 * 1024 * 1024 * v[0] + 1024 * 1024 * v[1] + 1024 * v[2] + v[3]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [e]],
+            [
+                "output",
+                [
+                    "MÚLTIPLOS BINARIOS",
+                    "Escriba un número de bytes: ",
+                    f"{e} bytes son {v[0]} GiB, {v[1]} MiB, {v[2]} KiB y {v[3]} bytes.",
+                ],
+            ],
+        )
+
         # De todo
         a = random.randrange(1, 1024)
         b = random.randrange(1, 1024)
@@ -731,3 +770,430 @@ def exercise(exercise_id):
         )
 
         # Exercise 171813 END
+
+    elif exercise_id == 171_821:
+        # Exercise 171821 BEGINNING
+        # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180523.html#ejercicio-1
+
+        # Cantidad negativa
+        a = -random.randrange(1, 10000)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    "Escriba una cantidad mayor que cero.",
+                ],
+            ],
+        )
+
+        # Cero
+        a = 0
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    "Escriba una cantidad mayor que cero.",
+                ],
+            ],
+        )
+
+        # Sólo ases
+        a = random.randrange(1, 4)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    f"{a} ases son {a} as(es).",
+                ],
+            ],
+        )
+
+        # Sólo sestercios
+        b = random.randrange(1, 4)
+        a = 4 * b
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    f"{a} ases son {b} sestercio(s), ",
+                ],
+            ],
+        )
+
+        # Sólo denarios
+        b = random.randrange(1, 25)
+        a = 4 * 4 * b
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    f"{a} ases son {b} denario(s), ",
+                ],
+            ],
+        )
+        # Sólo áureos
+        b = random.randrange(1, 100)
+        a = 25 * 4 * 4 * b
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    f"{a} ases son {b} áureo(s), ",
+                ],
+            ],
+        )
+
+        # Dos de los cuatro, al azar
+        v = [1, 1, 0, 0]
+        random.shuffle(v)
+        v = [
+            v[0] * random.randrange(1, 100),
+            v[1] * random.randrange(1, 25),
+            v[2] * random.randrange(1, 4),
+            v[3] * random.randrange(1, 4),
+        ]
+        a = 25 * 4 * 4 * v[0] + 4 * 4 * v[1] + 4 * v[2] + v[3]
+        frase = ""
+        if v[0]:
+            frase += f"{v[0]} áureo(s), "
+        if v[1]:
+            frase += f"{v[1]} denario(s), "
+        if v[2]:
+            frase += f"{v[2]} sestercio(s), "
+        if v[3]:
+            frase += f"{v[3]} as(es)."
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    f"{a} ases son {frase}",
+                ],
+            ],
+        )
+
+        # Tres de los cuatro, al azar
+        v = [1, 1, 1, 0]
+        random.shuffle(v)
+        v = [
+            v[0] * random.randrange(1, 100),
+            v[1] * random.randrange(1, 25),
+            v[2] * random.randrange(1, 4),
+            v[3] * random.randrange(1, 4),
+        ]
+        a = 25 * 4 * 4 * v[0] + 4 * 4 * v[1] + 4 * v[2] + v[3]
+        frase = ""
+        if v[0]:
+            frase += f"{v[0]} áureo(s), "
+        if v[1]:
+            frase += f"{v[1]} denario(s), "
+        if v[2]:
+            frase += f"{v[2]} sestercio(s), "
+        if v[3]:
+            frase += f"{v[3]} as(es)."
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    f"{a} ases son {frase}",
+                ],
+            ],
+        )
+
+        # Los cuatro
+        v = [
+            random.randrange(1, 100),
+            random.randrange(1, 25),
+            random.randrange(1, 4),
+            random.randrange(1, 4),
+        ]
+        a = 25 * 4 * 4 * v[0] + 4 * 4 * v[1] + 4 * v[2] + v[3]
+        frase = ""
+        if v[0]:
+            frase += f"{v[0]} áureo(s), "
+        if v[1]:
+            frase += f"{v[1]} denario(s), "
+        if v[2]:
+            frase += f"{v[2]} sestercio(s), "
+        if v[3]:
+            frase += f"{v[3]} as(es)."
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
+                    "Escriba la cantidad de ases: ",
+                    f"{a} ases son {frase}",
+                ],
+            ],
+        )
+
+        # Exercise 171821 END
+
+    elif exercise_id == 171_822:
+        # Exercise 171822 BEGINNING
+        # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180523.html
+
+        # Gana Cubitus
+        a = []
+        b = []
+        ta = tb = 0
+        for _ in range(3):
+            d = random.randrange(2, 6)
+            a += [d]
+            ta += d
+            b += [d - 1]
+            tb += d - 1
+        a += [1, 6]
+        b += [1, 6]
+        random.shuffle(a)
+        random.shuffle(b)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", a + b],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "",
+                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]} ",
+                    f"Cubitus ha sacado {ta} puntos.",
+                    "",
+                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]} ",
+                    f"Humerus ha sacado {tb} puntos.",
+                    "",
+                    "Ha ganado Cubitus.",
+                ],
+            ],
+        )
+
+        # Gana Humerus
+        a = []
+        b = []
+        ta = tb = 0
+        for _ in range(3):
+            d = random.randrange(2, 6)
+            a += [d]
+            ta += d
+            b += [d + 1]
+            tb += d + 1
+        a += [1, 6]
+        b += [1, 6]
+        random.shuffle(a)
+        random.shuffle(b)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", a + b],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "",
+                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]} ",
+                    f"Cubitus ha sacado {ta} puntos.",
+                    "",
+                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]} ",
+                    f"Humerus ha sacado {tb} puntos.",
+                    "",
+                    "Ha ganado Humerus.",
+                ],
+            ],
+        )
+
+        # Empatan
+        a = []
+        b = []
+        ta = tb = 0
+        for _ in range(3):
+            d = random.randrange(2, 6)
+            a += [d]
+            ta += d
+            b += [d]
+            tb += d
+        a += [1, 6]
+        b += [1, 6]
+        random.shuffle(a)
+        random.shuffle(b)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", a + b],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "",
+                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]} ",
+                    f"Cubitus ha sacado {ta} puntos.",
+                    "",
+                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]} ",
+                    f"Humerus ha sacado {tb} puntos.",
+                    "",
+                    "Han empatado.",
+                ],
+            ],
+        )
+
+        # Exercise 171822 END
+
+    elif exercise_id == 171_823:
+        # Exercise 171823 BEGINNING
+        # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180523.html
+
+        # Jugadores negativos
+        n = -random.randrange(1, 100)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "UNUS ET DUO",
+                    "Escriba el número de jugadores: ",
+                    "Escriba un número mayor que dos.",
+                ],
+            ],
+        )
+
+        # 0 jugadores
+        n = 0
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "UNUS ET DUO",
+                    "Escriba el número de jugadores: ",
+                    "Escriba un número mayor que dos.",
+                ],
+            ],
+        )
+
+        # 1 jugador
+        n = 1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "UNUS ET DUO",
+                    "Escriba el número de jugadores: ",
+                    "Escriba un número mayor que dos.",
+                ],
+            ],
+        )
+
+        # 2 jugadores
+        n = 2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "UNUS ET DUO",
+                    "Escriba el número de jugadores: ",
+                    "Escriba un número mayor que dos.",
+                ],
+            ],
+        )
+
+        # No acierta nadie
+        n = random.randrange(3, 10)
+        tmp_output = ["UNUS ET DUO", "Escriba el número de jugadores: "]
+        tmp_random = []
+        a = random.randrange(2, 7)
+        tmp_random += [a]
+        tmp_output += [f"El primer jugador ha sacado un {a}."]
+        for i in range(2, n + 1):
+            b = random.randrange(2, 7)
+            c = random.randrange(2, 7)
+            while b + c == a:
+                b = random.randrange(2, 7)
+                c = random.randrange(2, 7)
+            tmp_random += [b, c]
+            tmp_output += [""]
+            tmp_output += [f"El jugador {i} ha sacado {b} y {c}."]
+        tmp_output += [""]
+        tmp_output += ["No ha ganado nadie."]
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["random", tmp_random],
+            ["output", tmp_output],
+        )
+
+        # Acierta uno
+        n = random.randrange(3, 10)
+        g = random.randrange(2, n + 1)
+        tmp_output = ["UNUS ET DUO", "Escriba el número de jugadores: "]
+        tmp_random = []
+        a = random.randrange(2, 7)
+        tmp_random += [a]
+        tmp_output += [f"El primer jugador ha sacado un {a}."]
+        for i in range(2, g):
+            b = random.randrange(1, 7)
+            c = random.randrange(1, 7)
+            while b + c == a:
+                b = random.randrange(1, 7)
+                c = random.randrange(1, 7)
+            tmp_random += [b, c]
+            tmp_output += [""]
+            tmp_output += [f"El jugador {i} ha sacado {b} y {c}."]
+        b = random.randrange(1, 7)
+        c = random.randrange(1, 7)
+        while b + c != a:
+                b = random.randrange(1, 7)
+                c = random.randrange(1, 7)
+        tmp_random += [b, c]
+        tmp_output += [""]
+        tmp_output += [f"El jugador {g} ha sacado {b} y {c}."]
+        tmp_output += [""]
+        tmp_output += [f"El jugador {g} ha ganado."]
+
+        mpts_common.add_test(
+            LAST_TEST, ["input", [n]], ["random", tmp_random], ["output", tmp_output]
+        )
+
+        # Exercise 171823 END

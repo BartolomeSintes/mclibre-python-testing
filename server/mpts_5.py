@@ -482,131 +482,6 @@ def exercise(exercise_id):
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["random", [1, 1]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado piedra.",
-                    "Juan ha sacado piedra.",
-                    "Han empatado.",
-                ],
-            ],
-        )
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["random", [1, 2]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado piedra.",
-                    "Juan ha sacado papel.",
-                    "Ha ganado Juan.",
-                ],
-            ],
-        )
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["random", [1, 3]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado piedra.",
-                    "Juan ha sacado tijera.",
-                    "Ha ganado Inés.",
-                ],
-            ],
-        )
-
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["random", [2, 1]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado papel.",
-                    "Juan ha sacado piedra.",
-                    "Ha ganado Inés.",
-                ],
-            ],
-        )
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["random", [2, 2]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado papel.",
-                    "Juan ha sacado papel.",
-                    "Han empatado.",
-                ],
-            ],
-        )
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["random", [2, 3]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado papel.",
-                    "Juan ha sacado tijera.",
-                    "Ha ganado Juan.",
-                ],
-            ],
-        )
-
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["random", [3, 1]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado tijera.",
-                    "Juan ha sacado piedra.",
-                    "Ha ganado Juan.",
-                ],
-            ],
-        )
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["random", [3, 2]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado tijera.",
-                    "Juan ha sacado papel.",
-                    "Ha ganado Inés.",
-                ],
-            ],
-        )
-        mpts_common.add_test(
-            LAST_TEST,
-            ["random", [3, 3]],
-            [
-                "output",
-                [
-                    "PIEDRA, PAPEL, ... ¡TIJERA!",
-                    "Inés ha sacado tijera.",
-                    "Juan ha sacado tijera.",
-                    "Han empatado.",
-                ],
-            ],
-        )
-
-        # Exercise 55 END
-
-    elif exercise_id == 56:
-        # Exercise 56 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
-
-        mpts_common.add_test(
-            NOT_LAST_TEST,
             ["choice", ["piedra", "piedra"]],
             [
                 "output",
@@ -620,6 +495,7 @@ def exercise(exercise_id):
         )
         mpts_common.add_test(
             NOT_LAST_TEST,
+            ["random", [1, 2]],
             ["choice", ["piedra", "papel"]],
             [
                 "output",
@@ -633,6 +509,7 @@ def exercise(exercise_id):
         )
         mpts_common.add_test(
             NOT_LAST_TEST,
+            ["random", [1, 3]],
             ["choice", ["piedra", "tijera"]],
             [
                 "output",
@@ -647,6 +524,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             NOT_LAST_TEST,
+            ["random", [2, 1]],
             ["choice", ["papel", "piedra"]],
             [
                 "output",
@@ -660,6 +538,7 @@ def exercise(exercise_id):
         )
         mpts_common.add_test(
             NOT_LAST_TEST,
+            ["random", [2, 2]],
             ["choice", ["papel", "papel"]],
             [
                 "output",
@@ -673,6 +552,7 @@ def exercise(exercise_id):
         )
         mpts_common.add_test(
             NOT_LAST_TEST,
+            ["random", [2, 3]],
             ["choice", ["papel", "tijera"]],
             [
                 "output",
@@ -687,6 +567,7 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             NOT_LAST_TEST,
+            ["random", [3, 1]],
             ["choice", ["tijera", "piedra"]],
             [
                 "output",
@@ -700,6 +581,7 @@ def exercise(exercise_id):
         )
         mpts_common.add_test(
             NOT_LAST_TEST,
+            ["random", [3, 2]],
             ["choice", ["tijera", "papel"]],
             [
                 "output",
@@ -713,6 +595,7 @@ def exercise(exercise_id):
         )
         mpts_common.add_test(
             LAST_TEST,
+            ["random", [3, 3]],
             ["choice", ["tijera", "tijera"]],
             [
                 "output",
@@ -725,5 +608,4 @@ def exercise(exercise_id):
             ],
         )
 
-        # Exercise 56 END
-
+        # Exercise 55 END
