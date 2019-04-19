@@ -263,7 +263,7 @@ def exercise(exercise_id):
 
         tmp_output += [
             f"Ha acertado {n} operaciones en {m + n} intentos.",
-            "Programa terminado.",
+            "Programa terminado",
         ]
         mpts_common.add_test(
             LAST_TEST,
@@ -280,7 +280,8 @@ def exercise(exercise_id):
 
         # Valor negativo
         t1 = round(random.randrange(10, 100) / 10.0, 1)
-        tmp_input = [0, 1, t1]
+        tmp_input = [0, 1]
+        tmp_time = [t1]
         tmp_output = [
             "OPERACIONES (3)",
             "¿Cuántas operaciones correctas debe contestar para terminar el programa? ",
@@ -291,46 +292,56 @@ def exercise(exercise_id):
         ]
         a = random.randrange(1, 101)
         b = random.randrange(1, 101)
-        tmp_input += [a, b, a + b]
+        tmp_random = [a, b]
+        tmp_input += [a + b]
         tmp_output += [f"{a} + {b} = ", "¡Respuesta correcta!", ""]
 
         t2 = t1 + round(random.randrange(10, 100) / 10.0, 1)
-        tmp_input += [t2]
+        tmp_time += [t2]
         tmp_output += [
             f"Ha tardado {round(t2-t1, 1)} segundos en acertar 1 operación en 1 intento.",
             "Programa terminado.",
         ]
-        tmp_input += [a, b, a + b]
         mpts_common.add_test(
-            LAST_TEST,
+            NOT_LAST_TEST,
             ["input", tmp_input],
+            ["random", tmp_random],
+            ["time", tmp_time],
             ["output", tmp_output],
         )
 
-        # # Varios valores negativos
-        # tmp_input = []
-        # tmp_output = [
-        #     "OPERACIONES (3)",
-        #     "¿Cuántas operaciones correctas debe contestar para terminar el programa? ",
-        # ]
-        # for _ in range(random.randrange(2, 10)):
-        #     tmp_input += [-random.randrange(0, 10)]
-        #     tmp_output += [
-        #         "El número de operaciones debe ser mayor que cero.",
-        #         "¿Cuántas operaciones correctas debe contestar para terminar el programa? ",
-        #     ]
-        # tmp_input += [1]
-        # tmp_output += [
-        #   "",
-        #     "Escriba el resultado de las siguientes operaciones:",
-        # ]
-        # a = random.randrange(1, 101)
-        # b = random.randrange(1, 101)
-        # tmp_input += [a, b, a + b]
-        # tmp_output += [f"{a} + {b} = ", "¡Respuesta correcta!", ""]
+        # Varios valores negativos
+        tmp_input = []
+        tmp_output = [
+            "OPERACIONES (3)",
+            "¿Cuántas operaciones correctas debe contestar para terminar el programa? ",
+        ]
+        for _ in range(random.randrange(2, 10)):
+            tmp_input += [-random.randrange(0, 10)]
+            tmp_output += [
+                "El número de operaciones debe ser mayor que cero.",
+                "¿Cuántas operaciones correctas debe contestar para terminar el programa? ",
+            ]
+        tmp_input += [1]
+        t1 = round(random.randrange(10, 100) / 10.0, 1)
+        tmp_time = [t1]
+        tmp_output += ["", "Escriba el resultado de las siguientes operaciones:"]
+        a = random.randrange(1, 101)
+        b = random.randrange(1, 101)
+        tmp_random = [a, b]
+        tmp_input += [a + b]
+        tmp_output += [f"{a} + {b} = ", "¡Respuesta correcta!", ""]
 
-        # tmp_output += ["Ha acertado 1 operación en 1 intento.", "Programa terminado."]
-        # mpts_common.add_test(tmp_input, tmp_output, NOT_LAST_TEST)
+        t2 = t1 + round(random.randrange(10, 100) / 10.0, 1)
+        tmp_time += [t2]
+        tmp_output += [  f"Ha tardado {round(t2-t1, 1)} segundos en acertar 1 operación en 1 intento", "Programa terminado."]
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", tmp_input],
+            ["random", tmp_random],
+            ["time", tmp_time],
+            ["output", tmp_output],
+        )
 
         # # Una correcta
         # tmp_input = [1]

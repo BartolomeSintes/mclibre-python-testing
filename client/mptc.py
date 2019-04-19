@@ -44,7 +44,7 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
     texto = texto.replace("'", '"')
     values = json.loads(texto)
 
-    def test_program(monkeypatch):
+    def test_program():
         global values
 
         if "input" in values:
@@ -62,11 +62,6 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         else:
             choice_values = []
 
-        if "time" in values:
-            time_values = values["time"]
-        else:
-            time_values = []
-
         output = []
         partial_output = ""
 
@@ -76,9 +71,6 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
             elif len(args) == 1:
                 output.append(args[0])
             return input_values.pop(0)
-
-        def mock_time():
-            return time_values.pop(0)
 
         def generate_output(*args, **kwargs):
             nonlocal partial_output
@@ -125,11 +117,6 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
         try:
             program.choice = lambda *args : choice_values.pop(0)
-        except:
-            pass
-
-        try:
-            monkeypatch.setattr("time.time", mock_time)
         except:
             pass
 
