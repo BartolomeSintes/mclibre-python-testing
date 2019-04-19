@@ -170,7 +170,7 @@ def exercise(exercise_id):
             ["input", ["a"]],
             [
                 "output",
-                ["ESCRIBA LETRA", "Escriba una letra: ", f"Ha escrito la letra a."],
+                ["ESCRIBA LETRA", "Escriba una letra: ", "Ha escrito la letra a."],
             ],
         )
 
@@ -191,3 +191,43 @@ def exercise(exercise_id):
         )
 
         # Exercise 1007 END
+
+    elif exercise_id == 1009:
+        # Exercise 10078BEGINNING
+        # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+
+        # 2 segundos
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", ["", ""]],
+            ["time", [1.0, 3.0]],
+            [
+                "output",
+                [
+                    "CRONÓMETRO",
+                    "Pulse Intro para empezar a contar el tiempo: ",
+                    "Pulse Intro para terminar de contar el tiempo: ",
+                    "Han pasado 2.0 s.",
+                ],
+            ],
+        )
+
+        # segundos
+        a = random.randrange(10, 1000)
+        b = random.randrange(a + 100, 2000)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", ["", ""]],
+            ["time", [a / 10, b / 10]],
+            [
+                "output",
+                [
+                    "CRONÓMETRO",
+                    "Pulse Intro para empezar a contar el tiempo: ",
+                    "Pulse Intro para terminar de contar el tiempo: ",
+                    f"Han pasado {round((b-a)/10, 1)} s.",
+                ],
+            ],
+        )
+
+        # Exercise 1009 END

@@ -37,7 +37,7 @@ valid_exercise_ids = [
     # EJEMPLOS DE USO DE MPTC
     #
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
-    [100, [1001, 1002, 1003, 1004, 1005, 1006, 1007]],
+    [100, [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009]],
     #
     # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
     [101, [1011, 1012, 1013, 1014, 1015]],
