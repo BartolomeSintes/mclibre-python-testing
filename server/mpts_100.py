@@ -154,13 +154,60 @@ def exercise(exercise_id):
 
         mpts_common.add_test(
             LAST_TEST,
-            ["input", [a]],
+            ["random", [a]],
             ["output", ["TIRADA DE DADO", f"Ha salido un {a}."]],
         )
 
         # Exercise 1006 END
 
     elif exercise_id == 1007:
+        # Exercise 1007 BEGINNING
+
+        # Negros
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["choice", ["Negros"]],
+            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido Negros."]],
+        )
+
+        # Rojos
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["choice", ["Rojos"]],
+            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido Rojos."]],
+        )
+
+        # J
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["choice", ["J"]],
+            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido J."]],
+        )
+
+        # Q
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["choice", ["Q"]],
+            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido Q."]],
+        )
+
+        # K
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["choice", ["K"]],
+            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido K."]],
+        )
+
+        # As
+        mpts_common.add_test(
+            LAST_TEST,
+            ["choice", ["As"]],
+            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido As."]],
+        )
+
+        # Exercise 1006 END
+
+    elif exercise_id == 1008:
         # Exercise 1007 BEGINNING
         # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 

@@ -486,7 +486,7 @@ def exercise(exercise_id):
         )
 
         # lado3: triángulo degenerado
-        a = random.randrange(1, 100)
+        a = random.randrange(2, 100)
         b = random.randrange(1, a)
         c = a - b
         mpts_common.add_test(

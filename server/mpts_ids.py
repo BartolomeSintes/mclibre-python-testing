@@ -32,7 +32,7 @@ valid_exercise_ids = [
     [11, [111, 112, 113, 114, 115]],
     #
     # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
-    [12, [120, 121]],
+    [12, [120, 121, 122]],
     #
     # EJEMPLOS DE USO DE MPTC
     #

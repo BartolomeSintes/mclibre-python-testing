@@ -60,7 +60,7 @@ def exercise(exercise_id):
             b = random.randrange(0, 11)
             tmp_input += [a - b]
             tmp_output += [f"{a - b} no es mayor que {a}. Inténtelo de nuevo: "]
-        b = random.randrange(0, 11)
+        b = random.randrange(1, 11)
         tmp_input += [a + b]
         tmp_output += ["", f"Los números que ha escrito son {a} y {a + b}."]
         mpts_common.add_test(LAST_TEST, ["input", tmp_input], ["output", tmp_output])
