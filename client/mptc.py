@@ -62,6 +62,11 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         else:
             choice_values = []
 
+        if "time" in values:
+            time_values = values["time"]
+        else:
+            time_values = []
+
         output = []
         partial_output = ""
 
@@ -117,6 +122,16 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
 
         try:
             program.choice = lambda *args : choice_values.pop(0)
+        except:
+            pass
+
+        try:
+            program.time = lambda *args : time_values.pop(0)
+        except:
+            pass
+
+        try:
+            program.time.time = lambda *args : time_values.pop(0)
         except:
             pass
 
@@ -247,17 +262,19 @@ def main():
                 with open("test_values.txt", "w", encoding="utf-8") as file:
                     file.write(str(i))
                 create_test_program(testable)
-                p = subprocess.Popen(
-                    ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"],
-                    stdin=subprocess.PIPE,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.STDOUT,
-                )
-                p.wait()
+                with open('stdout.txt', 'w') as file:
+                    p = subprocess.Popen(
+                        ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"],
+                        stdout=file,
+                    )
+                    p.wait()
                 failed_message = False
-                for line in p.stdout:
-                    if line.rstrip().find(b"1 passed in") != -1:
-                        failed_message = True
+                with open('stdout.txt', 'r') as file:
+                    line = file.readline()
+                    while line:
+                        if line.rstrip().find("1 passed in") != -1:
+                            failed_message = True
+                        line = file.readline()
                 if failed_message:
                     print(f"Test {test_counter} passed. ", end="")
                 else:
@@ -294,6 +311,8 @@ def main():
                 if os.path.isfile("test_program.py"):
                     os.remove("test_program.py")
 
+                if os.path.isfile("stdout.txt"):
+                    os.remove("stdout.txt")
             print()
             print()
             print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
