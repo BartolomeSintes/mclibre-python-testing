@@ -1184,8 +1184,8 @@ def exercise(exercise_id):
         b = random.randrange(1, 7)
         c = random.randrange(1, 7)
         while b + c != a:
-                b = random.randrange(1, 7)
-                c = random.randrange(1, 7)
+            b = random.randrange(1, 7)
+            c = random.randrange(1, 7)
         tmp_random += [b, c]
         tmp_output += [""]
         tmp_output += [f"El jugador {g} ha sacado {b} y {c}."]
@@ -1197,3 +1197,487 @@ def exercise(exercise_id):
         )
 
         # Exercise 171823 END
+
+    elif exercise_id == 171_831:
+        # Exercise 171831 BEGINNING
+        # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180606.html
+
+        # No hay 29 de febrero
+        m = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+        # Días iguales
+        y_1 = random.randrange(1, 2100)
+        m_1 = random.randrange(1, 13)
+        d_1 = random.randrange(1, m[m_1 - 1] + 1)
+        y_2 = y_1
+        m_2 = m_1
+        d_2 = d_1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [d_1, m_1, y_1, d_2, m_2, y_2]],
+            [
+                "output",
+                [
+                    "COMPARADOR DE FECHAS",
+                    "Escriba una fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    "Escriba otra fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    "Las dos fechas son iguales.",
+                ],
+            ],
+        )
+
+        # Primero anterior (año)
+        y_1 = random.randrange(1, 2100)
+        m_1 = random.randrange(1, 13)
+        d_1 = random.randrange(1, m[m_1 - 1] + 1)
+        y_2 = y_1 + random.randrange(1, 10)
+        m_2 = m_1
+        d_2 = d_1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [d_1, m_1, y_1, d_2, m_2, y_2]],
+            [
+                "output",
+                [
+                    "COMPARADOR DE FECHAS",
+                    "Escriba una fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    "Escriba otra fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    f"El día {d_2}/{m_2}/{y_2} es posterior al día {d_1}/{m_1}/{y_1}.",
+                ],
+            ],
+        )
+
+        # Primero anterior (mes)
+        y_1 = random.randrange(1, 2100)
+        m_1 = random.randrange(1, 13 - 1)
+        d_1 = random.randrange(1, m[m_1 - 1] + 1)
+        y_2 = y_1
+        m_2 = random.randrange(m_1 + 1, 13)
+        d_2 = d_1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [d_1, m_1, y_1, d_2, m_2, y_2]],
+            [
+                "output",
+                [
+                    "COMPARADOR DE FECHAS",
+                    "Escriba una fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    "Escriba otra fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    f"El día {d_2}/{m_2}/{y_2} es posterior al día {d_1}/{m_1}/{y_1}.",
+                ],
+            ],
+        )
+
+        # Primero anterior (día)
+        y_1 = random.randrange(1, 2100)
+        m_1 = random.randrange(1, 13)
+        d_1 = random.randrange(1, m[m_1 - 1] + 1 - 1)
+        y_2 = y_1
+        m_2 = m_1
+        d_2 = random.randrange(d_1 + 1, m[m_1 - 1] + 1)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [d_1, m_1, y_1, d_2, m_2, y_2]],
+            [
+                "output",
+                [
+                    "COMPARADOR DE FECHAS",
+                    "Escriba una fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    "Escriba otra fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    f"El día {d_2}/{m_2}/{y_2} es posterior al día {d_1}/{m_1}/{y_1}.",
+                ],
+            ],
+        )
+
+        # Primero posterior (año)
+        y_1 = random.randrange(10, 2100)
+        m_1 = random.randrange(1, 13)
+        d_1 = random.randrange(1, m[m_1 - 1] + 1)
+        y_2 = y_1 - random.randrange(1, 10)
+        m_2 = m_1
+        d_2 = d_1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [d_1, m_1, y_1, d_2, m_2, y_2]],
+            [
+                "output",
+                [
+                    "COMPARADOR DE FECHAS",
+                    "Escriba una fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    "Escriba otra fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    f"El día {d_1}/{m_1}/{y_1} es posterior al día {d_2}/{m_2}/{y_2}.",
+                ],
+            ],
+        )
+
+        # Primero posterior (mes)
+        y_1 = random.randrange(1, 2100)
+        m_1 = random.randrange(1 + 1, 13)
+        d_1 = random.randrange(1, m[m_1 - 1] + 1)
+        y_2 = y_1
+        m_2 = random.randrange(1, m_1)
+        d_2 = d_1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [d_1, m_1, y_1, d_2, m_2, y_2]],
+            [
+                "output",
+                [
+                    "COMPARADOR DE FECHAS",
+                    "Escriba una fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    "Escriba otra fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    f"El día {d_1}/{m_1}/{y_1} es posterior al día {d_2}/{m_2}/{y_2}.",
+                ],
+            ],
+        )
+
+        # Primero posterior (día)
+        y_1 = random.randrange(1, 2100)
+        m_1 = random.randrange(1, 13)
+        d_1 = random.randrange(2, m[m_1 - 1] + 1)
+        y_2 = y_1
+        m_2 = m_1
+        d_2 = random.randrange(1, d_1)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [d_1, m_1, y_1, d_2, m_2, y_2]],
+            [
+                "output",
+                [
+                    "COMPARADOR DE FECHAS",
+                    "Escriba una fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    "Escriba otra fecha:",
+                    "Día: ",
+                    "Mes: ",
+                    "Año: ",
+                    f"El día {d_1}/{m_1}/{y_1} es posterior al día {d_2}/{m_2}/{y_2}.",
+                ],
+            ],
+        )
+
+        # Exercise 171831 END
+
+    elif exercise_id == 171_832:
+        # Exercise 171832 BEGINNING
+        # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180606.html
+
+        # Negativo
+        n = -random.randrange(0, 11)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos dados van a tirar los jugadores? ",
+                    "Indique como mínimo tres dados.",
+                ],
+            ],
+        )
+
+        # Uno
+        n = 1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos dados van a tirar los jugadores? ",
+                    "Indique como mínimo tres dados.",
+                ],
+            ],
+        )
+
+        # Dos
+        n = 2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos dados van a tirar los jugadores? ",
+                    "Indique como mínimo tres dados.",
+                ],
+            ],
+        )
+
+        # Empatan
+        n = random.randrange(3, 11)
+
+        d_1_a = random.randrange(5, 7)
+        d_1_b = random.randrange(4, d_1_a)
+        d_1 = [d_1_a, d_1_b]
+        for _ in range(n - 2):
+            d_1 += [random.randrange(1, d_1_b) + 1]
+        random.shuffle(d_1)
+        tmp_d1 = ""
+        for i in d_1:
+            tmp_d1 += f" {i}"
+
+        d_2_a = random.randrange(4, 7)
+        d_2_b = d_1_a + d_1_b - d_2_a
+        while d_2_b > 6:
+            d_2_a = random.randrange(4, 7)
+            d_2_b = d_1_a + d_1_b - d_2_a
+        d_2 = [d_2_a, d_2_b]
+        for _ in range(n - 2):
+            d_2 += [random.randrange(1, min(d_2_a, d_2_b)) + 1]
+        random.shuffle(d_2)
+        tmp_d2 = ""
+        for i in d_2:
+            tmp_d2 += f" {i}"
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["random", d_1 + d_2],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos dados van a tirar los jugadores? ",
+                    "",
+                    f"Tirada de Cubitus:{tmp_d1}",
+                    f"Cubitus ha sacado {d_1_a + d_1_b} puntos.",
+                    "",
+                    f"Tirada de Humerus:{tmp_d2}",
+                    f"Humerus ha sacado {d_2_a + d_2_b} puntos.",
+                    "",
+                    "Han empatado.",
+                ],
+            ],
+        )
+
+        # Gana el primero
+        n = random.randrange(3, 11)
+
+        d_1_a = random.randrange(5, 7)
+        d_1_b = random.randrange(4, d_1_a)
+        d_1 = [d_1_a, d_1_b]
+        for _ in range(n - 2):
+            d_1 += [random.randrange(1, d_1_b + 1)]
+        random.shuffle(d_1)
+        tmp_d1 = ""
+        for i in d_1:
+            tmp_d1 += f" {i}"
+
+        d_2_a = random.randrange(4, 7)
+        d_2_b = d_1_a + d_1_b - d_2_a - random.randrange(1, 3)
+        while d_2_b > 6:
+            d_2_a = random.randrange(4, 7)
+            d_2_b = d_1_a + d_1_b - d_2_a - random.randrange(1, 3)
+        d_2 = [d_2_a, d_2_b]
+        for _ in range(n - 2):
+            d_2 += [random.randrange(1, min(d_2_a, d_2_b) + 1)]
+        random.shuffle(d_2)
+        tmp_d2 = ""
+        for i in d_2:
+            tmp_d2 += f" {i}"
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["random", d_1 + d_2],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos dados van a tirar los jugadores? ",
+                    "",
+                    f"Tirada de Cubitus:{tmp_d1}",
+                    f"Cubitus ha sacado {d_1_a + d_1_b} puntos.",
+                    "",
+                    f"Tirada de Humerus:{tmp_d2}",
+                    f"Humerus ha sacado {d_2_a + d_2_b} puntos.",
+                    "",
+                    "Ha ganado Cubitus.",
+                ],
+            ],
+        )
+
+        # Gana el segundo
+        n = random.randrange(3, 11)
+
+        d_1_a = random.randrange(4, 7)
+        d_1_b = random.randrange(3, d_1_a)
+        d_1 = [d_1_a, d_1_b]
+        for _ in range(n - 2):
+            d_1 += [random.randrange(1, d_1_b + 1)]
+        random.shuffle(d_1)
+        tmp_d1 = ""
+        for i in d_1:
+            tmp_d1 += f" {i}"
+
+        d_2_a = random.randrange(4, 7)
+        d_2_b = d_1_a + d_1_b - d_2_a + random.randrange(1, 3)
+        while d_2_b > 6:
+            d_2_a = random.randrange(4, 7)
+            d_2_b = d_1_a + d_1_b - d_2_a + random.randrange(1, 3)
+        d_2 = [d_2_a, d_2_b]
+        for _ in range(n - 2):
+            d_2 += [random.randrange(1, min(d_2_a, d_2_b) + 1)]
+        random.shuffle(d_2)
+        tmp_d2 = ""
+        for i in d_2:
+            tmp_d2 += f" {i}"
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [n]],
+            ["random", d_1 + d_2],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos dados van a tirar los jugadores? ",
+                    "",
+                    f"Tirada de Cubitus:{tmp_d1}",
+                    f"Cubitus ha sacado {d_1_a + d_1_b} puntos.",
+                    "",
+                    f"Tirada de Humerus:{tmp_d2}",
+                    f"Humerus ha sacado {d_2_a + d_2_b} puntos.",
+                    "",
+                    "Ha ganado Humerus.",
+                ],
+            ],
+        )
+
+        # Exercise 171832 END
+
+    elif exercise_id == 171_833:
+        # Exercise 171833 BEGINNING
+        # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180606.html
+
+        # Cero
+        tmp_random = [random.choice([1, 3, 5])]
+        tmp_d = ""
+        for i in tmp_random:
+            tmp_d += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", tmp_random],
+            [
+                "output",
+                [
+                    "SOLITARIO DE DADOS",
+                    "",
+                    f"Tirada:{tmp_d}",
+                    "",
+                    "No ha obtenido ningún número par.",
+                ],
+            ],
+        )
+
+        # Uno
+        tmp_random = [random.choice([2, 4, 6]), random.choice([1, 3, 5])]
+        tmp_d = ""
+        for i in tmp_random:
+            tmp_d += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", tmp_random],
+            [
+                "output",
+                [
+                    "SOLITARIO DE DADOS",
+                    "",
+                    f"Tirada:{tmp_d}",
+                    "",
+                    "Ha obtenido 1 número par.",
+                ],
+            ],
+        )
+
+        # Dos
+        tmp_random = [
+            random.choice([2, 4, 6]),
+            random.choice([2, 4, 6]),
+            random.choice([1, 3, 5]),
+        ]
+        tmp_d = ""
+        for i in tmp_random:
+            tmp_d += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", tmp_random],
+            [
+                "output",
+                [
+                    "SOLITARIO DE DADOS",
+                    "",
+                    f"Tirada:{tmp_d}",
+                    "",
+                    "Ha obtenido 2 números pares seguidos.",
+                ],
+            ],
+        )
+
+        # Más de dos
+        n = random.randrange(3, 11)
+        tmp_random = []
+        for _ in range(n):
+            tmp_random += [random.choice([2, 4, 6])]
+        tmp_random += [random.choice([1, 3, 5])]
+        tmp_d = ""
+        for i in tmp_random:
+            tmp_d += f" {i}"
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", tmp_random],
+            [
+                "output",
+                [
+                    "SOLITARIO DE DADOS",
+                    "",
+                    f"Tirada:{tmp_d}",
+                    "",
+                    f"Ha obtenido {n} números pares seguidos.",
+                ],
+            ],
+        )
+
+        # Exercise 171833 END
