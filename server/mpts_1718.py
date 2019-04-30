@@ -1681,3 +1681,324 @@ def exercise(exercise_id):
         )
 
         # Exercise 171833 END
+
+    elif exercise_id == 171_841:
+        # Exercise 171841 BEGINNING
+        # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180625.html
+
+        # Salir
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [3]],
+            [
+                "output",
+                [
+                    "CONVERTIDOR DE UNIDADES ASTRONÓMICAS",
+                    "1 - Convertir km en unidades astronómicas",
+                    "2 - Convertir unidades astronómicas en km",
+                    "3 - Salir",
+                    "Elija una opción: ",
+                    "¡Hasta la vista!",
+                ],
+            ],
+        )
+
+        # Opción no valida y Salir
+        tmp_input = []
+        tmp_output = [
+            "CONVERTIDOR DE UNIDADES ASTRONÓMICAS",
+            "1 - Convertir km en unidades astronómicas",
+            "2 - Convertir unidades astronómicas en km",
+            "3 - Salir",
+            "Elija una opción: ",
+        ]
+        n = random.randrange(1, 6)
+        for _ in range(n):
+            tmp_input += [random.randrange(4, 10)]
+            tmp_output += ["Elija una opción: "]
+        tmp_input += [3]
+        tmp_output += ["¡Hasta la vista!"]
+        mpts_common.add_test(
+            NOT_LAST_TEST, ["input", tmp_input], ["output", tmp_output]
+        )
+
+        # km => ua
+        tmp_input = [1]
+        tmp_output = [
+            "CONVERTIDOR DE UNIDADES ASTRONÓMICAS",
+            "1 - Convertir km en unidades astronómicas",
+            "2 - Convertir unidades astronómicas en km",
+            "3 - Salir",
+            "Elija una opción: ",
+            "Escriba una cantidad de km: ",
+        ]
+        km = random.randrange(200, 1000) * 1_000_000.0
+        ua_1 = km // 149_597_870.7
+        ua_2 = round(km % 149_597_870.7, 1)
+        tmp_input += [km]
+        tmp_output += [f"{km} km son {ua_1} ua y {ua_2} km", "Elija una opción: "]
+        tmp_input += [3]
+        tmp_output += ["¡Hasta la vista!"]
+        mpts_common.add_test(
+            NOT_LAST_TEST, ["input", tmp_input], ["output", tmp_output]
+        )
+
+        # ua => km
+        tmp_input = [2]
+        tmp_output = [
+            "CONVERTIDOR DE UNIDADES ASTRONÓMICAS",
+            "1 - Convertir km en unidades astronómicas",
+            "2 - Convertir unidades astronómicas en km",
+            "3 - Salir",
+            "Elija una opción: ",
+            "Escriba una cantidad de ua: ",
+        ]
+        ua = random.randrange(1, 1000) * 0.01
+        km = round(ua * 149_597_870.7, 1)
+        tmp_input += [ua]
+        tmp_output += [f"{ua} ua son {km} km", "Elija una opción: "]
+        tmp_input += [3]
+        tmp_output += ["¡Hasta la vista!"]
+        mpts_common.add_test(
+            NOT_LAST_TEST, ["input", tmp_input], ["output", tmp_output]
+        )
+
+        # km => ua, ua => km
+        tmp_input = [1]
+        tmp_output = [
+            "CONVERTIDOR DE UNIDADES ASTRONÓMICAS",
+            "1 - Convertir km en unidades astronómicas",
+            "2 - Convertir unidades astronómicas en km",
+            "3 - Salir",
+            "Elija una opción: ",
+            "Escriba una cantidad de km: ",
+        ]
+        km = random.randrange(200, 1000) * 1_000_000.0
+        ua_1 = km // 149_597_870.7
+        ua_2 = round(km % 149_597_870.7, 1)
+        tmp_input += [km]
+        tmp_output += [f"{km} km son {ua_1} ua y {ua_2} km", "Elija una opción: "]
+        tmp_input += [2]
+        tmp_output += ["Escriba una cantidad de ua: "]
+        ua = random.randrange(1, 1000) * 0.01
+        km = round(ua * 149_597_870.7, 1)
+        tmp_input += [ua]
+        tmp_output += [f"{ua} ua son {km} km", "Elija una opción: "]
+        tmp_input += [3]
+        tmp_output += ["¡Hasta la vista!"]
+        mpts_common.add_test(
+            NOT_LAST_TEST, ["input", tmp_input], ["output", tmp_output]
+        )
+
+        # ua => km, km => ua
+        tmp_input = [2]
+        tmp_output = [
+            "CONVERTIDOR DE UNIDADES ASTRONÓMICAS",
+            "1 - Convertir km en unidades astronómicas",
+            "2 - Convertir unidades astronómicas en km",
+            "3 - Salir",
+            "Elija una opción: ",
+            "Escriba una cantidad de ua: ",
+        ]
+        ua = random.randrange(1, 1000) * 0.01
+        km = round(ua * 149_597_870.7, 1)
+        tmp_input += [ua]
+        tmp_output += [f"{ua} ua son {km} km", "Elija una opción: "]
+        tmp_input += [1]
+        tmp_output += ["Escriba una cantidad de km: "]
+        km = random.randrange(200, 1000) * 1_000_000.0
+        ua_1 = km // 149_597_870.7
+        ua_2 = round(km % 149_597_870.7, 1)
+        tmp_input += [km]
+        tmp_output += [f"{km} km son {ua_1} ua y {ua_2} km", "Elija una opción: "]
+        tmp_input += [3]
+        tmp_output += ["¡Hasta la vista!"]
+        mpts_common.add_test(LAST_TEST, ["input", tmp_input], ["output", tmp_output])
+
+        # Exercise 171841 END
+
+    elif exercise_id == 171_842:
+        # Exercise 171842 BEGINNING
+        # http://www.mclibre.org/consultar/python/examenes/17-18/examen-180625.html
+
+        # pares, empatan
+        n = random.randrange(1, 6)
+        tmp_random = []
+        for _ in range(n):
+            tmp_random += [random.choice([2, 4, 6])]
+            tmp_random += [random.choice([1, 3, 5])]
+        random.shuffle(tmp_random)
+        tirada = "Tirada de dados:"
+        for i in tmp_random:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [0, 2 * n] + tmp_random],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "Cubitus elige los números pares.",
+                    f"Humerus elige tirar {2*n} dados.",
+                    "",
+                    tirada,
+                    f"Cubitus ha sacado {n} puntos.",
+                    f"Humerus ha sacado {n} puntos.",
+                    "Han empatado.",
+                ],
+            ],
+        )
+
+        # pares, gana Cubitus
+        n = random.randrange(2, 11)
+        n_1 = random.randrange(n // 2 + 1, n + 1)
+        n_2 = n - n_1
+        tmp_random = []
+        for _ in range(n_1):
+            tmp_random += [random.choice([2, 4, 6])]
+        for _ in range(n_2):
+            tmp_random += [random.choice([1, 3, 5])]
+        random.shuffle(tmp_random)
+        tirada = "Tirada de dados:"
+        for i in tmp_random:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [0, n] + tmp_random],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "Cubitus elige los números pares.",
+                    f"Humerus elige tirar {n} dados.",
+                    "",
+                    tirada,
+                    f"Cubitus ha sacado {n_1} puntos.",
+                    f"Humerus ha sacado {n_2} puntos.",
+                    "Ha ganado Cubitus.",
+                ],
+            ],
+        )
+
+        # pares, gana Humerus
+        n = random.randrange(2, 11)
+        n_1 = random.randrange(0, n // 2)
+        n_2 = n - n_1
+        tmp_random = []
+        for _ in range(n_1):
+            tmp_random += [random.choice([2, 4, 6])]
+        for _ in range(n_2):
+            tmp_random += [random.choice([1, 3, 5])]
+        random.shuffle(tmp_random)
+        tirada = "Tirada de dados:"
+        for i in tmp_random:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [0, n] + tmp_random],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "Cubitus elige los números pares.",
+                    f"Humerus elige tirar {n} dados.",
+                    "",
+                    tirada,
+                    f"Cubitus ha sacado {n_1} puntos.",
+                    f"Humerus ha sacado {n_2} puntos.",
+                    "Ha ganado Humerus.",
+                ],
+            ],
+        )
+
+        # impares, empatan
+        n = random.randrange(1, 6)
+        tmp_random = []
+        for _ in range(n):
+            tmp_random += [random.choice([2, 4, 6])]
+            tmp_random += [random.choice([1, 3, 5])]
+        random.shuffle(tmp_random)
+        tirada = "Tirada de dados:"
+        for i in tmp_random:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [1, 2 * n] + tmp_random],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "Cubitus elige los números impares.",
+                    f"Humerus elige tirar {2*n} dados.",
+                    "",
+                    tirada,
+                    f"Cubitus ha sacado {n} puntos.",
+                    f"Humerus ha sacado {n} puntos.",
+                    "Han empatado.",
+                ],
+            ],
+        )
+
+        # impares, gana Cubitus
+        n = random.randrange(2, 11)
+        n_1 = random.randrange(n // 2 + 1, n + 1)
+        n_2 = n - n_1
+        tmp_random = []
+        for _ in range(n_1):
+            tmp_random += [random.choice([1, 3, 5])]
+        for _ in range(n_2):
+            tmp_random += [random.choice([2, 4, 6])]
+        random.shuffle(tmp_random)
+        tirada = "Tirada de dados:"
+        for i in tmp_random:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [1, n] + tmp_random],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "Cubitus elige los números impares.",
+                    f"Humerus elige tirar {n} dados.",
+                    "",
+                    tirada,
+                    f"Cubitus ha sacado {n_1} puntos.",
+                    f"Humerus ha sacado {n_2} puntos.",
+                    "Ha ganado Cubitus.",
+                ],
+            ],
+        )
+
+        # impares, gana Humerus
+        n = random.randrange(2, 11)
+        n_1 = random.randrange(0, n // 2)
+        n_2 = n - n_1
+        tmp_random = []
+        for _ in range(n_1):
+            tmp_random += [random.choice([1, 3, 5])]
+        for _ in range(n_2):
+            tmp_random += [random.choice([2, 4, 6])]
+        random.shuffle(tmp_random)
+        tirada = "Tirada de dados:"
+        for i in tmp_random:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", [1, n] + tmp_random],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "Cubitus elige los números impares.",
+                    f"Humerus elige tirar {n} dados.",
+                    "",
+                    tirada,
+                    f"Cubitus ha sacado {n_1} puntos.",
+                    f"Humerus ha sacado {n_2} puntos.",
+                    "Ha ganado Humerus.",
+                ],
+            ],
+        )
+
+        # Exercise 171842 END

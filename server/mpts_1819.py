@@ -6,8 +6,8 @@ LAST_TEST = False
 
 
 def exercise(exercise_id):
-    if exercise_id == 181_901:
-        # Exercise 181901 BEGINNING
+    if exercise_id == 181_911:
+        # Exercise 181911 BEGINNING
         # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
         # Cantidad negativa
@@ -187,10 +187,10 @@ def exercise(exercise_id):
             ],
         )
 
-        # Exercise 181901 END
+        # Exercise 181911 END
 
-    elif exercise_id == 181_902:
-        # Exercise 181902 BEGINNING
+    elif exercise_id == 181_912:
+        # Exercise 181912 BEGINNING
         # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
         # Cantidad negativa
@@ -303,10 +303,10 @@ def exercise(exercise_id):
             ],
         )
 
-        # Exercise 181902 END
+        # Exercise 181912 END
 
-    elif exercise_id == 181_903:
-        # Exercise 181903 BEGINNING
+    elif exercise_id == 181_913:
+        # Exercise 181913 BEGINNING
         # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
         # lado1: cantidad negativa
@@ -504,10 +504,10 @@ def exercise(exercise_id):
             ],
         )
 
-        # Exercise 181903 END
+        # Exercise 181913 END
 
-    elif exercise_id == 181_904:
-        # Exercise 181904 BEGINNING
+    elif exercise_id == 181_914:
+        # Exercise 181914 BEGINNING
         # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
         # a y b iguales
@@ -679,4 +679,4 @@ def exercise(exercise_id):
             ],
         )
 
-        # Exercise 181904 END
+        # Exercise 181914 END
