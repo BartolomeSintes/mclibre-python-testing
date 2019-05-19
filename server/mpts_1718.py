@@ -1733,7 +1733,7 @@ def exercise(exercise_id):
             "Escriba una cantidad de km: ",
         ]
         km = random.randrange(200, 1000) * 1_000_000.0
-        ua_1 = km // 149_597_870.7
+        ua_1 = int(km // 149_597_870.7)
         ua_2 = round(km % 149_597_870.7, 1)
         tmp_input += [km]
         tmp_output += [f"{km} km son {ua_1} ua y {ua_2} km", "Elija una opción: "]
@@ -1774,7 +1774,7 @@ def exercise(exercise_id):
             "Escriba una cantidad de km: ",
         ]
         km = random.randrange(200, 1000) * 1_000_000.0
-        ua_1 = km // 149_597_870.7
+        ua_1 = int(km // 149_597_870.7)
         ua_2 = round(km % 149_597_870.7, 1)
         tmp_input += [km]
         tmp_output += [f"{km} km son {ua_1} ua y {ua_2} km", "Elija una opción: "]
@@ -1807,7 +1807,7 @@ def exercise(exercise_id):
         tmp_input += [1]
         tmp_output += ["Escriba una cantidad de km: "]
         km = random.randrange(200, 1000) * 1_000_000.0
-        ua_1 = km // 149_597_870.7
+        ua_1 = int(km // 149_597_870.7)
         ua_2 = round(km % 149_597_870.7, 1)
         tmp_input += [km]
         tmp_output += [f"{km} km son {ua_1} ua y {ua_2} km", "Elija una opción: "]

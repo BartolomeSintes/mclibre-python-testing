@@ -467,8 +467,8 @@ def exercise(exercise_id):
         )
 
         # lado3: triángulo imposible
-        a = random.randrange(2, 100)
-        b = random.randrange(1, a)
+        a = random.randrange(3, 100)
+        b = random.randrange(1, a - 1)
         c = random.randrange(1, a - b)
         mpts_common.add_test(
             NOT_LAST_TEST,
