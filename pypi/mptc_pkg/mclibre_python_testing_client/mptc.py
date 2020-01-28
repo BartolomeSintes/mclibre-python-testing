@@ -201,7 +201,7 @@ def main():
             print(f"Error: {args.read} file not found.")
             exit()
     else:
-        server_url = "http://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre_python_testing_server.py"
+        server_url = "https://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre_python_testing_server.py"
         # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
 
         random_id = random.randint(0, 100_000)
