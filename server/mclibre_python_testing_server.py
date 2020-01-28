@@ -1,8 +1,9 @@
-#!"C:\Users\BLJ\AppData\Local\Programs\Python\Python36\pythonw.exe"
+#!"C:\Users\BLJ\AppData\Local\Programs\Python\Python38\pythonw.exe"
 # enable debugging
 import cgi
 import cgitb
 import importlib
+import io
 import json
 import os
 import random
@@ -10,6 +11,7 @@ import sys
 from mpts_ids import valid_exercise_ids
 
 cgitb.enable()
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding="utf-8")
 
 
 def valid_exercise_number(num):
