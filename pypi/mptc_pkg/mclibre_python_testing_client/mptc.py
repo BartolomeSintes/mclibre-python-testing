@@ -1,4 +1,5 @@
 import argparse
+import colorama
 import json
 import os
 import random
@@ -231,7 +232,9 @@ def main():
             print(f"Error: {args.write} file could not be created.")
             exit()
     else:
-        print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
+        print()
+        print(f"{colorama.Fore.YELLOW}-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-{colorama.Style.RESET_ALL}")
+        print()
         print("-+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-")
         print()
         if "error" in values:
@@ -314,8 +317,6 @@ def main():
                 if os.path.isfile("stdout.txt"):
                     os.remove("stdout.txt")
             print()
-            print()
-            print("-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-")
             print("-+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-")
             print()
             print(f"Tested program: {testable}")
@@ -327,7 +328,7 @@ def main():
                 print(f"{len(values['result'])} test has been executed.")
             if errorReport == []:
                 print()
-                print("All tests have been passed. Congratulations!")
+                print(f"{colorama.Fore.GREEN}All tests have been passed. Congratulations!{colorama.Style.RESET_ALL}")
             else:
                 if len(values["result"]) - len(errorReport) > 1:
                     print(
@@ -390,6 +391,9 @@ def main():
                                 print(f'  Obtained result: "{i[1][j]}"')
                             else:
                                 print(f"  No result was obtained.")
+                print()
+                print(f"{colorama.Fore.RED}{len(errorReport)} tests have been failed. Please correct and test again.{colorama.Style.RESET_ALL}")
+
             print()
 
 
