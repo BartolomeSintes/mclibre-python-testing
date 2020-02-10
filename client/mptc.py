@@ -6,8 +6,6 @@ import random
 import subprocess
 import sys
 
-from colorama import Fore, Style
-
 # pytest is a required module
 try:
     exec("import pytest")
@@ -235,7 +233,7 @@ def main():
             exit()
     else:
         print()
-        print(f"{Fore.YELLOW}-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-{Style.RESET_ALL}")
+        print(f"{colorama.Fore.YELLOW}-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-{colorama.Style.RESET_ALL}")
         print()
         print("-+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-")
         print()
@@ -330,7 +328,7 @@ def main():
                 print(f"{len(values['result'])} test has been executed.")
             if errorReport == []:
                 print()
-                print(f"{Fore.GREEN}All tests have been passed. Congratulations!{Style.RESET_ALL}")
+                print(f"{colorama.Fore.GREEN}All tests have been passed. Congratulations!{colorama.Style.RESET_ALL}")
             else:
                 if len(values["result"]) - len(errorReport) > 1:
                     print(
@@ -394,7 +392,7 @@ def main():
                             else:
                                 print(f"  No result was obtained.")
                 print()
-                print(f"{Fore.RED}{len(errorReport)} tests have been failed. Please correct and test again.{Style.RESET_ALL}")
+                print(f"{colorama.Fore.RED}{len(errorReport)} tests have been failed. Please correct and test again.{colorama.Style.RESET_ALL}")
 
             print()
 
