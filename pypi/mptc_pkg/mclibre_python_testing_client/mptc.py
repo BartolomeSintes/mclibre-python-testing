@@ -258,7 +258,7 @@ def main():
             errorReport = []
             test_counter = 1
             for i in values["result"]:
-                print(f"Running test {test_counter}. Please wait. ")
+                print(f"Running test {test_counter}. Please wait. ", end="")
                 with open("test_values.txt", "w", encoding="utf-8") as file:
                     file.write(str(i))
                 create_test_program(testable)
@@ -272,13 +272,13 @@ def main():
                 with open('stdout.txt', 'r') as file:
                     line = file.readline()
                     while line:
-                        if line.rstrip().find("1 passed in") != -1:
+                        if line.rstrip().find("AssertionError") != -1:
                             failed_message = True
                         line = file.readline()
                 if failed_message:
-                    print(f"Test {test_counter} passed. ", end="")
+                    print(f"Test {test_counter} failed. ")
                 else:
-                    print(f"Test {test_counter} failed. ", end="")
+                    print(f"Test {test_counter} passed. ")
                 test_counter += 1
 
                 import xml.etree.ElementTree as ET
