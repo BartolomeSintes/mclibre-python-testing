@@ -233,7 +233,9 @@ def main():
             exit()
     else:
         print()
-        print(f"{colorama.Fore.YELLOW}-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-{colorama.Style.RESET_ALL}")
+        print(
+            f"{colorama.Fore.YELLOW}-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-{colorama.Style.RESET_ALL}"
+        )
         print()
         print("-+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-")
         print()
@@ -265,14 +267,19 @@ def main():
                 with open("test_values.txt", "w", encoding="utf-8") as file:
                     file.write(str(i))
                 create_test_program(testable)
-                with open('stdout.txt', 'w') as file:
+                with open("stdout.txt", "w") as file:
                     p = subprocess.Popen(
-                        ["pytest", "test_program.py", "--junitxml=result.txt", "--quiet"],
+                        [
+                            "pytest",
+                            "test_program.py",
+                            "--junitxml=result.txt",
+                            "--quiet",
+                        ],
                         stdout=file,
                     )
                     p.wait()
                 failed_message = False
-                with open('stdout.txt', 'r') as file:
+                with open("stdout.txt", "r") as file:
                     line = file.readline()
                     while line:
                         if line.rstrip().find("AssertionError") != -1:
@@ -328,7 +335,9 @@ def main():
                 print(f"{len(values['result'])} test has been executed.")
             if errorReport == []:
                 print()
-                print(f"{colorama.Fore.GREEN}All tests have been passed. Congratulations!{colorama.Style.RESET_ALL}")
+                print(
+                    f"{colorama.Fore.GREEN}All tests have been passed. Congratulations!{colorama.Style.RESET_ALL}"
+                )
             else:
                 if len(values["result"]) - len(errorReport) > 1:
                     print(
@@ -392,7 +401,14 @@ def main():
                             else:
                                 print(f"  No result was obtained.")
                 print()
-                print(f"{colorama.Fore.RED}{len(errorReport)} tests have been failed. Please correct and test again.{colorama.Style.RESET_ALL}")
+                if len(errorReport) > 1:
+                    print(
+                        f"{colorama.Fore.RED}{len(errorReport)} tests have been failed. Please correct and test again.{colorama.Style.RESET_ALL}"
+                    )
+                else:
+                    print(
+                        f"{colorama.Fore.RED}{len(errorReport)} test has been failed. Please correct and test again.{colorama.Style.RESET_ALL}"
+                    )
 
             print()
 
