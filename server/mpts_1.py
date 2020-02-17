@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 1:
         # Exercise 1 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # envía dos números enteros positivos
         numero_1 = random.randrange(0, 20)
@@ -67,7 +67,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 2:
         # Exercise 2 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # imc bajo
         imc = random.randrange(150, 200) / 10.0
@@ -136,7 +136,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 3:
         # Exercise 3 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # números pequeños enteros
         pies = float(random.randrange(0, 10))
@@ -197,7 +197,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 4:
         # Exercise 4 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # números pequeños enteros
         pulgadas = float(random.randrange(0, 10))
@@ -252,7 +252,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 5:
         # Exercise 5 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # números pequeños enteros
         pies = float(random.randrange(0, 10))
@@ -307,7 +307,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 6:
         # Exercise 6 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # números pequeños enteros
         celsius = float(random.randrange(0, 100))
@@ -362,7 +362,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 7:
         # Exercise 7 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # números pequeños enteros
         fahrenheit = float(random.randrange(0, 100))
@@ -417,7 +417,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 8:
         # Exercise 8 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # números pequeños enteros
         segundos = random.randrange(0, 60)
@@ -476,7 +476,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 9:
         # Exercise 9 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # números pequeños enteros
         segundos = random.randrange(0, 60)
@@ -544,7 +544,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 10:
         # Exercise 10 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html
 
         # números pequeños enteros
         unidades = random.randrange(0, 12)

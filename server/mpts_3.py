@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 32:
         # Exercise 32 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html
 
         # dia == 0
         dia = 0
@@ -242,7 +242,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 33:
         # Exercise 33 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html
 
         # dia == 0
         opcion = "c"

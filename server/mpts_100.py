@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 1001:
         # Exercise 1001 BEGINNING
-        # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+        # https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # Comprueba salida
         mpts_common.add_test(LAST_TEST, ["output", ["¡Hola, mundo!"]])
@@ -16,7 +16,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 1002:
         # Exercise 1002 BEGINNING
-        # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+        # https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # Comprueba salida
         mpts_common.add_test(
@@ -27,7 +27,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 1003:
         # Exercise 1003 BEGINNING
-        # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+        # https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # número pequeño
         numero = random.randrange(0, 10)
@@ -65,7 +65,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 1004:
         # Exercise 1004 BEGINNING
-        # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+        # https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         a = random.randrange(0, 100) / 10
         b = random.randrange(0, 100) / 10
@@ -89,7 +89,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 1005:
         # Exercise 1005 BEGINNING
-        # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+        # https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # números crecientes
         a = random.randrange(0, 1000)
@@ -209,7 +209,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 1008:
         # Exercise 1007 BEGINNING
-        # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+        # https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # letra fija
         mpts_common.add_test(
@@ -241,7 +241,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 1009:
         # Exercise 10078BEGINNING
-        # http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
+        # https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
 
         # 2 segundos
         mpts_common.add_test(

@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 51:
         # Exercise 51 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
 
         # Empate
         a = random.randrange(1, 7)
@@ -65,7 +65,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 52:
         # Exercise 52 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
 
         # el mayor es de un jugador, pero gana el otro
         a_1 = random.randrange(5, 7)
@@ -204,7 +204,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 53:
         # Exercise 53 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
 
         # el mayor es de un jugador, la suma del otro es mayor
         a_1 = random.randrange(5, 7)
@@ -343,7 +343,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 54:
         # Exercise 54 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
 
         # Se pasan los dos
         a_1 = random.randrange(1, 11)
@@ -477,7 +477,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 55:
         # Exercise 55 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
 
         mpts_common.add_test(
             NOT_LAST_TEST,

@@ -6,8 +6,8 @@ LAST_TEST = False
 
 
 def exercise(exercise_id):
-    if exercise_id == 171_811:
-        # Exercise 171811 BEGINNING
+    if exercise_id == 161_711:
+        # Exercise 161711 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
 
         # Cantidad negativa

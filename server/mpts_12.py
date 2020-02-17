@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 120:
         # Exercise 120 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
         # Todas correctas
         tmp_input = []
@@ -75,7 +75,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 121:
         # Exercise 121 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
         # Valor negativo
         tmp_input = [0, 1]
@@ -276,7 +276,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 122:
         # Exercise 122 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
         # Valor negativo
         t1 = round(random.randrange(10, 100) / 10.0, 1)

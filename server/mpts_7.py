@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 71:
         # Exercise 71 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Cero
         a = 0
@@ -66,7 +66,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 72:
         # Exercise 72 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Cero
         a = 0
@@ -128,7 +128,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 73:
         # Exercise 73 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Jugadores: Cero
         a = 0
@@ -267,7 +267,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 74:
         # Exercise 74 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Jugadores: Cero
         a = 0
@@ -403,7 +403,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 75:
         # Exercise 75 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Jugadores: Cero
         a = 0
@@ -469,7 +469,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 76:
         # Exercise 76 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Jugadores: Cero
         a = 0
@@ -605,7 +605,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 77:
         # Exercise 77 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Jugadores: Cero
         a = 0
@@ -707,7 +707,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 78:
         # Exercise 78 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Jugadores: Cero
         a = 0
@@ -816,7 +816,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 79:
         # Exercise 79 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Jugadores: Cero
         a = 0
@@ -978,7 +978,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 80:
         # Exercise 80 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html
 
         # Jugadores: Cero
         a = 0

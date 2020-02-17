@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 11:
         # Exercise 11 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # División exacta
         resto = 0
@@ -75,7 +75,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 12:
         # Exercise 12 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # División exacta
         resto = 0
@@ -161,7 +161,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 13:
         # Exercise 13 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # Primer número es menor
         numero_1 = random.randrange(0, 500) / 10
@@ -223,7 +223,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 14:
         # Exercise 14 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # Primer año es menor
         fecha_1 = 2000 + random.randrange(0, 50)
@@ -283,7 +283,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 15:
         # Exercise 15 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # Primer año es menor
         fecha_1 = 2000 + random.randrange(0, 50)
@@ -379,7 +379,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 16:
         # Exercise 16 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # Los números son iguales
         numero_1 = random.randrange(1, 50)
@@ -480,7 +480,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 17:
         # Exercise 17 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # Un valor es cero
         numero_1 = random.randrange(1, 50)
@@ -617,7 +617,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 18:
         # Exercise 18 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # Los tres valores son iguales
         numero_1 = random.randrange(1, 50)
@@ -722,7 +722,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 19:
         # Exercise 19 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
         fecha = 4 * random.randrange(400, 600) + 1
         mpts_common.add_test(
             NOT_LAST_TEST,
@@ -814,7 +814,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 20:
         # Exercise 20 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # a, b son cero
         a = 0
@@ -905,7 +905,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 21:
         # Exercise 21 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # a, b, c son cero
         a = 0
@@ -1048,7 +1048,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 22:
         # Exercise 22 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # triángulo
         t_c = "T"
@@ -1138,7 +1138,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 23:
         # Exercise 23 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # cero
         cm = 0
@@ -1235,7 +1235,7 @@ def exercise(exercise_id):
     elif exercise_id == 24:
         # TODO NO SE PUEDE VALIDAR LA SOLUCIÓN PORQUE UTILIZA END="" EN EL PRINT
         # Exercise 24 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html
 
         # cero
         cm = 0

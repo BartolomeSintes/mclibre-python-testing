@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 61:
         # Exercise 61 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Listas fijas
         mpts_common.add_test(
@@ -36,7 +36,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 62:
         # Exercise 62 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Número negativo
         a = -random.randrange(10)
@@ -95,7 +95,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 63:
         # Exercise 63 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Cero
         mpts_common.add_test(
@@ -141,7 +141,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 64:
         # Exercise 64 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Números iguales
         a = random.randrange(0, 20)
@@ -278,7 +278,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 65:
         # Exercise 65 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Números iguales
         a = random.randrange(0, 20)
@@ -403,7 +403,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 66:
         # Exercise 66 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Números iguales
         a = random.randrange(0, 20)
@@ -562,7 +562,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 67:
         # Exercise 67 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Cantidad negativa
         a = random.randrange(0, 20)
@@ -653,7 +653,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 68:
         # Exercise 68 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Segundo menor que el primero (positivo)
         a = random.randrange(0, 21)
@@ -795,7 +795,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 69:
         # Exercise 69 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-range.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-range.html
 
         # Segundo menor que el primero (positivo)
         a = random.randrange(0, 21)

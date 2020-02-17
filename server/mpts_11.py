@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 111:
         # Exercise 111 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
         termina = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
@@ -83,7 +83,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 112:
         # Exercise 112 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
         termina = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
@@ -160,7 +160,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 113:
         # Exercise 113 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
         termina = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
@@ -374,7 +374,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 114:
         # Exercise 114 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
         termina = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
@@ -792,7 +792,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 115:
         # Exercise 115 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
         termina = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 

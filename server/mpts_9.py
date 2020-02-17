@@ -9,7 +9,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 93:
         # Exercise 93 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
 
         # Respuesta correcta
         a = random.randrange(2, 11)
@@ -69,7 +69,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 94:
         # Exercise 94 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
 
         # Número preguntas negativo
         n = -random.randrange(1, 11)
@@ -210,7 +210,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 95:
         # Exercise 95 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
 
         # Número preguntas negativo
         n = -random.randrange(1, 11)
@@ -473,7 +473,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 96:
         # Exercise 96 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
 
         # Respuesta correcta
         a = random.randrange(11, 100)
@@ -611,7 +611,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 97:
         # Exercise 97 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
 
         # Número preguntas negativo
         n = -random.randrange(1, 11)
@@ -887,7 +887,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 98:
         # Exercise 98 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
 
         # Número preguntas negativo
         n = -random.randrange(1, 11)

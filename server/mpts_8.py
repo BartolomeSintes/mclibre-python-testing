@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 81:
         # Exercise 81 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Segundo menor
         a = random.randrange(0, 20)
@@ -95,7 +95,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 82:
         # Exercise 82 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Negativo
         a = random.randrange(-1000, 0)
@@ -209,7 +209,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 83:
         # Exercise 83 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Negativo
         a = random.randrange(-1000, 0)
@@ -319,7 +319,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 84:
         # Exercise 84 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Negativo
         a = random.randrange(-1000, 0)
@@ -431,7 +431,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 85:
         # Exercise 85 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Negativo
         a = random.randrange(-1000, 0)
@@ -548,7 +548,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 86:
         # Exercise 86 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Negativo
         a = random.randrange(-1000, 0)
@@ -676,7 +676,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 87:
         # Exercise 87 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Negativo
         a = random.randrange(-1000, 0)
@@ -791,7 +791,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 88:
         # Exercise 88 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Negativo
         a = random.randrange(-1000, 0)
@@ -855,7 +855,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 89:
         # Exercise 89 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Primero negativo
         a = -random.randrange(1, 101)
@@ -961,7 +961,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 90:
         # Exercise 90 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Primero negativo
         a = -random.randrange(1, 101)
@@ -1077,7 +1077,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 91:
         # Exercise 91 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Primero negativo
         a = -random.randrange(1, 101)
@@ -1192,7 +1192,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 92:
         # Exercise 92 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html
 
         # Negativo
         a = -random.randrange(1, 101)

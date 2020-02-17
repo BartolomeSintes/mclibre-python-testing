@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 181_911:
         # Exercise 181911 BEGINNING
-        # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
         # Cantidad negativa
         a = -random.randrange(1, 10000)
@@ -191,7 +191,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 181_912:
         # Exercise 181912 BEGINNING
-        # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
         # Cantidad negativa
         a = -random.randrange(1, 10000)
@@ -307,7 +307,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 181_913:
         # Exercise 181913 BEGINNING
-        # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
         # lado1: cantidad negativa
         a = -random.randrange(2, 100)
@@ -508,7 +508,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 181_914:
         # Exercise 181914 BEGINNING
-        # http://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
         # a y b iguales
         a = random.randrange(-100, 101)

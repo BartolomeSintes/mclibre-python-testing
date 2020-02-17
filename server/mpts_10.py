@@ -8,7 +8,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 101:
         # Exercise 101 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         # Mayor a la primera
         a = random.randrange(-10, 11)
@@ -69,7 +69,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 102:
         # Exercise 102 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         # Menor a la primera
         a = round(random.randrange(-100, 110) / 10.0, 1)
@@ -148,7 +148,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 103:
         # Exercise 103 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         # Menor a la primera
         a = random.randrange(-10, 11)
@@ -229,7 +229,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 104:
         # Exercise 104 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         # Cantidad negativa
         a = -random.randrange(1, 11)
@@ -358,7 +358,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 105:
         # Exercise 105 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         # Primero negativo
         a = -random.randrange(1, 11)
@@ -418,7 +418,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 106:
         # Exercise 106 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         # Cantidad negativa
         a = -round(random.randrange(1, 101) / 10.0, 1)
@@ -517,7 +517,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 107:
         # Exercise 107 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         # Segundo valor igual al primero
         a = random.randrange(1, 21)
@@ -632,7 +632,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 108:
         # Exercise 108 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         termina = "abcdefghijklmnñopqrtuvwxyzABCDEFGHIJKLMNÑOPQRTUVWXYZ"
 
@@ -781,7 +781,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 109:
         # Exercise 109 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         repite = "abcdefghijklmñopqrtuvwxyzABCDEFGHIJKLMNÑOPQRTUVWXYZ"
 
@@ -950,7 +950,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 110:
         # Exercise 110 BEGINNING
-        # http://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
 
         # 1 y primo
         a = 1
