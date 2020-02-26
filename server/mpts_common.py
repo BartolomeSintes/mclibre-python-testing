@@ -90,3 +90,37 @@ def generate_date():
     else:
         day = random.randrange(1, 29)
     return (year, month, day)
+
+
+def hsl_2_rgb(h, s, l):
+    import math
+
+    # does not check 0 <= h <= 360, 0 <= s <= 1, 0 <= l <= 1
+    c = (1 - abs(2 * l - 1)) * s
+    h2 = h / 60
+    x = c * (1 - abs(h2 % 2 - 1))
+    h3 = math.ceil(h2)
+
+    if h3 == 1:
+        r, g, b = c, x, 0
+    elif h3 == 2:
+        r, g, b = x, c, 0
+    elif h3 == 3:
+        r, g, b = 0, c, x
+    elif h3 == 4:
+        r, g, b = 0, x, c
+    elif h3 == 5:
+        r, g, b = x, 0, c
+    elif h3 == 6:
+        r, g, b = c, 0, x
+    else:
+        r, g, b = 0, 0, 0
+
+    m = l - c / 2
+
+    r = round(255 * (r + m))
+    g = round(255 * (g + m))
+    b = round(255 * (b + m))
+
+    return r, g, b
+

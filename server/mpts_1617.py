@@ -9,7 +9,7 @@ LAST_TEST = False
 def exercise(exercise_id):
     if exercise_id == 161_711:
         # Exercise 161711 BEGINNING
-        # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170224.html
 
         semana = [
             "lunes",
@@ -68,7 +68,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 161712:
         # Exercise 161712 BEGINNING
-        # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170224.html
 
         # dia == 0
         dia = 0
@@ -302,7 +302,7 @@ def exercise(exercise_id):
 
     elif exercise_id == 161713:
         # Exercise 161732 BEGINNING
-        # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170224.html
 
         # dia == 0
         opcion = "c"
