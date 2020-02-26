@@ -6,234 +6,134 @@ LAST_TEST = False
 
 
 def exercise(exercise_id):
-    if exercise_id == 32:
-        # Exercise 32 BEGINNING
-        # https://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html
+    if exercise_id == 31:
+        # Exercise 31 BEGINNING
+        # https://www.mclibre.org/consultar/python/ejercicios//ej-if-else-1.html
 
-        # dia == 0
-        dia = 0
-        mes = random.randrange(1, 13)
-        anyo = random.randrange(1583, 5000)
+        # par, impar
+        par = 2 * random.randrange(-20, 20)
+        impar = 2 * random.randrange(-20, 20) + 1
         mpts_common.add_test(
             NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
+            ["input", [par, impar]],
             [
                 "output",
                 [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                    "PAR E IMPAR (1)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "¡Gracias por su colaboración!",
                 ],
             ],
         )
 
-        # dia < 0
-        dia = -random.randrange(1, 29)
-        mes = random.randrange(1, 13)
-        anyo = random.randrange(1583, 5000)
+        # par, par
+        par_1 = 2 * random.randrange(-20, 20)
+        par_2 = 2 * random.randrange(-20, 20)
         mpts_common.add_test(
             NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
+            ["input", [par_1, par_2]],
             [
                 "output",
                 [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                    "PAR E IMPAR (1)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "Uno o más de los valores que ha escrito no son correctos.",
+                    "Ejecute de nuevo el programa para volver a intentarlo.",
                 ],
             ],
         )
 
-        # dia >= 32
-        dia = random.randrange(32, 50)
-        mes = random.randrange(1, 13)
-        anyo = random.randrange(1583, 5000)
+        # par, par
+        impar_1 = 2 * random.randrange(-20, 20) + 1
+        impar_2 = 2 * random.randrange(-20, 20) + 1
         mpts_common.add_test(
             NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
+            ["input", [impar_1, impar_2]],
             [
                 "output",
                 [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                    "PAR E IMPAR (1)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "Uno o más de los valores que ha escrito no son correctos.",
+                    "Ejecute de nuevo el programa para volver a intentarlo.",
                 ],
             ],
         )
 
-        # mes == 0
-        dia = random.randrange(1, 29)
-        mes = 0
-        anyo = random.randrange(1583, 5000)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
-            [
-                "output",
-                [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
-                ],
-            ],
-        )
-
-        # mes < 0
-        dia = random.randrange(1, 29)
-        mes = -random.randrange(1, 13)
-        anyo = random.randrange(1583, 5000)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
-            [
-                "output",
-                [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
-                ],
-            ],
-        )
-
-        # mes >= 13
-        dia = random.randrange(1, 29)
-        mes = random.randrange(13, 20)
-        anyo = random.randrange(1583, 5000)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
-            [
-                "output",
-                [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
-                ],
-            ],
-        )
-
-        # dia 31 de mes con 31 días
-        dia = 31
-        mes = random.choice([1, 3, 5, 7, 8, 10, 12])
-        anyo = random.randrange(1583, 5000)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
-            [
-                "output",
-                [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} existe",
-                ],
-            ],
-        )
-
-        # dia 31 de mes con menos de 31 días
-        dia = 31
-        mes = random.choice([2, 4, 6, 9, 11])
-        anyo = random.randrange(1583, 5000)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
-            [
-                "output",
-                [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
-                ],
-            ],
-        )
-
-        # dia 29 febrero múltiplo de 400
-        dia = 29
-        mes = 2
-        anyo = random.randrange(1600, 5000, 400)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
-            [
-                "output",
-                [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} existe",
-                ],
-            ],
-        )
-
-        # dia 29 febrero múltiplo de 100 (no de 400)
-        dia = 29
-        mes = 2
-        anyo = 1600 + 400 * random.randrange(0, 11) + 100 * random.randrange(1, 4)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
-            [
-                "output",
-                [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
-                ],
-            ],
-        )
-
-        # dia 29 febrero múltiplo de 4 (no de 100)
-        dia = 29
-        mes = 2
-        anyo = 1600 + 100 * random.randrange(0, 5) + 4 * random.randrange(1, 25)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [dia, mes, anyo]],
-            [
-                "output",
-                [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} existe",
-                ],
-            ],
-        )
-
-        # dia 29 febrero no múltiplo de 4
-        dia = 29
-        mes = 2
-        anyo = 1584 + 4 * random.randrange(0, 150) + random.randrange(1, 4)
+        # par, par
+        par = 2 * random.randrange(-20, 20)
+        impar = 2 * random.randrange(-20, 20) + 1
         mpts_common.add_test(
             LAST_TEST,
-            ["input", [dia, mes, anyo]],
+            ["input", [impar, par]],
             [
                 "output",
                 [
-                    "COMPROBACIÓN DE FECHA",
-                    "Escriba el número de día: ",
-                    "Escriba el número de mes: ",
-                    "Escriba el número de año: ",
-                    f"El día {dia} del mes {mes} del año {anyo} no existe",
+                    "PAR E IMPAR (1)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "Uno o más de los valores que ha escrito no son correctos.",
+                    "Ejecute de nuevo el programa para volver a intentarlo.",
+                ],
+            ],
+        )
+
+        # Exercise 31 END
+
+    elif exercise_id == 32:
+        # Exercise 32 BEGINNING
+        # https://www.mclibre.org/consultar/python/ejercicios//ej-if-else-1.html
+
+        # par, impar
+        par = 2 * random.randrange(-20, 20)
+        impar = 2 * random.randrange(-20, 20) + 1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [par, impar]],
+            [
+                "output",
+                [
+                    "PAR E IMPAR (2)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "¡Gracias por su colaboración!",
+                ],
+            ],
+        )
+
+        # impar
+        impar = 2 * random.randrange(-20, 20) + 1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [impar]],
+            [
+                "output",
+                [
+                    "PAR E IMPAR (2)",
+                    "Escriba un número par: ",
+                    "No ha escrito un número par.",
+                    "Ejecute de nuevo el programa para volver a intentarlo.",
+                ],
+            ],
+        )
+
+        # par, par
+        par_1 = 2 * random.randrange(-20, 20)
+        par_2 = 2 * random.randrange(-20, 20)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [par_1, par_2]],
+            [
+                "output",
+                [
+                    "PAR E IMPAR (2)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "No ha escrito un número impar.",
+                    "Ejecute de nuevo el programa para volver a intentarlo.",
                 ],
             ],
         )
@@ -242,29 +142,79 @@ def exercise(exercise_id):
 
     elif exercise_id == 33:
         # Exercise 33 BEGINNING
-        # https://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html
+        # https://www.mclibre.org/consultar/python/ejercicios//ej-if-else-1.html
 
-        # dia == 0
-        opcion = "c"
+        # par, impar
+        par = 2 * random.randrange(-20, 20)
+        impar = 2 * random.randrange(-20, 20) + 1
         mpts_common.add_test(
-            LAST_TEST,
-            ["input", [opcion]],
+            NOT_LAST_TEST,
+            ["input", [par, impar]],
             [
                 "output",
                 [
-                    "GALONES Y PINTAS",
-                    "",
-                    "Este programa permite:",
-                    "a. Convertir litros en galones y pintas.",
-                    "b. Convertir galones y pintas en litros",
-                    "",
-                    "Elija una opción: ",
-                    "",
-                    "Debe escribir a o b.",
-                    "",
-                    "Programa terminado",
+                    "PAR E IMPAR (3)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "¡Gracias por su colaboración!",
+                ],
+            ],
+        )
+
+        # impar, impar
+        impar_1 = 2 * random.randrange(-20, 20) + 1
+        impar_2 = 2 * random.randrange(-20, 20) + 1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [impar_1, impar_2]],
+            [
+                "output",
+                [
+                    "PAR E IMPAR (3)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "No ha escrito un número par.",
+                    "Ejecute de nuevo el programa para volver a intentarlo.",
+                ],
+            ],
+        )
+
+        # impar, par
+        impar = 2 * random.randrange(-20, 20) + 1
+        par = 2 * random.randrange(-20, 20)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [impar, par]],
+            [
+                "output",
+                [
+                    "PAR E IMPAR (3)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "No ha escrito un número par.",
+                    "No ha escrito un número impar.",
+                    "Ejecute de nuevo el programa para volver a intentarlo.",
+                ],
+            ],
+        )
+
+        # par, par
+        par_1 = 2 * random.randrange(-20, 20)
+        par_2 = 2 * random.randrange(-20, 20)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [par_1, par_2]],
+            [
+                "output",
+                [
+                    "PAR E IMPAR (3)",
+                    "Escriba un número par: ",
+                    "Escriba un número impar: ",
+                    "No ha escrito un número impar.",
+                    "Ejecute de nuevo el programa para volver a intentarlo.",
                 ],
             ],
         )
 
         # Exercise 33 END
+

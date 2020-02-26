@@ -45,9 +45,9 @@ def add_test(comma, *args):
 
 def generate_prime(nth):
     if nth == 1:
-        return(2)
+        return 2
     elif nth == 2:
-        return(3)
+        return 3
     else:
         primes = [2, 3]
         while len(primes) < nth:
@@ -61,4 +61,32 @@ def generate_prime(nth):
                 if is_prime == False:
                     n += 2
             primes += [n]
-        return(primes[-1])
+        return primes[-1]
+
+
+def leap_year(year):
+    if year % 400 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    elif year % 4 == 0:
+        return True
+    else:
+        return False
+
+
+def generate_date():
+    import datetime
+    import random
+
+    year = random.randrange(1583, 2100)
+    month = random.randrange(1, 13)
+    if month in [1, 3, 5, 7, 8, 10, 12]:
+        day = random.randrange(1, 32)
+    elif month in [4, 6, 9, 11]:
+        day = random.randrange(1, 31)
+    elif leap_year(year):
+        day = random.randrange(1, 30)
+    else:
+        day = random.randrange(1, 29)
+    return (year, month, day)
