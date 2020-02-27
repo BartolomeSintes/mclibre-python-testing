@@ -8,7 +8,7 @@ LAST_TEST = False
 
 def exercise(exercise_id):
     if exercise_id == 192011:
-        # Exercise 192012 BEGINNING
+        # Exercise 192011 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/19-20/examen-200221.html
 
         # Valor negativo

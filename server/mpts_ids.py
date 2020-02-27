@@ -8,7 +8,7 @@ valid_exercise_ids = [
     [2, [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]],
     #
     # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-2.html
-    [3, [31, 32, 33]],
+    [3, [31, 32, 33, 34]],
     #
     # https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html
     [5, [51, 52, 53, 54, 55]],
@@ -62,6 +62,9 @@ valid_exercise_ids = [
     #
     # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
     [1819, [181911, 181912, 181913, 181914]],
+    # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190521.html
+    [1819, [181921, 181922, 181923]],
+    #
     # https://www.mclibre.org/consultar/python/examenes/19-20/examen-200221.html
     [1920, [192011, 192012, 192013, 192014]],
 ]
