@@ -936,102 +936,898 @@ def exercise(exercise_id):
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190521.html
 
         # Gana Cubitus
-        nc = random.randrange(5, 10) # Número de dados de Cubitus
-        tc = [random.randrange(nc, 101)] # Primer dado
+        nc = random.randrange(5, 10)  # Número de dados de Cubitus
+        tc = [random.randrange(nc, 101)]  # Primer dado
         for i in range(2, nc):
             tc += [random.randrange(nc - i + 1, tc[-1])]
-        tc += [random.randrange(tc[0], 101)] # Último dado
+        tc += [random.randrange(tc[0], 101)]  # Último dado
         output_c = "Cubitus: "
         for i in tc:
             output_c += f"{i} "
 
-        nh = random.randrange(2, nc) # Número de dados de Humerus
-        th = [random.randrange(nh, 101)] # Primer dado
+        nh = random.randrange(2, nc)  # Número de dados de Humerus
+        th = [random.randrange(nh, 101)]  # Primer dado
         for i in range(2, nh):
             th += [random.randrange(nh - i + 1, th[-1])]
-        th += [random.randrange(th[0], 101)] # Último dado
+        th += [random.randrange(th[0], 101)]  # Último dado
         output_h = "Humerus: "
         for i in th:
             output_h += f"{i} "
 
         mpts_common.add_test(
             NOT_LAST_TEST,
-            ["random", tc+th],
+            ["random", tc + th],
             [
                 "output",
-                [
-                    "JUEGO DADO A TIERRA",
-                    output_c,
-                    output_h,
-                    "Ha ganado Cubitus.",
-                ],
+                ["JUEGO DADO A TIERRA", output_c, output_h, "Ha ganado Cubitus.",],
             ],
         )
 
         # Gana Humerus
-        nc = random.randrange(2, 5) # Número de dados de Cubitus
-        tc = [random.randrange(nc, 101)] # Primer dado
+        nc = random.randrange(2, 5)  # Número de dados de Cubitus
+        tc = [random.randrange(nc, 101)]  # Primer dado
         for i in range(2, nc):
             tc += [random.randrange(nc - i + 1, tc[-1])]
-        tc += [random.randrange(tc[0], 101)] # Último dado
+        tc += [random.randrange(tc[0], 101)]  # Último dado
         output_c = "Cubitus: "
         for i in tc:
             output_c += f"{i} "
 
-        nh = random.randrange(nc + 1, 10) # Número de dados de Humerus
-        th = [random.randrange(nh, 101)] # Primer dado
+        nh = random.randrange(nc + 1, 10)  # Número de dados de Humerus
+        th = [random.randrange(nh, 101)]  # Primer dado
         for i in range(2, nh):
             th += [random.randrange(nh - i + 1, th[-1])]
-        th += [random.randrange(th[0], 101)] # Último dado
+        th += [random.randrange(th[0], 101)]  # Último dado
         output_h = "Humerus: "
         for i in th:
             output_h += f"{i} "
 
         mpts_common.add_test(
             NOT_LAST_TEST,
-            ["random", tc+th],
+            ["random", tc + th],
             [
                 "output",
-                [
-                    "JUEGO DADO A TIERRA",
-                    output_c,
-                    output_h,
-                    "Ha ganado Humerus.",
-                ],
+                ["JUEGO DADO A TIERRA", output_c, output_h, "Ha ganado Humerus.",],
             ],
         )
 
         # Empate
-        nc = random.randrange(2, 10) # Número de dados de Cubitus
-        tc = [random.randrange(nc, 101)] # Primer dado
+        nc = random.randrange(2, 10)  # Número de dados de Cubitus
+        tc = [random.randrange(nc, 101)]  # Primer dado
         for i in range(2, nc):
             tc += [random.randrange(nc - i + 1, tc[-1])]
-        tc += [random.randrange(tc[0], 101)] # Último dado
+        tc += [random.randrange(tc[0], 101)]  # Último dado
         output_c = "Cubitus: "
         for i in tc:
             output_c += f"{i} "
 
-        nh = nc # Número de dados de Humerus
-        th = [random.randrange(nh, 101)] # Primer dado
+        nh = nc  # Número de dados de Humerus
+        th = [random.randrange(nh, 101)]  # Primer dado
         for i in range(2, nh):
             th += [random.randrange(nh - i + 1, th[-1])]
-        th += [random.randrange(th[0], 101)] # Último dado
+        th += [random.randrange(th[0], 101)]  # Último dado
         output_h = "Humerus: "
         for i in th:
             output_h += f"{i} "
 
         mpts_common.add_test(
             LAST_TEST,
-            ["random", tc+th],
+            ["random", tc + th],
+            ["output", ["JUEGO DADO A TIERRA", output_c, output_h, "Han empatado.",],],
+        )
+
+        # Exercise 181923 END
+
+    elif exercise_id == 181931:
+        # Exercise 181931 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190530.html
+
+        # Valor negativo
+        a = -random.randrange(100)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
             [
                 "output",
                 [
-                    "JUEGO DADO A TIERRA",
-                    output_c,
-                    output_h,
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "¡No ha escrito un número positivo menor que 1000!",
+                ],
+            ],
+        )
+
+        a = random.randrange(1000, 2000)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "¡No ha escrito un número positivo menor que 1000!",
+                ],
+            ],
+        )
+
+        a = random.randrange(1000)
+        b = -random.randrange(100)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    "¡No ha escrito un número positivo menor que 1000!",
+                ],
+            ],
+        )
+
+        a = random.randrange(1000)
+        b = random.randrange(1000, 2000)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    "¡No ha escrito un número positivo menor que 1000!",
+                ],
+            ],
+        )
+
+        # Como hay un montón de casos posibles, no he forzado que d1, d2 y d3 sean iguales o distintas
+
+        # mismas cifras 1/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d1 * 100 + d2 * 10 + d3
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d1}, {d2} y {d3}.",
+                    "¡Son las mismas cifras!",
+                ],
+            ],
+        )
+
+        # mismas cifras 2/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d1 * 100 + d3 * 10 + d2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d1}, {d3} y {d2}.",
+                    "¡Son las mismas cifras!",
+                ],
+            ],
+        )
+
+        # mismas cifras 3/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d2 * 100 + d1 * 10 + d3
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d2}, {d1} y {d3}.",
+                    "¡Son las mismas cifras!",
+                ],
+            ],
+        )
+
+        # mismas cifras 4/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d2 * 100 + d3 * 10 + d1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d2}, {d3} y {d1}.",
+                    "¡Son las mismas cifras!",
+                ],
+            ],
+        )
+
+        # mismas cifras 5/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d3 * 100 + d1 * 10 + d2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d3}, {d1} y {d2}.",
+                    "¡Son las mismas cifras!",
+                ],
+            ],
+        )
+
+        # mismas cifras 6/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d3 * 100 + d2 * 10 + d1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d3}, {d2} y {d1}.",
+                    "¡Son las mismas cifras!",
+                ],
+            ],
+        )
+
+        # coinciden dos cifras 1/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d3)
+        d4 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d1 * 100 + d2 * 10 + d4
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d1}, {d2} y {d4}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # coinciden dos cifras 2/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d3)
+        d4 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d2 * 100 + d1 * 10 + d4
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d2}, {d1} y {d4}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # coinciden dos cifras 3/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d3)
+        d4 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d1 * 100 + d4 * 10 + d2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d1}, {d4} y {d2}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # coinciden dos cifras 4/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d3)
+        d4 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d2 * 100 + d4 * 10 + d1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d2}, {d4} y {d1}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # coinciden dos cifras 5/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d3)
+        d4 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d4 * 100 + d1 * 10 + d2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d4}, {d1} y {d2}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # coinciden dos cifras 6/6
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d3)
+        d4 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d4 * 100 + d2 * 10 + d1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d4}, {d2} y {d1}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # coincide una cifra 1/3
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d2)
+        if d3 in d:
+            d.remove(d3)
+        d4 = random.choice(d)
+        d5 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d1 * 100 + d4 * 10 + d5
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d1}, {d4} y {d5}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # coincide una cifra 2/3
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d2)
+        if d3 in d:
+            d.remove(d3)
+        d4 = random.choice(d)
+        d5 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d4 * 100 + d1 * 10 + d5
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d4}, {d1} y {d5}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # coincide una cifra 3/3
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d2)
+        if d3 in d:
+            d.remove(d3)
+        d4 = random.choice(d)
+        d5 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d4 * 100 + d5 * 10 + d1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d4}, {d5} y {d1}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # cifras distintas 1/1
+        d1 = random.randrange(0, 10)
+        d2 = random.randrange(0, 10)
+        d3 = random.randrange(0, 10)
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        d.remove(d1)
+        if d2 in d:
+            d.remove(d2)
+        if d3 in d:
+            d.remove(d3)
+        d4 = random.choice(d)
+        d5 = random.choice(d)
+        d6 = random.choice(d)
+        a = d1 * 100 + d2 * 10 + d3
+        b = d4 * 100 + d5 * 10 + d6
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "LAS MISMAS CIFRAS",
+                    "Escriba un número positivo menor que 1000: ",
+                    "Escriba otro número positivo menor que 1000: ",
+                    f"Las cifras del primer número son {d1}, {d2} y {d3}.",
+                    f"Las cifras del segundo número son {d4}, {d5} y {d6}.",
+                    "¡Las cifras son distintas!",
+                ],
+            ],
+        )
+
+        # Exercise 181931 END
+
+    elif exercise_id == 181932:
+        # Exercise 181932 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190530.html
+
+        # Valor negativo
+        a = random.randrange(1, 7)
+        b = random.randrange(1, 7)
+        c = random.randrange(1, 7)
+        n = -random.randrange(1, 20)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c, n]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: TRES VALORES",
+                    "Elija un valor del 1 al 6: ",
+                    "Elija otro valor del 1 al 6: ",
+                    "Elija otro valor más del 1 al 6: ",
+                    "¿Cuántos dados quiere tirar? ",
+                    "¡Imposible!",
+                ],
+            ],
+        )
+
+        # Cero
+        a = random.randrange(1, 7)
+        b = random.randrange(1, 7)
+        c = random.randrange(1, 7)
+        n = 0
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c, n]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: TRES VALORES",
+                    "Elija un valor del 1 al 6: ",
+                    "Elija otro valor del 1 al 6: ",
+                    "Elija otro valor más del 1 al 6: ",
+                    "¿Cuántos dados quiere tirar? ",
+                    "¡Imposible!",
+                ],
+            ],
+        )
+
+        # Gana
+        a = random.randrange(1, 7)
+        b = random.randrange(1, 7)
+        c = random.randrange(1, 7)
+        dg = [a, b, c]
+        dp = [1, 2, 3, 4, 5, 6]
+        for i in dg:
+            if i in dp:
+                dp.remove(i)
+        ng = random.randrange(6, 11)
+        np = random.randrange(1, ng)
+        g = []
+        for _ in range(ng):
+            g += [random.choice(dg)]
+        p = []
+        for _ in range(np):
+            p += [random.choice(dp)]
+        d = p + g
+        random.shuffle(d)
+        tmp_tirada = ""
+        for i in d:
+            tmp_tirada += f"{i} "
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c, ng + np]],
+            ["random", d],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: TRES VALORES",
+                    "Elija un valor del 1 al 6: ",
+                    "Elija otro valor del 1 al 6: ",
+                    "Elija otro valor más del 1 al 6: ",
+                    "¿Cuántos dados quiere tirar? ",
+                    f"Tirada de dados: {tmp_tirada}",
+                    f"Ha sacado {ng} dados de los valores elegidos. Ha ganado.",
+                ],
+            ],
+        )
+
+        # Pierde
+        a = random.randrange(1, 7)
+        b = random.randrange(1, 7)
+        c = random.randrange(1, 7)
+        dg = [a, b, c]
+        dp = [1, 2, 3, 4, 5, 6]
+        for i in dg:
+            if i in dp:
+                dp.remove(i)
+        ng = random.randrange(1, 5)
+        np = random.randrange(ng + 1, 11)
+        g = []
+        for _ in range(ng):
+            g += [random.choice(dg)]
+        p = []
+        for _ in range(np):
+            p += [random.choice(dp)]
+        d = p + g
+        random.shuffle(d)
+        tmp_tirada = ""
+        for i in d:
+            tmp_tirada += f"{i} "
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c, ng + np]],
+            ["random", d],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: TRES VALORES",
+                    "Elija un valor del 1 al 6: ",
+                    "Elija otro valor del 1 al 6: ",
+                    "Elija otro valor más del 1 al 6: ",
+                    "¿Cuántos dados quiere tirar? ",
+                    f"Tirada de dados: {tmp_tirada}",
+                    f"Ha sacado {ng} dados de los valores elegidos. Ha perdido.",
+                ],
+            ],
+        )
+
+        # Empata
+        a = random.randrange(1, 7)
+        b = random.randrange(1, 7)
+        c = random.randrange(1, 7)
+        dg = [a, b, c]
+        dp = [1, 2, 3, 4, 5, 6]
+        for i in dg:
+            if i in dp:
+                dp.remove(i)
+        ng = random.randrange(1, 11)
+        np = ng
+        g = []
+        for _ in range(ng):
+            g += [random.choice(dg)]
+        p = []
+        for _ in range(np):
+            p += [random.choice(dp)]
+        d = p + g
+        random.shuffle(d)
+        tmp_tirada = ""
+        for i in d:
+            tmp_tirada += f"{i} "
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a, b, c, ng + np]],
+            ["random", d],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: TRES VALORES",
+                    "Elija un valor del 1 al 6: ",
+                    "Elija otro valor del 1 al 6: ",
+                    "Elija otro valor más del 1 al 6: ",
+                    "¿Cuántos dados quiere tirar? ",
+                    f"Tirada de dados: {tmp_tirada}",
+                    f"Ha sacado {ng} dados de los valores elegidos. Ni ha ganado ni perdido.",
+                ],
+            ],
+        )
+
+        # Exercise 181932 END
+
+    elif exercise_id == 181933:
+        # Exercise 181933 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190530.html
+
+        # Gana primer jugador
+        na = random.randrange(2, 10)
+        da = random.randrange(2, 7)
+        ta = []
+        for _ in range(na - 3):
+            d = [1, 2, 3, 4, 5, 6]
+            if ta != []:
+                d.remove(ta[-1])
+            ta += [random.choice(d)]
+        if na >= 3:
+            d = [1, 2, 3, 4, 5, 6]
+            if ta != [] and ta[-1] in d:
+                d.remove(ta[-1])
+            if da in d:
+                d.remove(da)
+            xa = random.choice(d)
+            ta += [xa]
+        ta += [da, da]
+        texta = ""
+        for _ in ta:
+            texta += f"{_} "
+
+        nb = random.randrange(2, 10)
+        db = random.randrange(1, da)
+        tb = []
+        for _ in range(nb - 3):
+            d = [1, 2, 3, 4, 5, 6]
+            if tb != []:
+                d.remove(tb[-1])
+            tb += [random.choice(d)]
+        if nb >= 3:
+            d = [1, 2, 3, 4, 5, 6]
+            if tb != [] and tb[-1] in d:
+                d.remove(tb[-1])
+            if db in d:
+                d.remove(db)
+            xb = random.choice(d)
+            tb += [xb]
+        tb += [db, db]
+        textb = ""
+        for _ in tb:
+            textb += f"{_} "
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", ta + tb],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: HASTA REPETIR",
+                    f"Tirada de Cubitus: {texta}",
+                    f"Tirada de Humerus: {textb}",
+                    f"Cubitus ha sacado un {da} y Humerus ha sacado un {db}.",
+                    "Ha ganado Cubitus.",
+                ],
+            ],
+        )
+
+        # Gana segundo jugador
+        na = random.randrange(2, 10)
+        da = random.randrange(1, 6)
+        ta = []
+        for _ in range(na - 3):
+            d = [1, 2, 3, 4, 5, 6]
+            if ta != []:
+                d.remove(ta[-1])
+            ta += [random.choice(d)]
+        if na >= 3:
+            d = [1, 2, 3, 4, 5, 6]
+            if ta != [] and ta[-1] in d:
+                d.remove(ta[-1])
+            if da in d:
+                d.remove(da)
+            xa = random.choice(d)
+            ta += [xa]
+        ta += [da, da]
+        texta = ""
+        for _ in ta:
+            texta += f"{_} "
+
+        nb = random.randrange(2, 10)
+        db = random.randrange(da + 1, 7)
+        tb = []
+        for _ in range(nb - 3):
+            d = [1, 2, 3, 4, 5, 6]
+            if tb != []:
+                d.remove(tb[-1])
+            tb += [random.choice(d)]
+        if nb >= 3:
+            d = [1, 2, 3, 4, 5, 6]
+            if tb != [] and tb[-1] in d:
+                d.remove(tb[-1])
+            if db in d:
+                d.remove(db)
+            xb = random.choice(d)
+            tb += [xb]
+        tb += [db, db]
+        textb = ""
+        for _ in tb:
+            textb += f"{_} "
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", ta + tb],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: HASTA REPETIR",
+                    f"Tirada de Cubitus: {texta}",
+                    f"Tirada de Humerus: {textb}",
+                    f"Cubitus ha sacado un {da} y Humerus ha sacado un {db}.",
+                    "Ha ganado Humerus.",
+                ],
+            ],
+        )
+
+        # Empatan
+        na = random.randrange(2, 10)
+        da = random.randrange(1, 7)
+        ta = []
+        for _ in range(na - 3):
+            d = [1, 2, 3, 4, 5, 6]
+            if ta != []:
+                d.remove(ta[-1])
+            ta += [random.choice(d)]
+        if na >= 3:
+            d = [1, 2, 3, 4, 5, 6]
+            if ta != [] and ta[-1] in d:
+                d.remove(ta[-1])
+            if da in d:
+                d.remove(da)
+            xa = random.choice(d)
+            ta += [xa]
+        ta += [da, da]
+        texta = ""
+        for _ in ta:
+            texta += f"{_} "
+
+        nb = random.randrange(2, 10)
+        db = da
+        tb = []
+        for _ in range(nb - 3):
+            d = [1, 2, 3, 4, 5, 6]
+            if tb != []:
+                d.remove(tb[-1])
+            tb += [random.choice(d)]
+        if nb >= 3:
+            d = [1, 2, 3, 4, 5, 6]
+            if tb != [] and tb[-1] in d:
+                d.remove(tb[-1])
+            if db in d:
+                d.remove(db)
+            xb = random.choice(d)
+            tb += [xb]
+        tb += [db, db]
+        textb = ""
+        for _ in tb:
+            textb += f"{_} "
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", ta + tb],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: HASTA REPETIR",
+                    f"Tirada de Cubitus: {texta}",
+                    f"Tirada de Humerus: {textb}",
+                    f"Cubitus ha sacado un {da} y Humerus ha sacado un {db}.",
                     "Han empatado.",
                 ],
             ],
         )
 
-        # Exercise 181923 END
+        # Exercise 181933 END
