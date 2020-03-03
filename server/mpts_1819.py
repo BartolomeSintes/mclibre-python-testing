@@ -1831,3 +1831,435 @@ def exercise(exercise_id):
         )
 
         # Exercise 181933 END
+
+    elif exercise_id == 181941:
+        # Exercise 181941 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190618.html
+
+        # Primer número negativo
+        a = -random.randrange(1, 10)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Por favor, escriba un número positivo.",
+                ],
+            ],
+        )
+
+        # Primer número nulo
+        a = 0
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Por favor, escriba un número positivo.",
+                ],
+            ],
+        )
+
+        # Segundo número inválido
+        a = random.randrange(2, 10)
+        b = random.randrange(1, a)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Por favor, escriba números crecientes.",
+                ],
+            ],
+        )
+
+        # Segundo número inválido
+        a = random.randrange(2, 10)
+        b = a
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Por favor, escriba números crecientes.",
+                ],
+            ],
+        )
+
+        # Tercer número inválido
+        a = random.randrange(1, 10)
+        b = random.randrange(a + 1, 50)
+        c = random.randrange(1, b)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    "Por favor, escriba números crecientes.",
+                ],
+            ],
+        )
+
+        # Tercer número inválido
+        a = random.randrange(1, 10)
+        b = random.randrange(a + 1, 50)
+        c = b
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    "Por favor, escriba números crecientes.",
+                ],
+            ],
+        )
+
+        # Tercero múltiplo de segundo y segundo múltiplo de primero
+        a = random.randrange(1, 10)
+        n = random.randrange(2, 10)
+        b = a * n
+        n = random.randrange(2, 10)
+        c = b * n
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    f"{c} es múltiplo de {b} y de {a} y {b} es múltiplo de {a}.",
+                ],
+            ],
+        )
+
+        # Tercero múltiplo del primero y del segundo, primero y segundo primos entre sí
+        a = random.randrange(1, 10)
+        n = random.randrange(2, 10)
+        b = a * n + 1
+        n = random.randrange(2, 10)
+        c = a * b * n
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    f"{c} es múltiplo de {b} y de {a}.",
+                ],
+            ],
+        )
+
+        # Tercero y segundo múltiplos de primero, tercero y segundo primos entre sí
+        a = random.randrange(1, 10)
+        n1 = random.randrange(2, 10)
+        b = a * n1
+        n2 = random.randrange(n1, 11)
+        c = a * n2
+        while c % b == 0:
+            n2 = random.randrange(n1, 11)
+            c = a * n2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    f"{c} y {b} son múltiplos de {a}.",
+                ],
+            ],
+        )
+
+        # Segundo múltiplo de primero
+        a = random.randrange(2, 10)
+        b = a * random.randrange(2, 10)
+        c = a * b + 1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    f"{b} es múltiplo de {a}.",
+                ],
+            ],
+        )
+
+        # Tercero múltiplo de segundo
+        a = random.randrange(2, 10)
+        b = random.randrange(a + 1, 50)
+        while b % a == 0:
+            b += 1
+        n = random.randrange(2, 10)
+        while n % a == 0:
+            n += 1
+        c = b * n
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    f"{c} es múltiplo de {b}.",
+                ],
+            ],
+        )
+
+        # Tercero múltiplo de primero
+        a = random.randrange(2, 10)
+        n = random.randrange(3, 10)
+        c = a * n
+        b = a + 1
+        while b % a == 0 or c % b == 0:
+            b += 1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    f"{c} es múltiplo de {a}.",
+                ],
+            ],
+        )
+
+        # Ninguno es múltiplo de los otros
+        a = random.randrange(2, 10)
+        b = a * random.randrange(2, 10) + 1
+        c = a * b + 1
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "DETECTOR DE MÚLTIPLOS",
+                    "Escriba tres números enteros crecientes.",
+                    "Le indicaré si alguno es múltiplo de otro.",
+                    "Primer número: ",
+                    "Segundo número: ",
+                    "Tercer número: ",
+                    "Ningún número es múltiplo de otro.",
+                ],
+            ],
+        )
+
+        # Exercise 181941 END
+
+    elif exercise_id == 181942:
+        # Exercise 181942 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190618.html
+
+        # Primer número negativo
+        a = -random.randrange(1, 10)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: IGUALES O DISTINTOS",
+                    "¿Cuántas veces se van a tirar los dados? ",
+                    "¡Juego terminado!",
+                ],
+            ],
+        )
+
+        # Primer número cero
+        a = 0
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: IGUALES O DISTINTOS",
+                    "¿Cuántas veces se van a tirar los dados? ",
+                    "¡Juego terminado!",
+                ],
+            ],
+        )
+
+        # gana Cubitus
+        nb = random.randrange(0, 4)
+        t = []
+        for _ in range(nb):
+            d = random.randrange(1, 7)
+            t += [[d, d]]
+        na = nb * 6 + random.randrange(1, 6)
+        for _ in range(na):
+            d1 = random.randrange(1, 7)
+            d = [1, 2, 3, 4, 5, 6]
+            d.remove(d1)
+            d2 = random.choice(d)
+            t += [[d1, d2]]
+        random.shuffle(t)
+        t2 = []
+        for i in t:
+            t2 += [i[0], i[1]]
+        n = na + nb
+        text = ""
+        for i in range(0, len(t2), 2):
+            text += f"{t2[i]} {t2[i+1]} - "
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["random", t2],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: IGUALES O DISTINTOS",
+                    "¿Cuántas veces se van a tirar los dados? ",
+                    f"Tiradas de dados: {text}",
+                    f"Ha ganado Cubitus {na} a {6 * nb}.",
+                ],
+            ],
+        )
+
+        # gana Humerus
+        nb = random.randrange(1, 4)
+        t = []
+        for _ in range(nb):
+            d = random.randrange(1, 7)
+            t += [[d, d]]
+        na = random.randrange(0, 6 * nb)
+        for _ in range(na):
+            d1 = random.randrange(1, 7)
+            d = [1, 2, 3, 4, 5, 6]
+            d.remove(d1)
+            d2 = random.choice(d)
+            t += [[d1, d2]]
+        random.shuffle(t)
+        t2 = []
+        for i in t:
+            t2 += [i[0], i[1]]
+        n = na + nb
+        text = ""
+        for i in range(0, len(t2), 2):
+            text += f"{t2[i]} {t2[i+1]} - "
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["random", t2],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: IGUALES O DISTINTOS",
+                    "¿Cuántas veces se van a tirar los dados? ",
+                    f"Tiradas de dados: {text}",
+                    f"Ha ganado Humerus {6 * nb} a {na}.",
+                ],
+            ],
+        )
+
+        # Empate
+        nb = random.randrange(1, 4)
+        t = []
+        for _ in range(nb):
+            d = random.randrange(1, 7)
+            t += [[d, d]]
+        na = 6 * nb
+        for _ in range(na):
+            d1 = random.randrange(1, 7)
+            d = [1, 2, 3, 4, 5, 6]
+            d.remove(d1)
+            d2 = random.choice(d)
+            t += [[d1, d2]]
+        random.shuffle(t)
+        t2 = []
+        for i in t:
+            t2 += [i[0], i[1]]
+        n = na + nb
+        text = ""
+        for i in range(0, len(t2), 2):
+            text += f"{t2[i]} {t2[i+1]} - "
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [n]],
+            ["random", t2],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS: IGUALES O DISTINTOS",
+                    "¿Cuántas veces se van a tirar los dados? ",
+                    f"Tiradas de dados: {text}",
+                    f"Han empatado a {na}.",
+                ],
+            ],
+        )
+
+        # Exercise 181942 END
