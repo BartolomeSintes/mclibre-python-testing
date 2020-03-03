@@ -284,7 +284,7 @@ def exercise(exercise_id):
         mes = 2
         anyo = 1584 + 4 * random.randrange(0, 150) + random.randrange(1, 4)
         mpts_common.add_test(
-            LAST_TEST,
+            NOT_LAST_TEST,
             ["input", [dia, mes, anyo]],
             [
                 "output",
@@ -298,31 +298,184 @@ def exercise(exercise_id):
             ],
         )
 
-        # Exercise 161712 END
-
-    elif exercise_id == 161713:
-        # Exercise 161732 BEGINNING
-        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170224.html
-
-        # dia == 0
-        opcion = "c"
+        # dia que existe
+        dia = random.randrange(1, 29)
+        mes = random.randrange(1, 13)
+        anyo = random.randrange(1584, 10000)
         mpts_common.add_test(
             LAST_TEST,
-            ["input", [opcion]],
+            ["input", [dia, mes, anyo]],
             [
                 "output",
                 [
-                    "GALONES Y PINTAS",
-                    "",
-                    "Este programa permite:",
-                    "a. Convertir litros en galones y pintas.",
-                    "b. Convertir galones y pintas en litros",
-                    "",
-                    "Elija una opción: ",
-                    "",
-                    "Debe escribir a o b.",
-                    "",
-                    "Programa terminado",
+                    "COMPROBACIÓN DE FECHA",
+                    "Escriba el número de día: ",
+                    "Escriba el número de mes: ",
+                    "Escriba el número de año: ",
+                    f"El día {dia} del mes {mes} del año {anyo} existe",
+                ],
+            ],
+        )
+
+        # Exercise 161712 END
+
+    elif exercise_id == 161713:
+        # Exercise 161713 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170224.html
+
+        # segundo valor igual que el primero
+        a = random.randrange(-100, 101)
+        b = a
+        c = b + random.randrange(1, 100)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ESCALERA DE NÚMEROS",
+                    "Escriba el primer número: ",
+                    "Escriba el segundo número distinto del primero: ",
+                    "Escriba el tercer número distinto del segundo: ",
+                    "¡No ha escrito números válidos!",
+                ],
+            ],
+        )
+
+        # tercer valor igual que el segundo
+        a = random.randrange(-100, 101)
+        b = a + random.randrange(1, 100)
+        c = b
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ESCALERA DE NÚMEROS",
+                    "Escriba el primer número: ",
+                    "Escriba el segundo número distinto del primero: ",
+                    "Escriba el tercer número distinto del segundo: ",
+                    "¡No ha escrito números válidos!",
+                ],
+            ],
+        )
+
+        # tres valores iguales
+        a = random.randrange(-100, 101)
+        b = a
+        c = b
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ESCALERA DE NÚMEROS",
+                    "Escriba el primer número: ",
+                    "Escriba el segundo número distinto del primero: ",
+                    "Escriba el tercer número distinto del segundo: ",
+                    "¡No ha escrito números válidos!",
+                ],
+            ],
+        )
+
+        # tercer valor igual que el primero (correcto)
+        a = random.randrange(-100, 101)
+        b = a + random.randrange(1, 100)
+        c = a
+        resp = list(range(a, b)) + list(range(b, a - 1, -1))
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ESCALERA DE NÚMEROS",
+                    "Escriba el primer número: ",
+                    "Escriba el segundo número distinto del primero: ",
+                    "Escriba el tercer número distinto del segundo: ",
+                    resp,
+                ],
+            ],
+        )
+
+        # primero < segundo < tercero
+        a = random.randrange(-100, 101)
+        b = a + random.randrange(1, 100)
+        c = b + random.randrange(1, 100)
+        resp = list(range(a, c + 1))
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ESCALERA DE NÚMEROS",
+                    "Escriba el primer número: ",
+                    "Escriba el segundo número distinto del primero: ",
+                    "Escriba el tercer número distinto del segundo: ",
+                    resp,
+                ],
+            ],
+        )
+
+        # primero < segundo > tercero
+        a = random.randrange(-100, 101)
+        b = a + random.randrange(1, 100)
+        c = b - random.randrange(1, 100)
+        resp = list(range(a, b)) + list(range(b, c - 1, -1))
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ESCALERA DE NÚMEROS",
+                    "Escriba el primer número: ",
+                    "Escriba el segundo número distinto del primero: ",
+                    "Escriba el tercer número distinto del segundo: ",
+                    resp,
+                ],
+            ],
+        )
+
+        # primero > segundo < tercero
+        a = random.randrange(-100, 101)
+        b = a - random.randrange(1, 100)
+        c = b + random.randrange(1, 100)
+        resp = list(range(a, b, -1)) + list(range(b, c + 1))
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ESCALERA DE NÚMEROS",
+                    "Escriba el primer número: ",
+                    "Escriba el segundo número distinto del primero: ",
+                    "Escriba el tercer número distinto del segundo: ",
+                    resp,
+                ],
+            ],
+        )
+
+        # primero > segundo > tercero
+        a = random.randrange(-100, 101)
+        b = a - random.randrange(1, 100)
+        c = b - random.randrange(1, 100)
+        resp = list(range(a, c - 1, -1))
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "ESCALERA DE NÚMEROS",
+                    "Escriba el primer número: ",
+                    "Escriba el segundo número distinto del primero: ",
+                    "Escriba el tercer número distinto del segundo: ",
+                    resp,
                 ],
             ],
         )
