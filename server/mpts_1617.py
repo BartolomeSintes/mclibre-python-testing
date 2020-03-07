@@ -836,3 +836,774 @@ def exercise(exercise_id):
         )
 
         # Exercise 161723 END
+
+    elif exercise_id == 161731:
+        # Exercise 161731 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170606.html
+
+        # Gana jugador 1 (más puntos totales)
+        a1 = random.randrange(2, 7)
+        a2 = random.randrange(1, 7)
+        b1 = random.randrange(1, min(7, a1 + a2))
+        b2 = random.randrange(1, a1 + a2 - b1)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [a1, a2, b1, b2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    f"Álvaro ha sacado un {a1} y un {a2}.",
+                    f"Bárbara ha sacado un {b1} y un {b2}.",
+                    "Ha ganado Álvaro.",
+                ],
+            ],
+        )
+
+        # Gana jugador 1 (puntos totales iguales, valor más alto)
+        tiradas = [
+            [4, 6, 5, 5],
+            [3, 5, 4, 4],
+            [3, 6, 4, 5],
+            [2, 4, 3, 3],
+            [2, 5, 3, 4],
+            [2, 6, 3, 5],
+            [2, 6, 4, 4],
+            [1, 3, 2, 2],
+            [1, 4, 2, 3],
+            [1, 5, 2, 4],
+            [1, 5, 3, 3],
+            [1, 6, 2, 5],
+            [1, 6, 3, 4],
+        ]
+        tirada = random.choice(tiradas)
+        if random.choice([True, False]):
+            tirada[0], tirada[1] = tirada[1], tirada[0]
+        if random.choice([True, False]):
+            tirada[2], tirada[3] = tirada[3], tirada[2]
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", tirada],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    f"Álvaro ha sacado un {tirada[0]} y un {tirada[1]}.",
+                    f"Bárbara ha sacado un {tirada[2]} y un {tirada[3]}.",
+                    "Ha ganado Álvaro.",
+                ],
+            ],
+        )
+
+        # Gana jugador 2 (más puntos totales)
+        a1 = random.randrange(2, 7)
+        a2 = random.randrange(1, 7)
+        b1 = random.randrange(1, min(7, a1 + a2))
+        b2 = random.randrange(1, a1 + a2 - b1)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [b1, b2, a1, a2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    f"Álvaro ha sacado un {b1} y un {b2}.",
+                    f"Bárbara ha sacado un {a1} y un {a2}.",
+                    "Ha ganado Bárbara.",
+                ],
+            ],
+        )
+
+        # Gana jugador 2 (puntos totales iguales, valor más alto)
+        tiradas = [
+            [4, 6, 5, 5],
+            [3, 5, 4, 4],
+            [3, 6, 4, 5],
+            [2, 4, 3, 3],
+            [2, 5, 3, 4],
+            [2, 6, 3, 5],
+            [2, 6, 4, 4],
+            [1, 3, 2, 2],
+            [1, 4, 2, 3],
+            [1, 5, 2, 4],
+            [1, 5, 3, 3],
+            [1, 6, 2, 5],
+            [1, 6, 3, 4],
+        ]
+        tirada = random.choice(tiradas)
+        if random.choice([True, False]):
+            tirada[0], tirada[1] = tirada[1], tirada[0]
+        if random.choice([True, False]):
+            tirada[2], tirada[3] = tirada[3], tirada[2]
+        tirada[0], tirada[1], tirada[2], tirada[3] = (
+            tirada[2],
+            tirada[3],
+            tirada[0],
+            tirada[1],
+        )
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", tirada],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    f"Álvaro ha sacado un {tirada[0]} y un {tirada[1]}.",
+                    f"Bárbara ha sacado un {tirada[2]} y un {tirada[3]}.",
+                    "Ha ganado Bárbara.",
+                ],
+            ],
+        )
+
+        # Empate
+        a1 = random.randrange(1, 7)
+        a2 = random.randrange(1, 7)
+        b1, b2 = a1, a2
+        if random.choice([True, False]):
+            b1, b2 = b2, b1
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", [a1, a2, b1, b2]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    f"Álvaro ha sacado un {a1} y un {a2}.",
+                    f"Bárbara ha sacado un {b1} y un {b2}.",
+                    "Han empatado.",
+                ],
+            ],
+        )
+
+        # Exercise 161731 END
+
+    elif exercise_id == 161732:
+        # Exercise 161732 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170606.html
+
+        # Número negativo
+        a = -random.randrange(1, 1000)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "El número introducido no es válido.",
+                ],
+            ],
+        )
+
+        # Número mayor que 1000
+        a = random.randrange(1000, 10_000)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "El número introducido no es válido.",
+                ],
+            ],
+        )
+
+        # Número de tres cifras primera cifra
+        a1 = random.randrange(1, 10)
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        b = a1
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [1]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 1: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de tres cifras primera cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = random.randrange(1, 10)
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        d.remove(a1)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [1]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 1: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Número de tres cifras segunda cifra
+        a1 = random.randrange(1, 10)
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        b = a2
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [2]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 2: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de tres cifras segunda cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = random.randrange(1, 10)
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        d.remove(a2)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [2]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 2: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Número de tres cifras tercera cifra
+        a1 = random.randrange(1, 10)
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        b = a3
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [3]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 3: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de tres cifras tercera cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = random.randrange(1, 10)
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        d.remove(a3)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [3]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 3: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Número de dos cifras primera cifra
+        a1 = 0
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        b = a1
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [1]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 1: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de dos cifras primera cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = 0
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        d.remove(a1)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [1]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 1: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Número de dos cifras segunda cifra
+        a1 = 0
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        b = a2
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [2]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 2: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de dos cifras segunda cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = 0
+        a2 = random.randrange(1, 10)
+        a3 = random.randrange(1, 10)
+        d.remove(a2)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [2]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 2: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Número de una cifra primera cifra
+        a1 = 0
+        a2 = 0
+        a3 = random.randrange(1, 10)
+        b = a1
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [1]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 1: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de una cifra primera cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = 0
+        a2 = 0
+        a3 = random.randrange(1, 10)
+        d.remove(a1)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [1]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 1: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Número de una cifra segunda cifra
+        a1 = 0
+        a2 = 0
+        a3 = random.randrange(1, 10)
+        b = a2
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [2]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 2: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de una cifra segunda cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = 0
+        a2 = 0
+        a3 = random.randrange(1, 10)
+        d.remove(a2)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [2]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 2: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Número de una cifra tercera cifra
+        a1 = 0
+        a2 = 0
+        a3 = random.randrange(1, 10)
+        b = a3
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [3]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 3: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de una cifra tercera cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = 0
+        a2 = 0
+        a3 = random.randrange(1, 10)
+        d.remove(a3)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [3]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 3: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Cero
+        a1 = 0
+        a2 = 0
+        a3 = 0
+        b = a3
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [3]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 3: ",
+                    "¡Correcto!",
+                ],
+            ],
+        )
+
+        # Número de una cifra tercera cifra
+        d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        a1 = 0
+        a2 = 0
+        a3 = 0
+        d.remove(a3)
+        b = random.choice(d)
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a1 * 100 + a2 * 10 + a3, b]],
+            ["random", [3]],
+            [
+                "output",
+                [
+                    "CONTRASEÑA",
+                    "Escriba un número de tres cifras: ",
+                    "Escriba la cifra en la posición 3: ",
+                    "¡Incorrecto!",
+                ],
+            ],
+        )
+
+        # Exercise 161732 END
+
+    elif exercise_id == 161733:
+        # Exercise 161733 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170606.html
+
+        # Primer número negativo
+        a = -random.randrange(1, 1000)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    "¡Le he pedido un número positivo!",
+                ],
+            ],
+        )
+
+        # Segundo número incorrecto
+        a = 0
+        b = -random.randrange(1, 1000)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    f"Escriba un número mayor que {a}: ",
+                    f"¡Le he pedido un número mayor que {a}!",
+                ],
+            ],
+        )
+
+        # Segundo número incorrecto
+        a = random.randrange(1, 1000)
+        b = a - random.randrange(1, 1000)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    f"Escriba un número mayor que {a}: ",
+                    f"¡Le he pedido un número mayor que {a}!",
+                ],
+            ],
+        )
+
+        # Segundo número incorrecto
+        a = random.randrange(1, 1000)
+        b = a
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    f"Escriba un número mayor que {a}: ",
+                    f"¡Le he pedido un número mayor que {a}!",
+                ],
+            ],
+        )
+
+        # Tercer número incorrecto
+        a = random.randrange(0, 1000)
+        b = a + random.randrange(1, 1000)
+        c = -random.randrange(1, 1000)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    f"Escriba un número mayor que {a}: ",
+                    "Escriba un número del 1 al 10: ",
+                    f"¡Le he pedido un número del 1 al 10!",
+                ],
+            ],
+        )
+
+        # Tercer número incorrecto
+        a = random.randrange(0, 1000)
+        b = a + random.randrange(1, 1000)
+        c = 0
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    f"Escriba un número mayor que {a}: ",
+                    "Escriba un número del 1 al 10: ",
+                    f"¡Le he pedido un número del 1 al 10!",
+                ],
+            ],
+        )
+
+        # Tercer número incorrecto
+        a = random.randrange(0, 1000)
+        b = a + random.randrange(1, 1000)
+        c = 10 + random.randrange(1, 1000)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    f"Escriba un número mayor que {a}: ",
+                    "Escriba un número del 1 al 10: ",
+                    f"¡Le he pedido un número del 1 al 10!",
+                ],
+            ],
+        )
+
+        # Una repetición
+        a = random.randrange(0, 100)
+        b = a + random.randrange(1, 100)
+        c = 1
+        res = []
+        for i in range(c):
+            res += list(range(a, b + 1)) + list(range(b - 1, a, -1))
+        res += [a]
+
+        tmp_output = ""
+        for i in res:
+            tmp_output += f"{i} "
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    f"Escriba un número mayor que {a}: ",
+                    "Escriba un número del 1 al 10: ",
+                    tmp_output,
+                ],
+            ],
+        )
+
+        # Varias repeticiones
+        a = random.randrange(0, 100)
+        b = a + random.randrange(1, 100)
+        c = random.randrange(2, 11)
+        res = []
+        for i in range(c):
+            res += list(range(a, b + 1)) + list(range(b - 1, a, -1))
+        res += [a]
+
+        tmp_output = ""
+        for i in res:
+            tmp_output += f"{i} "
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUBE Y BAJA",
+                    "Escriba un número positivo: ",
+                    f"Escriba un número mayor que {a}: ",
+                    "Escriba un número del 1 al 10: ",
+                    tmp_output,
+                ],
+            ],
+        )
+
+        # Exercise 161733 END
