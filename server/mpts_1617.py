@@ -1607,3 +1607,280 @@ def exercise(exercise_id):
         )
 
         # Exercise 161733 END
+
+    elif exercise_id == 161741:
+        # Exercise 161741 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170628.html
+
+        # Se pasan los dos
+        a1 = random.randrange(5, 11)
+        a2 = random.randrange(5, 11)
+        a3 = random.randrange(6, 11)
+        b1 = random.randrange(5, 11)
+        b2 = random.randrange(5, 11)
+        b3 = random.randrange(6, 11)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [a1, a2, a3, b1, b2, b3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Álvaro ha sacado un {a1}, un {a2} y un {a3}.",
+                    f"Bárbara ha sacado un {b1}, un {b2} y un {b3}.",
+                    "No ha ganado nadie.",
+                ],
+            ],
+        )
+
+        # Se pasa jugador 1
+        a1 = random.randrange(1, 5)
+        a2 = random.randrange(1, 5)
+        a3 = random.randrange(1, 5)
+        b1 = random.randrange(6, 11)
+        b2 = random.randrange(5, 11)
+        b3 = random.randrange(5, 11)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [a1, a2, a3, b1, b2, b3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Álvaro ha sacado un {a1}, un {a2} y un {a3}.",
+                    f"Bárbara ha sacado un {b1}, un {b2} y un {b3}.",
+                    "Ha ganado Álvaro.",
+                ],
+            ],
+        )
+
+        # Se pasa jugador 2
+        a1 = random.randrange(6, 11)
+        a2 = random.randrange(5, 11)
+        a3 = random.randrange(5, 11)
+        b1 = random.randrange(1, 5)
+        b2 = random.randrange(1, 5)
+        b3 = random.randrange(1, 5)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [a1, a2, a3, b1, b2, b3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Álvaro ha sacado un {a1}, un {a2} y un {a3}.",
+                    f"Bárbara ha sacado un {b1}, un {b2} y un {b3}.",
+                    "Ha ganado Bárbara.",
+                ],
+            ],
+        )
+
+        # No se pasa ninguno, gana jugador 1
+        a1 = random.randrange(1, 11)
+        a2 = random.randrange(1, 14 - a1)
+        a3 = random.randrange(1, 15 - a1 - a2)
+        ta = a1 + a2 + a3
+        b1 = random.randrange(1, min(11, ta - 2))
+        b2 = random.randrange(1, ta - b1 - 1)
+        b3 = random.randrange(1, ta - b1 - b2)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [a1, a2, a3, b1, b2, b3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Álvaro ha sacado un {a1}, un {a2} y un {a3}.",
+                    f"Bárbara ha sacado un {b1}, un {b2} y un {b3}.",
+                    "Ha ganado Álvaro.",
+                ],
+            ],
+        )
+
+        # No se pasa ninguno, gana jugador 2
+        b1 = random.randrange(1, 11)
+        b2 = random.randrange(1, 14 - b1)
+        b3 = random.randrange(1, 15 - b1 - b2)
+        tb = b1 + b2 + b3
+        a1 = random.randrange(1, min(11, tb - 2))
+        a2 = random.randrange(1, tb - a1 - 1)
+        a3 = random.randrange(1, tb - a1 - a2)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [a1, a2, a3, b1, b2, b3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Álvaro ha sacado un {a1}, un {a2} y un {a3}.",
+                    f"Bárbara ha sacado un {b1}, un {b2} y un {b3}.",
+                    "Ha ganado Bárbara.",
+                ],
+            ],
+        )
+
+        # No se pasa ninguno, empate
+        a1 = random.randrange(1, 11)
+        a2 = random.randrange(1, 14 - a1)
+        a3 = random.randrange(1, 15 - a1 - a2)
+        ta = (a1 + a2 + a3) // 3
+        b1 = ta
+        b2 = ta + random.randrange(-1, 2)
+        b3 = a1 + a2 + a3 - b1 - b2
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", [a1, a2, a3, b1, b2, b3]],
+            [
+                "output",
+                [
+                    "JUEGO DEL QUINCE",
+                    f"Álvaro ha sacado un {a1}, un {a2} y un {a3}.",
+                    f"Bárbara ha sacado un {b1}, un {b2} y un {b3}.",
+                    "Han empatado.",
+                ],
+            ],
+        )
+
+        # Exercise 161741 END
+
+    elif exercise_id == 161742:
+        # Exercise 1617412BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170628.html
+
+        # Cantidad negativa de valores
+        a = random.randrange(1, 11)
+        b = random.randrange(1, 11)
+        c = -random.randrange(1, 11)
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUCESIÓN DE FIBONACCI",
+                    "Escriba el primer valor de la sucesión: ",
+                    "Escriba el segundo valor de la sucesión: ",
+                    "Escriba el número de valores a mostrar: ",
+                    "¡Se deben mostrar al menos dos valores!",
+                ],
+            ],
+        )
+
+        # Cero valores
+        a = random.randrange(1, 11)
+        b = random.randrange(1, 11)
+        c = 0
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUCESIÓN DE FIBONACCI",
+                    "Escriba el primer valor de la sucesión: ",
+                    "Escriba el segundo valor de la sucesión: ",
+                    "Escriba el número de valores a mostrar: ",
+                    "¡Se deben mostrar al menos dos valores!",
+                ],
+            ],
+        )
+
+        # Un valor
+        a = random.randrange(1, 11)
+        b = random.randrange(1, 11)
+        c = 1
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUCESIÓN DE FIBONACCI",
+                    "Escriba el primer valor de la sucesión: ",
+                    "Escriba el segundo valor de la sucesión: ",
+                    "Escriba el número de valores a mostrar: ",
+                    "¡Se deben mostrar al menos dos valores!",
+                ],
+            ],
+        )
+
+        # Dos valores
+        a = random.randrange(1, 11)
+        b = random.randrange(1, 11)
+        c = 2
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a, b, c]],
+            [
+                "output",
+                [
+                    "SUCESIÓN DE FIBONACCI",
+                    "Escriba el primer valor de la sucesión: ",
+                    "Escriba el segundo valor de la sucesión: ",
+                    "Escriba el número de valores a mostrar: ",
+                    f"{a} {b} ",
+                ],
+            ],
+        )
+
+        # Varios valores
+        a = random.randrange(1, 11)
+        b = random.randrange(1, 11)
+        a0, b0 = a, b
+        c = random.randrange(3, 11)
+        tmp_output = f"{a} {b} "
+        for _ in range(c - 2):
+            tmp_output += f"{a + b} "
+            a, b = b, a + b
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [a0, b0, c]],
+            [
+                "output",
+                [
+                    "SUCESIÓN DE FIBONACCI",
+                    "Escriba el primer valor de la sucesión: ",
+                    "Escriba el segundo valor de la sucesión: ",
+                    "Escriba el número de valores a mostrar: ",
+                    tmp_output,
+                ],
+            ],
+        )
+
+        # Varios valores (más que antes)
+        a = random.randrange(1, 11)
+        b = random.randrange(1, 11)
+        a0, b0 = a, b
+        c = random.randrange(10, 15)
+        tmp_output = f"{a} {b} "
+        for _ in range(c - 2):
+            tmp_output += f"{a + b} "
+            a, b = b, a + b
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [a0, b0, c]],
+            [
+                "output",
+                [
+                    "SUCESIÓN DE FIBONACCI",
+                    "Escriba el primer valor de la sucesión: ",
+                    "Escriba el segundo valor de la sucesión: ",
+                    "Escriba el número de valores a mostrar: ",
+                    tmp_output,
+                ],
+            ],
+        )
+
+        # Exercise 161742 END

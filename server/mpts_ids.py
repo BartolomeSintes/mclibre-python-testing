@@ -49,10 +49,13 @@ valid_exercise_ids = [
     [1617, [161711, 161712, 161713]],
     #
     # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170505.html
-    [1617, [ 161721, 161722, 161723]],
+    [1617, [161721, 161722, 161723]],
     #
     # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170606.html
-    [1617, [ 161731, 161732, 161733]],
+    [1617, [161731, 161732, 161733]],
+    #
+    # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170628.html
+    [1617, [161741, 161742]],
     #
     # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
     [1718, [171811, 171812, 171813]],
