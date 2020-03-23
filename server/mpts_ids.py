@@ -42,6 +42,9 @@ valid_exercise_ids = [
     # https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html
     [101, [1011, 1012, 1013, 1014, 1015]],
     #
+    # Ejemplos de programas incorrectos para ver qué dice MPTC
+    [102, [1021, 1022, 1023]],
+    #
     #
     # EXÁMENES
     #

@@ -100,7 +100,7 @@ def exercise(exercise_id):
             tmp_random += [random.randrange(1, 7)]
         tmp_output = ["TIRADAS DE DADO", "Número de jugadores: "]
         for i in range(a):
-            tmp_output += [f"Jugador {i + 1}: {tmp_random[i]} "]
+            tmp_output += [f"Jugador {i + 1}: {tmp_random[i]}"]
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["input", tmp_input],
@@ -116,7 +116,7 @@ def exercise(exercise_id):
             tmp_random += [random.randrange(1, 7)]
         tmp_output = ["TIRADAS DE DADO", "Número de jugadores: "]
         for i in range(a):
-            tmp_output += [f"Jugador {i + 1}: {tmp_random[i]} "]
+            tmp_output += [f"Jugador {i + 1}: {tmp_random[i]}"]
         mpts_common.add_test(
             LAST_TEST,
             ["input", tmp_input],

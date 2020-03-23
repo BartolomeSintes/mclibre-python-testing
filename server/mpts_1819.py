@@ -1974,7 +1974,7 @@ def exercise(exercise_id):
         )
 
         # Tercero múltiplo del primero y del segundo, primero y segundo primos entre sí
-        a = random.randrange(1, 10)
+        a = random.randrange(2, 10)
         n = random.randrange(2, 10)
         b = a * n + 1
         n = random.randrange(2, 10)
@@ -2049,7 +2049,7 @@ def exercise(exercise_id):
         while b % a == 0:
             b += 1
         n = random.randrange(2, 10)
-        while n % a == 0:
+        while (b * n) % a == 0:
             n += 1
         c = b * n
 

@@ -984,24 +984,25 @@ def exercise(exercise_id):
             ],
         )
 
-        # a no es cero, Delta nulo
-        a = float(random.randrange(1, 100))
-        b = float(random.randrange(1, 100))
-        c = b * b / (4 * a)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [a, b, c]],
-            [
-                "output",
-                [
-                    "ECUACIÓN A X² + B X + C = 0",
-                    "Escriba el valor del coeficiente a: ",
-                    "Escriba el valor del coeficiente b: ",
-                    "Escriba el valor del coeficiente c: ",
-                    f"La ecuación tiene una solución: {-b / (2 * a)}",
-                ],
-            ],
-        )
+        # Quito este caso porque genera decimales
+        # # a no es cero, Delta nulo
+        # a = float(random.randrange(1, 100))
+        # b = float(random.randrange(1, 100))
+        # c = b * b / (4 * a)
+        # mpts_common.add_test(
+        #     NOT_LAST_TEST,
+        #     ["input", [a, b, c]],
+        #     [
+        #         "output",
+        #         [
+        #             "ECUACIÓN A X² + B X + C = 0",
+        #             "Escriba el valor del coeficiente a: ",
+        #             "Escriba el valor del coeficiente b: ",
+        #             "Escriba el valor del coeficiente c: ",
+        #             f"La ecuación tiene una solución: {-b / (2 * a)}",
+        #         ],
+        #     ],
+        # )
 
         # a no es cero, Delta nulo
         a = float(random.randrange(1, 100))

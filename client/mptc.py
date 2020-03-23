@@ -10,16 +10,16 @@ import sys
 try:
     exec("import pytest")
 except:
-    print("[ERROR] Missing module: PyTest")
-    print("Please install PyTest and try again")
+    print("[ERROR] Módulo no instalado: PyTest")
+    print("Por favor, instale PyTest y ejecute mptc de nuevo.")
     exit()
 
 # requests is a required module
 try:
     import requests
 except:
-    print("[ERROR] Missing module: Requests")
-    print("Please install Requests and try again")
+    print("[ERROR] Módulo no instalado: Requests")
+    print("Por favor, instale Requests y ejecute mptc de nuevo.")
     exit()
 
 
@@ -155,28 +155,28 @@ def main():
     SYNTAX_ERROR = "Syntax error"
 
     parser = argparse.ArgumentParser(
-        description="Testing tool for some of the programming exercises in mclibre.org's Python course available at http://www.mclibre.org/consultar/python/"
+        description="Herramienta de prueba para los ejercicios de programación del curso de Python de mclibre.org, disponible en https://www.mclibre.org/consultar/python/"
     )
 
     parser.add_argument(
         "to_be_tested_py",
         action="store",
-        help="File name of the python program that will be tested",
+        help="Nombre del archivo del programa de Python que va a ser probado",
     )
 
     parser.add_argument(
         "exercise_id",
         action="store",
         type=int,
-        help="id of the tests that will be applied to the program",
+        help="Identificador del conjunto de pruebas que se aplicarán al programa",
     )
 
     parser.add_argument(
-        "-w", "--write", action="store", help="download and save test values in file"
+        "-w", "--write", action="store", help="descarga y guarda los valores de test en un archivo"
     )
 
     parser.add_argument(
-        "-r", "--read", action="store", help="read test values from file"
+        "-r", "--read", action="store", help="lee valores de test de un archivo"
     )
 
     args = parser.parse_args()
@@ -184,12 +184,12 @@ def main():
     if testable[0:2] == ".\\" or testable[0:2] == "./":
         testable = testable[2:]
     if testable.find("\\") != -1 or testable.find("/") != -1:
-        print(f"Error: Relative or absolute paths [{testable}] are not allowed.")
-        print("Please, execute MPTC from the directory where your program is located.")
+        print(f"Error: No se permiten caminos absolutos o relativos [{testable}].")
+        print("Por favor, ejecute MPTC en el directorio en el que se encuentra su programa.")
         exit()
     elif not (os.path.isfile(testable)):
         print(
-            f"Error: Program to be tested [{testable}] not found. Please, check file name"
+            f"Error: No se encuentra el programa [{testable}]. Por favor, compruebe el nombre del fichero e inténtelo de nuevo."
         )
         exit()
 
@@ -199,11 +199,11 @@ def main():
                 values = json.load(file)
                 random_id = values["id"]
         except:
-            print(f"Error: {args.read} file not found.")
+            print(f"Error: No se encuentra el fichero {args.read}.")
             exit()
     else:
         server_url = "https://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre_python_testing_server.py"
-        # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
+        server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
 
         random_id = random.randint(0, 100_000)
         json_request = {
@@ -212,24 +212,24 @@ def main():
             "params": {"version": "0.1", "exercise-id": args.exercise_id},
             "id": random_id,
         }
-        # print (json.dumps(json_request))
+        #print (json.dumps(json_request))
         r = requests.post(server_url, data=json.dumps(json_request))
         # print(r.text)
         values = r.json()
         # print(values)
         # for i in values["result"]:
-        #    print(i["input"])
-        #    print(i["random"])
-        #    print(i["output"])
-        #    print()
+           # print(i["input"])
+           # print(i["random"])
+           # print(i["output"])
+           # print()
 
     if args.write is not None:
         try:
             with open(args.write, "w", encoding="utf-8") as file:
                 file.write(json.dumps(values, ensure_ascii=False))
-                print(f"Test values have been saved as {file.name}")
+                print(f"Los valores de prueba se han guardado en el fichero {file.name}")
         except:
-            print(f"Error: {args.write} file could not be created.")
+            print(f"Error: No se ha podido crear el fichero {args.write}.")
             exit()
     else:
         print()
@@ -237,33 +237,33 @@ def main():
             f"{colorama.Fore.YELLOW}-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-{colorama.Style.RESET_ALL}"
         )
         print()
-        print("-+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-")
+        print("-+-+-+-+-+-+-+-+-       BIENVENIDO       -+-+-+-+-+-+-+-+-")
         print()
         if "error" in values:
-            print("An error has been detected:")
-            print(f"  Error number:  {values['error']}")
-            print(f"  Error message: {values['message']}")
+            print("Se ha detectado un error:")
+            print(f"  Código de error:  {values['error']}")
+            print(f"  Mensaje de error: {values['message']}")
         elif values["id"] != random_id:
-            print("An error has been detected:")
+            print("Se ha detectado un error:")
             print(
-                "  The id sent by the server is not the same that was sent to the server."
+                "  La respuesta del servidor contiene un identificador de petición distinto al de la solicitud enviada."
             )
         else:
             if len(values["result"]) == 1:
-                print(f"{len(values['result'])} test will be executed.")
+                print(f"Se va a ejecutar {len(values['result'])} test.")
             else:
-                print(f"{len(values['result'])} tests will be executed.")
+                print(f"Se van a ejecutar {len(values['result'])} tests.")
             print()
-            print("Please, wait until all tests have been executed.")
+            print("Por favor, espere a que se ejecuten todos los tests.")
             print()
-            print("A final report will be shown after.")
+            print("Una vez ejecutados, se mostrará el resultado.")
             print()
-            print("-+-+-+-+-+-+-+-+-     TESTS EXECUTION    -+-+-+-+-+-+-+-+-")
+            print("-+-+-+-+-+-+-+-+- EJECUCION DE LOS TESTS -+-+-+-+-+-+-+-+-")
             print()
             errorReport = []
             test_counter = 1
             for i in values["result"]:
-                print(f"Running test {test_counter}. Please wait. ", end="")
+                print(f"Ejecutando el test {test_counter}. Por favor, espere. ", end="")
                 with open("test_values.txt", "w", encoding="utf-8") as file:
                     file.write(str(i))
                 create_test_program(testable)
@@ -279,6 +279,7 @@ def main():
                     )
                     p.wait()
                 failed_message = False
+
                 with open("stdout.txt", "r") as file:
                     line = file.readline()
                     while line:
@@ -286,9 +287,9 @@ def main():
                             failed_message = True
                         line = file.readline()
                 if failed_message:
-                    print(f"Test {test_counter} failed. ")
+                    print(f"Test {test_counter} fallado. ")
                 else:
-                    print(f"Test {test_counter} passed. ")
+                    print(f"Test {test_counter} superado. ")
                 test_counter += 1
 
                 import xml.etree.ElementTree as ET
@@ -324,90 +325,93 @@ def main():
                 if os.path.isfile("stdout.txt"):
                     os.remove("stdout.txt")
             print()
-            print("-+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-")
+            print("-+-+-+-+-+-+-+-+-       RESULTADOS       -+-+-+-+-+-+-+-+-")
             print()
-            print(f"Tested program: {testable}")
-            print(f"MPTC number:    {args.exercise_id}")
+            print(f"Programa probado: {testable}")
+            print(f"Número MPTC:      {args.exercise_id}")
             print()
             if len(values["result"]) > 1:
-                print(f"{len(values['result'])} tests have been executed.")
+                print(f"Se han ejecutado {len(values['result'])} tests.")
             else:
-                print(f"{len(values['result'])} test has been executed.")
+                print(f"Se ha ejecutado {len(values['result'])} test.")
             if errorReport == []:
                 print()
                 print(
-                    f"{colorama.Fore.GREEN}All tests have been passed. Congratulations!{colorama.Style.RESET_ALL}"
+                    f"{colorama.Fore.GREEN}Se han superado todos los tests. ¡Enhorabuena!{colorama.Style.RESET_ALL}"
                 )
             else:
-                if len(values["result"]) - len(errorReport) > 1:
+                if len(values["result"]) - len(errorReport) != 1:
                     print(
-                        f"{len(values['result']) - len(errorReport)} tests have been passed."
+                        f"Se han superado {len(values['result']) - len(errorReport)} tests."
                     )
                 else:
                     print(
-                        f"{len(values['result']) - len(errorReport)} test has been passed."
+                        f"Se ha superado {len(values['result']) - len(errorReport)} test."
                     )
-                if len(errorReport) > 1:
-                    print(f"{len(errorReport)} tests have been failed.")
+                if len(errorReport) != 1:
+                    print(f"Han fallado {len(errorReport)} tests.")
                 else:
-                    print(f"{len(errorReport)} test has been failed.")
+                    print(f"Ha fallado {len(errorReport)} test.")
                 for i in errorReport:
                     print()
-                    print("Failed test:")
+                    print("Test fallado:")
                     if "input" in i[0]:
                         if len(i[0]) > 0:
-                            print("  Input values:   ", end="")
+                            print("  Valores de entrada:   ", end="")
                             for j in i[0]["input"]:
                                 if j == "":
                                     print("[Intro] ", end="")
                                 else:
                                     print(f"{j} ", end="")
                             print()
+                            print()
                     if "random" in i[0]:
                         if len(i[0]) > 0:
-                            print("  Random values:   ", end="")
+                            print("  Valores aleatorios:   ", end="")
                             for j in i[0]["random"]:
                                 print(f"{j} ", end="")
+                            print()
                             print()
 
                     if i[2] == SYNTAX_ERROR:
                         print(
-                            "  Your program could not be executed properly. Please, check syntax manually."
+                            "  El programa parece tener un error de sintaxis. Por favor, compruebe que puede ejecutarlo manualmente."
                         )
                     elif i[2] == EXECUTION_ERROR:
                         print(
-                            "  Your program could not be executed properly. Please, check manually."
+                            "  El programa no puede jecutarse. Por favor, compruebe que contiene la función main()."
                         )
                     else:
                         if len(i[0]["output"]) != len(i[1]):
                             print(
-                                "  The program produces an incorrect number of outputs."
+                                "  El programa genera un número incorrecto de cadenas de salida."
                             )
+                            print()
                         for j in range(min(len(i[0]["output"]), len(i[1]))):
                             if i[0]["output"][j] != i[1][j]:
-                                print(f'  Expected result: "{i[0]["output"][j]}"')
-                                print(f'  Obtained result: "{i[1][j]}"')
+                                print(f'  Resultado esperado: "{i[0]["output"][j]}"')
+                                print(f'  Resultado obtenido: "{i[1][j]}"')
+                                print()
                         for j in range(
                             min(len(i[0]["output"]), len(i[1])),
                             max(len(i[0]["output"]), len(i[1])),
                         ):
-                            print()
                             if 0 <= j < len(i[0]["output"]):
-                                print(f'  Expected result: "{i[0]["output"][j]}"')
+                                print(f'  Resultado esperado: "{i[0]["output"][j]}"')
                             else:
-                                print(f"  No result was expected.")
+                                print(f"  No se esperaba ningún resultado.")
                             if 0 <= j < len(i[1]):
-                                print(f'  Obtained result: "{i[1][j]}"')
+                                print(f'  Resultado obtenido: "{i[1][j]}"')
                             else:
-                                print(f"  No result was obtained.")
-                print()
+                                print(f"  No se obtuvo ningún resultado.")
+                            print()
                 if len(errorReport) > 1:
                     print(
-                        f"{colorama.Fore.RED}{len(errorReport)} tests have been failed. Please correct and test again.{colorama.Style.RESET_ALL}"
+                        f"{colorama.Fore.RED}{len(errorReport)} tests han fallado. Por favor, corrija el programa y pruebe de nuevo.{colorama.Style.RESET_ALL}"
                     )
                 else:
                     print(
-                        f"{colorama.Fore.RED}{len(errorReport)} test has been failed. Please correct and test again.{colorama.Style.RESET_ALL}"
+                        f"{colorama.Fore.RED}{len(errorReport)} test ha fallado. Por favor, corrija el programa y pruebe de nuevo.{colorama.Style.RESET_ALL}"
                     )
 
             print()
