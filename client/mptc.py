@@ -172,7 +172,10 @@ def main():
     )
 
     parser.add_argument(
-        "-w", "--write", action="store", help="descarga y guarda los valores de test en un archivo"
+        "-w",
+        "--write",
+        action="store",
+        help="descarga y guarda los valores de test en un archivo",
     )
 
     parser.add_argument(
@@ -185,7 +188,9 @@ def main():
         testable = testable[2:]
     if testable.find("\\") != -1 or testable.find("/") != -1:
         print(f"Error: No se permiten caminos absolutos o relativos [{testable}].")
-        print("Por favor, ejecute MPTC en el directorio en el que se encuentra su programa.")
+        print(
+            "Por favor, ejecute MPTC en el directorio en el que se encuentra su programa."
+        )
         exit()
     elif not (os.path.isfile(testable)):
         print(
@@ -203,7 +208,7 @@ def main():
             exit()
     else:
         server_url = "https://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre_python_testing_server.py"
-        #server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
+        # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
 
         random_id = random.randint(0, 100_000)
         json_request = {
@@ -212,22 +217,24 @@ def main():
             "params": {"version": "0.1", "exercise-id": args.exercise_id},
             "id": random_id,
         }
-        #print (json.dumps(json_request))
+        # print (json.dumps(json_request))
         r = requests.post(server_url, data=json.dumps(json_request))
         # print(r.text)
         values = r.json()
         # print(values)
         # for i in values["result"]:
-           # print(i["input"])
-           # print(i["random"])
-           # print(i["output"])
-           # print()
+        # print(i["input"])
+        # print(i["random"])
+        # print(i["output"])
+        # print()
 
     if args.write is not None:
         try:
             with open(args.write, "w", encoding="utf-8") as file:
                 file.write(json.dumps(values, ensure_ascii=False))
-                print(f"Los valores de prueba se han guardado en el fichero {file.name}")
+                print(
+                    f"Los valores de prueba se han guardado en el fichero {file.name}"
+                )
         except:
             print(f"Error: No se ha podido crear el fichero {args.write}.")
             exit()
@@ -279,13 +286,29 @@ def main():
                     )
                     p.wait()
                 failed_message = False
+                too_many_inputs = False
+                too_many_randoms = False
 
                 with open("stdout.txt", "r") as file:
                     line = file.readline()
                     while line:
-                        if line.rstrip().find("AssertionError") != -1:
+                        if line.rstrip().find("1 failed") != -1:
                             failed_message = True
+                        if (
+                            line.rstrip().find(">       return input_values.pop(0)")
+                            != -1
+                        ):
+                            too_many_inputs = True
+                        if line.rstrip().find(">   program.random.randrange") != -1:
+                            too_many_randoms = True
+                        if line.rstrip().find(">   program.randrange") != -1:
+                            too_many_randoms = True
+                        if line.rstrip().find(">   program.random.choice") != -1:
+                            too_many_randoms = True
+                        if line.rstrip().find(">   program.choice") != -1:
+                            too_many_randoms = True
                         line = file.readline()
+
                 if failed_message:
                     print(f"Test {test_counter} fallado. ")
                 else:
@@ -372,15 +395,26 @@ def main():
                                 print(f"{j} ", end="")
                             print()
                             print()
-
-                    if i[2] == SYNTAX_ERROR:
+                    if too_many_inputs:
+                        print(
+                            "  El programa pide al usuario más datos de los esperados."
+                        )
+                        print()
+                    elif too_many_randoms:
+                        print(
+                            "  El programa parece generar más números aleatorios de los esperados."
+                        )
+                        print()
+                    elif i[2] == SYNTAX_ERROR:
                         print(
                             "  El programa parece tener un error de sintaxis. Por favor, compruebe que puede ejecutarlo manualmente."
                         )
+                        print()
                     elif i[2] == EXECUTION_ERROR:
                         print(
-                            "  El programa no puede jecutarse. Por favor, compruebe que contiene la función main()."
+                            "  El programa no puede ejecutarse. Por favor, compruebe que contiene la función main()."
                         )
+                        print()
                     else:
                         if len(i[0]["output"]) != len(i[1]):
                             print(
