@@ -26,12 +26,15 @@ valid_exercise_ids = [
     [9, [93, 94, 95, 96, 97, 98]],
     #
     # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+    [14, [141, 142, 143, 144, 145, 146]],
+    #
+    # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
     [10, [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]],
     #
-    # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+    # https://www.mclibre.org/consultar/python/ejercicios/ej-while-3.html
     [11, [111, 112, 113, 114, 115]],
     #
-    # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
+    # https://www.mclibre.org/consultar/python/ejercicios/ej-while-3.html
     [12, [120, 121, 122]],
     #
     # https://www.mclibre.org/consultar/python/ejercicios/ej-sucesiones.html
