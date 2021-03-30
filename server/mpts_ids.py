@@ -25,9 +25,6 @@ valid_exercise_ids = [
     # https://www.mclibre.org/consultar/python/ejercicios/ej-for-2.html
     [9, [93, 94, 95, 96, 97, 98]],
     #
-    # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
-    [14, [141, 142, 143, 144, 145, 146]],
-    #
     # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
     [10, [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]],
     #
@@ -39,6 +36,9 @@ valid_exercise_ids = [
     #
     # https://www.mclibre.org/consultar/python/ejercicios/ej-sucesiones.html
     [13, [131, 132]],
+    #
+    # https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html
+    [14, [141, 142, 143, 144, 145, 146, 147, 148, 149, 150]],
     #
     # EJEMPLOS DE USO DE MPTC
     #

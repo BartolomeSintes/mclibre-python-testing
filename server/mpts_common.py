@@ -1,3 +1,5 @@
+import random
+
 def strType(var):
     try:
         if int(var) == float(var):
@@ -124,3 +126,40 @@ def hsl_2_rgb(h, s, l):
 
     return r, g, b
 
+
+def genera_string(
+    longitud,
+    letras_minusculas=True,
+    letras_mayusculas=True,
+    numeros=True,
+    acentos_minusculas=True,
+    acentos_mayusculas=True,
+    otros_caracteres=True,
+    espacios=True,
+):
+    letras_minusculas = "abcdefghijklmnñopqrstuvwxyz"
+    letras_mayusculas = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+    numeros = "0123456789"
+    acentos_minusculas = "áéíóúàèìòùäëïöüâêîôû"
+    acentos_mayusculas = "ÁÉÍÓÚÀÈÌÒÙÄËÏÖÜâêîôû"
+    otros_caracteres = "çÇ€@#~,;.-_:"  # TODO Faltan poner bastantes carácteres
+    espacios = " "
+    caracteres = ""
+    if letras_minusculas:
+        caracteres += letras_minusculas
+    if letras_mayusculas:
+        caracteres += letras_mayusculas
+    if numeros:
+        caracteres += numeros
+    if acentos_minusculas:
+        caracteres += acentos_minusculas
+    if acentos_mayusculas:
+        caracteres += acentos_mayusculas
+    if otros_caracteres:
+        caracteres += otros_caracteres
+    if espacios:
+        caracteres += espacios
+    cadena = ""
+    for _ in range(longitud):
+        cadena += random.choice(caracteres)
+    return cadena
