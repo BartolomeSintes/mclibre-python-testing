@@ -119,5 +119,7 @@ valid_exercise_ids = [
     #
     # https://www.mclibre.org/consultar/python/examenes/19-20/examen-200221.html
     [1920, [192011, 192012, 192013, 192014]],
+    #
+    # https://www.mclibre.org/consultar/python/examenes/20-21/examen-210519.html
+    [2021, [202111, 202112, 202113]],
 ]
-
