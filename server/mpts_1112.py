@@ -1,6 +1,5 @@
-import mpts_common
-import datetime
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False

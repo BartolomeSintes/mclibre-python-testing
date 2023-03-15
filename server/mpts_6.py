@@ -1,5 +1,5 @@
-import mpts_common
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -417,7 +417,7 @@ def exercise(exercise_id):
                     "LISTA DE MENOR A MAYOR",
                     "Escriba un número entero: ",
                     "Escriba otro número entero: ",
-                    f"[]",
+                    "[]",
                 ],
             ],
         )
@@ -434,7 +434,7 @@ def exercise(exercise_id):
                     "LISTA DE MENOR A MAYOR",
                     "Escriba un número entero: ",
                     "Escriba otro número entero: ",
-                    f"[]",
+                    "[]",
                 ],
             ],
         )
@@ -451,7 +451,7 @@ def exercise(exercise_id):
                     "LISTA DE MENOR A MAYOR",
                     "Escriba un número entero: ",
                     "Escriba otro número entero: ",
-                    f"[]",
+                    "[]",
                 ],
             ],
         )
@@ -1004,4 +1004,3 @@ def exercise(exercise_id):
         )
 
         # Exercise 69 END
-

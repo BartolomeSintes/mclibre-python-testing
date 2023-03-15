@@ -1,6 +1,6 @@
-import mpts_common
 import datetime
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -777,10 +777,10 @@ def exercise(exercise_id):
 
         # Gana el último jugador
         n = random.randrange(2, 11)
-        max = random.randrange(2, 7)
+        maximo = random.randrange(2, 7)
         d = []
         for _ in range(n - 1):
-            d += [random.randrange(1, max)]
+            d += [random.randrange(1, maximo)]
         d += [max]
         tmp_output = [
             "JUEGO DE DADOS (3)",
@@ -788,7 +788,7 @@ def exercise(exercise_id):
         ]
         for i in range(n):
             tmp_output += [f"El jugador {i+1} ha sacado un {d[i]}."]
-        tmp_output += [f"Ha ganado el jugador {n}, que ha sacado un {max}."]
+        tmp_output += [f"Ha ganado el jugador {n}, que ha sacado un {maximo}."]
         mpts_common.add_test(
             NOT_LAST_TEST, ["input", [n]], ["random", d], ["output", tmp_output],
         )
@@ -796,20 +796,20 @@ def exercise(exercise_id):
         # Gana otro jugador
         n1 = random.randrange(1, 6)
         n2 = random.randrange(1, 6)
-        max = random.randrange(2, 7)
+        maximo = random.randrange(2, 7)
         d = []
         for _ in range(n1):
-            d += [random.randrange(1, max)]
+            d += [random.randrange(1, maximo)]
         d += [max]
         for _ in range(n2):
-            d += [random.randrange(1, max)]
+            d += [random.randrange(1, maximo)]
         tmp_output = [
             "JUEGO DE DADOS (3)",
             "¿Cuántos jugadores van a jugar? ",
         ]
         for i in range(n1 + n2 + 1):
             tmp_output += [f"El jugador {i+1} ha sacado un {d[i]}."]
-        tmp_output += [f"Ha ganado el jugador {n1 + 1}, que ha sacado un {max}."]
+        tmp_output += [f"Ha ganado el jugador {n1 + 1}, que ha sacado un {maximo}."]
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["input", [n1 + n2 + 1]],
@@ -819,11 +819,11 @@ def exercise(exercise_id):
 
         # Empate
         n = random.randrange(2, 11)
-        max = random.randrange(2, 7)
+        maximo = random.randrange(2, 7)
         d = []
         for _ in range(n - 1):
-            d += [max]
-        d += [max]
+            d += [maximo]
+        d += [maximo]
         tmp_output = [
             "JUEGO DE DADOS (3)",
             "¿Cuántos jugadores van a jugar? ",
@@ -1505,7 +1505,7 @@ def exercise(exercise_id):
                     "Escriba un número positivo: ",
                     f"Escriba un número mayor que {a}: ",
                     "Escriba un número del 1 al 10: ",
-                    f"¡Le he pedido un número del 1 al 10!",
+                    "¡Le he pedido un número del 1 al 10!",
                 ],
             ],
         )
@@ -1525,7 +1525,7 @@ def exercise(exercise_id):
                     "Escriba un número positivo: ",
                     f"Escriba un número mayor que {a}: ",
                     "Escriba un número del 1 al 10: ",
-                    f"¡Le he pedido un número del 1 al 10!",
+                    "¡Le he pedido un número del 1 al 10!",
                 ],
             ],
         )
@@ -1545,7 +1545,7 @@ def exercise(exercise_id):
                     "Escriba un número positivo: ",
                     f"Escriba un número mayor que {a}: ",
                     "Escriba un número del 1 al 10: ",
-                    f"¡Le he pedido un número del 1 al 10!",
+                    "¡Le he pedido un número del 1 al 10!",
                 ],
             ],
         )

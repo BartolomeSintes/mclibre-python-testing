@@ -1,5 +1,5 @@
-import mpts_common
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -20,7 +20,7 @@ def exercise(exercise_id):
 
         # Comprueba salida
         mpts_common.add_test(
-            LAST_TEST, ["output", ["SALUDANDO", "¡Hola, mundo!", "¡Adios, amigo!"]]
+            LAST_TEST, ["output", ["SALUDANDO", "¡Hola, mundo!", "¡Adiós, amigo!"]]
         )
 
         # Exercise 1002 END
@@ -167,42 +167,42 @@ def exercise(exercise_id):
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["choice", ["Negros"]],
-            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido Negros."]],
+            ["output", ["TIRADA DE DADO DE PÓKER", "Ha salido Negros."]],
         )
 
         # Rojos
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["choice", ["Rojos"]],
-            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido Rojos."]],
+            ["output", ["TIRADA DE DADO DE PÓKER", "Ha salido Rojos."]],
         )
 
         # J
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["choice", ["J"]],
-            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido J."]],
+            ["output", ["TIRADA DE DADO DE PÓKER", "Ha salido J."]],
         )
 
         # Q
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["choice", ["Q"]],
-            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido Q."]],
+            ["output", ["TIRADA DE DADO DE PÓKER", "Ha salido Q."]],
         )
 
         # K
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["choice", ["K"]],
-            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido K."]],
+            ["output", ["TIRADA DE DADO DE PÓKER", "Ha salido K."]],
         )
 
         # As
         mpts_common.add_test(
             LAST_TEST,
             ["choice", ["As"]],
-            ["output", ["TIRADA DE DADO DE PÓKER", f"Ha salido As."]],
+            ["output", ["TIRADA DE DADO DE PÓKER", "Ha salido As."]],
         )
 
         # Exercise 1006 END

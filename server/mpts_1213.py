@@ -1,6 +1,5 @@
-import mpts_common
-import datetime
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -296,7 +295,7 @@ def exercise(exercise_id):
         ]
         for i in range(2, n + 1):
             tmp_output += [f"Escriba el número {i}: "]
-        tmp_output += [f"Ha escrito 0 valores mayores que el anterior"]
+        tmp_output += ["Ha escrito 0 valores mayores que el anterior"]
 
         mpts_common.add_test(
             NOT_LAST_TEST, ["input", v], ["output", tmp_output],
@@ -321,7 +320,7 @@ def exercise(exercise_id):
         ]
         for i in range(2, n + 1):
             tmp_output += [f"Escriba el número {i}: "]
-        tmp_output += [f"Ha escrito 1 valor mayor que el anterior"]
+        tmp_output += ["Ha escrito 1 valor mayor que el anterior"]
 
         mpts_common.add_test(
             NOT_LAST_TEST, ["input", v], ["output", tmp_output],

@@ -1,5 +1,5 @@
-import mpts_common
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -214,7 +214,7 @@ def exercise(exercise_id):
                     "COMPARADOR DE NÚMEROS",
                     "Escriba un número: ",
                     "Escriba otro número: ",
-                    f"Los dos números son iguales.",
+                    "Los dos números son iguales.",
                 ],
             ],
         )
@@ -274,7 +274,7 @@ def exercise(exercise_id):
                     "COMPARADOR DE AÑOS",
                     "¿En qué año estamos?: ",
                     "Escriba un año cualquiera: ",
-                    f"¡Son el mismo año!",
+                    "¡Son el mismo año!",
                 ],
             ],
         )
@@ -370,7 +370,7 @@ def exercise(exercise_id):
                     "COMPARADOR DE AÑOS",
                     "¿En qué año estamos?: ",
                     "Escriba un año cualquiera: ",
-                    f"¡Son el mismo año!",
+                    "¡Son el mismo año!",
                 ],
             ],
         )
@@ -1405,4 +1405,3 @@ def exercise(exercise_id):
         )
 
         # Exercise 24 END
-

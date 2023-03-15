@@ -1,5 +1,5 @@
-import mpts_common
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -681,7 +681,7 @@ def exercise(exercise_id):
 
         # Exercise 181914 END
 
-    if exercise_id == 181921:
+    elif exercise_id == 181921:
         # Exercise 181921 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190521.html
 
@@ -830,8 +830,8 @@ def exercise(exercise_id):
             "JUEGO DADOS REPETIDOS",
             "¿Cuántos dados quiere tirar? ",
         ]
-        for i in range(len(dados)):
-            tmp_output += [f"Dado {i+1}: {dados[i]}"]
+        for i, dado in enumerate(dados):
+            tmp_output += [f"Dado {i+1}: {dado}"]
         tmp_output += ["Ha obtenido 6 puntos."]
         mpts_common.add_test(
             NOT_LAST_TEST, ["input", [d]], ["random", dados], ["output", tmp_output],
@@ -890,8 +890,8 @@ def exercise(exercise_id):
                 "JUEGO DADOS REPETIDOS",
                 "¿Cuántos dados quiere tirar? ",
             ]
-            for j in range(len(tirada)):
-                tmp_output += [f"Dado {j + 1}: {tirada[j]}"]
+            for j, tira in enumerate(tirada):
+                tmp_output += [f"Dado {j + 1}: {tira}"]
             tmp_output += [f"Ha obtenido {ni * i} puntos."]
             mpts_common.add_test(
                 NOT_LAST_TEST,
@@ -922,8 +922,8 @@ def exercise(exercise_id):
             "JUEGO DADOS REPETIDOS",
             "¿Cuántos dados quiere tirar? ",
         ]
-        for i in range(len(tirada)):
-            tmp_output += [f"Dado {i+1}: {tirada[i]}"]
+        for i, tira in enumerate(tirada):
+            tmp_output += [f"Dado {i+1}: {tira}"]
         tmp_output += [f"Ha obtenido {dw * nw} puntos."]
         mpts_common.add_test(
             LAST_TEST, ["input", [d]], ["random", tirada], ["output", tmp_output],
@@ -1662,12 +1662,12 @@ def exercise(exercise_id):
         ta = []
         for _ in range(na - 3):
             d = [1, 2, 3, 4, 5, 6]
-            if ta != []:
+            if ta:
                 d.remove(ta[-1])
             ta += [random.choice(d)]
         if na >= 3:
             d = [1, 2, 3, 4, 5, 6]
-            if ta != [] and ta[-1] in d:
+            if ta and ta[-1] in d:
                 d.remove(ta[-1])
             if da in d:
                 d.remove(da)
@@ -1683,12 +1683,12 @@ def exercise(exercise_id):
         tb = []
         for _ in range(nb - 3):
             d = [1, 2, 3, 4, 5, 6]
-            if tb != []:
+            if tb:
                 d.remove(tb[-1])
             tb += [random.choice(d)]
         if nb >= 3:
             d = [1, 2, 3, 4, 5, 6]
-            if tb != [] and tb[-1] in d:
+            if tb and tb[-1] in d:
                 d.remove(tb[-1])
             if db in d:
                 d.remove(db)
@@ -1720,12 +1720,12 @@ def exercise(exercise_id):
         ta = []
         for _ in range(na - 3):
             d = [1, 2, 3, 4, 5, 6]
-            if ta != []:
+            if ta:
                 d.remove(ta[-1])
             ta += [random.choice(d)]
         if na >= 3:
             d = [1, 2, 3, 4, 5, 6]
-            if ta != [] and ta[-1] in d:
+            if ta and ta[-1] in d:
                 d.remove(ta[-1])
             if da in d:
                 d.remove(da)
@@ -1741,12 +1741,12 @@ def exercise(exercise_id):
         tb = []
         for _ in range(nb - 3):
             d = [1, 2, 3, 4, 5, 6]
-            if tb != []:
+            if tb:
                 d.remove(tb[-1])
             tb += [random.choice(d)]
         if nb >= 3:
             d = [1, 2, 3, 4, 5, 6]
-            if tb != [] and tb[-1] in d:
+            if tb and tb[-1] in d:
                 d.remove(tb[-1])
             if db in d:
                 d.remove(db)
@@ -1778,12 +1778,12 @@ def exercise(exercise_id):
         ta = []
         for _ in range(na - 3):
             d = [1, 2, 3, 4, 5, 6]
-            if ta != []:
+            if ta:
                 d.remove(ta[-1])
             ta += [random.choice(d)]
         if na >= 3:
             d = [1, 2, 3, 4, 5, 6]
-            if ta != [] and ta[-1] in d:
+            if ta and ta[-1] in d:
                 d.remove(ta[-1])
             if da in d:
                 d.remove(da)
@@ -1799,12 +1799,12 @@ def exercise(exercise_id):
         tb = []
         for _ in range(nb - 3):
             d = [1, 2, 3, 4, 5, 6]
-            if tb != []:
+            if tb:
                 d.remove(tb[-1])
             tb += [random.choice(d)]
         if nb >= 3:
             d = [1, 2, 3, 4, 5, 6]
-            if tb != [] and tb[-1] in d:
+            if tb and tb[-1] in d:
                 d.remove(tb[-1])
             if db in d:
                 d.remove(db)

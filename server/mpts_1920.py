@@ -1,6 +1,5 @@
-import mpts_common
-import datetime
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -296,7 +295,7 @@ def exercise(exercise_id):
                     "Escriba un número entero positivo: ",
                     f"Escriba un múltiplo de {a}: ",
                     f"Escriba un divisor de {b} distinto de {a}: ",
-                    f"¡Gracias por su colaboración!",
+                    "¡Gracias por su colaboración!",
                 ],
             ],
         )

@@ -1,5 +1,5 @@
-import mpts_common
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -483,9 +483,11 @@ def exercise(exercise_id):
             "sÍ",
             "si",
             "sí",
-            "NO" "No",
+            "NO",
+            "No",
             "nO",
-            "no" "N",
+            "no",
+            "N",
             "n",
             "puede",
             "tal vez",
@@ -923,7 +925,7 @@ def exercise(exercise_id):
             ahorrado += ahorro_positivo
             tmp_input += [ahorro_positivo]
             tmp_output += ["¿Cuántos euros quiere meter en la hucha?: "]
-            for j in range(random.randrange(2, 6)):
+            for _ in range(random.randrange(2, 6)):
                 ahorro = -float(random.randrange(1, 50))
                 tmp_input += [ahorro]
                 tmp_output += [

@@ -1,6 +1,6 @@
-import mpts_common
-import random
 import math
+import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -1177,4 +1177,3 @@ def exercise(exercise_id):
         )
 
         # Exercise 98 END
-

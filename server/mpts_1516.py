@@ -1,6 +1,5 @@
-import mpts_common
-import datetime
 import random
+import mpts_common
 
 NOT_LAST_TEST = True
 LAST_TEST = False
@@ -296,7 +295,7 @@ def exercise(exercise_id):
             "",
         ]
         for _ in range(np + ni):
-            tmp_output += [f"Escriba un número entero: "]
+            tmp_output += ["Escriba un número entero: "]
         num = [np + ni] + num
 
         tmp_output += [
@@ -333,7 +332,7 @@ def exercise(exercise_id):
             "",
         ]
         for _ in range(np + ni):
-            tmp_output += [f"Escriba un número entero: "]
+            tmp_output += ["Escriba un número entero: "]
         num = [np + ni] + num
 
         tmp_output += [
@@ -370,7 +369,7 @@ def exercise(exercise_id):
             "",
         ]
         for _ in range(np + ni):
-            tmp_output += [f"Escriba un número entero: "]
+            tmp_output += ["Escriba un número entero: "]
         num = [np + ni] + num
 
         tmp_output += [

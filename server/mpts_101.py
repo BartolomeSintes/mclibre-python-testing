@@ -1,5 +1,4 @@
 import mpts_common
-import random
 
 NOT_LAST_TEST = True
 LAST_TEST = False
