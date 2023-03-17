@@ -1,4 +1,3 @@
-import datetime
 import random
 import mpts_common
 
@@ -782,7 +781,7 @@ def exercise(exercise_id):
                 random.randrange(1, 7),
             ]
             d = random.randrange(1, 7)
-            while not (d in c):
+            while not d in c:
                 d = random.randrange(1, 7)
             tmp_random += c + [d]
             tmp_output += [
@@ -917,15 +916,15 @@ def exercise(exercise_id):
             tmp_random += [c + [d] + ["Humerus"]]
         random.shuffle(tmp_random)
         tmp_random_2 = []
-        for i in range(len(tmp_random)):
+        for i, tmp_r in enumerate(tmp_random):
             tmp_output += [
                 f"Turno {i + 1}",
-                f"  Tirada de Cubitus: {tmp_random[i][0]} {tmp_random[i][1]} {tmp_random[i][2]} {tmp_random[i][3]}",
-                f"  Tirada de Humerus: {tmp_random[i][4]}",
-                f"  Punto para {tmp_random[i][5]}",
+                f"  Tirada de Cubitus: {tmp_r[0]} {tmp_r[1]} {tmp_r[2]} {tmp_r[3]}",
+                f"  Tirada de Humerus: {tmp_r[4]}",
+                f"  Punto para {tmp_r[5]}",
                 "",
             ]
-            tmp_random_2 += [tmp_random[i][0], tmp_random[i][1], tmp_random[i][2], tmp_random[i][3], tmp_random[i][4]]
+            tmp_random_2 += [tmp_r[0], tmp_r[1], tmp_r[2], tmp_r[3], tmp_r[4]]
         tmp_output += [f"Ha ganado Cubitus ({n1} a {n2})."]
         mpts_common.add_test(
             NOT_LAST_TEST,
@@ -967,15 +966,15 @@ def exercise(exercise_id):
             tmp_random += [c + [d] + ["Cubitus"]]
         random.shuffle(tmp_random)
         tmp_random_2 = []
-        for i in range(len(tmp_random)):
+        for i, tmp_r in enumerate(tmp_random):
             tmp_output += [
                 f"Turno {i + 1}",
-                f"  Tirada de Cubitus: {tmp_random[i][0]} {tmp_random[i][1]} {tmp_random[i][2]} {tmp_random[i][3]}",
-                f"  Tirada de Humerus: {tmp_random[i][4]}",
-                f"  Punto para {tmp_random[i][5]}",
+                f"  Tirada de Cubitus: {tmp_r[0]} {tmp_r[1]} {tmp_r[2]} {tmp_r[3]}",
+                f"  Tirada de Humerus: {tmp_r[4]}",
+                f"  Punto para {tmp_r[5]}",
                 "",
             ]
-            tmp_random_2 += [tmp_random[i][0], tmp_random[i][1], tmp_random[i][2], tmp_random[i][3], tmp_random[i][4]]
+            tmp_random_2 += [tmp_r[0], tmp_r[1], tmp_r[2], tmp_r[3], tmp_r[4]]
         tmp_output += [f"Ha ganado Humerus ({n1} a {n2})."]
         mpts_common.add_test(
             NOT_LAST_TEST,
@@ -1017,15 +1016,15 @@ def exercise(exercise_id):
             tmp_random += [c + [d] + ["Cubitus"]]
         random.shuffle(tmp_random)
         tmp_random_2 = []
-        for i in range(len(tmp_random)):
+        for i, tmp_r in enumerate(tmp_random):
             tmp_output += [
                 f"Turno {i + 1}",
-                f"  Tirada de Cubitus: {tmp_random[i][0]} {tmp_random[i][1]} {tmp_random[i][2]} {tmp_random[i][3]}",
-                f"  Tirada de Humerus: {tmp_random[i][4]}",
-                f"  Punto para {tmp_random[i][5]}",
+                f"  Tirada de Cubitus: {tmp_r[0]} {tmp_r[1]} {tmp_r[2]} {tmp_r[3]}",
+                f"  Tirada de Humerus: {tmp_r[4]}",
+                f"  Punto para {tmp_r[5]}",
                 "",
             ]
-            tmp_random_2 += [tmp_random[i][0], tmp_random[i][1], tmp_random[i][2], tmp_random[i][3], tmp_random[i][4]]
+            tmp_random_2 += [tmp_r[0], tmp_r[1], tmp_r[2], tmp_r[3], tmp_r[4]]
         tmp_output += [f"Han empatado (a {n1})."]
         mpts_common.add_test(
             LAST_TEST,
@@ -1035,3 +1034,680 @@ def exercise(exercise_id):
         )
 
         # Exercise 202123 END
+
+    elif exercise_id == 2021_31:
+        # Exercise 202131 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/20-21/examen-210602.html
+
+        meses = [
+            ["enero", 31, 0],
+            ["febrero", 28, 31],
+            ["marzo", 31, 59],
+            ["abril", 30, 90],
+            ["mayo", 31, 120],
+            ["junio", 30, 151],
+            ["julio", 31, 181],
+            ["agosto", 31, 212],
+            ["septiembre", 30, 243],
+            ["octubre", 31, 273],
+            ["noviembre", 30, 304],
+            ["diciembre", 31, 334],
+        ]
+
+        # Día 0 incorrecto
+        d = 0
+        mes_d = random.choice(meses)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [d, mes_d[0]]],
+            [
+                "output",
+                [
+                    "CALENDARIO LUNAR",
+                    "Este programa convierte una fecha de un año NO bisiesto a un calendario lunar.",
+                    "Indique el día: ",
+                    "Indique el mes: ",
+                    f"El día {d} de {mes_d[0]} no existe.",
+                ],
+            ],
+        )
+
+        # Día negativo incorrecto
+        d = -random.randrange(1, 31)
+        mes_d = random.choice(meses)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [d, mes_d[0]]],
+            [
+                "output",
+                [
+                    "CALENDARIO LUNAR",
+                    "Este programa convierte una fecha de un año NO bisiesto a un calendario lunar.",
+                    "Indique el día: ",
+                    "Indique el mes: ",
+                    f"El día {d} de {mes_d[0]} no existe.",
+                ],
+            ],
+        )
+
+        # Día posterior al último del mes incorrecto
+        for mes_d in meses:
+            mpts_common.add_test(
+                NOT_LAST_TEST,
+                ["input", [mes_d[1] + 1, mes_d[0]]],
+                [
+                    "output",
+                    [
+                        "CALENDARIO LUNAR",
+                        "Este programa convierte una fecha de un año NO bisiesto a un calendario lunar.",
+                        "Indique el día: ",
+                        "Indique el mes: ",
+                        f"El día {mes_d[1] + 1} de {mes_d[0]} no existe.",
+                    ],
+                ],
+            )
+
+        # Día correcto
+        for mes_d in meses:
+            d = random.randrange(1, mes_d[1] + 1)
+            mpts_common.add_test(
+                NOT_LAST_TEST,
+                ["input", [d, mes_d[0]]],
+                [
+                    "output",
+                    [
+                        "CALENDARIO LUNAR",
+                        "Este programa convierte una fecha de un año NO bisiesto a un calendario lunar.",
+                        "Indique el día: ",
+                        "Indique el mes: ",
+                        f"El día {d} de {mes_d[0]} es el día {mes_d[2] + d} del año.",
+                        f"Habrán pasado {int((mes_d[2] + d) // 29.53)} lunas y {round((mes_d[2] + d) % 29.53, 2)} días.",
+                    ],
+                ],
+            )
+
+        # Nombre de mes incorrecto
+        letras = "abcdefghijklmnñopqrstuvwxyz"
+        d = random.randrange(1, 29)
+        mes = ""
+        for _ in range(random.randrange(5, 10)):
+            mes += random.choice(letras)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [d, mes]],
+            [
+                "output",
+                [
+                    "CALENDARIO LUNAR",
+                    "Este programa convierte una fecha de un año NO bisiesto a un calendario lunar.",
+                    "Indique el día: ",
+                    "Indique el mes: ",
+                    f"El mes {mes} no existe.",
+                ],
+            ],
+        )
+
+        # Exercise 202131 END
+
+    elif exercise_id == 2021_32:
+        # Exercise 202132 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/20-21/examen-210602.html
+
+        def dados_202132(gana):
+            d = []
+            for _ in range(7):
+                d += [random.randrange(1, 7)]
+            resC = d[0] % 2 * d[0] + d[1] % 2 * d[1] + d[2] % 2 * d[2] + d[3] % 2 * d[3]
+            resH = (
+                d[4] - d[4] % 2 * d[4] + d[5] - d[5] % 2 * d[5] + d[6] - d[6] % 2 * d[6]
+            )
+            if gana == "Cubitus":
+                while resC <= resH:
+                    d = []
+                    for _ in range(7):
+                        d += [random.randrange(1, 7)]
+                    resC = (
+                        d[0] % 2 * d[0]
+                        + d[1] % 2 * d[1]
+                        + d[2] % 2 * d[2]
+                        + d[3] % 2 * d[3]
+                    )
+                    resH = (
+                        d[4]
+                        - d[4] % 2 * d[4]
+                        + d[5]
+                        - d[5] % 2 * d[5]
+                        + d[6]
+                        - d[6] % 2 * d[6]
+                    )
+            elif gana == "Humerus":
+                while resC >= resH:
+                    d = []
+                    for _ in range(7):
+                        d += [random.randrange(1, 7)]
+                    resC = (
+                        d[0] % 2 * d[0]
+                        + d[1] % 2 * d[1]
+                        + d[2] % 2 * d[2]
+                        + d[3] % 2 * d[3]
+                    )
+                    resH = (
+                        d[4]
+                        - d[4] % 2 * d[4]
+                        + d[5]
+                        - d[5] % 2 * d[5]
+                        + d[6]
+                        - d[6] % 2 * d[6]
+                    )
+            else:
+                while resC != resH:
+                    d = []
+                    for _ in range(7):
+                        d += [random.randrange(1, 7)]
+                    resC = (
+                        d[0] % 2 * d[0]
+                        + d[1] % 2 * d[1]
+                        + d[2] % 2 * d[2]
+                        + d[3] % 2 * d[3]
+                    )
+                    resH = (
+                        d[4]
+                        - d[4] % 2 * d[4]
+                        + d[5]
+                        - d[5] % 2 * d[5]
+                        + d[6]
+                        - d[6] % 2 * d[6]
+                    )
+            return d
+
+        # Número de turnos incorrecto 0
+        n = 0
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos turnos va a tener la partida? ",
+                    "¡La partida debe tener al menos un turno!",
+                ],
+            ],
+        )
+
+        # Número de turnos incorrecto negativo
+        n = -random.randrange(1, 100)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos turnos va a tener la partida? ",
+                    "¡La partida debe tener al menos un turno!",
+                ],
+            ],
+        )
+
+        # 1 turno. Gana Cubitus
+        n = 1
+        d = dados_202132("Cubitus")
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["random", d],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos turnos va a tener la partida? ",
+                    "  Turno 1",
+                    f"    Tirada de Cubitus: {d[0]} {d[1]} {d[2]} {d[3]} => {d[0] % 2 * d[0] + d[1] % 2 * d[1] + d[2] % 2 * d[2] + d[3] % 2 * d[3]} puntos",
+                    f"    Tirada de Humerus: {d[4]} {d[5]} {d[6]} => {d[4] - d[4] % 2 * d[4] + d[5] - d[5] % 2 * d[5] + d[6] - d[6] % 2 * d[6]} puntos",
+                    "Ha ganado Cubitus (1 a 0).",
+                ],
+            ],
+        )
+
+        # 1 turno. Gana Humerus
+        n = 1
+        d = dados_202132("Humerus")
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["random", d],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos turnos va a tener la partida? ",
+                    "  Turno 1",
+                    f"    Tirada de Cubitus: {d[0]} {d[1]} {d[2]} {d[3]} => {d[0] % 2 * d[0] + d[1] % 2 * d[1] + d[2] % 2 * d[2] + d[3] % 2 * d[3]} puntos",
+                    f"    Tirada de Humerus: {d[4]} {d[5]} {d[6]} => {d[4] - d[4] % 2 * d[4] + d[5] - d[5] % 2 * d[5] + d[6] - d[6] % 2 * d[6]} puntos",
+                    "Ha ganado Humerus (1 a 0).",
+                ],
+            ],
+        )
+
+        # 1 turno. Empate
+        n = 1
+        d = dados_202132("Empate")
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["random", d],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS",
+                    "¿Cuántos turnos va a tener la partida? ",
+                    "  Turno 1",
+                    f"    Tirada de Cubitus: {d[0]} {d[1]} {d[2]} {d[3]} => {d[0] % 2 * d[0] + d[1] % 2 * d[1] + d[2] % 2 * d[2] + d[3] % 2 * d[3]} puntos",
+                    f"    Tirada de Humerus: {d[4]} {d[5]} {d[6]} => {d[4] - d[4] % 2 * d[4] + d[5] - d[5] % 2 * d[5] + d[6] - d[6] % 2 * d[6]} puntos",
+                    "Han empatado (a 0).",
+                ],
+            ],
+        )
+
+        # n turnos. Gana Cubitus
+        nc = random.randrange(2, 6)
+        nh = random.randrange(nc)
+        ne = random.randrange(1, 5)
+        dt = []
+        for _ in range(nc):
+            dt += [dados_202132("Cubitus")]
+        for _ in range(nh):
+            dt += [dados_202132("Humerus")]
+        for _ in range(ne):
+            dt += [dados_202132("Empate")]
+        random.shuffle(dt)
+        tmp_output = [
+            "JUEGO DE DADOS",
+            "¿Cuántos turnos va a tener la partida? ",
+        ]
+        dt2 = []
+        for i, d in enumerate(dt):
+            dt2 += d
+            tmp_output += [
+                f"  Turno {i+1}",
+                f"    Tirada de Cubitus: {d[0]} {d[1]} {d[2]} {d[3]} => {d[0] % 2 * d[0] + d[1] % 2 * d[1] + d[2] % 2 * d[2] + d[3] % 2 * d[3]} puntos",
+                f"    Tirada de Humerus: {d[4]} {d[5]} {d[6]} => {d[4] - d[4] % 2 * d[4] + d[5] - d[5] % 2 * d[5] + d[6] - d[6] % 2 * d[6]} puntos",
+            ]
+        tmp_output += [f"Ha ganado Cubitus ({nc} a {nh})."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc + nh + ne]],
+            ["random", dt2],
+            ["output", tmp_output],
+        )
+
+        # n turnos. Gana Humerus
+        nh = random.randrange(2, 6)
+        nc = random.randrange(nh)
+        ne = random.randrange(1, 5)
+        dt = []
+        for _ in range(nc):
+            dt += [dados_202132("Cubitus")]
+        for _ in range(nh):
+            dt += [dados_202132("Humerus")]
+        for _ in range(ne):
+            dt += [dados_202132("Empate")]
+        random.shuffle(dt)
+        tmp_output = [
+            "JUEGO DE DADOS",
+            "¿Cuántos turnos va a tener la partida? ",
+        ]
+        dt2 = []
+        for i, d in enumerate(dt):
+            dt2 += d
+            tmp_output += [
+                f"  Turno {i+1}",
+                f"    Tirada de Cubitus: {d[0]} {d[1]} {d[2]} {d[3]} => {d[0] % 2 * d[0] + d[1] % 2 * d[1] + d[2] % 2 * d[2] + d[3] % 2 * d[3]} puntos",
+                f"    Tirada de Humerus: {d[4]} {d[5]} {d[6]} => {d[4] - d[4] % 2 * d[4] + d[5] - d[5] % 2 * d[5] + d[6] - d[6] % 2 * d[6]} puntos",
+            ]
+        tmp_output += [f"Ha ganado Humerus ({nh} a {nc})."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc + nh + ne]],
+            ["random", dt2],
+            ["output", tmp_output],
+        )
+
+        # n turnos. Empate
+        nc = random.randrange(2, 6)
+        nh = nc
+        ne = random.randrange(1, 5)
+        dt = []
+        for _ in range(nc):
+            dt += [dados_202132("Cubitus")]
+        for _ in range(nh):
+            dt += [dados_202132("Humerus")]
+        for _ in range(ne):
+            dt += [dados_202132("Empate")]
+        random.shuffle(dt)
+        tmp_output = [
+            "JUEGO DE DADOS",
+            "¿Cuántos turnos va a tener la partida? ",
+        ]
+        dt2 = []
+        for i, d in enumerate(dt):
+            dt2 += d
+            tmp_output += [
+                f"  Turno {i+1}",
+                f"    Tirada de Cubitus: {d[0]} {d[1]} {d[2]} {d[3]} => {d[0] % 2 * d[0] + d[1] % 2 * d[1] + d[2] % 2 * d[2] + d[3] % 2 * d[3]} puntos",
+                f"    Tirada de Humerus: {d[4]} {d[5]} {d[6]} => {d[4] - d[4] % 2 * d[4] + d[5] - d[5] % 2 * d[5] + d[6] - d[6] % 2 * d[6]} puntos",
+            ]
+        tmp_output += [f"Han empatado (a {nc})."]
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [nc + nh + ne]],
+            ["random", dt2],
+            ["output", tmp_output],
+        )
+
+        # Exercise 202132 END
+
+    elif exercise_id == 2021_33:
+        # Exercise 202133 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/20-21/examen-210602.html
+
+        def monedas_202133(lmax, lmaxn, parejas, lcarasmax):
+            # genera una serie de ⚪⚪⚪✖✖✖✖⚪⚪⚪⚪✖✖✖⚪⚪✖✖✖
+            # lmax: número de cruces máximo. lmaxn : nñúmero de veces que aparece ese máximo
+            # lcarasmax: longitud máxima de los fragmentos de caras
+            # parejas: número de secuencias caras+cruces
+            lpos = []
+            for _ in range(lmaxn):
+                pos = random.randrange(parejas)
+                while pos in lpos:
+                    pos = random.randrange(parejas)
+                lpos += [pos]
+            d = []
+            for i in range(parejas):
+                for _ in range(random.randrange(1, lcarasmax + 1)):
+                    d += "⚪"
+                if i in lpos:
+                    for _ in range(lmax):
+                        d += "✖"
+                else:
+                    for _ in range(random.randrange(1, lmax)):
+                        d += "✖"
+            return d
+
+        # Número de tiradas incorrecto 0
+        n = 0
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    "¡La moneda se debe tirar al menos dos veces!",
+                ],
+            ],
+        )
+
+        # Número de tiradas incorrecto 1
+        n = 1
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    "¡La moneda se debe tirar al menos dos veces!",
+                ],
+            ],
+        )
+
+        # Número de tiradas incorrecto negativo
+        n = -random.randrange(1, 11)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    "¡La moneda se debe tirar al menos dos veces!",
+                ],
+            ],
+        )
+
+        # 2 tiradas: ⚪ ⚪
+        n = 2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["choice", ["⚪", "⚪"]],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    "Tirada: ⚪ ⚪",
+                    "No ha salido ninguna cruz.",
+                ],
+            ],
+        )
+
+        # 2 tiradas: ✖ ⚪
+        n = 2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["choice", ["⚪", "✖"]],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    "Tirada: ⚪ ✖",
+                    "Ha salido alguna cruz, pero no han llegado a salir dos cruces seguidas.",
+                ],
+            ],
+        )
+
+        # 2 tiradas: ⚪ ✖
+        n = 2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["choice", ["✖", "⚪"]],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    "Tirada: ✖ ⚪",
+                    "Ha salido alguna cruz, pero no han llegado a salir dos cruces seguidas.",
+                ],
+            ],
+        )
+
+        # 2 tiradas: ✖ ✖
+        n = 2
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["choice", ["✖", "✖"]],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    "Tirada: ✖ ✖",
+                    "Se han llegado a obtener 2 cruces seguidas.",
+                ],
+            ],
+        )
+
+        # n tiradas: solo ⚪
+        n = random.randrange(3, 10)
+        tmp_choice = []
+        tirada = ""
+        for _ in range(n):
+            tmp_choice += ["⚪"]
+            tirada += " ⚪"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["choice", tmp_choice],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    f"Tirada:{tirada}",
+                    "No ha salido ninguna cruz.",
+                ],
+            ],
+        )
+
+        # n tiradas: solo ✖
+        n = random.randrange(3, 10)
+        tmp_choice = []
+        tirada = ""
+        for _ in range(n):
+            tmp_choice += ["✖"]
+            tirada += " ✖"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [n]],
+            ["choice", tmp_choice],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    f"Tirada:{tirada}",
+                    f"Se han llegado a obtener {n} cruces seguidas.",
+                ],
+            ],
+        )
+
+        # cruces + caras/cruces, con 1 máximo inicial
+        lmax = random.randrange(3, 10)
+        tmp_choice = []
+        for _ in range(lmax):
+            tmp_choice += ["✖"]
+        tmp_choice += monedas_202133(lmax - 1, 1, random.randrange(5, 10), random.randrange(5, 10))
+        tirada = ""
+        for i in tmp_choice:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [len(tmp_choice)]],
+            ["choice", tmp_choice],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    f"Tirada:{tirada}",
+                    f"Se han llegado a obtener {lmax} cruces seguidas.",
+                ],
+            ],
+        )
+
+        # caras/cruces, con 1 máximo final
+        lmax = random.randrange(3, 10)
+        tmp_choice = []
+        tmp_choice += monedas_202133(lmax - 1, 1, random.randrange(5, 10), random.randrange(5, 10))
+        for _ in range(lmax - 2):
+            tmp_choice += ["⚪"]
+        for _ in range(lmax):
+            tmp_choice += ["✖"]
+        tirada = ""
+        for i in tmp_choice:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [len(tmp_choice)]],
+            ["choice", tmp_choice],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    f"Tirada:{tirada}",
+                    f"Se han llegado a obtener {lmax} cruces seguidas.",
+                ],
+            ],
+        )
+
+        # caras/cruces, con 1 máximo intermedio
+        lmax = random.randrange(3, 10)
+        tmp_choice = []
+        tmp_choice += monedas_202133(lmax, 1, random.randrange(5, 10), random.randrange(5, 10))
+        tirada = ""
+        for i in tmp_choice:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [len(tmp_choice)]],
+            ["choice", tmp_choice],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    f"Tirada:{tirada}",
+                    f"Se han llegado a obtener {lmax} cruces seguidas.",
+                ],
+            ],
+        )
+
+        # cruces + caras/cruces, con 2 máximos máximo inicial + máximo
+        lmax = random.randrange(3, 10)
+        tmp_choice = []
+        for _ in range(lmax):
+            tmp_choice += ["✖"]
+        tmp_choice += monedas_202133(lmax - 1, 2, random.randrange(5, 10), random.randrange(5, 10))
+        tirada = ""
+        for i in tmp_choice:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [len(tmp_choice)]],
+            ["choice", tmp_choice],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    f"Tirada:{tirada}",
+                    f"Se han llegado a obtener {lmax} cruces seguidas.",
+                ],
+            ],
+        )
+
+        # caras/cruces, con 2 máximos intermedios
+        lmax = random.randrange(3, 10)
+        tmp_choice = []
+        tmp_choice += monedas_202133(lmax, 2, random.randrange(5, 10), random.randrange(5, 10))
+        tirada = ""
+        for i in tmp_choice:
+            tirada += f" {i}"
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [len(tmp_choice)]],
+            ["choice", tmp_choice],
+            [
+                "output",
+                [
+                    "CRUCES SEGUIDAS",
+                    "¿Cuántas veces se va a tirar la moneda? ",
+                    f"Tirada:{tirada}",
+                    f"Se han llegado a obtener {lmax} cruces seguidas.",
+                ],
+            ],
+        )
+
+        # Exercise 202133 END
