@@ -1597,7 +1597,9 @@ def exercise(exercise_id):
         tmp_choice = []
         for _ in range(lmax):
             tmp_choice += ["✖"]
-        tmp_choice += monedas_202133(lmax - 1, 1, random.randrange(5, 10), random.randrange(5, 10))
+        tmp_choice += monedas_202133(
+            lmax - 1, 1, random.randrange(5, 10), random.randrange(5, 10)
+        )
         tirada = ""
         for i in tmp_choice:
             tirada += f" {i}"
@@ -1619,7 +1621,9 @@ def exercise(exercise_id):
         # caras/cruces, con 1 máximo final
         lmax = random.randrange(3, 10)
         tmp_choice = []
-        tmp_choice += monedas_202133(lmax - 1, 1, random.randrange(5, 10), random.randrange(5, 10))
+        tmp_choice += monedas_202133(
+            lmax - 1, 1, random.randrange(5, 10), random.randrange(5, 10)
+        )
         for _ in range(lmax - 2):
             tmp_choice += ["⚪"]
         for _ in range(lmax):
@@ -1645,7 +1649,9 @@ def exercise(exercise_id):
         # caras/cruces, con 1 máximo intermedio
         lmax = random.randrange(3, 10)
         tmp_choice = []
-        tmp_choice += monedas_202133(lmax, 1, random.randrange(5, 10), random.randrange(5, 10))
+        tmp_choice += monedas_202133(
+            lmax, 1, random.randrange(5, 10), random.randrange(5, 10)
+        )
         tirada = ""
         for i in tmp_choice:
             tirada += f" {i}"
@@ -1669,7 +1675,9 @@ def exercise(exercise_id):
         tmp_choice = []
         for _ in range(lmax):
             tmp_choice += ["✖"]
-        tmp_choice += monedas_202133(lmax - 1, 2, random.randrange(5, 10), random.randrange(5, 10))
+        tmp_choice += monedas_202133(
+            lmax - 1, 2, random.randrange(5, 10), random.randrange(5, 10)
+        )
         tirada = ""
         for i in tmp_choice:
             tirada += f" {i}"
@@ -1691,7 +1699,9 @@ def exercise(exercise_id):
         # caras/cruces, con 2 máximos intermedios
         lmax = random.randrange(3, 10)
         tmp_choice = []
-        tmp_choice += monedas_202133(lmax, 2, random.randrange(5, 10), random.randrange(5, 10))
+        tmp_choice += monedas_202133(
+            lmax, 2, random.randrange(5, 10), random.randrange(5, 10)
+        )
         tirada = ""
         for i in tmp_choice:
             tirada += f" {i}"
@@ -1711,3 +1721,636 @@ def exercise(exercise_id):
         )
 
         # Exercise 202133 END
+
+    elif exercise_id == 2021_41:
+        # Exercise 2021_41 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/20-21/examen-210622.html
+
+        # Precios y descuento
+        pv = 0.50
+        pc = 0.75
+        des = 1
+
+        # Cantidad buñuelos vacíos incorrecta: valor negativo
+        bv = -random.randrange(1, 10)
+        bc = random.randrange(1, 10)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [bv, bc]],
+            [
+                "output",
+                [
+                    "PUESTO DE BUÑUELOS",
+                    "¿Cuántos buñuelos vacíos quiere? ",
+                    "¿Cuántos buñuelos de calabaza quiere? ",
+                    "No puede indicar cantidades negativas.",
+                ],
+            ],
+        )
+
+        # Cantidad buñuelos calabaza incorrecta: valor negativo
+        bv = -random.randrange(1, 10)
+        bc = -random.randrange(1, 10)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [bv, bc]],
+            [
+                "output",
+                [
+                    "PUESTO DE BUÑUELOS",
+                    "¿Cuántos buñuelos vacíos quiere? ",
+                    "¿Cuántos buñuelos de calabaza quiere? ",
+                    "No puede indicar cantidades negativas.",
+                ],
+            ],
+        )
+
+        # Cantidad buñuelos incorrecta: valores negativos
+        bv = -random.randrange(1, 10)
+        bc = -random.randrange(1, 10)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [bv, bc]],
+            [
+                "output",
+                [
+                    "PUESTO DE BUÑUELOS",
+                    "¿Cuántos buñuelos vacíos quiere? ",
+                    "¿Cuántos buñuelos de calabaza quiere? ",
+                    "No puede indicar cantidades negativas.",
+                ],
+            ],
+        )
+
+        # Cantidad dinero incorrecto: valor negativo
+        bv = random.randrange(1, 10)
+        bc = random.randrange(1, 10)
+        d = (bv + bc) // 12
+        precio = bv * pv + bc * pc - d * des
+        d = -random.randrange(1, 1000) / 100
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [bv, bc, d]],
+            [
+                "output",
+                [
+                    "PUESTO DE BUÑUELOS",
+                    "¿Cuántos buñuelos vacíos quiere? ",
+                    "¿Cuántos buñuelos de calabaza quiere? ",
+                    f"Son {precio} €",
+                    "¿Cuánto dinero entrega? ",
+                    "Debe entregar una cantidad positiva.",
+                ],
+            ],
+        )
+
+        # 0 buñuelos vacíos y sobra dinero
+        bv = 0
+        bc = random.randrange(1, 10)
+        d = (bv + bc) // 12
+        precio = bv * pv + bc * pc - d * des
+        d = precio + random.randrange(1, 100) / 100
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [bv, bc, d]],
+            [
+                "output",
+                [
+                    "PUESTO DE BUÑUELOS",
+                    "¿Cuántos buñuelos vacíos quiere? ",
+                    "¿Cuántos buñuelos de calabaza quiere? ",
+                    f"Son {precio} €",
+                    "¿Cuánto dinero entrega? ",
+                    f"Su cambio son {d - precio} €.",
+                ],
+            ],
+        )
+
+        # 0 buñuelos rellenos y falta dinero
+        bv = random.randrange(1, 10)
+        bc = 0
+        d = (bv + bc) // 12
+        precio = bv * pv + bc * pc - d * des
+        d = precio - random.randrange(1, precio * 100) / 100
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [bv, bc, d]],
+            [
+                "output",
+                [
+                    "PUESTO DE BUÑUELOS",
+                    "¿Cuántos buñuelos vacíos quiere? ",
+                    "¿Cuántos buñuelos de calabaza quiere? ",
+                    f"Son {precio} €",
+                    "¿Cuánto dinero entrega? ",
+                    f"No ha entregado bastante dinero. Le faltan {round(precio - d, 2)} €.",
+                ],
+            ],
+        )
+
+        # importe exacto, sin llegar a docena
+        bv = random.randrange(1, 7)
+        bc = random.randrange(1, 6)
+        d = (bv + bc) // 12
+        precio = bv * pv + bc * pc - d * des
+        d = precio
+
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [bv, bc, d]],
+            [
+                "output",
+                [
+                    "PUESTO DE BUÑUELOS",
+                    "¿Cuántos buñuelos vacíos quiere? ",
+                    "¿Cuántos buñuelos de calabaza quiere? ",
+                    f"Son {precio} €",
+                    "¿Cuánto dinero entrega? ",
+                    "Ha entregado la cantidad exacta.",
+                ],
+            ],
+        )
+
+        # importe exacto, varias docenas
+        bv = random.randrange(30, 50)
+        bc = random.randrange(30, 50)
+        d = (bv + bc) // 12
+        precio = bv * pv + bc * pc - d * des
+        d = precio
+
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [bv, bc, d]],
+            [
+                "output",
+                [
+                    "PUESTO DE BUÑUELOS",
+                    "¿Cuántos buñuelos vacíos quiere? ",
+                    "¿Cuántos buñuelos de calabaza quiere? ",
+                    f"Son {precio} €",
+                    "¿Cuánto dinero entrega? ",
+                    "Ha entregado la cantidad exacta.",
+                ],
+            ],
+        )
+
+        # Exercise 2021_41 END
+
+    elif exercise_id == 2021_42:
+        # Exercise 2021_42 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/20-21/examen-210622.html
+
+        # Empatan varios dados
+        ndc = random.randrange(2, 7)
+        dc = [random.randrange(2, 7)]
+        for _ in range(ndc - 1):
+            dc += [random.randrange(1, 7)]
+        random.shuffle(dc)
+        ndh = random.randrange(2, 7)
+        dh = [max(dc)]
+        for _ in range(ndh - 1):
+            dh += [random.randrange(1, max(dc))]
+        tmp_output = [
+            "JUEGO DE DADOS (1)",
+            f"  Primera tirada de Cubitus: {ndc} dados",
+        ]
+        tiradac = ""
+        for i in range(len(dc) - 1):
+            tiradac += f" {dc[i]} -"
+        tiradac += f" {dc[-1]}"
+        if max(dc) > 1:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => {max(dc)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => 1 punto"]
+        tmp_output += [
+            f"  Primera tirada de Humerus: {ndh} dados",
+        ]
+        tiradah = ""
+        for i in range(len(dh) - 1):
+            tiradah += f" {dh[i]} -"
+        tiradah += f" {dh[-1]}"
+        if max(dh) > 1:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => {max(dh)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => 1 punto"]
+        tmp_output += ["  Han empatado."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [ndc] + dc + [ndh] + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Cubitus varios dados
+        ndc = random.randrange(2, 7)
+        dc = [random.randrange(2, 7)]
+        for _ in range(ndc - 1):
+            dc += [random.randrange(1, 7)]
+        random.shuffle(dc)
+        ndh = random.randrange(2, 7)
+        dh = []
+        for _ in range(ndh):
+            dh += [random.randrange(1, max(dc))]
+        tmp_output = [
+            "JUEGO DE DADOS (1)",
+            f"  Primera tirada de Cubitus: {ndc} dados",
+        ]
+        tiradac = ""
+        for i in range(len(dc) - 1):
+            tiradac += f" {dc[i]} -"
+        tiradac += f" {dc[-1]}"
+        if max(dc) > 1:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => {max(dc)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => 1 punto"]
+        tmp_output += [
+            f"  Primera tirada de Humerus: {ndh} dados",
+        ]
+        tiradah = ""
+        for i in range(len(dh) - 1):
+            tiradah += f" {dh[i]} -"
+        tiradah += f" {dh[-1]}"
+        if max(dh) > 1:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => {max(dh)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => 1 punto"]
+        tmp_output += ["  Ha ganado Cubitus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [ndc] + dc + [ndh] + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Cubitus 1 dado
+        dc = [random.randrange(2, 7)]
+        ndh = random.randrange(2, 7)
+        dh = []
+        for _ in range(ndh):
+            dh += [random.randrange(1, max(dc))]
+        tmp_output = [
+            "JUEGO DE DADOS (1)",
+            "  Primera tirada de Cubitus: 1 dado",
+        ]
+        if max(dc) > 1:
+            tmp_output += [f"  Tirada de Cubitus: {dc[0]} => {max(dc)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Cubitus: {dc[0]} => 1 punto"]
+        tmp_output += [
+            f"  Primera tirada de Humerus: {ndh} dados",
+        ]
+        tiradah = ""
+        for i in range(len(dh) - 1):
+            tiradah += f" {dh[i]} -"
+        tiradah += f" {dh[-1]}"
+        if max(dh) > 1:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => {max(dh)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => 1 punto"]
+        tmp_output += ["  Ha ganado Cubitus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [1] + dc + [ndh] + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Cubitus Humerus 1 punto
+        ndc = random.randrange(2, 7)
+        dc = [random.randrange(2, 7)]
+        for _ in range(ndc - 1):
+            dc += [random.randrange(1, 7)]
+        random.shuffle(dc)
+        ndh = random.randrange(2, 7)
+        dh = []
+        for _ in range(ndh):
+            dh += [1]
+        tmp_output = [
+            "JUEGO DE DADOS (1)",
+            f"  Primera tirada de Cubitus: {ndc} dados",
+        ]
+        tiradac = ""
+        for i in range(len(dc) - 1):
+            tiradac += f" {dc[i]} -"
+        tiradac += f" {dc[-1]}"
+        if max(dc) > 1:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => {max(dc)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => 1 punto"]
+        tmp_output += [
+            f"  Primera tirada de Humerus: {ndh} dados",
+        ]
+        tiradah = ""
+        for i in range(len(dh) - 1):
+            tiradah += f" {dh[i]} -"
+        tiradah += f" {dh[-1]}"
+        tmp_output += [f"  Tirada de Humerus:{tiradah} => 1 punto"]
+        tmp_output += ["  Ha ganado Cubitus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [ndc] + dc + [ndh] + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Humerus varios dados
+        ndh = random.randrange(2, 7)
+        dh = [random.randrange(2, 7)]
+        for _ in range(ndh - 1):
+            dh += [random.randrange(1, 7)]
+        random.shuffle(dh)
+        ndc = random.randrange(2, 7)
+        dc = []
+        for _ in range(ndc):
+            dc += [random.randrange(1, max(dh))]
+        tmp_output = [
+            "JUEGO DE DADOS (1)",
+            f"  Primera tirada de Cubitus: {ndc} dados",
+        ]
+        tiradac = ""
+        for i in range(len(dc) - 1):
+            tiradac += f" {dc[i]} -"
+        tiradac += f" {dc[-1]}"
+        if max(dc) > 1:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => {max(dc)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => 1 punto"]
+        tmp_output += [
+            f"  Primera tirada de Humerus: {ndh} dados",
+        ]
+        tiradah = ""
+        for i in range(len(dh) - 1):
+            tiradah += f" {dh[i]} -"
+        tiradah += f" {dh[-1]}"
+        if max(dh) > 1:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => {max(dh)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => 1 punto"]
+        tmp_output += ["  Ha ganado Humerus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [ndc] + dc + [ndh] + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Humerus 1 dado
+        dh = [random.randrange(2, 7)]
+        ndc = random.randrange(2, 7)
+        dc = []
+        for _ in range(ndc):
+            dc += [random.randrange(1, max(dh))]
+        tmp_output = [
+            "JUEGO DE DADOS (1)",
+            f"  Primera tirada de Cubitus: {ndc} dados",
+        ]
+        tiradac = ""
+        for i in range(len(dc) - 1):
+            tiradac += f" {dc[i]} -"
+        tiradac += f" {dc[-1]}"
+        if max(dc) > 1:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => {max(dc)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Cubitus:{tiradac} => 1 punto"]
+        tmp_output += [
+            "  Primera tirada de Humerus: 1 dado",
+        ]
+        tiradah = ""
+        for i in range(len(dh) - 1):
+            tiradah += f" {dh[i]} -"
+        tiradah += f" {dh[-1]}"
+        if max(dh) > 1:
+            tmp_output += [f"  Tirada de Humerus: {dh[0]} => {dh[0]} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Humerus: {dh[0]} => 1 punto"]
+        tmp_output += ["  Ha ganado Humerus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [ndc] + dc + [1] + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Humerus Cubitus 1 punto
+        ndh = random.randrange(2, 7)
+        dh = [random.randrange(2, 7)]
+        for _ in range(ndh - 1):
+            dh += [random.randrange(1, 7)]
+        random.shuffle(dh)
+        ndc = random.randrange(2, 7)
+        dc = []
+        for _ in range(ndc):
+            dc += [1]
+        tmp_output = [
+            "JUEGO DE DADOS (1)",
+            f"  Primera tirada de Cubitus: {ndc} dados",
+        ]
+        tiradac = ""
+        for i in range(len(dc) - 1):
+            tiradac += f" {dc[i]} -"
+        tiradac += f" {dc[-1]}"
+        tmp_output += [f"  Tirada de Cubitus:{tiradac} => 1 punto"]
+        tmp_output += [
+            f"  Primera tirada de Humerus: {ndh} dados",
+        ]
+        tiradah = ""
+        for i in range(len(dh) - 1):
+            tiradah += f" {dh[i]} -"
+        tiradah += f" {dh[-1]}"
+        if max(dh) > 1:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => {max(dh)} puntos"]
+        else:
+            tmp_output += [f"  Tirada de Humerus:{tiradah} => 1 punto"]
+        tmp_output += ["  Ha ganado Humerus."]
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", [ndc] + dc + [ndh] + dh],
+            ["output", tmp_output],
+        )
+
+        # Exercise 2021_42 END
+
+    elif exercise_id == 2021_43:
+        # Exercise 2021_43 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/20-21/examen-210622.html
+
+        # Gana Marcus varias tiradas
+        nc = random.randrange(2, 10)
+        dc = []
+        for _ in range(nc - 1):
+            t = random.randrange(1, 7)
+            while t == 5:
+                t = random.randrange(1, 7)
+            dc += [t]
+        dc += [5]
+        nh = random.randrange(nc + 1, 15)
+        dh = []
+        for _ in range(nh - 1):
+            t = random.randrange(1, 7)
+            while t == 5:
+                t = random.randrange(1, 7)
+            dh += [t]
+        dh += [5]
+        tmp_output = ["SACAR UN CINCO"]
+        tiradac = ""
+        for i in dc:
+            tiradac += f" {i}"
+        tmp_output += [f"  Tiradas de Marcus:{tiradac}"]
+        tmp_output += [f"  Marcus ha tenido que tirar {nc} veces."]
+        tiradah = ""
+        for i in dh:
+            tiradah += f" {i}"
+        tmp_output += [f"  Tiradas de Julius:{tiradah}"]
+        tmp_output += [f"  Julius ha tenido que tirar {nh} veces."]
+        tmp_output += ["  Ha ganado Marcus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", dc + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Marcus 1 tirada
+        nc = 1
+        dc = [5]
+        nh = random.randrange(nc + 1, 15)
+        dh = []
+        for _ in range(nh - 1):
+            t = random.randrange(1, 7)
+            while t == 5:
+                t = random.randrange(1, 7)
+            dh += [t]
+        dh += [5]
+        tmp_output = ["SACAR UN CINCO"]
+        tiradac = ""
+        for i in dc:
+            tiradac += f" {i}"
+        tmp_output += ["  Tiradas de Marcus: 5"]
+        tmp_output += ["  Marcus sólo ha tenido que tirar 1 vez."]
+        tiradah = ""
+        for i in dh:
+            tiradah += f" {i}"
+        tmp_output += [f"  Tiradas de Julius:{tiradah}"]
+        tmp_output += [f"  Julius ha tenido que tirar {nh} veces."]
+        tmp_output += ["  Ha ganado Marcus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", dc + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Julius varias tiradas
+        nh = random.randrange(2, 10)
+        dh = []
+        for _ in range(nh - 1):
+            t = random.randrange(1, 7)
+            while t == 5:
+                t = random.randrange(1, 7)
+            dh += [t]
+        dh += [5]
+        nc = random.randrange(nh + 1, 15)
+        dc = []
+        for _ in range(nc - 1):
+            t = random.randrange(1, 7)
+            while t == 5:
+                t = random.randrange(1, 7)
+            dc += [t]
+        dc += [5]
+        tmp_output = ["SACAR UN CINCO"]
+        tiradac = ""
+        for i in dc:
+            tiradac += f" {i}"
+        tmp_output += [f"  Tiradas de Marcus:{tiradac}"]
+        tmp_output += [f"  Marcus ha tenido que tirar {nc} veces."]
+        tiradah = ""
+        for i in dh:
+            tiradah += f" {i}"
+        tmp_output += [f"  Tiradas de Julius:{tiradah}"]
+        tmp_output += [f"  Julius ha tenido que tirar {nh} veces."]
+        tmp_output += ["  Ha ganado Julius."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", dc + dh],
+            ["output", tmp_output],
+        )
+
+        # Gana Julius 1 tirada
+        nh = 1
+        dh = [5]
+        nc = random.randrange(nh + 1, 15)
+        dc = []
+        for _ in range(nc - 1):
+            t = random.randrange(1, 7)
+            while t == 5:
+                t = random.randrange(1, 7)
+            dc += [t]
+        dc += [5]
+        tmp_output = ["SACAR UN CINCO"]
+        tiradac = ""
+        for i in dc:
+            tiradac += f" {i}"
+        tmp_output += [f"  Tiradas de Marcus:{tiradac}"]
+        tmp_output += [f"  Marcus ha tenido que tirar {nc} veces."]
+        tiradah = ""
+        for i in dh:
+            tiradah += f" {i}"
+        tmp_output += ["  Tiradas de Julius: 5"]
+        tmp_output += ["  Julius sólo ha tenido que tirar 1 vez."]
+        tmp_output += ["  Ha ganado Julius."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", dc + dh],
+            ["output", tmp_output],
+        )
+
+        # Empatan varias tiradas
+        nh = random.randrange(2, 10)
+        dh = []
+        for _ in range(nh - 1):
+            t = random.randrange(1, 7)
+            while t == 5:
+                t = random.randrange(1, 7)
+            dh += [t]
+        dh += [5]
+        nc = nh
+        dc = []
+        for _ in range(nc - 1):
+            t = random.randrange(1, 7)
+            while t == 5:
+                t = random.randrange(1, 7)
+            dc += [t]
+        dc += [5]
+        tmp_output = ["SACAR UN CINCO"]
+        tiradac = ""
+        for i in dc:
+            tiradac += f" {i}"
+        tmp_output += [f"  Tiradas de Marcus:{tiradac}"]
+        tmp_output += [f"  Marcus ha tenido que tirar {nc} veces."]
+        tiradah = ""
+        for i in dh:
+            tiradah += f" {i}"
+        tmp_output += [f"  Tiradas de Julius:{tiradah}"]
+        tmp_output += [f"  Julius ha tenido que tirar {nh} veces."]
+        tmp_output += ["  Han empatado."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", dc + dh],
+            ["output", tmp_output],
+        )
+
+        # Empatan 1 tirada
+        nh = 1
+        dh = [5]
+        nc = 1
+        dc = [5]
+        tmp_output = [
+            "SACAR UN CINCO",
+            "  Tiradas de Marcus: 5",
+            "  Marcus sólo ha tenido que tirar 1 vez.",
+            "  Tiradas de Julius: 5",
+            "  Julius sólo ha tenido que tirar 1 vez.",
+            "  Han empatado.",
+        ]
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", dc + dh],
+            ["output", tmp_output],
+        )
+
+        # Exercise 2021_43 END
