@@ -548,7 +548,7 @@ def exercise(exercise_id):
         p2 = 0
         while p2 <= tope:
             d = random.randrange(1, 7)
-            tiradas += [[d,d]]
+            tiradas += [[d, d]]
             p2 += d + d
         # el valor para ganar es p2 + 1 (no tope)
         tmp_input += [p2 + 1]
@@ -589,7 +589,6 @@ def exercise(exercise_id):
             ["output", tmp_output],
         )
 
-
         # Gana Jugador 2
         ja = ""
         for _ in range(random.randrange(3, 10)):
@@ -616,7 +615,7 @@ def exercise(exercise_id):
             d2 = random.randrange(1, 7)
             while d2 == d1:
                 d2 = random.randrange(1, 7)
-            tiradas += [[d1,d2]]
+            tiradas += [[d1, d2]]
             p1 += min(d1, d2)
         # el valor para ganar es p1 + 1 (no tope)
         tmp_input += [p1 + 1]
@@ -654,3 +653,729 @@ def exercise(exercise_id):
         )
 
         # Exercise 2122_13 END
+
+    elif exercise_id == 2122_21:
+        # Exercise 2122_21 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/21-22/examen-220623.html
+
+        # todos los valores distintos
+        d = [1, 2, 3, 4, 5, 6]
+        random.shuffle(d)
+        tmp_output = [
+            "JUEGO DE DADOS: NO COMUNES",
+            "",
+            f"Tirada de Cubitus: {d[0]} {d[1]} {d[2]}",
+            f"Tirada de Humerus: {d[3]} {d[4]} {d[5]}",
+            "",
+        ]
+        if d[0] + d[1] + d[2] > d[3] + d[4] + d[5]:
+            tmp_output += [f"Cubitus ha ganado la partida {d[0] + d[1] + d[2]} a {d[3] + d[4] + d[5]}."]
+        elif d[0] + d[1] + d[2] < d[3] + d[4] + d[5]:
+            tmp_output += [f"Humerus ha ganado la partida {d[3] + d[4] + d[5]} a {d[0] + d[1] + d[2]}."]
+        else:
+            tmp_output += [f"Han empatado a {d[0] + d[1] + d[2]}."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", d],
+            ["output", tmp_output],
+        )
+
+        # a1 b1 coinciden
+        d0 = [1, 2, 3, 4, 5, 6]
+        random.shuffle(d0)
+        d0[3] = d0[0]
+        da = d0[0:3]
+        random.shuffle(da)
+        db = d0[3:6]
+        random.shuffle(db)
+        d = da + db
+        tmp_output = [
+            "JUEGO DE DADOS: NO COMUNES",
+            "",
+            f"Tirada de Cubitus: {d[0]} {d[1]} {d[2]}",
+            f"Tirada de Humerus: {d[3]} {d[4]} {d[5]}",
+            "",
+        ]
+        if d0[1] + d0[2] > d0[4] + d0[5]:
+            tmp_output += [f"Cubitus ha ganado la partida {d0[1] + d0[2]} a {d0[4] + d0[5]}."]
+        elif d0[1] + d0[2] < d0[4] + d0[5]:
+            tmp_output += [f"Humerus ha ganado la partida {d0[4] + d0[5]} a {d0[1] + d0[2]}."]
+        else:
+            tmp_output += [f"Han empatado a {d0[1] + d0[2]}."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", d],
+            ["output", tmp_output],
+        )
+
+        # a1 b1 b2 coinciden
+        d0 = [1, 2, 3, 4, 5, 6]
+        random.shuffle(d0)
+        d0[3] = d0[0]
+        d0[4] = d0[0]
+        da = d0[0:3]
+        random.shuffle(da)
+        db = d0[3:6]
+        random.shuffle(db)
+        d = da + db
+        tmp_output = [
+            "JUEGO DE DADOS: NO COMUNES",
+            "",
+            f"Tirada de Cubitus: {d[0]} {d[1]} {d[2]}",
+            f"Tirada de Humerus: {d[3]} {d[4]} {d[5]}",
+            "",
+        ]
+        if d0[1] + d0[2] > d0[5]:
+            tmp_output += [f"Cubitus ha ganado la partida {d0[1] + d0[2]} a {d0[5]}."]
+        elif d0[1] + d0[2] < d0[5]:
+            tmp_output += [f"Humerus ha ganado la partida {d0[5]} a {d0[1] + d0[2]}."]
+        else:
+            tmp_output += [f"Han empatado a {d0[1] + d0[2]}."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", d],
+            ["output", tmp_output],
+        )
+
+        # a1 b1 b2 b3 coinciden Gana Cubitus
+        d0 = [1, 2, 3, 4, 5, 6]
+        random.shuffle(d0)
+        d0[3] = d0[0]
+        d0[4] = d0[0]
+        d0[5] = d0[0]
+        da = d0[0:3]
+        random.shuffle(da)
+        db = d0[3:6]
+        random.shuffle(db)
+        d = da + db
+        tmp_output = [
+            "JUEGO DE DADOS: NO COMUNES",
+            "",
+            f"Tirada de Cubitus: {d[0]} {d[1]} {d[2]}",
+            f"Tirada de Humerus: {d[3]} {d[4]} {d[5]}",
+            "",
+            f"Cubitus ha ganado la partida {d0[1] + d0[2]} a 0.",
+        ]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", d],
+            ["output", tmp_output],
+        )
+
+        # a1 b1, a2 b2 coinciden
+        d0 = [1, 2, 3, 4, 5, 6]
+        random.shuffle(d0)
+        d0[3] = d0[0]
+        d0[4] = d0[1]
+        da = d0[0:3]
+        random.shuffle(da)
+        db = d0[3:6]
+        random.shuffle(db)
+        d = da + db
+        tmp_output = [
+            "JUEGO DE DADOS: NO COMUNES",
+            "",
+            f"Tirada de Cubitus: {d[0]} {d[1]} {d[2]}",
+            f"Tirada de Humerus: {d[3]} {d[4]} {d[5]}",
+            "",
+        ]
+        if d0[2] > d0[5]:
+            tmp_output += [f"Cubitus ha ganado la partida {d0[2]} a {d0[5]}."]
+        else:
+            tmp_output += [f"Humerus ha ganado la partida {d0[5]} a {d0[2]}."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", d],
+            ["output", tmp_output],
+        )
+
+        # a1 b1, a2 b2 b3 coinciden (cambio los dados para que gane Humerus)
+        d0 = [1, 2, 3, 4, 5, 6]
+        random.shuffle(d0)
+        d0[3] = d0[0]
+        d0[4] = d0[1]
+        d0[5] = d0[1]
+        da = d0[3:6]
+        random.shuffle(da)
+        db = d0[0:3]
+        random.shuffle(db)
+        d = da + db
+        tmp_output = [
+            "JUEGO DE DADOS: NO COMUNES",
+            "",
+            f"Tirada de Cubitus: {d[0]} {d[1]} {d[2]}",
+            f"Tirada de Humerus: {d[3]} {d[4]} {d[5]}",
+            "",
+            f"Humerus ha ganado la partida {d0[2]} a 0.",
+        ]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", d],
+            ["output", tmp_output],
+        )
+
+        # a1 b1, a2 b2, a3 b3 coinciden (empatan)
+        d0 = [1, 2, 3, 4, 5, 6]
+        random.shuffle(d0)
+        d0[3] = d0[0]
+        d0[4] = d0[1]
+        d0[5] = d0[2]
+        da = d0[3:6]
+        random.shuffle(da)
+        db = d0[0:3]
+        random.shuffle(db)
+        d = da + db
+        tmp_output = [
+            "JUEGO DE DADOS: NO COMUNES",
+            "",
+            f"Tirada de Cubitus: {d[0]} {d[1]} {d[2]}",
+            f"Tirada de Humerus: {d[3]} {d[4]} {d[5]}",
+            "",
+            "Han empatado a 0.",
+        ]
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", d],
+            ["output", tmp_output],
+        )
+
+        # Exercise 2122_21 END
+
+    elif exercise_id == 2122_22:
+        # Exercise 2122_22 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/21-22/examen-220623.html
+
+        # nc < n < nh. Gana Cubitus
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nc = random.randrange(1, n)
+        nh = random.randrange(n + 1, n + 11)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Ha ganado Cubitus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nc = n < nh. Gana Cubitus
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nc = n
+        nh = random.randrange(n + 1, n + 11)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Ha ganado Cubitus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nh < nc < n. Gana Cubitus
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nc = random.randrange(5, n)
+        nh = random.randrange(1, nc)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Ha ganado Cubitus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nh < nc = n. Gana Cubitus
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nc = n
+        nh = random.randrange(1, nc)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Ha ganado Cubitus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nh < n < nc. Gana Humerus
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nh = random.randrange(1, n)
+        nc = random.randrange(n + 1, n + 11)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Ha ganado Humerus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nh = n < nc. Gana Humerus
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nh = n
+        nc = random.randrange(n + 1, n + 11)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Ha ganado Humerus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nc < nh < n. Gana Humerus
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nh = random.randrange(5, n)
+        nc = random.randrange(1, nh)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Ha ganado Humerus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nc < nh = n. Gana Humerus
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nh = n
+        nc = random.randrange(1, nh)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Ha ganado Humerus."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # n < nc < nh. No gana nadie
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nc = random.randrange(n + 1, n + 1 + 11)
+        nh = random.randrange(nc + 1, nc + 1 + 11)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["No ha ganado nadie."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # n < nh < nc. No gana nadie
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nh = random.randrange(n + 1, n + 1 + 11)
+        nc = random.randrange(nh + 1, nh + 1 + 11)
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["No ha ganado nadie."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # n < nc = nh. No gana nadie
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nc = random.randrange(n + 1, n + 1 + 11)
+        nh = nc
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["No ha ganado nadie."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nc = nh < n. Empatan
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nc = random.randrange(1, n)
+        nh = nc
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Han empatado."]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # nc = nh = n. Empatan
+        n = 0
+        d = []
+        for i in range(1, 7):
+            dtmp = []
+            dx = random.randrange(1, 7)
+            dtmp += [dx]
+            n += 1
+            while dx != i:
+                dx = random.randrange(1, 7)
+                dtmp += [dx]
+                n += 1
+            d += [dtmp]
+
+        nc = n
+        nh = nc
+
+        tmp_output = [
+            "JUEGO: DEL 1 AL 6",
+            "Estimación de tiradas de Cubitus: ",
+            "Estimación de tiradas de Humerus: ",
+            "",
+        ]
+        for i in range(6):
+            linea = f"Conseguir un {i+1}:"
+            for j in d[i]:
+                linea += f" {j}"
+            tmp_output += [linea]
+            if len(d[i]) == 1:
+                tmp_output += [f"Ha costado {len(d[i])} tirada."]
+            else:
+                tmp_output += [f"Ha costado {len(d[i])} tiradas."]
+        tmp_output += [f"En total, ha costado {n} tiradas."]
+        tmp_output += ["Han empatado."]
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [nc, nh]],
+            ["random", d[0] + d[1] + d[2] + d[3] + d[4] + d[5]],
+            ["output", tmp_output],
+        )
+
+        # Exercise 2122_22 END
