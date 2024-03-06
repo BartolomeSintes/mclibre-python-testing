@@ -445,7 +445,7 @@ def exercise(exercise_id):
                     "Escriba la coordenada X del punto: ",
                     "Escriba la coordenada Y del punto: ",
                     "",
-                    "El punto está fuera de la la circunferencia.",
+                    "El punto está fuera de la circunferencia.",
                     "",
                     "Programa terminado",
                 ],
@@ -476,7 +476,7 @@ def exercise(exercise_id):
                     "Escriba la coordenada X del punto: ",
                     "Escriba la coordenada Y del punto: ",
                     "",
-                    "El punto está dentro de la la circunferencia.",
+                    "El punto está dentro de la circunferencia.",
                     "",
                     "Programa terminado",
                 ],
@@ -497,11 +497,11 @@ def exercise(exercise_id):
         elif n == 2:
             x = cx - rx - random.randrange(1, 5)
             y = cy + ry + random.randrange(1, 5)
-            t = "El punto está fuera de la la circunferencia."
+            t = "El punto está fuera de la circunferencia."
         else:
             x = cx - rx + random.randrange(1, 5)
             y = cy - ry + random.randrange(1, 5)
-            t = "El punto está dentro de la la circunferencia."
+            t = "El punto está dentro de la circunferencia."
 
         mpts_common.add_test(
             LAST_TEST,
