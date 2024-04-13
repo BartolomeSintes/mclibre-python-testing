@@ -14,5 +14,5 @@ Estas son algunas de las cosas que me quedan por hacer ...
 
 -   [2023-03-23] Al hacer las comparaciones entre cadenas, podría descartar los espacios finales. En los ejercicios que hago una enumeración de valores, en realidad me da lo mismo que el programa escriba " {i}" o "{i} ", que haya o no espacio al final de la línea no es importante.
 
--   [2023-03-23] Podría hacer una opción de mptc (-lighto algo así) para que no le importaran mayúsculas o minúsculas, o acentos o varios espacios en blanco intermedios (aunque hay ejercicios en que el número de espacios es importante, una solución sería que el json indicara cuándo son importantes los espacios en blanco intermedios y tenerlo en cuenta).
+-   [2023-03-23] Podría hacer una opción de mptc (-light o algo así) para que no le importaran mayúsculas o minúsculas, o acentos o varios espacios en blanco intermedios (aunque hay ejercicios en que el número de espacios es importante, una solución sería que el json indicara cuándo son importantes los espacios en blanco intermedios y tenerlo en cuenta).
 

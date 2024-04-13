@@ -936,7 +936,10 @@ def exercise(exercise_id):
                     f"Turno {i + 1} - Cubitus: {tirada[0]} - Humerus: {tirada[1]} - {tirada[0] + tirada[1]} puntos para Humerus.",
                 ]
             tir += [tirada[0], tirada[1]]
-        tmp_output += ["", f"Ha ganado Humerus {th} a {tc}.",]
+        tmp_output += [
+            "",
+            f"Ha ganado Humerus {th} a {tc}.",
+        ]
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["input", [tu]],
@@ -983,7 +986,10 @@ def exercise(exercise_id):
                     f"Turno {i + 1} - Cubitus: {tirada[0]} - Humerus: {tirada[1]} - {tirada[0] + tirada[1]} puntos para Humerus.",
                 ]
             tir += [tirada[0], tirada[1]]
-        tmp_output += ["", f"Ha ganado Cubitus {tc} a {th}.",]
+        tmp_output += [
+            "",
+            f"Ha ganado Cubitus {tc} a {th}.",
+        ]
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["input", [tu]],
@@ -1028,12 +1034,239 @@ def exercise(exercise_id):
                     f"Turno {i + 1} - Cubitus: {tirada[0]} - Humerus: {tirada[1]} - {tirada[0] + tirada[1]} puntos para Humerus.",
                 ]
             tir += [tirada[0], tirada[1]]
-        tmp_output += ["", f"Han empatado a {tc}.",]
+        tmp_output += [
+            "",
+            f"Han empatado a {tc}.",
+        ]
         mpts_common.add_test(
             LAST_TEST,
             ["input", [tu]],
             ["random", tir],
             ["output", tmp_output],
+        )
+
+        # Exercise 2223_21 END
+
+    elif exercise_id == 2223_22:
+        # Exercise 2223_22 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/22-23/examen-230530.html
+
+        # parejas a la primera, gana Cubitus
+        c = random.randrange(1, 6)
+        h = random.randrange(c + 1, 7)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [c, c, h, h]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    "",
+                    f"Tiradas de Cubitus: {c} {c}",
+                    f"Tiradas de Humerus: {h} {h}",
+                    "",
+                    "Ha ganado Cubitus.",
+                ],
+            ],
+        )
+
+        # parejas a la primera, gana Humerus
+        h = random.randrange(1, 6)
+        c = random.randrange(h + 1, 7)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [c, c, h, h]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    "",
+                    f"Tiradas de Cubitus: {c} {c}",
+                    f"Tiradas de Humerus: {h} {h}",
+                    "",
+                    "Ha ganado Humerus.",
+                ],
+            ],
+        )
+
+        # parejas a la primera, empate
+        ch = random.randrange(1, 7)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", [ch, ch, ch, ch]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    "",
+                    f"Tiradas de Cubitus: {ch} {ch}",
+                    f"Tiradas de Humerus: {ch} {ch}",
+                    "",
+                    "Han empatado.",
+                ],
+            ],
+        )
+
+        # c1 < h1, c2 = h2, gana Cubitus
+        # hago dos listas iguales, sin valores iguales seguidos
+        ch = random.randrange(1, 7)
+        c1 = [ch]
+        h1 = [ch]
+        for i in range(random.randrange(3, 7)):
+            ch = random.randrange(1, 7)
+            while ch == c1[-1]:
+                ch = random.randrange(1, 7)
+            c1 += [ch]
+            h1 += [ch]
+        random.shuffle(h1)
+        iguales_seguidos = False
+        for i in range(len(h1) - 1):
+            if h1[i] == h1[i + 1]:
+                iguales_seguidos = True
+        while iguales_seguidos:
+            random.shuffle(h1)
+            iguales_seguidos = False
+            for i in range(len(h1) - 1):
+                if h1[i] == h1[i + 1]:
+                    iguales_seguidos = True
+        # añado un valor a la de humerus y los dados finales iguales (pero que no pueden coincidir con los últimos anteriores)
+        hd = random.randrange(1, 7)
+        while hd == h1[-1]:
+            hd = random.randrange(1, 7)
+        h1 += [hd]
+        ch = random.randrange(1, 7)
+        while ch == c1[-1] or ch == h1[-1]:
+            ch = random.randrange(1, 7)
+        c1 += [ch, ch]
+        h1 += [ch, ch]
+        tc = ""
+        for i, dc in enumerate(c1):
+            tc += f" {dc}"
+        th = ""
+        for i, dh in enumerate(h1):
+            th += f" {dh}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", c1 + h1],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    "",
+                    f"Tiradas de Cubitus:{tc}",
+                    f"Tiradas de Humerus:{th}",
+                    "",
+                    "Ha ganado Cubitus.",
+                ],
+            ],
+        )
+
+        # c1 < h1, c2 > h2, empate
+        # hago dos listas iguales, sin valores iguales seguidos
+        ch = random.randrange(1, 7)
+        c1 = [ch]
+        h1 = [ch]
+        for i in range(random.randrange(3, 7)):
+            ch = random.randrange(1, 7)
+            while ch == c1[-1]:
+                ch = random.randrange(1, 7)
+            c1 += [ch]
+            h1 += [ch]
+        random.shuffle(h1)
+        iguales_seguidos = False
+        for i in range(len(h1) - 1):
+            if h1[i] == h1[i + 1]:
+                iguales_seguidos = True
+        while iguales_seguidos:
+            random.shuffle(h1)
+            iguales_seguidos = False
+            for i in range(len(h1) - 1):
+                if h1[i] == h1[i + 1]:
+                    iguales_seguidos = True
+        # añado un valor par a la lista de humerus y los dados finales se llevan ese valor (para que salga empate)
+        hd = random.randrange(1, 4) * 2
+        while hd == h1[-1]:
+            hd = random.randrange(1, 4) * 2
+        h1 += [hd]
+        ch = random.randrange(1 + hd // 2, 7)
+        while ch - hd // 2 == h1[-1] or ch == c1[-1]:
+            ch = random.randrange(1 + hd // 2, 7)
+        c1 += [ch, ch]
+        h1 += [ch - hd // 2, ch - hd // 2]
+        tc = ""
+        for i, dc in enumerate(c1):
+            tc += f" {dc}"
+        th = ""
+        for i, dh in enumerate(h1):
+            th += f" {dh}"
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["random", c1 + h1],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    "",
+                    f"Tiradas de Cubitus:{tc}",
+                    f"Tiradas de Humerus:{th}",
+                    "",
+                    "Han empatado.",
+                ],
+            ],
+        )
+
+        # c1 < h1, c2 > h2, gana Humerus
+        # hago dos listas iguales, sin valores iguales seguidos
+        ch = random.randrange(1, 7)
+        c1 = [ch]
+        h1 = [ch]
+        for i in range(random.randrange(3, 7)):
+            ch = random.randrange(1, 7)
+            while ch == c1[-1]:
+                ch = random.randrange(1, 7)
+            c1 += [ch]
+            h1 += [ch]
+        random.shuffle(h1)
+        iguales_seguidos = False
+        for i in range(len(h1) - 1):
+            if h1[i] == h1[i + 1]:
+                iguales_seguidos = True
+        while iguales_seguidos:
+            random.shuffle(h1)
+            iguales_seguidos = False
+            for i in range(len(h1) - 1):
+                if h1[i] == h1[i + 1]:
+                    iguales_seguidos = True
+        # añado un valor a la lista de humerus y los dados finales se llevan más de ese valor (para que gane humerus)
+        hd = random.randrange(1, 4)
+        while hd == h1[-1]:
+            hd = random.randrange(1, 4)
+        h1 += [hd]
+        ch = random.randrange(4, 7)
+        while ch - 2 == h1[-1] or ch == c1[-1]:
+            ch = random.randrange(4, 7)
+        c1 += [ch, ch]
+        h1 += [ch - 2, ch - 2]
+        tc = ""
+        for i, dc in enumerate(c1):
+            tc += f" {dc}"
+        th = ""
+        for i, dh in enumerate(h1):
+            th += f" {dh}"
+        mpts_common.add_test(
+            LAST_TEST,
+            ["random", c1 + h1],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (2)",
+                    "",
+                    f"Tiradas de Cubitus:{tc}",
+                    f"Tiradas de Humerus:{th}",
+                    "",
+                    "Ha ganado Humerus.",
+                ],
+            ],
         )
 
         # Exercise 2223_21 END
