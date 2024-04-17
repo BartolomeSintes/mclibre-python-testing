@@ -135,7 +135,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS (1)",
                     "",
-                    "¿Cuántos partidas van a jugar? ",
+                    "¿Cuántas partidas van a jugar? ",
                     "¡Como mínimo se debe jugar una partida!",
                 ],
             ],
@@ -151,7 +151,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS (1)",
                     "",
-                    "¿Cuántos partidas van a jugar? ",
+                    "¿Cuántas partidas van a jugar? ",
                     "¡Como mínimo se debe jugar una partida!",
                 ],
             ],
@@ -186,7 +186,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS (1)",
                     "",
-                    "¿Cuántos partidas van a jugar? ",
+                    "¿Cuántas partidas van a jugar? ",
                     "",
                     "Partida 1",
                     f"  Tirada de Cubitus: {c[0]} {c[1]} {c[2]} {c[3]} {c[4]} => {tc} puntos.",
@@ -225,7 +225,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS (1)",
                     "",
-                    "¿Cuántos partidas van a jugar? ",
+                    "¿Cuántas partidas van a jugar? ",
                     "",
                     "Partida 1",
                     f"  Tirada de Cubitus: {c[0]} {c[1]} {c[2]} {c[3]} {c[4]} => {tc} puntos.",
@@ -265,7 +265,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS (1)",
                     "",
-                    "¿Cuántos partidas van a jugar? ",
+                    "¿Cuántas partidas van a jugar? ",
                     "",
                     "Partida 1",
                     f"  Tirada de Cubitus: {c[0]} {c[1]} {c[2]} {c[3]} {c[4]} => {tc} puntos.",
@@ -319,7 +319,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS (1)",
                     "",
-                    "¿Cuántos partidas van a jugar? ",
+                    "¿Cuántas partidas van a jugar? ",
                     "",
                     "Partida 1",
                     f"  Tirada de Cubitus: {c[0]} {c[1]} {c[2]} {c[3]} {c[4]} => {tc} puntos.",
@@ -402,7 +402,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS (1)",
                     "",
-                    "¿Cuántos partidas van a jugar? ",
+                    "¿Cuántas partidas van a jugar? ",
                     "",
                     "Partida 1",
                     f"  Tirada de Cubitus: {c[0]} {c[1]} {c[2]} {c[3]} {c[4]} => {tc} puntos.",
@@ -428,7 +428,7 @@ def exercise(exercise_id):
         tmp_output = [
             "JUEGO DE DADOS (1)",
             "",
-            "¿Cuántos partidas van a jugar? ",
+            "¿Cuántas partidas van a jugar? ",
         ]
         for i in range(tu):
             # partida 2: gana Humerus, Cubitus 2 mínimos
@@ -1269,4 +1269,304 @@ def exercise(exercise_id):
             ],
         )
 
-        # Exercise 2223_21 END
+        # Exercise 2223_22 END
+
+    elif exercise_id == 2223_31:
+        # Exercise 2223_31 BEGINNING
+        # https://www.mclibre.org/consultar/python/examenes/22-23/examen-230623.html
+
+        # turnos negativos
+        tu = -random.randrange(1, 20)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    "¡Como mínimo se debe jugar una partida!",
+                ],
+            ],
+        )
+
+        # turnos cero
+        tu = 0
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    "¡Como mínimo se debe jugar una partida!",
+                ],
+            ],
+        )
+
+        # turnos pares
+        tu = 2 * random.randrange(1, 20)
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    "¡El número de partidas debe ser impar!",
+                ],
+            ],
+        )
+
+        # 1 turno, coincide el primer valor de Humerus con alguno de Cubitus, gana Cubitus
+        tu = 1
+        c = [random.randrange(1, 14), random.randrange(1, 14), random.randrange(1, 14)]
+        h = [
+            c[random.randrange(1, 3)],
+            random.randrange(1, 14),
+            random.randrange(1, 14),
+        ]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            ["random", c + h],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    f"Partida 1 - Cubitus: {c[0]} {c[1]} {c[2]} - Humerus: {h[0]} {h[1]} {h[2]} - Gana Cubitus.",
+                    "",
+                    "Ha ganado Cubitus 1 partidas a 0.",
+                ],
+            ],
+        )
+
+        # 1 turno, coincide el segundo valor de Humerus con alguno de Cubitus, gana Cubitus
+        tu = 1
+        c = [random.randrange(1, 14), random.randrange(1, 14), random.randrange(1, 14)]
+        h = [
+            random.randrange(1, 14),
+            c[random.randrange(1, 3)],
+            random.randrange(1, 14),
+        ]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            ["random", c + h],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    f"Partida 1 - Cubitus: {c[0]} {c[1]} {c[2]} - Humerus: {h[0]} {h[1]} {h[2]} - Gana Cubitus.",
+                    "",
+                    "Ha ganado Cubitus 1 partidas a 0.",
+                ],
+            ],
+        )
+
+        # 1 turno, coincide el tercer valor de Humerus con alguno de Cubitus, gana Cubitus
+        tu = 1
+        c = [random.randrange(1, 14), random.randrange(1, 14), random.randrange(1, 14)]
+        h = [
+            random.randrange(1, 14),
+            random.randrange(1, 14),
+            c[random.randrange(1, 3)],
+        ]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            ["random", c + h],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    f"Partida 1 - Cubitus: {c[0]} {c[1]} {c[2]} - Humerus: {h[0]} {h[1]} {h[2]} - Gana Cubitus.",
+                    "",
+                    "Ha ganado Cubitus 1 partidas a 0.",
+                ],
+            ],
+        )
+
+        # 1 turno, no coincide ningún valor, gana Humerus
+        tu = 1
+        d = list(range(1, 14))
+        random.shuffle(d)
+        c = [d[0], d[1], d[2]]
+        h = [d[3], d[4], d[5]]
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            ["random", c + h],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    f"Partida 1 - Cubitus: {c[0]} {c[1]} {c[2]} - Humerus: {h[0]} {h[1]} {h[2]} - Gana Humerus.",
+                    "",
+                    "Ha ganado Humerus 1 partidas a 0.",
+                ],
+            ],
+        )
+
+        # 3 turnos, Cubitus gana 2 y Humerus 1
+        tu = 3
+        c1 = [random.randrange(1, 14), random.randrange(1, 14), random.randrange(1, 14)]
+        h1 = [
+            random.randrange(1, 14),
+            random.randrange(1, 14),
+            c1[random.randrange(1, 3)],
+        ]
+        random.shuffle(h1)
+        t1 = f"Cubitus: {c1[0]} {c1[1]} {c1[2]} - Humerus: {h1[0]} {h1[1]} {h1[2]} - Gana Cubitus."
+        c2 = [random.randrange(1, 14), random.randrange(1, 14), random.randrange(1, 14)]
+        h2 = [
+            random.randrange(1, 14),
+            random.randrange(1, 14),
+            c2[random.randrange(1, 3)],
+        ]
+        random.shuffle(h2)
+        t2 = f"Cubitus: {c2[0]} {c2[1]} {c2[2]} - Humerus: {h2[0]} {h2[1]} {h2[2]} - Gana Cubitus."
+        d = list(range(1, 14))
+        random.shuffle(d)
+        c3 = [d[0], d[1], d[2]]
+        h3 = [d[3], d[4], d[5]]
+        t3 = f"Cubitus: {c3[0]} {c3[1]} {c3[2]} - Humerus: {h3[0]} {h3[1]} {h3[2]} - Gana Humerus."
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            ["random", c1 + h1 + c2 + h2 + c3 + h3],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    f"Partida 1 - {t1}",
+                    f"Partida 2 - {t2}",
+                    f"Partida 3 - {t3}",
+                    "",
+                    "Ha ganado Cubitus 2 partidas a 1.",
+                ],
+            ],
+        )
+
+        # 3 turnos, Cubitus gana 1 y Humerus 2
+        tu = 3
+        d = list(range(1, 14))
+        random.shuffle(d)
+        c1 = [d[0], d[1], d[2]]
+        h1 = [d[3], d[4], d[5]]
+        t1 = f"Cubitus: {c1[0]} {c1[1]} {c1[2]} - Humerus: {h1[0]} {h1[1]} {h1[2]} - Gana Humerus."
+        c2 = [random.randrange(1, 14), random.randrange(1, 14), random.randrange(1, 14)]
+        h2 = [
+            random.randrange(1, 14),
+            random.randrange(1, 14),
+            c2[random.randrange(1, 3)],
+        ]
+        random.shuffle(h2)
+        t2 = f"Cubitus: {c2[0]} {c2[1]} {c2[2]} - Humerus: {h2[0]} {h2[1]} {h2[2]} - Gana Cubitus."
+        d = list(range(1, 14))
+        random.shuffle(d)
+        c3 = [d[0], d[1], d[2]]
+        h3 = [d[3], d[4], d[5]]
+        t3 = f"Cubitus: {c3[0]} {c3[1]} {c3[2]} - Humerus: {h3[0]} {h3[1]} {h3[2]} - Gana Humerus."
+        mpts_common.add_test(
+            NOT_LAST_TEST,
+            ["input", [tu]],
+            ["random", c1 + h1 + c2 + h2 + c3 + h3],
+            [
+                "output",
+                [
+                    "JUEGO DE DADOS (1)",
+                    "",
+                    "¿Cuántas partidas van a jugar? ",
+                    "",
+                    f"Partida 1 - {t1}",
+                    f"Partida 2 - {t2}",
+                    f"Partida 3 - {t3}",
+                    "",
+                    "Ha ganado Humerus 2 partidas a 1.",
+                ],
+            ],
+        )
+
+        # turnos impar
+        tu = 2 * random.randrange(1, 4) + 1
+        c = []
+        h = []
+        t = []
+        gc = gh = 0
+        for i in range(tu):
+            if random.randrange(0, 2) == 0:
+                ci = [
+                    random.randrange(1, 14),
+                    random.randrange(1, 14),
+                    random.randrange(1, 14),
+                ]
+                hi = [
+                    random.randrange(1, 14),
+                    random.randrange(1, 14),
+                    ci[random.randrange(1, 3)],
+                ]
+                random.shuffle(hi)
+                t += [
+                    f"Partida {i + 1} - Cubitus: {ci[0]} {ci[1]} {ci[2]} - Humerus: {hi[0]} {hi[1]} {hi[2]} - Gana Cubitus."
+                ]
+                gc += 1
+            else:
+                di = list(range(1, 14))
+                random.shuffle(di)
+                ci = [di[0], di[1], di[2]]
+                hi = [di[3], di[4], di[5]]
+                t += [
+                    f"Partida {i + 1} - Cubitus: {ci[0]} {ci[1]} {ci[2]} - Humerus: {hi[0]} {hi[1]} {hi[2]} - Gana Humerus."
+                ]
+                gh += 1
+            c += [ci]
+            h += [hi]
+        if gc > gh:
+            f = f"Ha ganado Cubitus {gc} partidas a {gh}."
+        else:
+            f = f"Ha ganado Humerus {gc} partidas a {gh}."
+        ch = []
+        for i in range(tu):
+            ch += c[i]
+            ch += h[i]
+        tmp_output = [
+            "JUEGO DE DADOS (1)",
+            "",
+            "¿Cuántas partidas van a jugar? ",
+            "",
+        ]
+        for i in range(tu):
+            tmp_output += [t[i]]
+        tmp_output += ["", f]
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [tu]],
+            ["random", ch],
+            ["output", tmp_output],
+        )
+
+        # Exercise 2223_31 END
