@@ -1,10 +1,10 @@
 import argparse
-import colorama
 import json
 import os
 import random
 import subprocess
 import sys
+import colorama
 
 # pytest is a required module
 try:
@@ -100,7 +100,7 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
                     for j in range(1, len(args[0])):
                         string += " " + str(args[0][j])
                 partial_output = ""
-                output.append(string)
+                output.append(string.rstrip())
 
         program.input = mock_input
 
@@ -139,7 +139,7 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         program.main()
 
         if partial_output != "":
-            output.append(partial_output)
+            output.append(partial_output.rstrip())
 
         with open("obtained_result.txt", "w", encoding="utf-8") as file:
             # saved as json because it is a list
@@ -207,8 +207,7 @@ def main():
             print(f"Error: No se encuentra el fichero {args.read}.")
             exit()
     else:
-        server_url = "https://smagris3.uv.es/mclibre/mclibre-python-testing/mclibre_python_testing_server.py"
-        # server_url = "http://localhost/mclibre/consultar/python-testing/server/mclibre_python_testing_server.py"
+        server_url = "https://www.mclibre.org/mclibre-python-testing/mclibre_python_testing_server.py"
 
         random_id = random.randint(0, 100_000)
         json_request = {
@@ -217,16 +216,8 @@ def main():
             "params": {"version": "0.1", "exercise-id": args.exercise_id},
             "id": random_id,
         }
-        # print (json.dumps(json_request))
         r = requests.post(server_url, data=json.dumps(json_request))
-        # print(r.text)
         values = r.json()
-        # print(values)
-        # for i in values["result"]:
-        # print(i["input"])
-        # print(i["random"])
-        # print(i["output"])
-        # print()
 
     if args.write is not None:
         try:
