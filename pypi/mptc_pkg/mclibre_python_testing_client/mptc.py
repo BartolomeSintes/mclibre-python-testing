@@ -100,7 +100,10 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
                     for j in range(1, len(args[0])):
                         string += " " + str(args[0][j])
                 partial_output = ""
-                output.append(string.rstrip())
+                if string[-2:] == ": " or string[-2:] == "? :" or string[-2:] == "= ":
+                    output.append(string)
+                else:
+                    output.append(string.rstrip())
 
         program.input = mock_input
 
