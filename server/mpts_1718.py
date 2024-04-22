@@ -6,7 +6,7 @@ LAST_TEST = False
 
 
 def exercise(exercise_id):
-    if exercise_id == 171_811:
+    if exercise_id == 1718_11:
         # Exercise 171811 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
 
@@ -163,7 +163,7 @@ def exercise(exercise_id):
 
         # Exercise 171811 END
 
-    elif exercise_id == 171_812:
+    elif exercise_id == 1718_12:
         # Exercise 171812 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
 
@@ -630,7 +630,7 @@ def exercise(exercise_id):
 
         # Exercise 171812 END
 
-    elif exercise_id == 171_813:
+    elif exercise_id == 1718_13:
         # Exercise 171813 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180228.html
 
@@ -771,7 +771,7 @@ def exercise(exercise_id):
 
         # Exercise 171813 END
 
-    elif exercise_id == 171_821:
+    elif exercise_id == 1718_21:
         # Exercise 171821 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180523.html#ejercicio-1
 
@@ -832,7 +832,7 @@ def exercise(exercise_id):
                 [
                     "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
                     "Escriba la cantidad de ases: ",
-                    f"{a} ases son {b} sestercio(s), ",
+                    f"{a} ases son {b} sestercio(s),",
                 ],
             ],
         )
@@ -849,7 +849,7 @@ def exercise(exercise_id):
                 [
                     "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
                     "Escriba la cantidad de ases: ",
-                    f"{a} ases son {b} denario(s), ",
+                    f"{a} ases son {b} denario(s),",
                 ],
             ],
         )
@@ -865,7 +865,7 @@ def exercise(exercise_id):
                 [
                     "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
                     "Escriba la cantidad de ases: ",
-                    f"{a} ases son {b} áureo(s), ",
+                    f"{a} ases son {b} áureo(s),",
                 ],
             ],
         )
@@ -898,7 +898,7 @@ def exercise(exercise_id):
                 [
                     "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
                     "Escriba la cantidad de ases: ",
-                    f"{a} ases son {frase}",
+                    f"{a} ases son {frase}".rstrip(),
                 ],
             ],
         )
@@ -931,7 +931,7 @@ def exercise(exercise_id):
                 [
                     "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
                     "Escriba la cantidad de ases: ",
-                    f"{a} ases son {frase}",
+                    f"{a} ases son {frase}".rstrip(),
                 ],
             ],
         )
@@ -962,14 +962,14 @@ def exercise(exercise_id):
                 [
                     "CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS",
                     "Escriba la cantidad de ases: ",
-                    f"{a} ases son {frase}",
+                    f"{a} ases son {frase}".rstrip(),
                 ],
             ],
         )
 
         # Exercise 171821 END
 
-    elif exercise_id == 171_822:
+    elif exercise_id == 1718_22:
         # Exercise 171822 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180523.html
 
@@ -995,10 +995,10 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS",
                     "",
-                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]} ",
+                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]}",
                     f"Cubitus ha sacado {ta} puntos.",
                     "",
-                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]} ",
+                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]}",
                     f"Humerus ha sacado {tb} puntos.",
                     "",
                     "Ha ganado Cubitus.",
@@ -1028,10 +1028,10 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS",
                     "",
-                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]} ",
+                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]}",
                     f"Cubitus ha sacado {ta} puntos.",
                     "",
-                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]} ",
+                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]}",
                     f"Humerus ha sacado {tb} puntos.",
                     "",
                     "Ha ganado Humerus.",
@@ -1061,10 +1061,10 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS",
                     "",
-                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]} ",
+                    f"Tirada de Cubitus: {a[0]} {a[1]} {a[2]} {a[3]} {a[4]}",
                     f"Cubitus ha sacado {ta} puntos.",
                     "",
-                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]} ",
+                    f"Tirada de Humerus: {b[0]} {b[1]} {b[2]} {b[3]} {b[4]}",
                     f"Humerus ha sacado {tb} puntos.",
                     "",
                     "Han empatado.",
@@ -1074,7 +1074,7 @@ def exercise(exercise_id):
 
         # Exercise 171822 END
 
-    elif exercise_id == 171_823:
+    elif exercise_id == 1718_23:
         # Exercise 171823 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180523.html
 
@@ -1198,7 +1198,7 @@ def exercise(exercise_id):
 
         # Exercise 171823 END
 
-    elif exercise_id == 171_831:
+    elif exercise_id == 1718_31:
         # Exercise 171831 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180606.html
 
@@ -1396,7 +1396,7 @@ def exercise(exercise_id):
 
         # Exercise 171831 END
 
-    elif exercise_id == 171_832:
+    elif exercise_id == 1718_32:
         # Exercise 171832 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180606.html
 
@@ -1588,7 +1588,7 @@ def exercise(exercise_id):
 
         # Exercise 171832 END
 
-    elif exercise_id == 171_833:
+    elif exercise_id == 1718_33:
         # Exercise 171833 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180606.html
 
@@ -1682,7 +1682,7 @@ def exercise(exercise_id):
 
         # Exercise 171833 END
 
-    elif exercise_id == 171_841:
+    elif exercise_id == 1718_41:
         # Exercise 171841 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180625.html
 
@@ -1817,7 +1817,7 @@ def exercise(exercise_id):
 
         # Exercise 171841 END
 
-    elif exercise_id == 171_842:
+    elif exercise_id == 1718_42:
         # Exercise 171842 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/17-18/examen-180625.html
 

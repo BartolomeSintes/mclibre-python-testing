@@ -7,7 +7,7 @@ LAST_TEST = False
 
 def exercise(exercise_id):
 
-    if exercise_id == 151611:
+    if exercise_id == 1516_11:
         # Exercise 151611 BEGINNING
         # /examenes/15-16/examen-160525.html
 
@@ -233,7 +233,7 @@ def exercise(exercise_id):
 
         # Exercise 151611 END
 
-    elif exercise_id == 151612:
+    elif exercise_id == 1516_12:
         # Exercise 151612 BEGINNING
         # /examenes/15-16/examen-160525.html
 
@@ -386,7 +386,7 @@ def exercise(exercise_id):
 
         # Exercise 151612 END
 
-    elif exercise_id == 151621:
+    elif exercise_id == 1516_21:
         # Exercise 151621 BEGINNING
         # /examenes/15-16/examen-160608.html
 
@@ -527,7 +527,7 @@ def exercise(exercise_id):
 
         # Exercise 151621 END
 
-    elif exercise_id == 151622:
+    elif exercise_id == 1516_22:
         # Exercise 151622 BEGINNING
         # /examenes/15-16/examen-160608.html
 
@@ -670,7 +670,7 @@ def exercise(exercise_id):
 
         # Exercise 151622 END
 
-    elif exercise_id == 151631:
+    elif exercise_id == 1516_31:
         # Exercise 151631 BEGINNING
         # /examenes/15-16/examen-160628.html
 
@@ -699,7 +699,7 @@ def exercise(exercise_id):
 
         # Litros incorrecto
         opcion = "a"
-        l = -random.randrange(0, 11)
+        l = -random.randrange(1, 11)
 
         mpts_common.add_test(
             NOT_LAST_TEST,

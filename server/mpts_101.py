@@ -62,10 +62,25 @@ def exercise(exercise_id):
         # Exercise 1014 END
 
     elif exercise_id == 1015:
-        # Exercise 1014 BEGINNING
+        # Exercise 1015 BEGINNING
 
         # Test mptc 0.23
         mpts_common.add_test(NOT_LAST_TEST, ["input", [2]], ["output", ["0.5"]])
         mpts_common.add_test(LAST_TEST, ["input", [0]], ["output", ["0"]])
 
         # Exercise 1015 END
+
+    elif exercise_id == 1016:
+        # Exercise 1016 BEGINNING
+
+        # Test mptc 0.0.44 (final spaces in lines)
+        mpts_common.add_test(
+            LAST_TEST,
+            ["input", [2, "Barto"]],
+            [
+                "output",
+                ["PRUEBA PARA MPTC 0.0.44", "Escribe un número entero: ", "¿Cuál es tu nombre?", "Datos escritos: 2 Barto"],
+            ],
+        )
+
+        # Exercise 1016 END

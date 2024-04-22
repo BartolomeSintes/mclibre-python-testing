@@ -6,7 +6,7 @@ LAST_TEST = False
 
 
 def exercise(exercise_id):
-    if exercise_id == 192011:
+    if exercise_id == 1920_11:
         # Exercise 192011 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/19-20/examen-200221.html
 
@@ -132,7 +132,7 @@ def exercise(exercise_id):
 
         # Exercise 192011 END
 
-    elif exercise_id == 192012:
+    elif exercise_id == 1920_12:
         # Exercise 192012 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/19-20/examen-200221.html
 
@@ -302,7 +302,7 @@ def exercise(exercise_id):
 
         # Exercise 192012 END
 
-    elif exercise_id == 192013:
+    elif exercise_id == 1920_13:
         # Exercise 192013 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/19-20/examen-200221.html
 
@@ -720,7 +720,7 @@ def exercise(exercise_id):
 
         # Exercise 192013 END #
 
-    elif exercise_id == 192014:
+    elif exercise_id == 1920_14:
         # Exercise 192014 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/19-20/examen-200221.html
 

@@ -7,7 +7,7 @@ LAST_TEST = False
 
 def exercise(exercise_id):
 
-    if exercise_id == 121311:
+    if exercise_id == 1213_11:
         # Exercise 121311 BEGINNING
         # /examenes/12-13/examen-130129.html
 
@@ -80,7 +80,7 @@ def exercise(exercise_id):
 
         # Exercise 121311 END
 
-    elif exercise_id == 121312:
+    elif exercise_id == 1213_12:
         # Exercise 121312 BEGINNING
         # /examenes/12-13/examen-130129.html
 
@@ -253,7 +253,7 @@ def exercise(exercise_id):
 
         # Exercise 121312 END
 
-    elif exercise_id == 121313:
+    elif exercise_id == 1213_13:
         # Exercise 121313 BEGINNING
         # /examenes/12-13/examen-130129.html
 

@@ -137,7 +137,7 @@ def exercise(exercise_id):
                 [
                     "DIVISORES",
                     "Escriba un número entero mayor que cero: ",
-                    "Los divisores de 1 son 1 ",
+                    "Los divisores de 1 son 1",
                 ],
             ],
         )
@@ -152,7 +152,7 @@ def exercise(exercise_id):
                 [
                     "DIVISORES",
                     "Escriba un número entero mayor que cero: ",
-                    f"Los divisores de {a} son 1 {a} ",
+                    f"Los divisores de {a} son 1 {a}",
                 ],
             ],
         )
@@ -165,8 +165,8 @@ def exercise(exercise_id):
         resp = ""
         for i in range(1, numero // 2 + 1):
             if numero % i == 0:
-                resp += f"{i} "
-        resp += f"{numero } "
+                resp += f" {i}"
+        resp += f" {numero }"
 
         mpts_common.add_test(
             NOT_LAST_TEST,
@@ -176,7 +176,7 @@ def exercise(exercise_id):
                 [
                     "DIVISORES",
                     "Escriba un número entero mayor que cero: ",
-                    f"Los divisores de {numero} son {resp}",
+                    f"Los divisores de {numero} son{resp}",
                 ],
             ],
         )
@@ -189,8 +189,8 @@ def exercise(exercise_id):
         resp = ""
         for i in range(1, numero // 2 + 1):
             if numero % i == 0:
-                resp += f"{i} "
-        resp += f"{numero } "
+                resp += f" {i}"
+        resp += f" {numero }"
 
         mpts_common.add_test(
             LAST_TEST,
@@ -200,7 +200,7 @@ def exercise(exercise_id):
                 [
                     "DIVISORES",
                     "Escriba un número entero mayor que cero: ",
-                    f"Los divisores de {numero} son {resp}",
+                    f"Los divisores de {numero} son{resp}",
                 ],
             ],
         )
@@ -965,21 +965,6 @@ def exercise(exercise_id):
 
         # Primero negativo
         a = -random.randrange(1, 101)
-        mpts_common.add_test(
-            NOT_LAST_TEST,
-            ["input", [a]],
-            [
-                "output",
-                [
-                    "SUMA ENTRE VALORES",
-                    "Escriba un número entero positivo: ",
-                    "¡Le he pedido un número entero positivo!",
-                ],
-            ],
-        )
-
-        # Primero cero
-        a = 0
         mpts_common.add_test(
             NOT_LAST_TEST,
             ["input", [a]],

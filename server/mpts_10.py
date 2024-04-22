@@ -783,7 +783,7 @@ def exercise(exercise_id):
         # Exercise 109 BEGINNING
         # https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html
 
-        repite = "abcdefghijklmñopqrtuvwxyzABCDEFGHIJKLMNÑOPQRTUVWXYZ"
+        repite = "abcdefghijklmñopqrtuvwxyzABCDEFGHIJKLMÑOPQRTUVWXYZ"
 
         # Un sólo número par
         a = random.randrange(1, 21) * 2

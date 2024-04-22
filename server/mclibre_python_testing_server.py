@@ -1,13 +1,19 @@
-#!"C:\Users\BLJ\AppData\Local\Programs\Python\Python39\pythonw.exe"
+#!/usr/bin/python3
+#"C:\Users\BLJ\AppData\Local\Programs\Python\Python39\pythonw.exe"
 # enable debugging
-import cgi
+#"C:\Users\ASIR 7L\AppData\Local\Programs\Python\Python312\pythonw.exe"     # A112
+#"C:\Users\ASIR\AppData\Local\Programs\Python\Python312\pythonw.exe"        # A010
+#"C:\Users\BLJ\AppData\Local\Programs\Python\Python39\pythonw.exe"         casa
+#/usr/bin/python3                                                          mclibre
+# import cgi
 import cgitb
 import importlib
 import io
 import json
 import os
-import random
+# import random
 import sys
+
 from mpts_ids import valid_exercise_ids
 
 cgitb.enable()
@@ -80,7 +86,7 @@ def check_request(form):
         request_ok = 7
     elif "exercise-id" not in form["params"]:
         request_ok = 8
-    elif not (valid_exercise_number(form["params"]["exercise-id"])):
+    elif not valid_exercise_number(form["params"]["exercise-id"]):
         request_ok = 9
     elif "id" not in form:
         request_ok = 10

@@ -7,7 +7,7 @@ LAST_TEST = False
 
 
 def exercise(exercise_id):
-    if exercise_id == 161711:
+    if exercise_id == 1617_11:
         # Exercise 161711 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170224.html
 
@@ -66,7 +66,7 @@ def exercise(exercise_id):
 
         # Exercise 161711 END
 
-    elif exercise_id == 161712:
+    elif exercise_id == 1617_12:
         # Exercise 161712 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170224.html
 
@@ -319,7 +319,7 @@ def exercise(exercise_id):
 
         # Exercise 161712 END
 
-    elif exercise_id == 161713:
+    elif exercise_id == 1617_13:
         # Exercise 161713 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170224.html
 
@@ -482,7 +482,7 @@ def exercise(exercise_id):
 
         # Exercise 161713 END
 
-    elif exercise_id == 161721:
+    elif exercise_id == 1617_21:
         # Exercise 161721 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170505.html
 
@@ -533,7 +533,7 @@ def exercise(exercise_id):
 
         # Exercise 161721 END
 
-    elif exercise_id == 161722:
+    elif exercise_id == 1617_22:
         # Exercise 161722 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170505.html
 
@@ -710,7 +710,7 @@ def exercise(exercise_id):
 
         # Exercise 161722 END
 
-    elif exercise_id == 161723:
+    elif exercise_id == 1617_23:
         # Exercise 161723 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170505.html
 
@@ -781,7 +781,7 @@ def exercise(exercise_id):
         d = []
         for _ in range(n - 1):
             d += [random.randrange(1, maximo)]
-        d += [max]
+        d += [maximo]
         tmp_output = [
             "JUEGO DE DADOS (3)",
             "¿Cuántos jugadores van a jugar? ",
@@ -800,7 +800,7 @@ def exercise(exercise_id):
         d = []
         for _ in range(n1):
             d += [random.randrange(1, maximo)]
-        d += [max]
+        d += [maximo]
         for _ in range(n2):
             d += [random.randrange(1, maximo)]
         tmp_output = [
@@ -837,7 +837,7 @@ def exercise(exercise_id):
 
         # Exercise 161723 END
 
-    elif exercise_id == 161731:
+    elif exercise_id == 1617_31:
         # Exercise 161731 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170606.html
 
@@ -982,7 +982,7 @@ def exercise(exercise_id):
 
         # Exercise 161731 END
 
-    elif exercise_id == 161732:
+    elif exercise_id == 1617_32:
         # Exercise 161732 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170606.html
 
@@ -1416,7 +1416,7 @@ def exercise(exercise_id):
 
         # Exercise 161732 END
 
-    elif exercise_id == 161733:
+    elif exercise_id == 1617_33:
         # Exercise 161733 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170606.html
 
@@ -1573,7 +1573,7 @@ def exercise(exercise_id):
                     "Escriba un número positivo: ",
                     f"Escriba un número mayor que {a}: ",
                     "Escriba un número del 1 al 10: ",
-                    tmp_output,
+                    tmp_output.rstrip(),
                 ],
             ],
         )
@@ -1601,14 +1601,14 @@ def exercise(exercise_id):
                     "Escriba un número positivo: ",
                     f"Escriba un número mayor que {a}: ",
                     "Escriba un número del 1 al 10: ",
-                    tmp_output,
+                    tmp_output.rstrip(),
                 ],
             ],
         )
 
         # Exercise 161733 END
 
-    elif exercise_id == 161741:
+    elif exercise_id == 1617_41:
         # Exercise 161741 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170628.html
 
@@ -1749,7 +1749,7 @@ def exercise(exercise_id):
 
         # Exercise 161741 END
 
-    elif exercise_id == 161742:
+    elif exercise_id == 1617_42:
         # Exercise 1617412BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/16-17/examen-170628.html
 
@@ -1828,7 +1828,7 @@ def exercise(exercise_id):
                     "Escriba el primer valor de la sucesión: ",
                     "Escriba el segundo valor de la sucesión: ",
                     "Escriba el número de valores a mostrar: ",
-                    f"{a} {b} ",
+                    f"{a} {b}",
                 ],
             ],
         )
@@ -1853,7 +1853,7 @@ def exercise(exercise_id):
                     "Escriba el primer valor de la sucesión: ",
                     "Escriba el segundo valor de la sucesión: ",
                     "Escriba el número de valores a mostrar: ",
-                    tmp_output,
+                    tmp_output.rstrip(),
                 ],
             ],
         )
@@ -1878,7 +1878,7 @@ def exercise(exercise_id):
                     "Escriba el primer valor de la sucesión: ",
                     "Escriba el segundo valor de la sucesión: ",
                     "Escriba el número de valores a mostrar: ",
-                    tmp_output,
+                    tmp_output.rstrip(),
                 ],
             ],
         )

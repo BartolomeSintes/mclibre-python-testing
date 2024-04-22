@@ -1823,7 +1823,7 @@ def exercise(exercise_id):
                     "¿Cuántos buñuelos de calabaza quiere? ",
                     f"Son {precio} €",
                     "¿Cuánto dinero entrega? ",
-                    f"Su cambio son {d - precio} €.",
+                    f"Su cambio son {round(d - precio, 2)} €.",
                 ],
             ],
         )

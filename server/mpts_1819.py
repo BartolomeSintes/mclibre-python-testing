@@ -6,7 +6,7 @@ LAST_TEST = False
 
 
 def exercise(exercise_id):
-    if exercise_id == 181_911:
+    if exercise_id == 1819_11:
         # Exercise 181911 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
@@ -189,7 +189,7 @@ def exercise(exercise_id):
 
         # Exercise 181911 END
 
-    elif exercise_id == 181_912:
+    elif exercise_id == 1819_12:
         # Exercise 181912 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
@@ -305,7 +305,7 @@ def exercise(exercise_id):
 
         # Exercise 181912 END
 
-    elif exercise_id == 181_913:
+    elif exercise_id == 1819_13:
         # Exercise 181913 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
@@ -506,7 +506,7 @@ def exercise(exercise_id):
 
         # Exercise 181913 END
 
-    elif exercise_id == 181_914:
+    elif exercise_id == 1819_14:
         # Exercise 181914 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190225.html
 
@@ -681,7 +681,7 @@ def exercise(exercise_id):
 
         # Exercise 181914 END
 
-    elif exercise_id == 181921:
+    elif exercise_id == 1819_21:
         # Exercise 181921 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190521.html
 
@@ -803,7 +803,7 @@ def exercise(exercise_id):
 
         # Exercise 181921 END
 
-    elif exercise_id == 181922:
+    elif exercise_id == 1819_22:
         # Exercise 181922 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190521.html
 
@@ -931,7 +931,7 @@ def exercise(exercise_id):
 
         # Exercise 181922 END
 
-    elif exercise_id == 181923:
+    elif exercise_id == 1819_23:
         # Exercise 181923 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190521.html
 
@@ -959,7 +959,7 @@ def exercise(exercise_id):
             ["random", tc + th],
             [
                 "output",
-                ["JUEGO DADO A TIERRA", output_c, output_h, "Ha ganado Cubitus.",],
+                ["JUEGO DADO A TIERRA", output_c.rstrip(), output_h.rstrip(), "Ha ganado Cubitus.",],
             ],
         )
 
@@ -987,7 +987,7 @@ def exercise(exercise_id):
             ["random", tc + th],
             [
                 "output",
-                ["JUEGO DADO A TIERRA", output_c, output_h, "Ha ganado Humerus.",],
+                ["JUEGO DADO A TIERRA", output_c.rstrip(), output_h.rstrip(), "Ha ganado Humerus.",],
             ],
         )
 
@@ -1013,12 +1013,12 @@ def exercise(exercise_id):
         mpts_common.add_test(
             LAST_TEST,
             ["random", tc + th],
-            ["output", ["JUEGO DADO A TIERRA", output_c, output_h, "Han empatado.",],],
+            ["output", ["JUEGO DADO A TIERRA", output_c.rstrip(), output_h.rstrip(), "Han empatado.",],],
         )
 
         # Exercise 181923 END
 
-    elif exercise_id == 181931:
+    elif exercise_id == 1819_31:
         # Exercise 181931 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190530.html
 
@@ -1484,7 +1484,7 @@ def exercise(exercise_id):
 
         # Exercise 181931 END
 
-    elif exercise_id == 181932:
+    elif exercise_id == 1819_32:
         # Exercise 181932 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190530.html
 
@@ -1564,7 +1564,7 @@ def exercise(exercise_id):
                     "Elija otro valor del 1 al 6: ",
                     "Elija otro valor más del 1 al 6: ",
                     "¿Cuántos dados quiere tirar? ",
-                    f"Tirada de dados: {tmp_tirada}",
+                    f"Tirada de dados: {tmp_tirada}".rstrip(),
                     f"Ha sacado {ng} dados de los valores elegidos. Ha ganado.",
                 ],
             ],
@@ -1604,7 +1604,7 @@ def exercise(exercise_id):
                     "Elija otro valor del 1 al 6: ",
                     "Elija otro valor más del 1 al 6: ",
                     "¿Cuántos dados quiere tirar? ",
-                    f"Tirada de dados: {tmp_tirada}",
+                    f"Tirada de dados: {tmp_tirada}".rstrip(),
                     f"Ha sacado {ng} dados de los valores elegidos. Ha perdido.",
                 ],
             ],
@@ -1644,7 +1644,7 @@ def exercise(exercise_id):
                     "Elija otro valor del 1 al 6: ",
                     "Elija otro valor más del 1 al 6: ",
                     "¿Cuántos dados quiere tirar? ",
-                    f"Tirada de dados: {tmp_tirada}",
+                    f"Tirada de dados: {tmp_tirada}".rstrip(),
                     f"Ha sacado {ng} dados de los valores elegidos. Ni ha ganado ni perdido.",
                 ],
             ],
@@ -1652,7 +1652,7 @@ def exercise(exercise_id):
 
         # Exercise 181932 END
 
-    elif exercise_id == 181933:
+    elif exercise_id == 1819_33:
         # Exercise 181933 BEGINNING
         # https://www.mclibre.org/consultar/python/examenes/18-19/examen-190530.html
 
@@ -1706,8 +1706,8 @@ def exercise(exercise_id):
                 "output",
                 [
                     "JUEGO DE DADOS: HASTA REPETIR",
-                    f"Tirada de Cubitus: {texta}",
-                    f"Tirada de Humerus: {textb}",
+                    f"Tirada de Cubitus: {texta}".rstrip(),
+                    f"Tirada de Humerus: {textb}".rstrip(),
                     f"Cubitus ha sacado un {da} y Humerus ha sacado un {db}.",
                     "Ha ganado Cubitus.",
                 ],
@@ -1764,8 +1764,8 @@ def exercise(exercise_id):
                 "output",
                 [
                     "JUEGO DE DADOS: HASTA REPETIR",
-                    f"Tirada de Cubitus: {texta}",
-                    f"Tirada de Humerus: {textb}",
+                    f"Tirada de Cubitus: {texta}".rstrip(),
+                    f"Tirada de Humerus: {textb}".rstrip(),
                     f"Cubitus ha sacado un {da} y Humerus ha sacado un {db}.",
                     "Ha ganado Humerus.",
                 ],
@@ -1822,8 +1822,8 @@ def exercise(exercise_id):
                 "output",
                 [
                     "JUEGO DE DADOS: HASTA REPETIR",
-                    f"Tirada de Cubitus: {texta}",
-                    f"Tirada de Humerus: {textb}",
+                    f"Tirada de Cubitus: {texta}".rstrip(),
+                    f"Tirada de Humerus: {textb}".rstrip(),
                     f"Cubitus ha sacado un {da} y Humerus ha sacado un {db}.",
                     "Han empatado.",
                 ],
@@ -2182,7 +2182,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS: IGUALES O DISTINTOS",
                     "¿Cuántas veces se van a tirar los dados? ",
-                    f"Tiradas de dados: {text}",
+                    f"Tiradas de dados: {text}".rstrip(),
                     f"Ha ganado Cubitus {na} a {6 * nb}.",
                 ],
             ],
@@ -2219,7 +2219,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS: IGUALES O DISTINTOS",
                     "¿Cuántas veces se van a tirar los dados? ",
-                    f"Tiradas de dados: {text}",
+                    f"Tiradas de dados: {text}".rstrip(),
                     f"Ha ganado Humerus {6 * nb} a {na}.",
                 ],
             ],
@@ -2256,7 +2256,7 @@ def exercise(exercise_id):
                 [
                     "JUEGO DE DADOS: IGUALES O DISTINTOS",
                     "¿Cuántas veces se van a tirar los dados? ",
-                    f"Tiradas de dados: {text}",
+                    f"Tiradas de dados: {text}".rstrip(),
                     f"Han empatado a {na}.",
                 ],
             ],

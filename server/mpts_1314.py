@@ -7,7 +7,7 @@ LAST_TEST = False
 
 def exercise(exercise_id):
 
-    if exercise_id == 131422:
+    if exercise_id == 1314_22:
         # Exercise 131422 BEGINNING
         # /examenes/13-14/examen-140307.html
 
