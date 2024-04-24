@@ -4,6 +4,7 @@ import os
 import random
 import subprocess
 import sys
+
 import colorama
 
 # pytest is a required module
@@ -100,7 +101,7 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
                     for j in range(1, len(args[0])):
                         string += " " + str(args[0][j])
                 partial_output = ""
-                if string[-2:] == ": " or string[-2:] == "? :" or string[-2:] == "= ":
+                if string[-2:] == ": " or string[-2:] == "? " or string[-2:] == "= ":
                     output.append(string)
                 else:
                     output.append(string.rstrip())
@@ -153,7 +154,33 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
         )
 
 
+def check_latest_version():
+    response = requests.get("https://pypi.org/pypi/mclibre-python-testing-client/json")
+    latest_version = response.json()["info"]["version"]
+    if sys.version_info >= (3, 8):
+        from importlib import metadata
+    else:
+        import importlib_metadata as metadata
+    actual_version = metadata.version("mclibre_python_testing_client")
+    if latest_version != actual_version:
+        print(
+            f"{colorama.Fore.YELLOW}[AVISO] Está utilizando la versión {actual_version} de MPTC.{colorama.Style.RESET_ALL}"
+        )
+        print(
+            f"{colorama.Fore.YELLOW}        Actualice a la versión {latest_version} con el comando:{colorama.Style.RESET_ALL}"
+        )
+        print(
+            f"{colorama.Fore.WHITE}        pip install --upgrade mclibre-python-testing-client{colorama.Style.RESET_ALL}"
+        )
+        print(
+            f"{colorama.Fore.YELLOW}        Pulse la tecla [Intro] o [Return] para continuar.{colorama.Style.RESET_ALL}"
+        )
+        input()
+
+
 def main():
+    check_latest_version()
+
     EXECUTION_ERROR = "Execution error"
     SYNTAX_ERROR = "Syntax error"
 
@@ -427,11 +454,11 @@ def main():
                             if 0 <= j < len(i[0]["output"]):
                                 print(f'  Resultado esperado: "{i[0]["output"][j]}"')
                             else:
-                                print(f"  No se esperaba ningún resultado.")
+                                print("  No se esperaba ningún resultado.")
                             if 0 <= j < len(i[1]):
                                 print(f'  Resultado obtenido: "{i[1][j]}"')
                             else:
-                                print(f"  No se obtuvo ningún resultado.")
+                                print("  No se obtuvo ningún resultado.")
                             print()
                 if len(errorReport) > 1:
                     print(

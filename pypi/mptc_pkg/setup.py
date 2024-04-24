@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mclibre_python_testing_client",
-    version="0.0.45",
+    version="0.0.46",
     author="Bartolome Sintes",
     author_email="bartolome.sintes@gmail.com",
     description="Testing tool for some of the exercises in mclibre.org's Python course available at https://www.mclibre.org/consultar/python/",
@@ -15,7 +15,9 @@ setuptools.setup(
     # packages=setuptools.find_packages(),
     packages=["mclibre_python_testing_client"],
     # scripts=["mclibre-python-testing-client/mptc.py"],
-    entry_points={"console_scripts": ["mptc = mclibre_python_testing_client.mptc:main"]},
+    entry_points={
+        "console_scripts": ["mptc = mclibre_python_testing_client.mptc:main"]
+    },
     install_requires=["requests", "pytest"],
     classifiers=[
         "Programming Language :: Python :: 3",
