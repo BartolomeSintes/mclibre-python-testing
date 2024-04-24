@@ -121,6 +121,16 @@ with open("test_values.txt", "r", encoding="utf-8") as file:
             pass
 
         try:
+            program.random.randint = lambda *args : random_values.pop(0)
+        except:
+            pass
+
+        try:
+            program.randint = lambda *args : random_values.pop(0)
+        except:
+            pass
+
+        try:
             program.random.choice = lambda *args : choice_values.pop(0)
         except:
             pass
