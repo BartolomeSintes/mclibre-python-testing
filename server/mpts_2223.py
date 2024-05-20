@@ -1010,10 +1010,16 @@ def exercise(exercise_id):
             parc += [tmp]
         parh = []
         for i, tirada in enumerate(parc):
-            if tirada[0] % 2 == 0:
-                tmp = [tirada[0] - 1, tirada[1]]
+            if i % 2 == 0:
+                if tirada[0] > 1:
+                    tmp = [tirada[0] - 1, tirada[1]]
+                else:
+                    tmp = [tirada[0], tirada[1] - 1]
             else:
-                tmp = [tirada[0] + 1, tirada[1]]
+                if tirada[0] < 6:
+                    tmp = [tirada[0] + 1, tirada[1]]
+                else:
+                    tmp = [tirada[0], tirada[1] + 1]
             parh += [tmp]
         tu = len(parc) + len(parh)
         par = parc + parh
