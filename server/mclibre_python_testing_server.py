@@ -1,22 +1,25 @@
 #!/usr/bin/python3
-#"C:\Users\BLJ\AppData\Local\Programs\Python\Python39\pythonw.exe"
+# "C:\Users\BLJ\AppData\Local\Programs\Python\Python39\pythonw.exe"
 # enable debugging
-#"C:\Users\ASIR 7L\AppData\Local\Programs\Python\Python312\pythonw.exe"     # A112
-#"C:\Users\ASIR\AppData\Local\Programs\Python\Python312\pythonw.exe"        # A010
-#"C:\Users\BLJ\AppData\Local\Programs\Python\Python39\pythonw.exe"         casa
-#/usr/bin/python3                                                          mclibre
+# Añadir exclamación después de la almohadilla
+# "C:\Users\7ASM\AppData\Local\Programs\Python\Python313\pythonw.exe"       # A110O
+# "C:\Users\ASIR\AppData\Local\Programs\Python\Python312\pythonw.exe"       # A010
+# "C:\Users\BLJ\AppData\Local\Programs\Python\Python39\pythonw.exe"         casa
+# /usr/bin/python3                                                          mclibre
+
 # import cgi
-import cgitb
+# import cgitb
 import importlib
 import io
 import json
 import os
+
 # import random
 import sys
 
 from mpts_ids import valid_exercise_ids
 
-cgitb.enable()
+# cgitb.enable()
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding="utf-8")
 
 
